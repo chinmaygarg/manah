@@ -36,7 +36,6 @@ export default function MegaMenuPanel({ item, onClose }: MegaMenuPanelProps) {
       exit={{ opacity: 0, y: -8 }}
       transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
       className="absolute left-0 right-0 top-full z-50"
-      onMouseLeave={onClose}
     >
       {/* Gold accent bar */}
       <div className="h-[2px] bg-gradient-to-r from-transparent via-manah-gold to-transparent" />

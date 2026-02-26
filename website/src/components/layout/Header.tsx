@@ -76,6 +76,7 @@ export default function Header() {
             ? "bg-white/95 backdrop-blur-xl shadow-glass border-b border-manah-gray-200/50"
             : "bg-transparent"
         )}
+        onMouseLeave={handleMenuLeave}
       >
         <div className="section-container">
           <div className="flex items-center justify-between h-20">
@@ -112,7 +113,6 @@ export default function Header() {
             {/* Desktop Navigation */}
             <nav
               className="hidden xl:flex items-center gap-0.5 ml-auto mr-4"
-              onMouseLeave={handleMenuLeave}
             >
               {NAVIGATION.map((item) => (
                 <div
