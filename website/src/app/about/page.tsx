@@ -127,47 +127,79 @@ export default function AboutPage() {
       </MotionSection>
 
       {/* ─── Vision & Mission ─── */}
-      <MotionSection className="section-padding bg-manah-gray-50">
-        <div className="section-container">
-          <SectionHeading
-            eyebrow="Purpose"
-            title="Vision & Mission"
-            description="Guided by purpose, driven by impact."
-          />
-          <div className="grid md:grid-cols-2 gap-8 mt-12">
-            <motion.div
-              variants={scaleIn}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="bg-white rounded-2xl p-8 md:p-10 shadow-card border border-manah-gray-200/50"
+      <section className="relative bg-manah-navy overflow-hidden">
+        {/* Ambient glow effects */}
+        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-manah-gold/[0.04] rounded-full blur-[180px]" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-manah-accent-blue/[0.06] rounded-full blur-[150px]" />
+
+        {/* ── Vision Block ── */}
+        <div className="relative section-container" style={{ paddingTop: "var(--section-padding)", paddingBottom: "0" }}>
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            className="max-w-4xl"
+          >
+            <motion.p
+              variants={fadeUp}
+              className="text-manah-gold font-semibold text-body-sm tracking-widest uppercase mb-6"
             >
-              <div className="w-14 h-14 rounded-xl bg-manah-navy flex items-center justify-center mb-6">
-                <Eye className="w-7 h-7 text-manah-gold" />
-              </div>
-              <h3 className="font-display text-heading-xl font-bold text-manah-navy mb-4">Our Vision</h3>
-              <p className="text-manah-gray-500 text-body-md leading-relaxed">
-                To be the world&apos;s most trusted and innovative EPC enterprise, delivering world-class infrastructure and technology solutions that power sustainable development across markets worldwide.
-              </p>
-            </motion.div>
-            <motion.div
-              variants={scaleIn}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="bg-white rounded-2xl p-8 md:p-10 shadow-card border border-manah-gray-200/50"
+              Our Vision
+            </motion.p>
+            <motion.h2
+              variants={fadeUp}
+              className="font-display text-display-md md:text-display-lg lg:text-display-xl font-bold text-white leading-[1.1] mb-8"
             >
-              <div className="w-14 h-14 rounded-xl bg-manah-gold flex items-center justify-center mb-6">
-                <Target className="w-7 h-7 text-manah-navy" />
-              </div>
-              <h3 className="font-display text-heading-xl font-bold text-manah-navy mb-4">Our Mission</h3>
-              <p className="text-manah-gray-500 text-body-md leading-relaxed">
-                To deliver engineering excellence through mindful enterprising—combining cutting-edge technology, sustainable practices, and unwavering commitment to quality in every project we undertake.
-              </p>
-            </motion.div>
-          </div>
+              To be the world&apos;s most{" "}
+              <span className="text-gradient-gold">trusted and innovative</span>{" "}
+              EPC enterprise.
+            </motion.h2>
+            <motion.p
+              variants={fadeUp}
+              className="text-manah-gray-300 text-body-lg md:text-heading-lg font-light leading-relaxed max-w-3xl"
+            >
+              Delivering world-class infrastructure and technology solutions that power sustainable development across markets worldwide.
+            </motion.p>
+          </motion.div>
         </div>
-      </MotionSection>
+
+        {/* ── Separator ── */}
+        <div className="section-container py-16 md:py-20">
+          <div className="h-px bg-gradient-to-r from-transparent via-manah-gold/30 to-transparent" />
+        </div>
+
+        {/* ── Mission Block ── */}
+        <div className="relative section-container" style={{ paddingTop: "0", paddingBottom: "var(--section-padding)" }}>
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            className="max-w-4xl ml-auto text-right"
+          >
+            <motion.p
+              variants={fadeUp}
+              className="text-manah-gold font-semibold text-body-sm tracking-widest uppercase mb-6"
+            >
+              Our Mission
+            </motion.p>
+            <motion.h2
+              variants={fadeUp}
+              className="font-display text-display-md md:text-display-lg lg:text-display-xl font-bold text-white leading-[1.1] mb-8"
+            >
+              Engineering excellence through{" "}
+              <span className="text-gradient-gold">mindful enterprising.</span>
+            </motion.h2>
+            <motion.p
+              variants={fadeUp}
+              className="text-manah-gray-300 text-body-lg md:text-heading-lg font-light leading-relaxed max-w-3xl ml-auto"
+            >
+              Combining cutting-edge technology, sustainable practices, and unwavering commitment to quality in every project we undertake.
+            </motion.p>
+          </motion.div>
+        </div>
+      </section>
 
       {/* ─── Core Values ─── */}
       <MotionSection className="section-padding bg-white">
