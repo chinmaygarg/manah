@@ -54,10 +54,10 @@ export default function DivisionPage() {
   }
 
   return (
-    <main className="pt-[var(--nav-height)]">
+    <main>
       {/* ─── Hero ─── */}
       <section
-        className="relative text-white overflow-hidden"
+        className="relative text-white overflow-hidden -mt-20 pt-20"
         style={{
           background: `linear-gradient(135deg, ${division.color} 0%, #0A1628 100%)`,
         }}

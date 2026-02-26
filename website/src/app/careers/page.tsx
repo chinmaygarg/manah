@@ -111,9 +111,9 @@ export default function CareersPage() {
     : OPENINGS.filter((o) => o.department === activeDept);
 
   return (
-    <main className="pt-[var(--nav-height)]">
+    <main>
       {/* ─── Hero ─── */}
-      <section className="relative bg-manah-navy text-white overflow-hidden">
+      <section className="relative bg-manah-navy text-white overflow-hidden -mt-20 pt-20">
         <video
           autoPlay
           muted

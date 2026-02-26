@@ -76,9 +76,9 @@ const SECTORS = [
 
 export default function SectorsPage() {
   return (
-    <main className="pt-[var(--nav-height)]">
+    <main>
       {/* ─── Hero ─── */}
-      <section className="relative bg-manah-navy text-white overflow-hidden">
+      <section className="relative bg-manah-navy text-white overflow-hidden -mt-20 pt-20">
         <Image src="/images/sectors/power_transmission.png" alt="" fill className="object-cover opacity-20" priority />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,rgba(200,169,110,0.12),transparent_60%)]" />
         <div className="section-container py-24 md:py-32 relative z-10">

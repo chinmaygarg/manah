@@ -94,9 +94,9 @@ export default function MediaPage() {
   const [activeTab, setActiveTab] = useState("Press Releases");
 
   return (
-    <main className="pt-[var(--nav-height)]">
+    <main>
       {/* ─── Hero ─── */}
-      <section className="relative bg-manah-navy text-white overflow-hidden">
+      <section className="relative bg-manah-navy text-white overflow-hidden -mt-20 pt-20">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_70%,rgba(200,169,110,0.1),transparent_60%)]" />
         <div className="section-container py-24 md:py-28 relative z-10">
           <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="max-w-3xl">
