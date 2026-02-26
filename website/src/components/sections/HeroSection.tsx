@@ -35,16 +35,14 @@ const DIVISIONS = [
 const CROSSFADE_DURATION = 4000; // ms per video
 const TRANSITION_DURATION = 1200; // ms for crossfade
 
-function getVideoSrc(basePath: string): string {
-  if (typeof window !== "undefined" && window.innerWidth < 768) {
-    return `${basePath}-480p.mp4`;
-  }
-  return `${basePath}-720p.mp4`;
+function getVideoSrc(basePath: string, isMobile: boolean): string {
+  return isMobile ? `${basePath}-480p.mp4` : `${basePath}-720p.mp4`;
 }
 
 export default function HeroSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -55,6 +53,7 @@ export default function HeroSection() {
   }, []);
 
   useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
     setIsLoaded(true);
     startCrossfade();
     return () => {
@@ -96,7 +95,7 @@ export default function HeroSection() {
               poster={div.poster}
               className="absolute inset-0 w-full h-full object-cover"
             >
-              <source src={getVideoSrc(div.video)} type="video/mp4" />
+              <source src={getVideoSrc(div.video, isMobile)} type="video/mp4" />
             </video>
           </div>
         ))}
@@ -113,7 +112,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isLoaded ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.3, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="font-display text-display-md sm:text-display-lg lg:text-[5.5rem] lg:leading-[1.05] xl:text-[6.5rem] font-bold text-white mb-6 max-w-5xl tracking-tight lowercase"
+          className="font-display text-[3.3rem] leading-[1.1] sm:text-[4.25rem] lg:text-[5.5rem] lg:leading-[1.05] xl:text-[6.5rem] font-bold text-white mb-6 max-w-5xl tracking-tight lowercase"
         >
           building what the{" "}
           <br className="hidden sm:block" />
