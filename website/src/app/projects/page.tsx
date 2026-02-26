@@ -186,14 +186,14 @@ export default function ProjectsPage() {
             </motion.p>
             <motion.h1
               variants={fadeUp}
-              className="font-display text-display-lg md:text-display-xl lg:text-[4.5rem] font-bold mb-6 tracking-tight"
+              className="font-display text-display-lg md:text-display-xl font-bold mb-6"
             >
               We Build{" "}
               <span className="text-gradient-gold">History</span>
             </motion.h1>
             <motion.p
               variants={fadeUp}
-              className="text-white/60 text-body-lg md:text-heading-lg font-light leading-relaxed max-w-2xl"
+              className="text-manah-gray-300 text-body-lg max-w-2xl"
             >
               From mega transmission lines to green hydrogen plants, our
               portfolio spans the nation&apos;s most ambitious infrastructure

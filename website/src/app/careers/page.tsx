@@ -135,7 +135,7 @@ export default function CareersPage() {
               Build the Future{" "}
               <span className="text-gradient-gold">With Us</span>
             </motion.h1>
-            <motion.p variants={fadeUp} className="text-manah-gray-300 text-body-lg">
+            <motion.p variants={fadeUp} className="text-manah-gray-300 text-body-lg max-w-2xl">
               Join a team of innovators, engineers, and leaders shaping the global infrastructure, energy, and technology landscape.
             </motion.p>
             <motion.div variants={fadeUp} className="mt-8">

@@ -224,7 +224,7 @@ export default function CapabilitiesPage() {
           priority
         />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_20%,rgba(200,169,110,0.12),transparent_60%)]" />
-        <div className="section-container py-24 md:py-32 lg:py-40 relative z-10">
+        <div className="section-container py-24 md:py-32 relative z-10">
           <motion.div
             variants={staggerContainer}
             initial="hidden"

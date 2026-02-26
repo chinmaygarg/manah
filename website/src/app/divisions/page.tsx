@@ -14,7 +14,7 @@ export default function DivisionsPage() {
       <section className="relative bg-manah-navy text-white overflow-hidden -mt-20 pt-20">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(200,169,110,0.12),transparent_60%)]" />
         <div className="section-container py-24 md:py-32 relative z-10">
-          <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="max-w-3xl mx-auto text-center">
+          <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="max-w-3xl">
             <motion.p variants={fadeUp} className="text-manah-gold font-semibold text-body-sm tracking-widest uppercase mb-4">
               Business Divisions
             </motion.p>
@@ -22,7 +22,7 @@ export default function DivisionsPage() {
               Many Divisions.{" "}
               <span className="text-gradient-gold">One Vision.</span>
             </motion.h1>
-            <motion.p variants={fadeUp} className="text-manah-gray-300 text-body-lg">
+            <motion.p variants={fadeUp} className="text-manah-gray-300 text-body-lg max-w-2xl">
               Manah Group operates through specialized divisions, each a centre of excellence delivering world-class solutions in its domain.
             </motion.p>
           </motion.div>

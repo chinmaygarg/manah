@@ -104,12 +104,12 @@ export default function ContactPage() {
       {/* ─── Hero ─── */}
       <section className="relative bg-manah-navy text-white overflow-hidden -mt-20 pt-20">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(200,169,110,0.1),transparent_60%)]" />
-        <div className="section-container py-24 md:py-28 relative z-10">
+        <div className="section-container py-24 md:py-32 relative z-10">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
-            className="max-w-3xl mx-auto text-center"
+            className="max-w-3xl"
           >
             <motion.p variants={fadeUp} className="text-manah-gold font-semibold text-body-sm tracking-widest uppercase mb-4">
               Contact Us
@@ -118,7 +118,7 @@ export default function ContactPage() {
               Let&apos;s Build{" "}
               <span className="text-gradient-gold">Together</span>
             </motion.h1>
-            <motion.p variants={fadeUp} className="text-manah-gray-300 text-body-lg">
+            <motion.p variants={fadeUp} className="text-manah-gray-300 text-body-lg max-w-2xl">
               Whether you have a project in mind, a partnership to explore, or just want to learn more — we&apos;d love to hear from you.
             </motion.p>
           </motion.div>
