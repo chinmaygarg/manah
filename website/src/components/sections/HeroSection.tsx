@@ -127,8 +127,9 @@ export default function HeroSection() {
           transition={{ delay: 0.7, duration: 0.8 }}
           className="text-body-md sm:text-body-lg lg:text-heading-lg text-white/60 max-w-2xl mb-12 font-light leading-relaxed"
         >
-          From infrastructure to aerospace, green energy to advanced
-          manufacturing — enterprise-scale solutions that power nations forward.
+          We partner with visionary clients to deliver projects that make a
+          lasting, meaningful difference for people and communities around the
+          world.
         </motion.p>
 
         {/* CTA */}

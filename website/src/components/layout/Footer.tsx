@@ -28,7 +28,7 @@ export default function Footer() {
         <div className="section-container section-padding relative">
           <MotionSection className="text-center max-w-3xl mx-auto">
             <h2 className="font-display text-[2.5rem] sm:text-[3.5rem] lg:text-[4.5rem] font-semibold leading-[1.08] tracking-tight text-white mb-4">
-              Let&apos;s Build Together
+              Let&apos;s Build Something Extraordinary
             </h2>
             <p className="text-body-lg text-white/70 mb-8">
               The next chapter of global transformation is being written now. Partner with Manah Group to make it yours.

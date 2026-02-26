@@ -89,10 +89,10 @@ export default function StorySection() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.12, ease: EXPO_EASE }}
           >
-            Built for the era{" "}
+            Extraordinary Teams{" "}
             <span className="relative">
               <span className="text-gradient-gold">
-                the world decided to transform.
+                Building Inspiring Projects.
               </span>
               {/* Underline flourish */}
               <motion.span
@@ -122,7 +122,7 @@ export default function StorySection() {
             </motion.p>
 
             <motion.p
-              className="text-body-lg text-manah-gray-600 leading-[1.7] mb-10"
+              className="text-body-lg text-manah-gray-600 leading-[1.7] mb-6"
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.4, ease: EXPO_EASE }}
@@ -134,6 +134,34 @@ export default function StorySection() {
                 We build what&apos;s next.
               </span>
             </motion.p>
+
+            <motion.p
+              className="text-body-lg text-manah-gray-600 leading-[1.7] mb-8"
+              initial={{ opacity: 0, y: 24 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.5, ease: EXPO_EASE }}
+            >
+              Leveraging domain knowledge across sectors, we address the shift
+              to clean energy and meet ambitious Net Zero goals while delivering
+              projects on time and on budget.
+            </motion.p>
+
+            {/* Pillars */}
+            <motion.div
+              className="flex flex-wrap gap-3 mb-10"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.6, ease: EXPO_EASE }}
+            >
+              {["Sustainable Solutions", "Global Expertise", "On-Time Delivery", "Innovation Driven"].map((pillar) => (
+                <span
+                  key={pillar}
+                  className="px-4 py-2 text-body-sm font-medium text-manah-navy bg-manah-gold/10 border border-manah-gold/20 rounded-full"
+                >
+                  {pillar}
+                </span>
+              ))}
+            </motion.div>
 
             {/* CTA */}
             <motion.div

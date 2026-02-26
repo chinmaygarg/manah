@@ -24,73 +24,138 @@ export const STATS = [
   { value: 12, suffix: "+", label: "Strategic Partners" },
 ] as const;
 
-export interface NavItem {
-  label: string;
-  href: string;
-  description?: string;
-  children?: NavChild[];
-}
-
 export interface NavChild {
   label: string;
   href: string;
   description?: string;
   icon?: string;
+  image?: string;
+  featured?: boolean;
 }
+
+export interface NavItem {
+  label: string;
+  href: string;
+  description?: string;
+  children?: NavChild[];
+  megaMenu?: {
+    heading: string;
+    description: string;
+    ctaText: string;
+    ctaHref: string;
+  };
+}
+
+export const TOP_BAR_LINKS = [
+  { label: "Home", href: "/" },
+  { label: "Blog", href: "/blog" },
+  { label: "Landmark Projects", href: "/projects#landmark" },
+  { label: "Partner With Us", href: "/partner" },
+  { label: "Contact Us", href: "/contact" },
+] as const;
 
 export const NAVIGATION: NavItem[] = [
   {
-    label: "About",
+    label: "About Us",
     href: "/about",
+    megaMenu: {
+      heading: "Building the Future Since 1998",
+      description: "Discover who we are and what drives us.",
+      ctaText: "Learn More",
+      ctaHref: "/about",
+    },
     children: [
-      { label: "Company Overview", href: "/about", description: "Our story, vision, and philosophy" },
-      { label: "Leadership", href: "/about#leadership", description: "Meet our executive team" },
-      { label: "Sustainability", href: "/sustainability", description: "ESG commitment and green initiatives" },
-      { label: "Careers", href: "/careers", description: "Join our growing team" },
+      { label: "Who We Are", href: "/about", description: "Our story, vision, and philosophy", image: "/images/about/team_collaboration.png", featured: true },
+      { label: "Board of Directors", href: "/about#leadership", description: "Meet our executive team", image: "/images/leaders/prem_kumar.jpg", featured: true },
+      { label: "Mission, Vision & Values", href: "/about#mission", description: "Purpose-driven excellence", image: "/images/about/values_mindful.png", featured: true },
+      { label: "Investor Relations", href: "/about#investors", description: "Financial performance and reports" },
+      { label: "Policies & Charters", href: "/about#policies", description: "Governance framework" },
       { label: "History & Awards", href: "/about#history", description: "Milestones and certifications" },
     ],
   },
   {
     label: "Divisions",
     href: "/divisions",
+    megaMenu: {
+      heading: "Five Divisions, One Vision",
+      description: "Integrated capabilities across infrastructure, energy & technology.",
+      ctaText: "Explore All",
+      ctaHref: "/divisions",
+    },
     children: [
-      { label: "Manah Dynamics", href: "/divisions/dynamics", description: "Projects & Infrastructure" },
-      { label: "Manah Aerospace", href: "/divisions/aerospace", description: "Aviation & MRO Services" },
-      { label: "Green Energy", href: "/divisions/green-energy", description: "Green Hydrogen & Renewables" },
-      { label: "Tech & Manufacturing", href: "/divisions/technology", description: "Electronics Manufacturing" },
-      { label: "Manah Investments", href: "/divisions/investments", description: "Strategic Investments" },
+      { label: "Manah Dynamics", href: "/divisions/dynamics", description: "Projects & Infrastructure", image: "/images/divisions/manah_dynamics_hero.png", featured: true },
+      { label: "Manah Aerospace", href: "/divisions/aerospace", description: "Aviation & MRO Services", image: "/images/divisions/manah_aerospace_hero.png", featured: true },
+      { label: "Green Energy", href: "/divisions/green-energy", description: "Green Hydrogen & Renewables", image: "/images/divisions/green_energy_hero.png", featured: true },
+      { label: "Tech & Manufacturing", href: "/divisions/technology", description: "Electronics Manufacturing", image: "/images/divisions/tech_manufacturing_hero.png", featured: true },
+      { label: "Manah Investments", href: "/divisions/investments", description: "Strategic Investments", image: "/images/divisions/manah_dynamics_projects.png", featured: true },
     ],
   },
   {
     label: "Sectors",
     href: "/sectors",
+    megaMenu: {
+      heading: "Comprehensive Solutions Across Industries",
+      description: "Ready-to-deploy solutions for critical infrastructure, energy, transportation, and advanced technology.",
+      ctaText: "View All Sectors",
+      ctaHref: "/sectors",
+    },
     children: [
-      { label: "Power Transmission", href: "/sectors/power-transmission", description: "HV/EHV transmission infrastructure" },
-      { label: "Renewable Energy", href: "/sectors/renewable-energy", description: "Solar, wind, and hybrid solutions" },
-      { label: "Infrastructure", href: "/sectors/infrastructure", description: "Roads, bridges, and urban projects" },
-      { label: "Defence Electronics", href: "/sectors/defence", description: "Strategic electronics systems" },
-      { label: "Aviation", href: "/sectors/aviation", description: "Airport and MRO facilities" },
-      { label: "Green Hydrogen", href: "/sectors/green-hydrogen", description: "Electrolyzer and hydrogen infrastructure" },
-      { label: "Manufacturing", href: "/sectors/manufacturing", description: "EMS and precision manufacturing" },
+      { label: "Urban Infrastructure", href: "/sectors/infrastructure", description: "Smart cities & urban development", image: "/images/sectors/infrastructure.png", featured: true },
+      { label: "Advanced Technology", href: "/sectors/defence", description: "Data centers & semiconductor fabs", image: "/images/sectors/defence_electronics.png", featured: true },
+      { label: "Transportation", href: "/sectors/aviation", description: "Metro, airports & highways", image: "/images/sectors/transportation.png", featured: true },
+      { label: "Oil, Gas & Energy", href: "/sectors/power-transmission", description: "Refinery & petrochemical", image: "/images/sectors/power_transmission.png", featured: true },
+      { label: "Power & Renewables", href: "/sectors/renewable-energy", description: "Solar, wind & thermal power", image: "/images/sectors/renewable_energy.png", featured: true },
+      { label: "Water & Environment", href: "/sectors/green-hydrogen", description: "Treatment, desalination & rejuvenation", image: "/images/sectors/green_hydrogen.png", featured: true },
     ],
   },
   {
     label: "Projects",
     href: "/projects",
+  },
+  {
+    label: "Sustainability",
+    href: "/sustainability",
+    megaMenu: {
+      heading: "Committed to a Sustainable Future",
+      description: "Building responsibly for generations to come.",
+      ctaText: "Explore ESG",
+      ctaHref: "/sustainability",
+    },
     children: [
-      { label: "All Projects", href: "/projects", description: "Browse our complete portfolio" },
-      { label: "Featured Projects", href: "/projects#featured", description: "Landmark achievements" },
-      { label: "Capabilities", href: "/capabilities", description: "Full-spectrum EPC services" },
-      { label: "Case Studies", href: "/projects#case-studies", description: "In-depth project analyses" },
+      { label: "Environment", href: "/sustainability#environment", description: "Climate action & carbon reduction", image: "/images/sustainability/environment.png", featured: true },
+      { label: "Social Responsibility", href: "/sustainability#social", description: "Community impact & inclusion", image: "/images/sustainability/community_impact.png", featured: true },
+      { label: "Governance", href: "/sustainability#governance", description: "Ethics, compliance & transparency", image: "/images/sustainability/sustainability_hero.png", featured: true },
+      { label: "ESG Reports", href: "/sustainability#reports", description: "Annual sustainability disclosures" },
     ],
   },
   {
     label: "Media",
     href: "/media",
+    megaMenu: {
+      heading: "Latest News & Updates",
+      description: "Stay informed about our projects, partnerships, and achievements.",
+      ctaText: "View All Media",
+      ctaHref: "/media",
+    },
     children: [
-      { label: "Press Releases", href: "/media#press", description: "Latest announcements" },
-      { label: "News & Blog", href: "/media#news", description: "Company news and insights" },
-      { label: "Gallery", href: "/media#gallery", description: "Photo and video gallery" },
+      { label: "Press Releases", href: "/media#press", description: "Official announcements", image: "/images/news/power-transmission.jpg", featured: true },
+      { label: "In The News", href: "/media#news", description: "Media coverage & features", image: "/images/news/aerospace-mro.jpg", featured: true },
+      { label: "Awards & Recognition", href: "/media#awards", description: "Industry accolades", image: "/images/news/green-hydrogen.jpg", featured: true },
+      { label: "Videos", href: "/media#videos", description: "Project films & corporate stories" },
+    ],
+  },
+  {
+    label: "Careers",
+    href: "/careers",
+    megaMenu: {
+      heading: "Build Your Career With Us",
+      description: "Join a team that builds the future.",
+      ctaText: "View All Positions",
+      ctaHref: "/careers",
+    },
+    children: [
+      { label: "Life at Manah Group", href: "/careers#life", description: "Culture, values & growth", image: "/images/careers/engineering_team.png", featured: true },
+      { label: "Job Search", href: "/careers#jobs", description: "Current openings", image: "/images/careers/professional_growth.png", featured: true },
     ],
   },
 ];
