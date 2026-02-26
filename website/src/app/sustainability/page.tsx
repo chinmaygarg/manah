@@ -91,9 +91,18 @@ export default function SustainabilityPage() {
     <main>
       {/* ─── Hero ─── */}
       <section className="relative bg-manah-navy text-white overflow-hidden -mt-20 pt-20">
-        <Image src="/images/sustainability/sustainability_hero.png" alt="" fill className="object-cover opacity-25" priority />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_40%_60%,rgba(22,163,74,0.15),transparent_60%)]" />
-        <div className="section-container py-24 md:py-32 relative z-10">
+        <Image
+          src="/images/sustainability/sustainability_hero.png"
+          alt="Renewable energy landscape — solar panels, wind turbines, and transmission infrastructure"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-manah-navy/70 via-manah-navy/40 to-manah-navy/85" />
+        <div className="absolute inset-0 bg-gradient-to-r from-manah-navy/60 via-transparent to-manah-navy/40" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_40%_60%,rgba(22,163,74,0.12),transparent_60%)]" />
+        <div className="relative z-10 section-container py-24 md:py-32">
           <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="max-w-3xl">
             <motion.p variants={fadeUp} className="text-manah-accent-green font-semibold text-body-sm tracking-widest uppercase mb-4">
               Sustainability

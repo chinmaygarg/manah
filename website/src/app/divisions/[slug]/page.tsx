@@ -42,6 +42,12 @@ const DIVISION_IMAGES: Record<string, { hero: string; detail: string; video?: st
     hero: "/images/divisions/tech_manufacturing_hero.png",
     detail: "/images/divisions/tech_manufacturing_pcb.png",
   },
+  investments: {
+    hero: "/images/divisions/manah_investments_hero.png",
+    detail: "/images/divisions/manah_investments_detail.png",
+    video: "/videos/divisions/investments_reel-720p.mp4",
+    videoMobile: "/videos/divisions/investments_reel-480p.mp4",
+  },
 };
 
 export default function DivisionPage() {
@@ -56,12 +62,8 @@ export default function DivisionPage() {
   return (
     <main>
       {/* ─── Hero ─── */}
-      <section
-        className="relative text-white overflow-hidden -mt-20 pt-20"
-        style={{
-          background: `linear-gradient(135deg, ${division.color} 0%, #0A1628 100%)`,
-        }}
-      >
+      <section className="relative text-white overflow-hidden -mt-20 pt-20 bg-manah-navy">
+        {/* Background image/video */}
         {DIVISION_IMAGES[slug] && (
           DIVISION_IMAGES[slug].video ? (
             <video
@@ -71,7 +73,7 @@ export default function DivisionPage() {
               playsInline
               preload="auto"
               poster={DIVISION_IMAGES[slug].hero}
-              className="absolute inset-0 w-full h-full object-cover opacity-30"
+              className="absolute inset-0 w-full h-full object-cover"
             >
               <source src={DIVISION_IMAGES[slug].video} type="video/mp4" />
             </video>
@@ -80,12 +82,20 @@ export default function DivisionPage() {
               src={DIVISION_IMAGES[slug].hero}
               alt=""
               fill
-              className="object-cover opacity-30"
+              className="object-cover"
               priority
+              sizes="100vw"
             />
           )
         )}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_30%,rgba(255,255,255,0.08),transparent_60%)]" />
+        {/* Dark overlays for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-manah-navy/80 via-manah-navy/50 to-manah-navy/90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-manah-navy/70 via-transparent to-manah-navy/40" />
+        {/* Subtle division color accent */}
+        <div
+          className="absolute inset-0 opacity-[0.12]"
+          style={{ background: `radial-gradient(ellipse at 70% 30%, ${division.color}, transparent 60%)` }}
+        />
         <div className="section-container py-24 md:py-32 relative z-10">
           <motion.div
             variants={staggerContainer}

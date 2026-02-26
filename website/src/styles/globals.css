@@ -127,7 +127,7 @@
 
 /* ═══ Base ═══ */
 @layer base {
-  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; overflow-x: hidden; }
   body { @apply bg-white text-manah-gray-700 font-sans; overflow-x: hidden; }
   ::selection { background-color: rgba(200, 169, 110, 0.3); color: #0A1628; }
   ::-webkit-scrollbar { width: 8px; }

@@ -75,7 +75,7 @@ export default function StrategicPartnersSection() {
 
       {/* Marquee container */}
       <motion.div
-        className="relative"
+        className="relative overflow-hidden"
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.8, delay: 0.3, ease: EXPO_EASE }}

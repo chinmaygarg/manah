@@ -15,13 +15,13 @@ export default function Footer() {
       {/* CTA Banner */}
       <div className="relative overflow-hidden bg-gradient-to-br from-manah-navy-dark via-manah-navy to-manah-dark">
         {/* Diagonal gold streaks */}
-        <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-1/2 -right-1/4 w-[800px] h-[200px] bg-gradient-to-r from-transparent via-manah-gold/[0.07] to-transparent rotate-[-35deg]" />
           <div className="absolute -bottom-1/3 -left-1/4 w-[600px] h-[150px] bg-gradient-to-r from-transparent via-manah-gold/[0.05] to-transparent rotate-[-35deg]" />
           <div className="absolute top-1/4 right-1/3 w-[400px] h-[100px] bg-gradient-to-r from-transparent via-manah-gold/[0.04] to-transparent rotate-[-35deg]" />
         </div>
         {/* Ambient glow */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-0 right-0 w-96 h-96 bg-manah-gold/10 rounded-full blur-[120px]" />
           <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-manah-accent-blue/10 rounded-full blur-[100px]" />
         </div>

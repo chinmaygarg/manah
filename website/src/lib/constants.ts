@@ -87,7 +87,7 @@ export const NAVIGATION: NavItem[] = [
       { label: "Manah Aerospace", href: "/divisions/aerospace", description: "Aviation & MRO Services", image: "/images/divisions/manah_aerospace_hero.png", featured: true },
       { label: "Green Energy", href: "/divisions/green-energy", description: "Green Hydrogen & Renewables", image: "/images/divisions/green_energy_hero.png", featured: true },
       { label: "Tech & Manufacturing", href: "/divisions/technology", description: "Electronics Manufacturing", image: "/images/divisions/tech_manufacturing_hero.png", featured: true },
-      { label: "Manah Investments", href: "/divisions/investments", description: "Strategic Investments", image: "/images/divisions/manah_dynamics_projects.png", featured: true },
+      { label: "Manah Investments", href: "/divisions/investments", description: "Strategic Investments", image: "/images/divisions/manah_investments_hero.png", featured: true },
     ],
   },
   {
@@ -224,7 +224,7 @@ export const DIVISIONS = [
     description: "Deploying strategic capital across infrastructure, energy, and technology ventures — identifying high-impact opportunities aligned with global growth trajectories.",
     href: "/divisions/investments",
     color: "#D97706",
-    image: "/images/divisions/manah_dynamics_projects.png",
+    image: "/images/divisions/manah_investments_hero.png",
     stats: [
       { label: "Portfolio Value", value: "$500M+" },
       { label: "Active Ventures", value: "15+" },
