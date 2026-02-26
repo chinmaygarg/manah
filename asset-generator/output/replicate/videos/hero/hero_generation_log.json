@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-02-26T18:50:51.885017",
+  "model": "google/veo-3-fast",
+  "results": [
+    {
+      "status": "success",
+      "id": "infrastructure",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/replicate/videos/hero/hero_infrastructure.mp4"
+    },
+    {
+      "status": "success",
+      "id": "aerospace",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/replicate/videos/hero/hero_aerospace.mp4"
+    },
+    {
+      "status": "success",
+      "id": "green_energy",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/replicate/videos/hero/hero_green_energy.mp4"
+    },
+    {
+      "status": "success",
+      "id": "technology",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/replicate/videos/hero/hero_technology.mp4"
+    },
+    {
+      "status": "success",
+      "id": "investments",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/replicate/videos/hero/hero_investments.mp4"
+    }
+  ]
+}

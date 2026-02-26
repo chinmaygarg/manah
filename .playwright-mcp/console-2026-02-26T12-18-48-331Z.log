@@ -1,0 +1,3 @@
+[    1132ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://builder.hostinger.com/api/builder-backend/v1/users/me:0
+[    1137ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://builder.hostinger.com/api/resources/api/v2/resources:0
+[    1349ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://builder.hostinger.com/api/auth/api/external/v1/auth/refresh:0

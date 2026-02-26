@@ -1,0 +1,18 @@
+[  322966ms] [ERROR] Warning: Received `%s` for a non-boolean attribute `%s`.
+
+If you want to write it to the DOM, pass a string instead: %s="%s" or %s={value.toString()}.%s true jsx jsx true jsx 
+    at style
+    at div
+    at Index (https://bullsai.fun/src/pages/Index.tsx:30:22)
+    at RenderedRoute (https://bullsai.fun/node_modules/.vite/deps/react-router-dom.js?v=d7a39ba0:4088:5)
+    at Routes (https://bullsai.fun/node_modules/.vite/deps/react-router-dom.js?v=d7a39ba0:4558:5)
+    at AuthProvider (https://bullsai.fun/src/contexts/AuthContext.tsx:36:32)
+    at Router (https://bullsai.fun/node_modules/.vite/deps/react-router-dom.js?v=d7a39ba0:4501:15)
+    at BrowserRouter (https://bullsai.fun/node_modules/.vite/deps/react-router-dom.js?v=d7a39ba0:5247:5)
+    at Provider (https://bullsai.fun/node_modules/.vite/deps/chunk-PLT6GTVM.js?v=d7a39ba0:38:15)
+    at TooltipProvider (https://bullsai.fun/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=d7a39ba0:64:5)
+    at QueryClientProvider (https://bullsai.fun/node_modules/.vite/deps/@tanstack_react-query.js?v=d7a39ba0:2934:3)
+    at App @ https://bullsai.fun/node_modules/.vite/deps/chunk-R6S4VRB5.js?v=d7a39ba0:520
+[  322971ms] [WARNING] ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition. @ https://bullsai.fun/node_modules/.vite/deps/react-router-dom.js?v=d7a39ba0:4392
+[  322971ms] [WARNING] ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath. @ https://bullsai.fun/node_modules/.vite/deps/react-router-dom.js?v=d7a39ba0:4392
+[  443974ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://bullsai.fun/trading/auth/api/daily-auth:0

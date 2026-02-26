@@ -1,0 +1,212 @@
+{
+  "timestamp": "2026-02-25T13:54:03.829031",
+  "model": "imagen-4.0-generate-001",
+  "total": 35,
+  "success": 27,
+  "skipped": 7,
+  "errors": 0,
+  "elapsed_seconds": 693.2049059867859,
+  "results": [
+    {
+      "status": "skipped",
+      "id": "hero_main_01",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/hero/hero_main_infrastructure.png"
+    },
+    {
+      "status": "skipped",
+      "id": "hero_main_02",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/hero/hero_construction_site.png"
+    },
+    {
+      "status": "skipped",
+      "id": "hero_main_03",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/hero/hero_renewable_energy.png"
+    },
+    {
+      "status": "skipped",
+      "id": "hero_main_04",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/hero/hero_aviation_mro.png"
+    },
+    {
+      "status": "skipped",
+      "id": "div_dynamics_01",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/divisions/manah_dynamics_hero.png"
+    },
+    {
+      "status": "skipped",
+      "id": "div_dynamics_02",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/divisions/manah_dynamics_projects.png"
+    },
+    {
+      "status": "skipped",
+      "id": "div_aerospace_01",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/divisions/manah_aerospace_hero.png"
+    },
+    {
+      "status": "success",
+      "id": "div_aerospace_02",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/divisions/manah_aerospace_detail.png",
+      "size": 1478471
+    },
+    {
+      "status": "success",
+      "id": "div_green_energy_01",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/divisions/green_energy_hero.png",
+      "size": 1465046
+    },
+    {
+      "status": "success",
+      "id": "div_green_energy_02",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/divisions/green_energy_hydrogen.png",
+      "size": 1383735
+    },
+    {
+      "status": "success",
+      "id": "div_tech_01",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/divisions/tech_manufacturing_hero.png",
+      "size": 1360579
+    },
+    {
+      "status": "success",
+      "id": "div_tech_02",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/divisions/tech_manufacturing_pcb.png",
+      "size": 1444357
+    },
+    {
+      "status": "success",
+      "id": "sector_power_transmission",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/sectors/power_transmission.png",
+      "size": 1492936
+    },
+    {
+      "status": "success",
+      "id": "sector_renewable",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/sectors/renewable_energy.png",
+      "size": 1668464
+    },
+    {
+      "status": "success",
+      "id": "sector_infrastructure",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/sectors/infrastructure.png",
+      "size": 1457820
+    },
+    {
+      "status": "success",
+      "id": "sector_defence",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/sectors/defence_electronics.png",
+      "size": 1341939
+    },
+    {
+      "status": "success",
+      "id": "sector_aviation",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/sectors/aviation.png",
+      "size": 1368604
+    },
+    {
+      "status": "success",
+      "id": "sector_green_hydrogen",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/sectors/green_hydrogen.png",
+      "size": 1222821
+    },
+    {
+      "status": "success",
+      "id": "sector_manufacturing",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/sectors/manufacturing.png",
+      "size": 1650776
+    },
+    {
+      "status": "success",
+      "id": "about_hero",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/about/about_hero.png",
+      "size": 1632855
+    },
+    {
+      "status": "success",
+      "id": "about_team",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/about/team_collaboration.png",
+      "size": 1322268
+    },
+    {
+      "status": "success",
+      "id": "about_values",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/about/values_mindful.png",
+      "size": 1183749
+    },
+    {
+      "status": "success",
+      "id": "about_timeline_bg",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/about/timeline_background.png",
+      "size": 535829
+    },
+    {
+      "status": "success",
+      "id": "sustain_hero",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/sustainability/sustainability_hero.png",
+      "size": 1472224
+    },
+    {
+      "status": "empty",
+      "id": "sustain_community"
+    },
+    {
+      "status": "success",
+      "id": "sustain_environment",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/sustainability/environment.png",
+      "size": 1042748
+    },
+    {
+      "status": "success",
+      "id": "careers_hero",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/careers/careers_hero.png",
+      "size": 1444468
+    },
+    {
+      "status": "success",
+      "id": "careers_culture",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/careers/team_culture.png",
+      "size": 1616756
+    },
+    {
+      "status": "success",
+      "id": "careers_engineering",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/careers/engineering_team.png",
+      "size": 1476311
+    },
+    {
+      "status": "success",
+      "id": "careers_growth",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/careers/professional_growth.png",
+      "size": 1408899
+    },
+    {
+      "status": "success",
+      "id": "partners_hero",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/partners/partners_hero.png",
+      "size": 1271138
+    },
+    {
+      "status": "success",
+      "id": "ui_pattern_navy",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/ui-elements/pattern_navy_geometric.png",
+      "size": 1184022
+    },
+    {
+      "status": "success",
+      "id": "ui_pattern_light",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/ui-elements/pattern_light_geometric.png",
+      "size": 646321
+    },
+    {
+      "status": "success",
+      "id": "ui_globe_bg",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/ui-elements/globe_background.png",
+      "size": 1298340
+    },
+    {
+      "status": "success",
+      "id": "ui_cta_bg",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/images/ui-elements/cta_background.png",
+      "size": 1171960
+    }
+  ]
+}

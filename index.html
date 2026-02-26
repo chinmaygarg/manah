@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manah Group — Building Tomorrow, Together</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1a1a2e;
+      background: #fff;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; transition: color .3s; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ===== UTILITY BAR (top thin bar — Tata-style) ===== */
+    .utility-bar {
+      background: #111827;
+      color: #d1d5db;
+      font-size: .75rem;
+      letter-spacing: .03em;
+      padding: 0 3rem;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1001;
+      position: relative;
+    }
+    .utility-bar a { color: #d1d5db; margin-left: 1.25rem; transition: color .25s; }
+    .utility-bar a:hover { color: #f59e0b; }
+    .utility-links { display: flex; align-items: center; gap: .15rem; }
+    .utility-links a { padding: 0 .6rem; border-right: 1px solid #374151; }
+    .utility-links a:last-child { border-right: none; }
+    .utility-social a { font-size: .85rem; margin-left: .9rem; }
+
+    /* ===== MAIN NAV (Tata-style mega dropdown) ===== */
+    .main-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.97);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 1px 6px rgba(0,0,0,.08);
+      padding: 0 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      transition: background .35s, box-shadow .35s;
+    }
+    .main-nav.scrolled {
+      background: rgba(255,255,255,.99);
+      box-shadow: 0 2px 16px rgba(0,0,0,.12);
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.65rem;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
+    .logo-icon {
+      width: 38px; height: 38px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 1.1rem; font-weight: 800;
+      font-family: 'Inter', sans-serif;
+    }
+    .nav-links { display: flex; align-items: center; gap: 0; height: 100%; }
+    .nav-links > li {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+    .nav-links > li > a {
+      padding: 0 1.1rem;
+      font-size: .835rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: #334155;
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      height: 100%;
+      border-bottom: 3px solid transparent;
+      transition: color .25s, border-color .25s;
+    }
+    .nav-links > li > a:hover,
+    .nav-links > li:hover > a {
+      color: #d97706;
+      border-bottom-color: #d97706;
+    }
+    .nav-links > li > a .arrow { font-size: .55rem; transition: transform .25s; }
+    .nav-links > li:hover > a .arrow { transform: rotate(180deg); }
+
+    /* Dropdown */
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 260px;
+      background: #fff;
+      box-shadow: 0 12px 40px rgba(0,0,0,.12);
+      border-top: 3px solid #d97706;
+      border-radius: 0 0 8px 8px;
+      padding: .5rem 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: opacity .25s, transform .25s, visibility .25s;
+    }
+    .nav-links > li:hover .dropdown {
+      opacity: 1; visibility: visible; transform: translateY(0);
+    }
+    .dropdown li a {
+      display: block;
+      padding: .65rem 1.5rem;
+      font-size: .8rem;
+      color: #475569;
+      font-weight: 500;
+      transition: background .2s, color .2s, padding-left .2s;
+    }
+    .dropdown li a:hover {
+      background: #fffbeb;
+      color: #b45309;
+      padding-left: 1.85rem;
+    }
+
+    /* Nav CTA */
+    .nav-cta {
+      background: linear-gradient(135deg, #d97706, #b45309);
+      color: #fff !important;
+      padding: .55rem 1.4rem !important;
+      border-radius: 6px;
+      font-size: .8rem !important;
+      font-weight: 600 !important;
+      text-transform: uppercase !important;
+      letter-spacing: .04em !important;
+      border-bottom: none !important;
+      height: auto !important;
+      transition: transform .2s, box-shadow .2s !important;
+    }
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(217,119,6,.4);
+      color: #fff !important;
+      border-bottom-color: transparent !important;
+    }
+
+    /* Mobile toggle */
+    .mobile-toggle {
+      display: none;
+      background: none; border: none; cursor: pointer;
+      font-size: 1.5rem; color: #1e293b;
+    }
+
+    /* ===== HERO (Bechtel-style fullscreen with video bg) ===== */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-video-wrap {
+      position: absolute; inset: 0; z-index: 0;
+    }
+    .hero-video-wrap video,
+    .hero-video-wrap img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(15,23,42,.78) 0%, rgba(30,41,59,.55) 50%, rgba(15,23,42,.72) 100%);
+      z-index: 1;
+    }
+    .hero-particles {
+      position: absolute; inset: 0; z-index: 2;
+      background-image:
+        radial-gradient(1.5px 1.5px at 10% 20%, rgba(245,158,11,.35) 50%, transparent 50%),
+        radial-gradient(1px 1px at 30% 65%, rgba(255,255,255,.2) 50%, transparent 50%),
+        radial-gradient(1.5px 1.5px at 55% 15%, rgba(245,158,11,.25) 50%, transparent 50%),
+        radial-gradient(1px 1px at 75% 80%, rgba(255,255,255,.15) 50%, transparent 50%),
+        radial-gradient(1.5px 1.5px at 90% 40%, rgba(245,158,11,.2) 50%, transparent 50%);
+    }
+    .hero-content {
+      position: relative; z-index: 3;
+      max-width: 780px;
+      padding: 0 5vw;
+      animation: heroFadeIn 1.2s ease-out;
+    }
+    @keyframes heroFadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(245,158,11,.15);
+      border: 1px solid rgba(245,158,11,.3);
+      padding: .4rem 1rem;
+      border-radius: 50px;
+      color: #fbbf24;
+      font-size: .75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(4px);
+    }
+    .hero-badge .dot {
+      width: 6px; height: 6px; background: #f59e0b;
+      border-radius: 50%; animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; } 50% { opacity: .4; }
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5.5vw, 4.2rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.12;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 span { color: #fbbf24; }
+    .hero p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,.8);
+      max-width: 600px;
+      margin-bottom: 2.2rem;
+    }
+    .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .85rem 2rem;
+      border-radius: 6px;
+      font-size: .85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      transition: transform .25s, box-shadow .25s, background .25s;
+      cursor: pointer; border: none;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(245,158,11,.4);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid rgba(255,255,255,.4);
+      color: #fff;
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,.1);
+      border-color: rgba(255,255,255,.7);
+      transform: translateY(-2px);
+    }
+
+    /* Hero stats bar */
+    .hero-stats {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      z-index: 4;
+      background: rgba(15,23,42,.6);
+      backdrop-filter: blur(14px);
+      border-top: 1px solid rgba(255,255,255,.08);
+      display: flex;
+      justify-content: center;
+      padding: 1.5rem 3rem;
+      gap: 4rem;
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 700;
+      color: #fbbf24;
+    }
+    .hero-stat .label {
+      font-size: .72rem; color: rgba(255,255,255,.65);
+      text-transform: uppercase; letter-spacing: .08em;
+      margin-top: .15rem;
+    }
+
+    /* ===== SECTION BASE ===== */
+    section { padding: 6rem 5vw; }
+    .section-tag {
+      display: inline-flex; align-items: center; gap: .4rem;
+      font-size: .7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .12em;
+      color: #d97706;
+      margin-bottom: .75rem;
+    }
+    .section-tag .bar { width: 28px; height: 2px; background: #d97706; border-radius: 2px; }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: #0f172a;
+      margin-bottom: .8rem;
+    }
+    .section-subtitle {
+      font-size: 1.05rem; color: #64748b;
+      max-width: 620px; line-height: 1.65;
+    }
+
+    /* ===== ABOUT ===== */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      padding: 6rem 5vw;
+      background: #fafafa;
+    }
+    .about-image {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 420px;
+    }
+    .about-image img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .about-image::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 40%;
+      background: linear-gradient(to top, rgba(15,23,42,.4), transparent);
+    }
+    .about-accent {
+      position: absolute; bottom: -16px; right: -16px;
+      width: 120px; height: 120px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-radius: 12px;
+      z-index: -1;
+    }
+    .about-text p {
+      color: #475569; line-height: 1.75;
+      margin: 1.25rem 0;
+    }
+    .about-highlights {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1rem; margin-top: 1.5rem;
+    }
+    .about-highlight {
+      display: flex; align-items: flex-start; gap: .65rem;
+    }
+    .about-highlight i {
+      color: #d97706; font-size: 1rem; margin-top: .2rem;
+    }
+    .about-highlight span {
+      font-size: .85rem; font-weight: 600; color: #334155;
+    }
+
+    /* ===== SERVICES / SECTORS ===== */
+    .services { background: #fff; text-align: center; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.75rem;
+      margin-top: 3rem;
+    }
+    .service-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 2.2rem 1.8rem;
+      text-align: left;
+      transition: transform .3s, box-shadow .3s, border-color .3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #f59e0b, #d97706);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .35s;
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.08);
+      border-color: #fde68a;
+    }
+    .service-icon {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, #fffbeb, #fef3c7);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem; color: #d97706;
+      margin-bottom: 1.2rem;
+    }
+    .service-card h3 {
+      font-size: 1.05rem; font-weight: 700;
+      color: #0f172a; margin-bottom: .6rem;
+    }
+    .service-card p {
+      font-size: .85rem; color: #64748b; line-height: 1.65;
+    }
+
+    /* ===== PROJECTS ===== */
+    .projects { background: #0f172a; color: #fff; }
+    .projects .section-tag { color: #fbbf24; }
+    .projects .section-tag .bar { background: #fbbf24; }
+    .projects .section-title { color: #fff; }
+    .projects .section-subtitle { color: rgba(255,255,255,.6); }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.75rem;
+      margin-top: 3rem;
+    }
+    .project-card {
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      height: 320px;
+      cursor: pointer;
+    }
+    .project-card img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .5s;
+    }
+    .project-card:hover img { transform: scale(1.08); }
+    .project-card-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(15,23,42,.9) 0%, transparent 60%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.8rem;
+      transition: background .35s;
+    }
+    .project-card:hover .project-card-overlay {
+      background: linear-gradient(to top, rgba(15,23,42,.95) 0%, rgba(15,23,42,.2) 60%);
+    }
+    .project-location {
+      font-size: .7rem; text-transform: uppercase;
+      letter-spacing: .1em; color: #fbbf24;
+      font-weight: 600; margin-bottom: .3rem;
+    }
+    .project-card h3 {
+      font-size: 1.15rem; font-weight: 700; color: #fff;
+    }
+    .project-card p {
+      font-size: .8rem; color: rgba(255,255,255,.65);
+      margin-top: .4rem; line-height: 1.55;
+      max-height: 0; overflow: hidden;
+      transition: max-height .4s;
+    }
+    .project-card:hover p { max-height: 80px; }
+
+    /* ===== NUMBERS / STATS ===== */
+    .stats-section {
+      background: linear-gradient(135deg, #fffbeb 0%, #fff 100%);
+      text-align: center;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .stat-item {
+      padding: 2rem 1rem;
+    }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem; font-weight: 700;
+      color: #d97706;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: .85rem; color: #64748b;
+      margin-top: .5rem; font-weight: 500;
+    }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials {
+      background: #fff;
+      text-align: center;
+    }
+    .testimonial-card {
+      max-width: 700px;
+      margin: 3rem auto 0;
+      padding: 2.5rem;
+      background: #f8fafc;
+      border-radius: 16px;
+      border-left: 4px solid #d97706;
+      text-align: left;
+    }
+    .testimonial-card .quote {
+      font-size: 1.1rem; color: #334155;
+      line-height: 1.75; font-style: italic;
+      margin-bottom: 1.25rem;
+    }
+    .testimonial-author {
+      display: flex; align-items: center; gap: .75rem;
+    }
+    .testimonial-avatar {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 700; font-size: 1rem;
+    }
+    .testimonial-name { font-weight: 700; font-size: .9rem; color: #0f172a; }
+    .testimonial-role { font-size: .78rem; color: #94a3b8; }
+
+    /* ===== CONTACT ===== */
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      background: #0f172a;
+      color: #fff;
+    }
+    .contact .section-tag { color: #fbbf24; }
+    .contact .section-tag .bar { background: #fbbf24; }
+    .contact .section-title { color: #fff; }
+    .contact p { color: rgba(255,255,255,.65); line-height: 1.7; }
+    .contact-info-item {
+      display: flex; align-items: flex-start; gap: .85rem;
+      margin-top: 1.5rem;
+    }
+    .contact-info-item i {
+      color: #fbbf24; font-size: 1rem; margin-top: .2rem;
+    }
+    .contact-info-item span {
+      font-size: .9rem; color: rgba(255,255,255,.75);
+    }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-form input,
+    .contact-form textarea {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 8px;
+      padding: .85rem 1.1rem;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: .9rem;
+      transition: border-color .25s, background .25s;
+      outline: none;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: rgba(255,255,255,.35); }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #f59e0b;
+      background: rgba(255,255,255,.08);
+    }
+    .contact-form textarea { min-height: 130px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .btn-submit {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #fff;
+      padding: .9rem 2rem;
+      border: none; border-radius: 8px;
+      font-size: .85rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .06em;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+      align-self: flex-start;
+    }
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(245,158,11,.4);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #0a0f1a;
+      color: rgba(255,255,255,.5);
+      padding: 3.5rem 5vw 1.5rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+    .footer-brand .logo { color: #fff; margin-bottom: 1rem; }
+    .footer-brand p { font-size: .83rem; line-height: 1.65; max-width: 320px; }
+    .footer-social { display: flex; gap: .7rem; margin-top: 1.2rem; }
+    .footer-social a {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.06);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,.5);
+      font-size: .85rem;
+      transition: background .25s, color .25s;
+    }
+    .footer-social a:hover { background: #d97706; color: #fff; }
+    footer h4 {
+      color: #fff; font-size: .82rem;
+      text-transform: uppercase; letter-spacing: .08em;
+      font-weight: 700; margin-bottom: 1rem;
+    }
+    footer ul li { margin-bottom: .55rem; }
+    footer ul li a {
+      font-size: .82rem;
+      color: rgba(255,255,255,.45);
+      transition: color .25s, padding-left .25s;
+    }
+    footer ul li a:hover { color: #fbbf24; padding-left: .3rem; }
+    .footer-bottom {
+      display: flex; justify-content: space-between;
+      align-items: center; padding-top: 1.5rem;
+      font-size: .75rem;
+    }
+    .footer-bottom a { color: rgba(255,255,255,.4); margin-left: 1.5rem; }
+    .footer-bottom a:hover { color: #fbbf24; }
+
+    /* ===== SCROLL ANIMATIONS ===== */
+    .reveal {
+      opacity: 0; transform: translateY(35px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .about { grid-template-columns: 1fr; }
+      .about-image { height: 320px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .utility-bar { display: none; }
+      .main-nav { padding: 0 1.5rem; }
+      .nav-links {
+        display: none;
+        position: absolute; top: 72px; left: 0; right: 0;
+        background: #fff;
+        flex-direction: column;
+        box-shadow: 0 10px 30px rgba(0,0,0,.1);
+        height: auto;
+        padding: 1rem 0;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links > li { height: auto; }
+      .nav-links > li > a {
+        padding: .75rem 1.5rem;
+        border-bottom: none;
+      }
+      .dropdown {
+        position: static;
+        box-shadow: none;
+        border-top: none;
+        border-left: 3px solid #f59e0b;
+        margin-left: 1.5rem;
+        opacity: 1; visibility: visible; transform: none;
+        display: none;
+      }
+      .nav-links > li:hover .dropdown { display: block; }
+      .mobile-toggle { display: block; }
+      .hero-stats { gap: 1.5rem; padding: 1rem 1.5rem; flex-wrap: wrap; }
+      .hero-stat .num { font-size: 1.5rem; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== UTILITY BAR ===== -->
+  <div class="utility-bar">
+    <div class="utility-links">
+      <a href="#">Home</a>
+      <a href="#">Blog</a>
+      <a href="#">Landmark Projects</a>
+      <a href="#">Partner With Us</a>
+      <a href="#">Contact Us</a>
+    </div>
+    <div class="utility-social">
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+
+  <!-- ===== MAIN NAV ===== -->
+  <nav class="main-nav" id="mainNav">
+    <div class="logo">
+      <div class="logo-icon">M</div>
+      Manah Group
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li>
+        <a href="#about">About Us <i class="fas fa-chevron-down arrow"></i></a>
+        <ul class="dropdown">
+          <li><a href="#">Who We Are</a></li>
+          <li><a href="#">Mission, Vision &amp; Values</a></li>
+          <li><a href="#">Board of Directors</a></li>
+          <li><a href="#">Investor Relations</a></li>
+          <li><a href="#">Policies &amp; Charters</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#services">Sectors <i class="fas fa-chevron-down arrow"></i></a>
+        <ul class="dropdown">
+          <li><a href="#">Urban Infrastructure</a></li>
+          <li><a href="#">Advanced Technology</a></li>
+          <li><a href="#">Transportation</a></li>
+          <li><a href="#">Oil, Gas &amp; Energy</a></li>
+          <li><a href="#">Power &amp; Renewables</a></li>
+          <li><a href="#">Water &amp; Environment</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#projects">Projects</a>
+      </li>
+      <li>
+        <a href="#">Sustainability <i class="fas fa-chevron-down arrow"></i></a>
+        <ul class="dropdown">
+          <li><a href="#">Environment</a></li>
+          <li><a href="#">Social Responsibility</a></li>
+          <li><a href="#">Governance</a></li>
+          <li><a href="#">ESG Reports</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Media <i class="fas fa-chevron-down arrow"></i></a>
+        <ul class="dropdown">
+          <li><a href="#">Press Releases</a></li>
+          <li><a href="#">In The News</a></li>
+          <li><a href="#">Awards &amp; Recognition</a></li>
+          <li><a href="#">Videos</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Careers <i class="fas fa-chevron-down arrow"></i></a>
+        <ul class="dropdown">
+          <li><a href="#">Life at Manah Group</a></li>
+          <li><a href="#">Job Search</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#contact" class="nav-cta">Contact Us</a>
+      </li>
+    </ul>
+
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero">
+    <div class="hero-video-wrap">
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80" alt="Construction site aerial view" />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-particles"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Building the Future Since 1998
+      </div>
+      <h1>We Live for a <span>Challenge</span></h1>
+      <p>
+        We partner with visionary clients to deliver projects that make a lasting, meaningful difference for people and communities around the world.
+      </p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">
+          <i class="fas fa-play-circle"></i> Explore Projects
+        </a>
+        <a href="#about" class="btn btn-outline">
+          Learn More <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="num">25+</div>
+        <div class="label">Years of Excellence</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">500+</div>
+        <div class="label">Projects Delivered</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">30+</div>
+        <div class="label">Countries</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">10K+</div>
+        <div class="label">Team Members</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about">
+    <div class="about-image reveal">
+      <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80" alt="Modern infrastructure project" />
+      <div class="about-accent"></div>
+    </div>
+    <div class="about-text reveal">
+      <div class="section-tag"><span class="bar"></span> About Us</div>
+      <h2 class="section-title">Extraordinary Teams Building Inspiring Projects</h2>
+      <p>
+        We are one of the most admired technology-led Engineering, Procurement, and Construction companies globally. Our expertise lies in providing sustainable solutions for large and complex infrastructure projects.
+      </p>
+      <p>
+        Leveraging domain knowledge across sectors, we address the shift to clean energy and meet ambitious Net Zero goals while delivering projects on time and on budget.
+      </p>
+      <div class="about-highlights">
+        <div class="about-highlight">
+          <i class="fas fa-check-circle"></i>
+          <span>Sustainable Solutions</span>
+        </div>
+        <div class="about-highlight">
+          <i class="fas fa-check-circle"></i>
+          <span>Global Expertise</span>
+        </div>
+        <div class="about-highlight">
+          <i class="fas fa-check-circle"></i>
+          <span>On-Time Delivery</span>
+        </div>
+        <div class="about-highlight">
+          <i class="fas fa-check-circle"></i>
+          <span>Innovation Driven</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES / SECTORS ===== -->
+  <section class="services" id="services">
+    <div class="section-tag"><span class="bar"></span> Our Sectors</div>
+    <h2 class="section-title">Comprehensive Solutions Across Industries</h2>
+    <p class="section-subtitle" style="margin: 0 auto;">
+      Ready-to-deploy solutions for critical infrastructure, energy, transportation, and advanced technology.
+    </p>
+
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-city"></i></div>
+        <h3>Urban Infrastructure</h3>
+        <p>Building smart cities with modern utilities, drainage systems, and sustainable urban environments for growing communities.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-microchip"></i></div>
+        <h3>Advanced Technology</h3>
+        <p>Turnkey solutions for data centers, semiconductor fabs, and advanced manufacturing facilities meeting global standards.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-train"></i></div>
+        <h3>Transportation</h3>
+        <p>Metro rail systems, airports, highways, and expressways connecting communities and driving economic growth.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-bolt"></i></div>
+        <h3>Power &amp; Renewables</h3>
+        <p>Custom turnkey solutions for thermal, solar, and wind power generation supporting the transition to clean energy.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-oil-can"></i></div>
+        <h3>Oil, Gas &amp; Energy</h3>
+        <p>Downstream processing, refinery expansion, LNG terminals, and petrochemical plant construction worldwide.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-tint"></i></div>
+        <h3>Water &amp; Environment</h3>
+        <p>End-to-end water treatment, desalination, sewage management, and river rejuvenation solutions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="projects" id="projects">
+    <div style="text-align:center;">
+      <div class="section-tag"><span class="bar"></span> Featured Projects</div>
+      <h2 class="section-title">We Build History</h2>
+      <p class="section-subtitle" style="margin: 0 auto;">
+        From mega airports to metro tunnels, our portfolio spans the world's most ambitious infrastructure endeavors.
+      </p>
+    </div>
+
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=700&q=80" alt="Airport project" />
+        <div class="project-card-overlay">
+          <div class="project-location">International</div>
+          <h3>Greenfield International Airport</h3>
+          <p>A state-of-the-art airport with capacity for 70 million annual passengers and sustainable operations.</p>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=700&q=80" alt="Bridge project" />
+        <div class="project-card-overlay">
+          <div class="project-location">Coastal Region</div>
+          <h3>Trans Harbour Sea Link</h3>
+          <p>The longest sea bridge connecting two major metro hubs, spanning over 22 kilometers of open water.</p>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=700&q=80" alt="Metro rail" />
+        <div class="project-card-overlay">
+          <div class="project-location">Metro City</div>
+          <h3>Underground Metro Network</h3>
+          <p>Twin-bored tunnels and underground stations transforming urban mobility for millions of commuters.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <section class="stats-section">
+    <div class="section-tag"><span class="bar"></span> By The Numbers</div>
+    <h2 class="section-title">Defining Scale &amp; Impact</h2>
+
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <div class="stat-number">500+</div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-number">30+</div>
+        <div class="stat-label">Countries Worldwide</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-number">$12B+</div>
+        <div class="stat-label">Revenue Managed</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-number">10K+</div>
+        <div class="stat-label">Skilled Professionals</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIAL ===== -->
+  <section class="testimonials">
+    <div class="section-tag"><span class="bar"></span> Client Stories</div>
+    <h2 class="section-title">Trusted by Industry Leaders</h2>
+
+    <div class="testimonial-card reveal">
+      <div class="quote">
+        "Their ability to deliver complex infrastructure projects on time and within budget is unmatched. The team brought innovation and technical excellence at every stage of our flagship metro project."
+      </div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">RK</div>
+        <div>
+          <div class="testimonial-name">Rajesh Kumar</div>
+          <div class="testimonial-role">Director of Infrastructure, Metro Authority</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div>
+      <div class="section-tag"><span class="bar"></span> Get In Touch</div>
+      <h2 class="section-title">Let's Build Something Extraordinary</h2>
+      <p>Have a project in mind? We'd love to discuss how our expertise can bring your vision to life.</p>
+
+      <div class="contact-info-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Corporate Tower, Business District<br/>Mumbai, India — 400001</span>
+      </div>
+      <div class="contact-info-item">
+        <i class="fas fa-phone-alt"></i>
+        <span>+91 22 1234 5678</span>
+      </div>
+      <div class="contact-info-item">
+        <i class="fas fa-envelope"></i>
+        <span>info@manahgroup.com</span>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <div class="form-row">
+        <input type="text" placeholder="Full Name" />
+        <input type="email" placeholder="Email Address" />
+      </div>
+      <input type="text" placeholder="Company / Organization" />
+      <input type="text" placeholder="Subject" />
+      <textarea placeholder="Tell us about your project..."></textarea>
+      <button class="btn-submit">Send Message <i class="fas fa-paper-plane" style="margin-left:.4rem;"></i></button>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">M</div>
+          Manah Group
+        </div>
+        <p>Building tomorrow's infrastructure with integrity, innovation, and a relentless drive to achieve the extraordinary.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Leadership</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sectors</h4>
+        <ul>
+          <li><a href="#">Urban Infrastructure</a></li>
+          <li><a href="#">Transportation</a></li>
+          <li><a href="#">Power &amp; Energy</a></li>
+          <li><a href="#">Oil &amp; Gas</a></li>
+          <li><a href="#">Water Solutions</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Press Releases</a></li>
+          <li><a href="#">Awards</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Media Kit</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Manah Group. All rights reserved.</span>
+      <div>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    // Sticky nav background on scroll
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile toggle
+    document.getElementById('mobileToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Counter animation
+    const counters = document.querySelectorAll('.stat-number, .hero-stat .num');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const text = el.textContent;
+          const match = text.match(/(\$?)(\d+)(\w*\+?)/);
+          if (match) {
+            const prefix = match[1];
+            const target = parseInt(match[2]);
+            const suffix = match[3];
+            let current = 0;
+            const step = Math.ceil(target / 60);
+            const timer = setInterval(() => {
+              current += step;
+              if (current >= target) {
+                current = target;
+                clearInterval(timer);
+              }
+              el.textContent = prefix + current + suffix;
+            }, 25);
+          }
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(el => counterObserver.observe(el));
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          document.getElementById('navLinks').classList.remove('open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

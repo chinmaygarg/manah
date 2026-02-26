@@ -1,0 +1,38 @@
+[   21584ms] [ERROR] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <SegmentViewNode type="page" pagePath="page.tsx">
+      <SegmentTrieNode>
+      <HomePage>
+        <HomePage>
+          <HeroSection>
+            <section className="relative h...">
+              <div className="absolute i...">
+                <AnimatePresence mode="wait">
+                  <PresenceChild isPresent={true} initial={undefined} custom={undefined} presenceAffectsLayout={true} ...>
+                    <PopChild pop={false} isPresent={true} anchorX="left" anchorY="top" root={undefined}>
+                      <PopChildMeasure isPresent={true} childRef={{current:null}} sizeRef={{...}} pop={false}>
+                        <motion.div initial={{opacity:0, ...}} animate={{opacity:1,scale:1}} exit={{opacity:0}} ...>
+                          <div className="absolute i..." style={{opacity:0, ...}} ref={function useMotionRef.useCallback}>
+                            <video autoPlay={true} muted={true} loop={true} playsInline={true} preload="auto" ...>
+                              <source
++                               src="/videos/hero/hero_main_loop-480p.mp4"
+-                               src="/videos/hero/hero_main_loop-720p.mp4"
+                                type="video/mp4"
+                              >
+                ...
+              ...
+        ...
+    ...
+ @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
+[   21871ms] [WARNING] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:2297
