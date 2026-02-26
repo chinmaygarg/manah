@@ -34,6 +34,7 @@ const DEFAULT_LOCATIONS: MapLocation[] = [
     { id: "jaipur", label: "Jaipur", sublabel: "EPC & Projects", coordinates: [75.787, 26.912] },
     { id: "hyderabad", label: "Hyderabad", sublabel: "Aerospace Division", coordinates: [78.487, 17.385] },
     { id: "bangalore", label: "Bangalore", sublabel: "Tech & Manufacturing", coordinates: [77.594, 12.972] },
+    { id: "dubai", label: "Dubai", sublabel: "Middle East Office", coordinates: [55.296, 25.276] },
 ];
 
 export default function WorldMap({

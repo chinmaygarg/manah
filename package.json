@@ -5,7 +5,6 @@
     "build": "cd website && npm run build",
     "dev": "cd website && npm run dev"
   },
-  "dependencies": {
-    "next": "^16.1.4"
-  }
+  "dependencies": {}
+
 }

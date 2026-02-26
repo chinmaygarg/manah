@@ -1,0 +1,343 @@
+"use client";
+
+import { useParams, notFound } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import {
+  fadeUp,
+  fadeLeft,
+  fadeRight,
+  staggerContainer,
+  scaleIn,
+} from "@/lib/animations";
+import MotionSection from "@/components/animations/MotionSection";
+import SectionHeading from "@/components/ui/SectionHeading";
+import { SECTOR_DETAILS } from "@/lib/sectors-data";
+import {
+  ArrowRight,
+  CheckCircle2,
+  ChevronRight,
+  MapPin,
+  DollarSign,
+} from "lucide-react";
+
+export default function SectorDetailPage() {
+  const params = useParams();
+  const slug = params.slug as string;
+  const sector = SECTOR_DETAILS[slug];
+
+  if (!sector) {
+    notFound();
+  }
+
+  return (
+    <main className="pt-[var(--nav-height)]">
+      {/* ─── Hero ─── */}
+      <section className="relative text-white overflow-hidden bg-manah-navy">
+        <Image
+          src={sector.image}
+          alt=""
+          fill
+          className="object-cover opacity-20"
+          priority
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `linear-gradient(135deg, ${sector.color}40 0%, #0A1628 100%)`,
+          }}
+        />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_30%,rgba(255,255,255,0.06),transparent_60%)]" />
+
+        <div className="section-container py-24 md:py-32 relative z-10">
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            animate="visible"
+            className="max-w-3xl"
+          >
+            {/* Breadcrumb */}
+            <motion.nav
+              variants={fadeUp}
+              className="flex items-center gap-2 text-white/60 text-body-sm mb-6"
+            >
+              <Link href="/" className="hover:text-white transition-colors">
+                Home
+              </Link>
+              <ChevronRight className="w-4 h-4" />
+              <Link
+                href="/sectors"
+                className="hover:text-white transition-colors"
+              >
+                Sectors
+              </Link>
+              <ChevronRight className="w-4 h-4" />
+              <span className="text-white">{sector.title}</span>
+            </motion.nav>
+
+            <motion.p
+              variants={fadeUp}
+              className="text-manah-gold font-semibold text-body-sm tracking-widest uppercase mb-4"
+            >
+              {sector.tagline}
+            </motion.p>
+            <motion.h1
+              variants={fadeUp}
+              className="font-display text-display-lg md:text-display-xl font-bold mb-6"
+            >
+              {sector.title}
+            </motion.h1>
+            <motion.p
+              variants={fadeUp}
+              className="text-white/80 text-body-lg max-w-2xl"
+            >
+              {sector.heroDescription}
+            </motion.p>
+            <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-4">
+              <Link href="/contact" className="btn-primary">
+                Discuss Your Project
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link href="/projects" className="btn-secondary">
+                View Portfolio
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ─── Key Stats ─── */}
+      <section className="bg-white border-b border-manah-gray-200">
+        <div className="section-container py-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {sector.keyStats.map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="text-center"
+              >
+                <p className="font-display text-heading-xl font-bold text-manah-navy">
+                  {stat.value}
+                </p>
+                <p className="text-manah-gray-500 text-body-sm mt-1">
+                  {stat.label}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Overview ─── */}
+      <MotionSection className="section-padding bg-white">
+        <div className="section-container">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <motion.div
+              variants={fadeLeft}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <SectionHeading
+                eyebrow="Overview"
+                title={sector.title}
+                align="left"
+              />
+              <div className="mt-6 space-y-4 text-manah-gray-500 text-body-md">
+                {sector.overview.map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
+
+              {/* Related Divisions */}
+              <div className="mt-8">
+                <h4 className="font-semibold text-manah-navy text-body-md mb-3">
+                  Delivered By
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {sector.relatedDivisions.map((div) => (
+                    <span
+                      key={div}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-manah-gray-100 text-manah-gray-600 text-body-sm rounded-full"
+                    >
+                      <CheckCircle2 className="w-3.5 h-3.5 text-manah-gold" />
+                      {div}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              variants={fadeRight}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-manah-gray-100"
+            >
+              <Image
+                src={sector.image}
+                alt={`${sector.title} operations`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </MotionSection>
+
+      {/* ─── Services ─── */}
+      <section className="section-padding bg-manah-gray-50">
+        <div className="section-container">
+          <SectionHeading
+            eyebrow="What We Do"
+            title="Services & Capabilities"
+            description={`Comprehensive ${sector.tagline.toLowerCase()} solutions delivered with engineering excellence.`}
+          />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+            {sector.services.map((service, i) => (
+              <motion.div
+                key={service.title}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="bg-white rounded-xl p-6 border border-manah-gray-200/60 hover:border-manah-gold/30 hover:shadow-card-hover transition-all duration-500"
+              >
+                <div
+                  className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
+                  style={{ backgroundColor: `${sector.color}15` }}
+                >
+                  <CheckCircle2
+                    className="w-5 h-5"
+                    style={{ color: sector.color }}
+                  />
+                </div>
+                <h3 className="font-display text-heading-md font-semibold text-manah-navy mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-manah-gray-500 text-body-sm leading-relaxed">
+                  {service.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Featured Projects ─── */}
+      <section className="section-padding bg-white">
+        <div className="section-container">
+          <SectionHeading
+            eyebrow="Portfolio"
+            title="Featured Projects"
+            description="Landmark projects demonstrating our expertise and execution capability in this sector."
+          />
+          <div className="grid md:grid-cols-3 gap-8 mt-12">
+            {sector.projects.map((project, i) => (
+              <motion.div
+                key={project.title}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-manah-gray-50 rounded-2xl p-8 border border-manah-gray-200/60 hover:border-manah-gold/20 hover:shadow-card-hover transition-all duration-500"
+              >
+                <div
+                  className="w-12 h-1 rounded-full mb-6"
+                  style={{ backgroundColor: sector.color }}
+                />
+                <h3 className="font-display text-heading-md font-bold text-manah-navy mb-3">
+                  {project.title}
+                </h3>
+                <div className="flex items-center gap-4 mb-4">
+                  <span className="inline-flex items-center gap-1.5 text-manah-gray-500 text-body-sm">
+                    <MapPin className="w-3.5 h-3.5" />
+                    {project.location}
+                  </span>
+                  <span className="inline-flex items-center gap-1 text-manah-gold font-semibold text-body-sm">
+                    <DollarSign className="w-3.5 h-3.5" />
+                    {project.value.replace("$", "")}
+                  </span>
+                </div>
+                <p className="text-manah-gray-500 text-body-sm leading-relaxed">
+                  {project.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Process ─── */}
+      <section className="section-padding bg-manah-navy text-white">
+        <div className="section-container">
+          <SectionHeading
+            eyebrow="Our Approach"
+            title="How We Deliver"
+            description="A proven methodology refined across dozens of projects — ensuring quality, safety, and timely delivery."
+            mode="dark"
+          />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+            {sector.process.map((step, i) => (
+              <motion.div
+                key={step.step}
+                variants={scaleIn}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.12 }}
+                className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-colors duration-300"
+              >
+                <span
+                  className="text-display-sm font-display font-bold mb-4 block opacity-30"
+                  style={{ color: sector.color }}
+                >
+                  {step.step}
+                </span>
+                <h3 className="font-display text-heading-md font-semibold text-white mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-white/60 text-body-sm leading-relaxed">
+                  {step.description}
+                </p>
+
+                {/* Connector line */}
+                {i < sector.process.length - 1 && (
+                  <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-px bg-white/20" />
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── CTA ─── */}
+      <MotionSection className="section-padding bg-manah-gray-50">
+        <div className="section-container text-center max-w-2xl mx-auto">
+          <SectionHeading
+            eyebrow="Get Started"
+            title="Ready to Discuss Your Project?"
+            description="Our sector specialists are ready to help you scope, plan, and execute your next project with confidence."
+          />
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact" className="btn-primary">
+              Contact Our Team <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link href="/projects" className="btn-secondary">
+              Explore Our Portfolio
+            </Link>
+          </div>
+        </div>
+      </MotionSection>
+    </main>
+  );
+}

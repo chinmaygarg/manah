@@ -46,6 +46,13 @@ const OFFICES = [
     phone: "+91 96769 02243",
     email: "tech@manah.com",
   },
+  {
+    city: "Dubai",
+    type: "Middle East Office",
+    address: "Dubai, United Arab Emirates",
+    phone: "+91 96769 02243",
+    email: "me@manah.com",
+  },
 ];
 
 const INQUIRY_TYPE_OPTIONS: readonly SelectOption[] = [
@@ -333,7 +340,7 @@ export default function ContactPage() {
             title="Our Global Offices"
             description="Visit any of our offices for in-person meetings and discussions."
           />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 mt-12">
             {OFFICES.map((office, i) => (
               <motion.div
                 key={office.city}
