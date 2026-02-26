@@ -425,7 +425,7 @@ export default function PartnerPage() {
             description="We are proud to collaborate with leading public and private sector organizations across India and beyond."
             mode="dark"
           />
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-12">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 mt-12">
             {PARTNER_LOGOS.map((logo, i) => (
               <motion.div
                 key={logo.alt}
@@ -434,14 +434,14 @@ export default function PartnerPage() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06 }}
-                className="flex items-center justify-center bg-white/5 rounded-xl border border-white/10 p-6 hover:bg-white/10 transition-colors duration-300 aspect-[3/2]"
+                className="flex items-center justify-center bg-white/5 rounded-xl border border-white/10 p-8 hover:bg-white/10 transition-colors duration-300 aspect-[2/1]"
               >
                 <Image
                   src={logo.src}
                   alt={logo.alt}
-                  width={120}
-                  height={60}
-                  className="object-contain opacity-80 hover:opacity-100 transition-opacity duration-300 max-h-12"
+                  width={200}
+                  height={100}
+                  className="object-contain opacity-80 hover:opacity-100 transition-opacity duration-300 w-full h-full max-h-20"
                 />
               </motion.div>
             ))}
