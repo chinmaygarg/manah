@@ -154,16 +154,19 @@ export default function ProjectsPage() {
   return (
     <main>
       {/* ─── Hero ─── */}
-      <section className="relative min-h-[70vh] md:min-h-[80vh] bg-manah-navy text-white overflow-hidden -mt-20 pt-20 flex flex-col">
-        {/* Background image */}
-        <Image
-          src="/images/hero/hero_main_infrastructure.png"
-          alt="Transmission towers at sunset — representing Manah Group's infrastructure portfolio"
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        />
+      <section className="relative bg-manah-navy text-white overflow-hidden -mt-20 pt-20">
+        {/* Background video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/images/hero/hero_construction_site.png"
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/videos/hero/hero_infrastructure-720p.mp4" type="video/mp4" />
+        </video>
 
         {/* Overlay gradients */}
         <div className="absolute inset-0 bg-gradient-to-b from-manah-navy/80 via-manah-navy/50 to-manah-navy/90" />
@@ -171,7 +174,7 @@ export default function ProjectsPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_80%,rgba(200,169,110,0.12),transparent_60%)]" />
 
         {/* Content */}
-        <div className="relative z-10 section-container flex-1 flex flex-col justify-center pb-32 md:pb-40">
+        <div className="relative z-10 section-container py-24 md:py-32">
           <motion.div
             variants={staggerContainer}
             initial="hidden"

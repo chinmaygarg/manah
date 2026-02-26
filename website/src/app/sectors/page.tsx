@@ -79,9 +79,26 @@ export default function SectorsPage() {
     <main>
       {/* ─── Hero ─── */}
       <section className="relative bg-manah-navy text-white overflow-hidden -mt-20 pt-20">
-        <Image src="/images/sectors/power_transmission.png" alt="" fill className="object-cover opacity-20" priority />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,rgba(200,169,110,0.12),transparent_60%)]" />
-        <div className="section-container py-24 md:py-32 relative z-10">
+        {/* Background video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/images/hero/hero_construction_site.png"
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/videos/hero/hero_technology-720p.mp4" type="video/mp4" />
+        </video>
+
+        {/* Overlay gradients */}
+        <div className="absolute inset-0 bg-gradient-to-b from-manah-navy/80 via-manah-navy/50 to-manah-navy/90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-manah-navy/60 via-transparent to-manah-navy/40" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_80%,rgba(200,169,110,0.12),transparent_60%)]" />
+
+        {/* Content */}
+        <div className="relative z-10 section-container py-24 md:py-32">
           <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="max-w-3xl">
             <motion.p variants={fadeUp} className="text-manah-gold font-semibold text-body-sm tracking-widest uppercase mb-4">
               Sectors

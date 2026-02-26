@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeUp, fadeLeft, fadeRight, staggerContainer } from "@/lib/animations";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -69,6 +70,7 @@ const DIVISION_OPTIONS: readonly SelectOption[] = [
   { value: "aerospace", label: "Manah Aerospace" },
   { value: "green-energy", label: "Green Energy" },
   { value: "technology", label: "Tech & Manufacturing" },
+  { value: "investments", label: "Manah Investments" },
 ];
 
 export default function ContactPage() {
@@ -103,8 +105,23 @@ export default function ContactPage() {
     <main>
       {/* ─── Hero ─── */}
       <section className="relative bg-manah-navy text-white overflow-hidden -mt-20 pt-20">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(200,169,110,0.1),transparent_60%)]" />
-        <div className="section-container py-24 md:py-32 relative z-10">
+        {/* Background image */}
+        <Image
+          src="/images/hero/hero_construction_site.png"
+          alt="Manah Group contact — engineering and construction excellence"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
+
+        {/* Overlay gradients */}
+        <div className="absolute inset-0 bg-gradient-to-b from-manah-navy/80 via-manah-navy/50 to-manah-navy/90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-manah-navy/60 via-transparent to-manah-navy/40" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_80%,rgba(200,169,110,0.12),transparent_60%)]" />
+
+        {/* Content */}
+        <div className="relative z-10 section-container py-24 md:py-32">
           <motion.div
             variants={staggerContainer}
             initial="hidden"

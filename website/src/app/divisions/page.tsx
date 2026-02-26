@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "@/lib/animations";
@@ -12,8 +13,26 @@ export default function DivisionsPage() {
     <main>
       {/* ─── Hero ─── */}
       <section className="relative bg-manah-navy text-white overflow-hidden -mt-20 pt-20">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(200,169,110,0.12),transparent_60%)]" />
-        <div className="section-container py-24 md:py-32 relative z-10">
+        {/* Background video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/images/hero/hero_main_infrastructure.png"
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/videos/hero/hero_main_loop-720p.mp4" type="video/mp4" />
+        </video>
+
+        {/* Overlay gradients */}
+        <div className="absolute inset-0 bg-gradient-to-b from-manah-navy/80 via-manah-navy/50 to-manah-navy/90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-manah-navy/60 via-transparent to-manah-navy/40" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_80%,rgba(200,169,110,0.12),transparent_60%)]" />
+
+        {/* Content */}
+        <div className="relative z-10 section-container py-24 md:py-32">
           <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="max-w-3xl">
             <motion.p variants={fadeUp} className="text-manah-gold font-semibold text-body-sm tracking-widest uppercase mb-4">
               Business Divisions
@@ -45,15 +64,19 @@ export default function DivisionsPage() {
                 }`}
                 style={{ direction: i % 2 !== 0 ? "rtl" : "ltr" }}
               >
-                {/* Image placeholder */}
+                {/* Division image */}
                 <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-manah-gray-100" style={{ direction: "ltr" }}>
+                  <Image
+                    src={division.image}
+                    alt={`${division.name} — ${division.tagline}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
                   <div
-                    className="absolute inset-0 opacity-10"
+                    className="absolute inset-0 opacity-20"
                     style={{ background: `linear-gradient(135deg, ${division.color}, transparent)` }}
                   />
-                  <div className="absolute inset-0 flex items-center justify-center text-manah-gray-400 text-body-sm">
-                    {division.name} Image
-                  </div>
                 </div>
 
                 {/* Content */}

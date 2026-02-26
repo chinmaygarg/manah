@@ -290,8 +290,8 @@ export default function MediaPage() {
       <section className="relative bg-manah-navy text-white overflow-hidden -mt-20 pt-20">
         {/* Background image */}
         <Image
-          src="/images/hero/hero_main_infrastructure.png"
-          alt="Manah Group media centre — infrastructure projects and industry insights"
+          src="/images/hero/hero_media_centre.png"
+          alt="Manah Group media centre — news, insights, and press coverage"
           fill
           className="object-cover"
           priority
