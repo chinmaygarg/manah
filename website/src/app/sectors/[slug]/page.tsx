@@ -32,9 +32,9 @@ export default function SectorDetailPage() {
   }
 
   return (
-    <main className="pt-[var(--nav-height)]">
+    <main>
       {/* ─── Hero ─── */}
-      <section className="relative text-white overflow-hidden bg-manah-navy">
+      <section className="relative text-white overflow-hidden bg-manah-navy -mt-20 pt-20">
         <Image
           src={sector.image}
           alt=""

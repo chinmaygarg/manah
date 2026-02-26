@@ -199,9 +199,9 @@ export default function PartnerPage() {
   };
 
   return (
-    <main className="pt-[var(--nav-height)]">
+    <main>
       {/* ═══ 1. Hero Section ═══ */}
-      <section className="relative bg-manah-navy text-white overflow-hidden">
+      <section className="relative bg-manah-navy text-white overflow-hidden -mt-20 pt-20">
         <Image
           src="/images/partners/partners_hero.png"
           alt=""

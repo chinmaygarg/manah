@@ -213,9 +213,9 @@ const RESOURCES = [
 
 export default function CapabilitiesPage() {
   return (
-    <main className="pt-[var(--nav-height)]">
+    <main>
       {/* ─── Hero ─── */}
-      <section className="relative bg-manah-navy text-white overflow-hidden">
+      <section className="relative bg-manah-navy text-white overflow-hidden -mt-20 pt-20">
         <Image
           src="/images/hero/hero_main_infrastructure.png"
           alt=""
