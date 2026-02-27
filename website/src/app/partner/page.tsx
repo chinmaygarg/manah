@@ -434,14 +434,14 @@ export default function PartnerPage() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06 }}
-                className="flex items-center justify-center bg-white/5 rounded-xl border border-white/10 p-8 hover:bg-white/10 transition-colors duration-300 aspect-[2/1]"
+                className="flex items-center justify-center bg-white rounded-xl border border-white/20 p-6 hover:shadow-lg hover:shadow-white/10 hover:scale-[1.03] transition-all duration-300 aspect-[2/1]"
               >
                 <Image
                   src={logo.src}
                   alt={logo.alt}
-                  width={200}
-                  height={100}
-                  className="object-contain opacity-80 hover:opacity-100 transition-opacity duration-300 w-full h-full max-h-20"
+                  width={240}
+                  height={120}
+                  className="object-contain w-full h-full max-h-24"
                 />
               </motion.div>
             ))}
