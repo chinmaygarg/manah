@@ -126,77 +126,125 @@ export default function AboutPage() {
         </div>
       </MotionSection>
 
-      {/* ─── Vision & Mission ─── */}
-      <section className="relative bg-manah-navy overflow-hidden">
+      {/* ─── Vision & Mission — Bento Grid ─── */}
+      <section id="mission" className="relative bg-manah-navy overflow-hidden">
         {/* Ambient glow effects */}
         <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-manah-gold/[0.04] rounded-full blur-[180px]" />
         <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-manah-accent-blue/[0.06] rounded-full blur-[150px]" />
 
-        {/* ── Vision Block ── */}
-        <div className="relative section-container" style={{ paddingTop: "var(--section-padding)", paddingBottom: "0" }}>
+        <div className="relative section-container section-padding">
+          {/* Eyebrow */}
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
-            className="max-w-4xl"
+            className="text-center mb-12 md:mb-16"
           >
-            <motion.p
-              variants={fadeUp}
-              className="text-manah-gold font-semibold text-body-sm tracking-widest uppercase mb-6"
-            >
-              Our Vision
-            </motion.p>
-            <motion.h2
-              variants={fadeUp}
-              className="font-display text-display-md md:text-display-lg lg:text-display-xl font-bold text-white leading-[1.1] mb-8"
-            >
-              To be the world&apos;s most{" "}
-              <span className="text-gradient-gold">trusted and innovative</span>{" "}
-              EPC enterprise.
-            </motion.h2>
-            <motion.p
-              variants={fadeUp}
-              className="text-manah-gray-300 text-body-lg md:text-heading-lg font-light leading-relaxed max-w-3xl"
-            >
-              Delivering world-class infrastructure and technology solutions that power sustainable development across markets worldwide.
-            </motion.p>
+            <motion.div variants={fadeUp} className="flex items-center justify-center gap-3 mb-2">
+              <div className="h-px w-8 bg-manah-gold/40" />
+              <p className="text-manah-gold font-semibold text-body-sm tracking-widest uppercase">
+                What Guides Us
+              </p>
+              <div className="h-px w-8 bg-manah-gold/40" />
+            </motion.div>
           </motion.div>
-        </div>
 
-        {/* ── Separator ── */}
-        <div className="section-container py-16 md:py-20">
-          <div className="h-px bg-gradient-to-r from-transparent via-manah-gold/30 to-transparent" />
-        </div>
-
-        {/* ── Mission Block ── */}
-        <div className="relative section-container" style={{ paddingTop: "0", paddingBottom: "var(--section-padding)" }}>
+          {/* Bento Grid */}
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
-            className="max-w-4xl ml-auto text-right"
+            className="grid lg:grid-cols-[1.4fr_0.6fr] gap-4"
           >
-            <motion.p
+            {/* ── Vision Card (spans full width) ── */}
+            <motion.div
               variants={fadeUp}
-              className="text-manah-gold font-semibold text-body-sm tracking-widest uppercase mb-6"
+              className="relative lg:col-span-2 rounded-2xl p-8 md:p-12 bg-gradient-to-br from-manah-gold/[0.07] to-manah-gold/[0.01] border border-manah-gold/15 overflow-hidden"
             >
-              Our Mission
-            </motion.p>
-            <motion.h2
+              {/* Background image */}
+              <Image
+                src="/images/about/vision_mission_bg.webp"
+                alt=""
+                fill
+                className="object-cover opacity-30"
+                sizes="(max-width: 1024px) 100vw, 80vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-manah-navy/90 via-manah-navy/75 to-manah-navy/50" />
+
+              {/* Decorative circles */}
+              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full border border-manah-gold/[0.08]" />
+              <div className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full border border-manah-accent-blue/[0.06]" />
+
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-6">
+                  <Eye className="w-5 h-5 text-manah-gold" />
+                  <p className="text-manah-gold font-semibold text-body-sm tracking-widest uppercase">
+                    Our Vision
+                  </p>
+                </div>
+                <h2 className="font-display text-display-md md:text-display-lg lg:text-display-xl font-bold text-white leading-[1.1] mb-6">
+                  To be the world&apos;s most{" "}
+                  <span className="text-gradient-gold">trusted and innovative</span>{" "}
+                  EPC enterprise.
+                </h2>
+                <p className="text-manah-gray-300 text-body-lg md:text-heading-lg font-light leading-relaxed max-w-3xl">
+                  Delivering world-class infrastructure and technology solutions that power sustainable development across markets worldwide.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* ── Mission Card (bottom-left) ── */}
+            <motion.div
               variants={fadeUp}
-              className="font-display text-display-md md:text-display-lg lg:text-display-xl font-bold text-white leading-[1.1] mb-8"
+              className="relative rounded-2xl p-8 md:p-10 bg-white/[0.03] border border-white/[0.07] hover:border-manah-gold/20 transition-colors duration-500 overflow-hidden"
             >
-              Engineering excellence through{" "}
-              <span className="text-gradient-gold">mindful enterprising.</span>
-            </motion.h2>
-            <motion.p
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-6">
+                  <Target className="w-5 h-5 text-manah-gold" />
+                  <p className="text-manah-gold font-semibold text-body-sm tracking-widest uppercase">
+                    Our Mission
+                  </p>
+                </div>
+                <h3 className="font-display text-heading-lg md:text-display-sm font-bold text-white leading-[1.15] mb-4">
+                  Engineering excellence through{" "}
+                  <span className="text-manah-gold">mindful enterprising.</span>
+                </h3>
+                <p className="text-manah-gray-300 text-body-md font-light leading-relaxed">
+                  Combining cutting-edge technology, sustainable practices, and unwavering commitment to quality in every project we undertake.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* ── Brand Quote Accent Cell (bottom-right) ── */}
+            <motion.div
               variants={fadeUp}
-              className="text-manah-gray-300 text-body-lg md:text-heading-lg font-light leading-relaxed max-w-3xl ml-auto"
+              className="relative rounded-2xl p-8 md:p-10 bg-gradient-to-br from-manah-gold/[0.06] to-manah-gold/[0.02] border border-manah-gold/[0.12] overflow-hidden flex flex-col justify-center"
             >
-              Combining cutting-edge technology, sustainable practices, and unwavering commitment to quality in every project we undertake.
-            </motion.p>
+              {/* Gold left-border accent */}
+              <div className="absolute left-0 top-1/4 bottom-1/4 w-px bg-gradient-to-b from-transparent via-manah-gold/30 to-transparent" />
+
+              {/* Opening quote mark */}
+              <span className="absolute top-4 left-6 text-7xl font-serif text-manah-gold/[0.15] leading-none select-none" aria-hidden="true">
+                &ldquo;
+              </span>
+
+              <div className="relative z-10 pl-4">
+                <p className="font-serif italic text-white/75 text-body-lg leading-relaxed mb-4">
+                  Building tomorrow&apos;s infrastructure with integrity, innovation, and a relentless drive to achieve the extraordinary.
+                </p>
+                <p className="text-manah-gold/60 text-body-sm tracking-widest uppercase">
+                  <span className="inline-block w-4 h-px bg-manah-gold/40 mr-2 align-middle" />
+                  Brand Ethos
+                </p>
+              </div>
+
+              {/* Closing quote mark */}
+              <span className="absolute bottom-4 right-6 text-7xl font-serif text-manah-gold/[0.15] leading-none select-none" aria-hidden="true">
+                &rdquo;
+              </span>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -319,6 +367,43 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ─── Policies & Charters ─── */}
+      <section id="policies" className="section-padding bg-manah-gray-50">
+        <div className="section-container">
+          <SectionHeading
+            eyebrow="Governance"
+            title="Policies & Charters"
+            description="Our governance framework ensures transparency, accountability, and ethical business practices across all operations."
+          />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+            {[
+              { title: "Code of Conduct", description: "Ethical standards and professional behaviour guidelines for all employees and stakeholders." },
+              { title: "Anti-Corruption Policy", description: "Zero-tolerance approach to bribery and corruption across all business operations." },
+              { title: "Whistleblower Policy", description: "Protected channels for reporting concerns about unethical or illegal activities." },
+              { title: "HSE Policy", description: "Health, Safety, and Environment standards ensuring zero-harm operations at all project sites." },
+              { title: "CSR Policy", description: "Corporate Social Responsibility framework guiding community development initiatives." },
+              { title: "Quality Policy", description: "ISO-certified quality management systems ensuring excellence in project delivery." },
+            ].map((policy, i) => (
+              <motion.div
+                key={policy.title}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="p-6 rounded-xl border border-manah-gray-200/60 hover:border-manah-gold/30 hover:shadow-card transition-all duration-400"
+              >
+                <div className="shrink-0 w-10 h-10 rounded-lg bg-manah-navy flex items-center justify-center mb-4">
+                  <Shield className="w-5 h-5 text-manah-gold" />
+                </div>
+                <h3 className="font-semibold text-manah-navy text-body-md">{policy.title}</h3>
+                <p className="text-manah-gray-500 text-body-sm mt-2">{policy.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ─── Awards & Certifications ─── */}
       <section id="awards" className="section-padding bg-white">
         <div className="section-container">
@@ -351,8 +436,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ─── Stats Bar ─── */}
-      <section className="bg-manah-navy py-16">
+      {/* ─── Investor Relations ─── */}
+      <section id="investors" className="bg-manah-navy py-16">
         <div className="section-container">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[
