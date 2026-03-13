@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { BLUR_DATA_URL } from "@/lib/blur";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -272,6 +273,8 @@ export default function ProjectsPage() {
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                     sizes="(max-width: 1024px) 100vw, 33vw"
+                    placeholder="blur"
+                    blurDataURL={BLUR_DATA_URL}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-manah-navy/40 via-transparent to-transparent" />
                   <div className="absolute top-3 left-3">
@@ -361,6 +364,8 @@ export default function ProjectsPage() {
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      placeholder="blur"
+                      blurDataURL={BLUR_DATA_URL}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-manah-navy/30 via-transparent to-transparent" />
                     <div className="absolute top-2.5 left-2.5">

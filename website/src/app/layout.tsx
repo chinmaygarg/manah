@@ -5,6 +5,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CookieConsent from "@/components/ui/CookieConsent";
 import ScrollToTop from "@/components/ui/ScrollToTop";
+import ScrollProgressBar from "@/components/animations/ScrollProgressBar";
 import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/seo/JsonLd";
 import { SITE_CONFIG } from "@/lib/constants";
 
@@ -91,6 +92,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen flex flex-col">
         <Header />
+        <ScrollProgressBar />
         <main className="flex-1">{children}</main>
         <Footer />
         <CookieConsent />

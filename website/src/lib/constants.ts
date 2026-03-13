@@ -49,7 +49,7 @@ export interface NavItem {
 export const TOP_BAR_LINKS = [
   { label: "Home", href: "/" },
   { label: "Blog", href: "/blog" },
-  { label: "Landmark Projects", href: "/projects#landmark" },
+  { label: "Landmark Projects", href: "/projects#featured" },
   { label: "Partner With Us", href: "/partner" },
   { label: "Contact Us", href: "/contact" },
 ] as const;
@@ -106,6 +106,7 @@ export const NAVIGATION: NavItem[] = [
       { label: "Oil, Gas & Energy", href: "/sectors/power-transmission", description: "Refinery & petrochemical", image: "/images/sectors/power_transmission.png", featured: true },
       { label: "Power & Renewables", href: "/sectors/renewable-energy", description: "Solar, wind & thermal power", image: "/images/sectors/renewable_energy.png", featured: true },
       { label: "Water & Environment", href: "/sectors/green-hydrogen", description: "Treatment, desalination & rejuvenation", image: "/images/sectors/green_hydrogen.png", featured: true },
+      { label: "Manufacturing", href: "/sectors/manufacturing", description: "Electronics & defence manufacturing", image: "/images/sectors/manufacturing.png" },
     ],
   },
   {
@@ -273,6 +274,8 @@ export const FOOTER_LINKS = {
     { label: "Infrastructure", href: "/sectors/infrastructure" },
     { label: "Defence Electronics", href: "/sectors/defence" },
     { label: "Aviation", href: "/sectors/aviation" },
+    { label: "Green Hydrogen", href: "/sectors/green-hydrogen" },
+    { label: "Manufacturing", href: "/sectors/manufacturing" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy" },

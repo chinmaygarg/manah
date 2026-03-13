@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { ALL_BLOG_ARTICLES } from "@/lib/blog-data";
 
 const BASE_URL = "https://www.manah.com";
 
@@ -24,7 +25,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/sustainability", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/media", priority: 0.7, changeFrequency: "weekly" as const },
     { path: "/careers", priority: 0.8, changeFrequency: "weekly" as const },
+    { path: "/blog", priority: 0.8, changeFrequency: "weekly" as const },
     { path: "/contact", priority: 0.8, changeFrequency: "yearly" as const },
+    ...ALL_BLOG_ARTICLES.map((article) => ({
+      path: `/blog/${article.slug}`,
+      priority: 0.7,
+      changeFrequency: "monthly" as const,
+    })),
   ];
 
   return routes.map((route) => ({

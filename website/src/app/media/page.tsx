@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
+import { BLUR_DATA_URL } from "@/lib/blur";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeUp, staggerContainer } from "@/lib/animations";
@@ -296,6 +297,8 @@ export default function MediaPage() {
           className="object-cover"
           priority
           sizes="100vw"
+          placeholder="blur"
+          blurDataURL={BLUR_DATA_URL}
         />
 
         {/* Overlay gradients */}
@@ -336,7 +339,7 @@ export default function MediaPage() {
       </section>
 
       {/* ─── Tab Navigation ─── */}
-      <section className="bg-white border-b border-manah-gray-200 sticky top-[var(--nav-height)] z-20">
+      <section id="press" className="bg-white border-b border-manah-gray-200 sticky top-[var(--nav-height)] z-20">
         <div className="section-container">
           <div className="flex gap-0 overflow-x-auto no-scrollbar">
             {TABS.map((tab) => (
@@ -357,7 +360,7 @@ export default function MediaPage() {
       </section>
 
       {/* ─── Tab Content ─── */}
-      <section className="section-padding bg-manah-gray-50">
+      <section id="news" className="section-padding bg-manah-gray-50">
         <div className="section-container">
           <AnimatePresence mode="wait">
             {/* ── Press Releases ── */}
@@ -455,6 +458,8 @@ export default function MediaPage() {
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        placeholder="blur"
+                        blurDataURL={BLUR_DATA_URL}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-manah-navy/20 to-transparent" />
                       <span className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-sm text-manah-navy text-caption font-semibold rounded-full">
@@ -580,6 +585,8 @@ export default function MediaPage() {
                                 ? "(max-width: 768px) 100vw, 50vw"
                                 : "(max-width: 768px) 50vw, 25vw"
                             }
+                            placeholder="blur"
+                            blurDataURL={BLUR_DATA_URL}
                           />
 
                           {/* Hover Overlay */}
@@ -601,6 +608,10 @@ export default function MediaPage() {
           </AnimatePresence>
         </div>
       </section>
+
+      {/* Anchor targets for navigation links */}
+      <div id="awards" />
+      <div id="videos" />
 
       {/* ─── Gallery Lightbox ─── */}
       <AnimatePresence>
@@ -663,6 +674,8 @@ export default function MediaPage() {
                 className="object-contain"
                 sizes="90vw"
                 priority
+                placeholder="blur"
+                blurDataURL={BLUR_DATA_URL}
               />
             </motion.div>
 

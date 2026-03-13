@@ -20,6 +20,7 @@ import {
   Shield,
 } from "lucide-react";
 import Image from "next/image";
+import { BLUR_DATA_URL } from "@/lib/blur";
 
 const DIVISION_IMAGES: Record<string, { hero: string; detail: string; video?: string; videoMobile?: string }> = {
   dynamics: {
@@ -85,6 +86,8 @@ export default function DivisionPage() {
               className="object-cover"
               priority
               sizes="100vw"
+              placeholder="blur"
+              blurDataURL={BLUR_DATA_URL}
             />
           )
         )}
@@ -207,6 +210,8 @@ export default function DivisionPage() {
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
+                  placeholder="blur"
+                  blurDataURL={BLUR_DATA_URL}
                 />
               ) : (
                 <div className="absolute inset-0 flex items-center justify-center text-manah-gray-400 text-body-sm">
@@ -280,6 +285,8 @@ export default function DivisionPage() {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  placeholder="blur"
+                  blurDataURL={BLUR_DATA_URL}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-5">

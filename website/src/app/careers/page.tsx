@@ -139,7 +139,7 @@ export default function CareersPage() {
               Join a team of innovators, engineers, and leaders shaping the global infrastructure, energy, and technology landscape.
             </motion.p>
             <motion.div variants={fadeUp} className="mt-8">
-              <a href="#openings" className="btn-primary">
+              <a href="#jobs" className="btn-primary">
                 View Open Positions <ArrowRight className="w-4 h-4" />
               </a>
             </motion.div>
@@ -148,7 +148,7 @@ export default function CareersPage() {
       </section>
 
       {/* ─── Why Manah ─── */}
-      <MotionSection className="section-padding bg-white">
+      <MotionSection id="life" className="section-padding bg-white">
         <div className="section-container">
           <SectionHeading
             eyebrow="Why Join Us"
@@ -180,7 +180,7 @@ export default function CareersPage() {
       </MotionSection>
 
       {/* ─── Open Positions ─── */}
-      <section id="openings" className="section-padding bg-manah-gray-50">
+      <section id="jobs" className="section-padding bg-manah-gray-50">
         <div className="section-container">
           <SectionHeading
             eyebrow="Open Positions"

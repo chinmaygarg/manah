@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { BLUR_DATA_URL } from "@/lib/blur";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, ArrowUpRight, Calendar } from "lucide-react";
 
@@ -136,6 +137,8 @@ function HeroCard({ item }: { item: (typeof NEWS_ITEMS)[0] }) {
               className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
               sizes="(max-width: 768px) 100vw, 55vw"
               priority
+              placeholder="blur"
+              blurDataURL={BLUR_DATA_URL}
             />
           </motion.div>
 
@@ -212,6 +215,8 @@ function StackedCard({
             fill
             className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.08]"
             sizes="(max-width: 768px) 100vw, 45vw"
+            placeholder="blur"
+            blurDataURL={BLUR_DATA_URL}
           />
 
           {/* Gradient overlay */}

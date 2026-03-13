@@ -1,34 +1,29 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Link from "next/link";
 import Image from "next/image";
+import { BLUR_DATA_URL } from "@/lib/blur";
 import { motion, AnimatePresence } from "framer-motion";
-import { fadeUp, staggerContainer, scaleIn } from "@/lib/animations";
+import { fadeUp, staggerContainer } from "@/lib/animations";
 import SectionHeading from "@/components/ui/SectionHeading";
 import MotionSection from "@/components/animations/MotionSection";
+import NewsletterCTA from "@/components/sections/NewsletterCTA";
+import {
+  FEATURED_BLOG_ARTICLE,
+  ALL_BLOG_ARTICLES,
+} from "@/lib/blog-data";
 import {
   ArrowRight,
   Calendar,
   Clock,
   User,
-  Mail,
   Search,
 } from "lucide-react";
 
 /* ═══════════════════════════════════════════════════════════
    DATA
    ═══════════════════════════════════════════════════════════ */
-
-interface Article {
-  readonly id: number;
-  readonly title: string;
-  readonly category: string;
-  readonly date: string;
-  readonly readTime: string;
-  readonly author: string;
-  readonly excerpt: string;
-  readonly image: string;
-}
 
 const CATEGORIES = [
   "All",
@@ -39,125 +34,10 @@ const CATEGORIES = [
   "Aviation",
 ] as const;
 
-const FEATURED_ARTICLE: Article = {
-  id: 0,
-  title:
-    "India's Power Transmission Modernization: A $50 Billion Opportunity",
-  category: "Industry Insights",
-  date: "February 15, 2026",
-  readTime: "8 min read",
-  author: "Manah Research Team",
-  excerpt:
-    "India's power transmission network requires an estimated $50 billion in investment over the next decade to integrate 500 GW of renewable energy capacity. With ageing 220kV corridors struggling to handle bidirectional power flows, the shift to 765kV and HVDC super-highways is no longer optional — it is an engineering imperative that will redefine how the nation moves electrons from source to load.",
-  image: "/images/news/power-transmission.jpg",
-};
-
-const ARTICLES: readonly Article[] = [
-  {
-    id: 1,
-    title: "Green Hydrogen: The Missing Piece in India's Net Zero Puzzle",
-    category: "Sustainability",
-    date: "January 28, 2026",
-    readTime: "6 min read",
-    author: "Manah Green Energy Division",
-    excerpt:
-      "As India targets 5 million tonnes of green hydrogen production annually by 2030, the EPC ecosystem must rapidly scale electrolyzer manufacturing, water treatment infrastructure, and dedicated renewable energy corridors to make the National Green Hydrogen Mission a reality.",
-    image: "/images/news/green-hydrogen.jpg",
-  },
-  {
-    id: 2,
-    title:
-      "How Defence Electronics Manufacturing is Reshaping Make in India",
-    category: "Technology",
-    date: "January 15, 2026",
-    readTime: "7 min read",
-    author: "Manah Technology Division",
-    excerpt:
-      "The defence electronics segment is witnessing unprecedented growth as India's offset policies drive local manufacturing of radar subsystems, electronic warfare suites, and avionics. Companies with SMT lines capable of military-grade soldering standards are positioned to capture a $12 billion addressable market.",
-    image: "/images/sectors/defence_electronics.png",
-  },
-  {
-    id: 3,
-    title:
-      "765kV Transmission Lines: Engineering Challenges and Solutions",
-    category: "Industry Insights",
-    date: "January 5, 2026",
-    readTime: "10 min read",
-    author: "Manah Dynamics Engineering Team",
-    excerpt:
-      "Designing and constructing 765kV extra-high-voltage transmission lines presents unique engineering challenges — from tower foundation design in varying soil conditions to sag-tension calculations for long-span crossings. This deep-dive explores how modern simulation tools and field engineering practices are overcoming these hurdles.",
-    image: "/images/sectors/power_transmission.png",
-  },
-  {
-    id: 4,
-    title: "Manah Aerospace Achieves EASA Part 145 Certification",
-    category: "Company News",
-    date: "December 20, 2025",
-    readTime: "4 min read",
-    author: "Manah Aerospace Division",
-    excerpt:
-      "A landmark achievement for our aviation division — EASA Part 145 approval enables Manah Aerospace to service aircraft registered in European Union member states, significantly expanding our addressable MRO market beyond DGCA-registered fleets.",
-    image: "/images/news/aerospace-mro.jpg",
-  },
-  {
-    id: 5,
-    title:
-      "The Future of Solar EPC: Bifacial Modules and Tracker Innovation",
-    category: "Sustainability",
-    date: "December 8, 2025",
-    readTime: "6 min read",
-    author: "Manah Renewable Energy Team",
-    excerpt:
-      "Bifacial solar modules paired with single-axis trackers are delivering 15-25% higher energy yields compared to fixed-tilt monofacial installations. For EPC contractors, this shift demands new design methodologies for ground clearance, albedo optimization, and tracker foundation engineering.",
-    image: "/images/sectors/renewable_energy.png",
-  },
-  {
-    id: 6,
-    title: "Smart Grid Technologies Transforming Power Distribution",
-    category: "Technology",
-    date: "November 25, 2025",
-    readTime: "8 min read",
-    author: "Manah Research Team",
-    excerpt:
-      "The convergence of IoT sensors, advanced metering infrastructure, and AI-driven load forecasting is transforming passive distribution networks into intelligent, self-healing grids. Utilities investing in these technologies are seeing 30% reductions in aggregate technical and commercial losses.",
-    image: "/images/news/power-transmission.jpg",
-  },
-  {
-    id: 7,
-    title:
-      "Aviation MRO in India: Growth Drivers and Market Outlook",
-    category: "Aviation",
-    date: "November 12, 2025",
-    readTime: "7 min read",
-    author: "Manah Aerospace Division",
-    excerpt:
-      "India's commercial aviation fleet is projected to exceed 1,500 aircraft by 2030, creating a $4 billion annual MRO demand. With over 85% of heavy maintenance currently outsourced overseas, the opportunity for domestic MRO facilities with global certifications is immense and immediate.",
-    image: "/images/hero/hero_aviation_mro.png",
-  },
-  {
-    id: 8,
-    title: "ESG Reporting: Why Infrastructure Companies Must Lead",
-    category: "Sustainability",
-    date: "October 30, 2025",
-    readTime: "5 min read",
-    author: "Manah Corporate Strategy",
-    excerpt:
-      "With SEBI's BRSR framework mandating ESG disclosures for the top 1,000 listed companies, infrastructure and EPC firms face heightened scrutiny on carbon emissions, water usage, and supply chain ethics. Companies that embed ESG into project delivery — not just annual reports — will win more bids.",
-    image: "/images/news/green-hydrogen.jpg",
-  },
-  {
-    id: 9,
-    title:
-      "From Prototype to Production: Inside Our Electronics Manufacturing Facility",
-    category: "Company News",
-    date: "October 15, 2025",
-    readTime: "6 min read",
-    author: "Manah Technology Division",
-    excerpt:
-      "A behind-the-scenes look at Manah's electronics manufacturing services facility — from eight SMT production lines running 0201 components at 80,000 placements per hour to automated optical inspection systems achieving 99.97% defect detection rates on complex PCB assemblies.",
-    image: "/images/sectors/manufacturing.png",
-  },
-];
+// Exclude featured article from the grid
+const GRID_ARTICLES = ALL_BLOG_ARTICLES.filter(
+  (a) => a.slug !== FEATURED_BLOG_ARTICLE.slug
+);
 
 /* ═══════════════════════════════════════════════════════════
    COMPONENT
@@ -165,13 +45,12 @@ const ARTICLES: readonly Article[] = [
 
 export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState<string>("All");
-  const [email, setEmail] = useState("");
 
   const filteredArticles = useMemo(
     () =>
       activeCategory === "All"
-        ? ARTICLES
-        : ARTICLES.filter((a) => a.category === activeCategory),
+        ? GRID_ARTICLES
+        : GRID_ARTICLES.filter((a) => a.category === activeCategory),
     [activeCategory]
   );
 
@@ -187,6 +66,8 @@ export default function BlogPage() {
           className="object-cover"
           priority
           sizes="100vw"
+          placeholder="blur"
+          blurDataURL={BLUR_DATA_URL}
         />
 
         {/* Overlay gradients */}
@@ -236,51 +117,58 @@ export default function BlogPage() {
             align="left"
           />
           <MotionSection>
-            <div className="grid lg:grid-cols-2 gap-0 bg-white rounded-2xl overflow-hidden border border-manah-gray-200/60 shadow-card hover:shadow-card-hover transition-all duration-500">
-              {/* Image */}
-              <div className="relative aspect-[16/10] lg:aspect-auto lg:min-h-[420px]">
-                <Image
-                  src={FEATURED_ARTICLE.image}
-                  alt={FEATURED_ARTICLE.title}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-manah-navy/30 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-manah-navy/5" />
-              </div>
+            <Link
+              href={`/blog/${FEATURED_BLOG_ARTICLE.slug}`}
+              className="group block"
+            >
+              <div className="grid lg:grid-cols-2 gap-0 bg-white rounded-2xl overflow-hidden border border-manah-gray-200/60 shadow-card group-hover:shadow-card-hover transition-all duration-500">
+                {/* Image */}
+                <div className="relative aspect-[16/10] lg:aspect-auto lg:min-h-[420px] overflow-hidden">
+                  <Image
+                    src={FEATURED_BLOG_ARTICLE.image}
+                    alt={FEATURED_BLOG_ARTICLE.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    priority
+                    placeholder="blur"
+                    blurDataURL={BLUR_DATA_URL}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-manah-navy/30 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-manah-navy/5" />
+                </div>
 
-              {/* Content */}
-              <div className="p-8 md:p-10 lg:p-12 flex flex-col justify-center">
-                <span className="inline-block px-3 py-1 bg-manah-gold/10 text-manah-gold text-caption font-semibold rounded-full mb-4 w-fit">
-                  {FEATURED_ARTICLE.category}
-                </span>
-                <h2 className="font-display text-heading-xl md:text-display-sm font-bold text-manah-navy mb-4 leading-tight">
-                  {FEATURED_ARTICLE.title}
-                </h2>
-                <p className="text-manah-gray-500 text-body-md mb-6 leading-relaxed">
-                  {FEATURED_ARTICLE.excerpt}
-                </p>
-                <div className="flex flex-wrap items-center gap-4 text-caption text-manah-gray-400 mb-6">
-                  <span className="flex items-center gap-1.5">
-                    <Calendar className="w-3.5 h-3.5" />
-                    {FEATURED_ARTICLE.date}
+                {/* Content */}
+                <div className="p-8 md:p-10 lg:p-12 flex flex-col justify-center">
+                  <span className="inline-block px-3 py-1 bg-manah-gold/10 text-manah-gold text-caption font-semibold rounded-full mb-4 w-fit">
+                    {FEATURED_BLOG_ARTICLE.category}
                   </span>
-                  <span className="flex items-center gap-1.5">
-                    <Clock className="w-3.5 h-3.5" />
-                    {FEATURED_ARTICLE.readTime}
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <User className="w-3.5 h-3.5" />
-                    {FEATURED_ARTICLE.author}
+                  <h2 className="font-display text-heading-xl md:text-display-sm font-bold text-manah-navy mb-4 leading-tight group-hover:text-manah-gold transition-colors duration-300">
+                    {FEATURED_BLOG_ARTICLE.title}
+                  </h2>
+                  <p className="text-manah-gray-500 text-body-md mb-6 leading-relaxed">
+                    {FEATURED_BLOG_ARTICLE.excerpt}
+                  </p>
+                  <div className="flex flex-wrap items-center gap-4 text-caption text-manah-gray-400 mb-6">
+                    <span className="flex items-center gap-1.5">
+                      <Calendar className="w-3.5 h-3.5" />
+                      {FEATURED_BLOG_ARTICLE.date}
+                    </span>
+                    <span className="flex items-center gap-1.5">
+                      <Clock className="w-3.5 h-3.5" />
+                      {FEATURED_BLOG_ARTICLE.readTime}
+                    </span>
+                    <span className="flex items-center gap-1.5">
+                      <User className="w-3.5 h-3.5" />
+                      {FEATURED_BLOG_ARTICLE.author.name}
+                    </span>
+                  </div>
+                  <span className="btn-primary w-fit">
+                    Read Full Article
+                    <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>
-                <button className="btn-primary w-fit">
-                  Read Full Article
-                  <ArrowRight className="w-4 h-4" />
-                </button>
               </div>
-            </div>
+            </Link>
           </MotionSection>
         </div>
       </section>
@@ -324,63 +212,70 @@ export default function BlogPage() {
               className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
             >
               {filteredArticles.map((article, i) => (
-                <motion.article
+                <Link
                   key={article.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: i * 0.08,
-                    duration: 0.5,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
-                  className="group bg-white rounded-2xl overflow-hidden border border-manah-gray-200/60 hover:shadow-card-hover hover:-translate-y-1 transition-all duration-500"
+                  href={`/blog/${article.slug}`}
+                  className="group block"
                 >
-                  {/* Card Image */}
-                  <div className="relative aspect-[16/10] overflow-hidden">
-                    <Image
-                      src={article.image}
-                      alt={article.title}
-                      fill
-                      loading="eager"
-                      className="object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-manah-navy/20 to-transparent" />
-                    <span className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-sm text-manah-navy text-caption font-semibold rounded-full">
-                      {article.category}
-                    </span>
-                  </div>
+                  <motion.article
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      delay: i * 0.08,
+                      duration: 0.5,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
+                    className="bg-white rounded-2xl overflow-hidden border border-manah-gray-200/60 hover:shadow-card-hover hover:-translate-y-1 transition-all duration-500 h-full"
+                  >
+                    {/* Card Image */}
+                    <div className="relative aspect-[16/10] overflow-hidden">
+                      <Image
+                        src={article.image}
+                        alt={article.title}
+                        fill
+                        loading="eager"
+                        className="object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        placeholder="blur"
+                        blurDataURL={BLUR_DATA_URL}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-manah-navy/20 to-transparent" />
+                      <span className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-sm text-manah-navy text-caption font-semibold rounded-full">
+                        {article.category}
+                      </span>
+                    </div>
 
-                  {/* Card Content */}
-                  <div className="p-6">
-                    <div className="flex items-center gap-3 text-caption text-manah-gray-400 mb-3">
-                      <span className="flex items-center gap-1">
-                        <Calendar className="w-3 h-3" />
-                        {article.date}
-                      </span>
-                      <span className="w-1 h-1 rounded-full bg-manah-gray-300" />
-                      <span className="flex items-center gap-1">
-                        <Clock className="w-3 h-3" />
-                        {article.readTime}
-                      </span>
+                    {/* Card Content */}
+                    <div className="p-6">
+                      <div className="flex items-center gap-3 text-caption text-manah-gray-400 mb-3">
+                        <span className="flex items-center gap-1">
+                          <Calendar className="w-3 h-3" />
+                          {article.date}
+                        </span>
+                        <span className="w-1 h-1 rounded-full bg-manah-gray-300" />
+                        <span className="flex items-center gap-1">
+                          <Clock className="w-3 h-3" />
+                          {article.readTime}
+                        </span>
+                      </div>
+                      <h3 className="font-display text-heading-md font-bold text-manah-navy mb-3 line-clamp-2 group-hover:text-manah-gold transition-colors duration-300">
+                        {article.title}
+                      </h3>
+                      <p className="text-manah-gray-500 text-body-sm line-clamp-3 mb-4 leading-relaxed">
+                        {article.excerpt}
+                      </p>
+                      <div className="flex items-center justify-between">
+                        <span className="text-caption text-manah-gray-400">
+                          {article.author.name}
+                        </span>
+                        <span className="inline-flex items-center gap-1 text-manah-gold font-semibold text-body-sm group-hover:gap-2 transition-all duration-300">
+                          Read Article
+                          <ArrowRight className="w-4 h-4" />
+                        </span>
+                      </div>
                     </div>
-                    <h3 className="font-display text-heading-md font-bold text-manah-navy mb-3 line-clamp-2 group-hover:text-manah-gold transition-colors duration-300">
-                      {article.title}
-                    </h3>
-                    <p className="text-manah-gray-500 text-body-sm line-clamp-3 mb-4 leading-relaxed">
-                      {article.excerpt}
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-caption text-manah-gray-400">
-                        {article.author}
-                      </span>
-                      <span className="inline-flex items-center gap-1 text-manah-gold font-semibold text-body-sm group-hover:gap-2 transition-all duration-300 cursor-pointer">
-                        Read Article
-                        <ArrowRight className="w-4 h-4" />
-                      </span>
-                    </div>
-                  </div>
-                </motion.article>
+                  </motion.article>
+                </Link>
               ))}
             </motion.div>
           </AnimatePresence>
@@ -408,47 +303,7 @@ export default function BlogPage() {
       </section>
 
       {/* ─── Newsletter CTA ─── */}
-      <section className="section-padding bg-manah-navy text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(200,169,110,0.08),transparent_70%)]" />
-        <div className="section-container relative z-10">
-          <MotionSection className="max-w-2xl mx-auto text-center">
-            <span className="inline-block text-manah-gold-light font-semibold text-body-sm tracking-widest uppercase mb-4">
-              Newsletter
-            </span>
-            <h2 className="font-display text-display-sm md:text-display-md font-bold mb-4">
-              Stay Ahead of{" "}
-              <span className="text-gradient-gold">Industry Trends</span>
-            </h2>
-            <p className="text-manah-gray-300 text-body-lg mb-8 max-w-lg mx-auto">
-              Subscribe to The Manah Journal for curated insights on
-              infrastructure, energy transitions, and technology
-              breakthroughs delivered straight to your inbox.
-            </p>
-            <form
-              onSubmit={(e) => e.preventDefault()}
-              className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4"
-            >
-              <div className="relative flex-1">
-                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-manah-gray-400" />
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Your work email"
-                  className="w-full pl-11 pr-4 py-3.5 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-manah-gray-400 text-body-sm focus:outline-none focus:border-manah-gold/60 focus:ring-1 focus:ring-manah-gold/30 transition-all duration-300"
-                />
-              </div>
-              <button type="submit" className="btn-primary whitespace-nowrap">
-                Subscribe
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </form>
-            <p className="text-caption text-manah-gray-400">
-              Monthly digest. No spam. Unsubscribe anytime.
-            </p>
-          </MotionSection>
-        </div>
-      </section>
+      <NewsletterCTA />
     </main>
   );
 }

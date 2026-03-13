@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { BLUR_DATA_URL } from "@/lib/blur";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { DIVISIONS } from "@/lib/constants";
@@ -72,6 +73,8 @@ export default function DivisionsPage() {
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
+                    placeholder="blur"
+                    blurDataURL={BLUR_DATA_URL}
                   />
                   <div
                     className="absolute inset-0 opacity-20"

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { MapPin, Globe, Users, Briefcase } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import MotionSection from "@/components/animations/MotionSection";
+import ParallaxWrapper from "@/components/animations/ParallaxWrapper";
 import CounterAnimation from "@/components/animations/CounterAnimation";
 import WorldMap, { type MapLocation } from "@/components/ui/WorldMap";
 
@@ -49,11 +50,13 @@ export default function GlobalReachSection() {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           {/* Left — Map (half width on desktop) */}
           <MotionSection direction="left">
+            <ParallaxWrapper speed={0.3}>
             <WorldMap
               locations={LOCATIONS}
               eyebrow="Manah Group"
               title="Global Presence"
             />
+            </ParallaxWrapper>
           </MotionSection>
 
           {/* Right — Description + Stats */}

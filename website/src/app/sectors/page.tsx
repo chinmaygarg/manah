@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { BLUR_DATA_URL } from "@/lib/blur";
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer, scaleIn } from "@/lib/animations";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -138,6 +139,8 @@ export default function SectorsPage() {
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      placeholder="blur"
+                      blurDataURL={BLUR_DATA_URL}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
                   </div>

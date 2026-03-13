@@ -13,6 +13,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import CounterAnimation from "@/components/animations/CounterAnimation";
 import { Award, Target, Eye, Heart, Shield, Users, Clock, Globe } from "lucide-react";
 import Image from "next/image";
+import { BLUR_DATA_URL } from "@/lib/blur";
 import { LEADERS } from "@/lib/constants";
 
 /* ─── Timeline Data ─── */
@@ -25,6 +26,16 @@ const MILESTONES = [
   { year: "2023", title: "$300M+ Portfolio", description: "Crossed $300M in cumulative project value with 500%+ YoY growth." },
   { year: "2024", title: "Global Expansion", description: "Expanded operations to Middle East and Southeast Asia with strategic partnerships." },
   { year: "2025", title: "Industry Recognition", description: "Awarded 'Fastest Growing EPC Company' and achieved ISO 9001, 14001, 45001 certifications." },
+];
+
+/* ─── Policies (compact list) ─── */
+const POLICIES = [
+  "Code of Conduct",
+  "Anti-Corruption Policy",
+  "Whistleblower Policy",
+  "HSE Policy",
+  "CSR Policy",
+  "Quality Policy",
 ];
 
 /* ─── Awards ─── */
@@ -119,6 +130,8 @@ export default function AboutPage() {
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
+                placeholder="blur"
+                blurDataURL={BLUR_DATA_URL}
               />
               <div className="absolute inset-0 bg-gradient-to-br from-manah-navy/10 to-manah-gold/5" />
             </motion.div>
@@ -170,6 +183,8 @@ export default function AboutPage() {
                 fill
                 className="object-cover opacity-30"
                 sizes="(max-width: 1024px) 100vw, 80vw"
+                placeholder="blur"
+                blurDataURL={BLUR_DATA_URL}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-manah-navy/90 via-manah-navy/75 to-manah-navy/50" />
 
@@ -307,6 +322,8 @@ export default function AboutPage() {
                     fill
                     className="object-cover"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    placeholder="blur"
+                    blurDataURL={BLUR_DATA_URL}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-manah-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
@@ -323,7 +340,7 @@ export default function AboutPage() {
 
       {/* ─── History Timeline ─── */}
       <section id="history" className="section-padding bg-manah-navy text-white overflow-hidden relative">
-        <Image src="/images/about/timeline_background.png" alt="" fill className="object-cover opacity-10" />
+        <Image src="/images/about/timeline_background.png" alt="" fill className="object-cover opacity-10" placeholder="blur" blurDataURL={BLUR_DATA_URL} />
         <div className="section-container">
           <SectionHeading
             eyebrow="Our Journey"
@@ -367,52 +384,48 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ─── Policies & Charters ─── */}
-      <section id="policies" className="section-padding bg-manah-gray-50">
+      {/* ─── Governance & Recognition ─── */}
+      <section id="governance" className="section-padding bg-white">
         <div className="section-container">
           <SectionHeading
-            eyebrow="Governance"
-            title="Policies & Charters"
-            description="Our governance framework ensures transparency, accountability, and ethical business practices across all operations."
+            eyebrow="Trust & Excellence"
+            title="Governance & Recognition"
+            description="Built on strong governance frameworks and recognized for our commitment to excellence."
           />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-            {[
-              { title: "Code of Conduct", description: "Ethical standards and professional behaviour guidelines for all employees and stakeholders." },
-              { title: "Anti-Corruption Policy", description: "Zero-tolerance approach to bribery and corruption across all business operations." },
-              { title: "Whistleblower Policy", description: "Protected channels for reporting concerns about unethical or illegal activities." },
-              { title: "HSE Policy", description: "Health, Safety, and Environment standards ensuring zero-harm operations at all project sites." },
-              { title: "CSR Policy", description: "Corporate Social Responsibility framework guiding community development initiatives." },
-              { title: "Quality Policy", description: "ISO-certified quality management systems ensuring excellence in project delivery." },
-            ].map((policy, i) => (
-              <motion.div
-                key={policy.title}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="p-6 rounded-xl border border-manah-gray-200/60 hover:border-manah-gold/30 hover:shadow-card transition-all duration-400"
-              >
-                <div className="shrink-0 w-10 h-10 rounded-lg bg-manah-navy flex items-center justify-center mb-4">
-                  <Shield className="w-5 h-5 text-manah-gold" />
-                </div>
-                <h3 className="font-semibold text-manah-navy text-body-md">{policy.title}</h3>
-                <p className="text-manah-gray-500 text-body-sm mt-2">{policy.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* ─── Awards & Certifications ─── */}
-      <section id="awards" className="section-padding bg-white">
-        <div className="section-container">
-          <SectionHeading
-            eyebrow="Recognition"
-            title="Awards & Certifications"
-            description="Industry recognition for our commitment to excellence, safety, and sustainability."
-          />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+          {/* Policies — compact pill/badge layout */}
+          <div className="mt-12 mb-16">
+            <h3 className="text-manah-gold font-semibold text-body-sm tracking-widest uppercase mb-6">
+              Policies &amp; Charters
+            </h3>
+            <motion.div
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="flex flex-wrap gap-3"
+            >
+              {POLICIES.map((policy, i) => (
+                <motion.div
+                  key={policy}
+                  variants={fadeUp}
+                  transition={{ delay: i * 0.05 }}
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full
+                    border border-manah-gray-200 hover:border-manah-gold/30
+                    hover:bg-manah-gold/[0.04] transition-all duration-300 cursor-default"
+                >
+                  <Shield className="w-4 h-4 text-manah-navy/60" />
+                  <span className="text-manah-navy text-body-sm font-medium">{policy}</span>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Awards — navy cards with gold accents */}
+          <h3 className="text-manah-gold font-semibold text-body-sm tracking-widest uppercase mb-6">
+            Awards &amp; Certifications
+          </h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {AWARDS.map((award, i) => (
               <motion.div
                 key={award.title}
@@ -421,14 +434,15 @@ export default function AboutPage() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="flex items-start gap-4 p-6 rounded-xl border border-manah-gray-200/60 hover:border-manah-gold/30 hover:shadow-card transition-all duration-400"
+                className="flex items-start gap-4 p-6 rounded-xl bg-manah-navy
+                  hover:bg-manah-navy/95 transition-colors duration-300"
               >
-                <div className="shrink-0 w-12 h-12 rounded-lg bg-manah-navy flex items-center justify-center">
+                <div className="shrink-0 w-12 h-12 rounded-lg bg-manah-gold/15 flex items-center justify-center">
                   <award.icon className="w-6 h-6 text-manah-gold" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-manah-navy text-body-md">{award.title}</h3>
-                  <p className="text-manah-gray-500 text-body-sm mt-1">{award.org}</p>
+                  <h3 className="font-semibold text-white text-body-md">{award.title}</h3>
+                  <p className="text-manah-gray-300 text-body-sm mt-1">{award.org}</p>
                 </div>
               </motion.div>
             ))}

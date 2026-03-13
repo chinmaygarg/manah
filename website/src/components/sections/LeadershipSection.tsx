@@ -5,6 +5,7 @@ import { fadeUp, staggerContainer } from "@/lib/animations";
 import { LEADERS } from "@/lib/constants";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Image from "next/image";
+import { BLUR_DATA_URL } from "@/lib/blur";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -40,6 +41,8 @@ export default function LeadershipSection() {
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  placeholder="blur"
+                  blurDataURL={BLUR_DATA_URL}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-manah-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
