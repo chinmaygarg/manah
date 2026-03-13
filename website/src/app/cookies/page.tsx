@@ -89,10 +89,10 @@ export default function CookiePolicyPage() {
   };
 
   return (
-    <main className="pt-[var(--nav-height)]">
+    <main>
       {/* ─── Hero ─── */}
       <section className="bg-manah-navy text-white">
-        <div className="section-container py-16 md:py-20">
+        <div className="section-container pt-[calc(var(--nav-height)+4rem)] pb-16 md:pt-[calc(var(--nav-height)+5rem)] md:pb-20">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
