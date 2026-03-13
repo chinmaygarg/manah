@@ -13,7 +13,7 @@ export interface DivisionDetail {
   overview: string[];
   keyStats: { value: string; label: string }[];
   services: { title: string; description: string }[];
-  sectors: string[];
+  sectors: { name: string; image: string; description: string }[];
   certifications: string[];
   cta: { text: string; href: string };
 }
@@ -47,7 +47,12 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
       { title: "Civil Infrastructure", description: "Roads, bridges, industrial buildings, and urban infrastructure projects with focus on quality and timely delivery." },
       { title: "O&M Services", description: "Comprehensive operations and maintenance for power transmission and generation assets across all operating regions." },
     ],
-    sectors: ["Power Transmission", "Renewable Energy", "Infrastructure", "Industrial"],
+    sectors: [
+      { name: "Power Transmission", image: "/images/sectors/power_transmission.png", description: "EHV/HV transmission lines and substation infrastructure across 15+ regions." },
+      { name: "Renewable Energy", image: "/images/sectors/renewable_energy.png", description: "Utility-scale solar and wind farm EPC from design to grid interconnection." },
+      { name: "Infrastructure", image: "/images/sectors/infrastructure.png", description: "Roads, bridges, and urban infrastructure built to international standards." },
+      { name: "Industrial", image: "/images/sectors/manufacturing.png", description: "Industrial facilities and process plants with turnkey project delivery." },
+    ],
     certifications: ["ISO 9001:2015", "ISO 14001:2015", "ISO 45001:2018", "CEA Compliant"],
     cta: { text: "View Projects", href: "/projects?division=dynamics" },
   },
@@ -80,7 +85,12 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
       { title: "Interiors & Modifications", description: "Cabin refurbishment, seat upholstery, IFE installations, and STC-based modifications." },
       { title: "AOG & Technical Support", description: "24/7 Aircraft-on-Ground support with mobile repair teams and global parts sourcing." },
     ],
-    sectors: ["Commercial Aviation", "Defence Aviation", "General Aviation", "Helicopter MRO"],
+    sectors: [
+      { name: "Commercial Aviation", image: "/images/sectors/aviation.png", description: "Full MRO services for narrow and wide-body commercial aircraft fleets." },
+      { name: "Defence Aviation", image: "/images/sectors/defence_electronics.png", description: "Military aircraft maintenance meeting defence procurement standards." },
+      { name: "General Aviation", image: "/images/sectors/general_aviation.png", description: "Business jets and turboprops serviced with rapid turnaround times." },
+      { name: "Helicopter MRO", image: "/images/sectors/helicopter_mro.png", description: "Rotary-wing maintenance, repair, and overhaul for civil and defence helicopters." },
+    ],
     certifications: ["DGCA CAR 145", "EASA Part 145", "ISO 9001:2015", "AS9110 Rev C"],
     cta: { text: "Explore Capabilities", href: "/capabilities" },
   },
@@ -113,7 +123,12 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
       { title: "Fuel Cell Solutions", description: "Hydrogen fuel cell systems for stationary power, material handling equipment, and commercial vehicle applications." },
       { title: "Carbon Advisory", description: "Carbon credit generation, ESG reporting support, and sustainability roadmap development for industrial clients." },
     ],
-    sectors: ["Green Hydrogen", "Renewable Energy", "Industrial Decarbonization", "Clean Transport"],
+    sectors: [
+      { name: "Green Hydrogen", image: "/images/sectors/green_hydrogen.png", description: "Large-scale green hydrogen production powering net-zero ambitions." },
+      { name: "Renewable Energy", image: "/images/sectors/renewable_energy.png", description: "Dedicated solar and wind parks for captive hydrogen generation." },
+      { name: "Industrial Decarbonization", image: "/images/sectors/manufacturing.png", description: "Decarbonizing steel, chemicals, and heavy industry with clean energy." },
+      { name: "Clean Transport", image: "/images/sectors/transportation.png", description: "Hydrogen fuel cell solutions for commercial vehicles and logistics." },
+    ],
     certifications: ["ISO 9001:2015", "ISO 14001:2015", "BIS Standards", "MNRE Approved"],
     cta: { text: "Learn More", href: "/sustainability" },
   },
@@ -146,7 +161,12 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
       { title: "Testing & Validation", description: "In-circuit testing (ICT), functional testing, burn-in, environmental stress screening, and EMI/EMC compliance testing." },
       { title: "Design Support", description: "DFM/DFA analysis, component engineering, prototype rapid-turn, and NPI (New Product Introduction) support." },
     ],
-    sectors: ["Defence Electronics", "Aerospace Systems", "Telecom Equipment", "Industrial IoT"],
+    sectors: [
+      { name: "Defence Electronics", image: "/images/sectors/defence_electronics.png", description: "Mission-critical assemblies meeting MIL-STD and JSS quality standards." },
+      { name: "Aerospace Systems", image: "/images/sectors/aviation.png", description: "High-reliability avionics and flight system electronics manufacturing." },
+      { name: "Telecom Equipment", image: "/images/sectors/telecom_equipment.png", description: "PCB assemblies and system integration for telecom infrastructure." },
+      { name: "Industrial IoT", image: "/images/sectors/industrial_iot.png", description: "Smart sensors, edge devices, and industrial automation electronics." },
+    ],
     certifications: ["ISO 9001:2015", "IPC-A-610 Class 3", "MIL-STD-883", "BIS License"],
     cta: { text: "Request Quote", href: "/contact" },
   },
@@ -179,7 +199,12 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
       { title: "Joint Ventures & Partnerships", description: "Structured JVs with global technology partners and industry leaders for market entry and capability building." },
       { title: "Advisory & Asset Management", description: "Investment advisory services and fund management for institutional investors seeking exposure to global infrastructure growth." },
     ],
-    sectors: ["Infrastructure", "Energy & Cleantech", "Technology & Defence", "Real Estate"],
+    sectors: [
+      { name: "Infrastructure", image: "/images/sectors/infrastructure.png", description: "Direct equity in power, roads, logistics, and urban development." },
+      { name: "Energy & Cleantech", image: "/images/sectors/renewable_energy.png", description: "Capital allocation for renewables, hydrogen, and battery storage." },
+      { name: "Technology & Defence", image: "/images/sectors/defence_electronics.png", description: "Growth-stage investments in deep tech and defence technology." },
+      { name: "Real Estate", image: "/images/sectors/real_estate.png", description: "Strategic positions in commercial and mixed-use developments." },
+    ],
     certifications: ["SEBI Registered", "DPIIT Recognized", "ISO 9001:2015", "ESG Compliant"],
     cta: { text: "Explore Opportunities", href: "/contact" },
   },

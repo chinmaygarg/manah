@@ -266,15 +266,26 @@ export default function DivisionPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
             {division.sectors.map((sector, i) => (
               <motion.div
-                key={sector}
+                key={sector.name}
                 variants={scaleIn}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 text-center hover:bg-white/10 transition-colors duration-300"
+                className="group relative overflow-hidden rounded-xl aspect-[3/4] cursor-default"
               >
-                <p className="font-display font-semibold text-white">{sector}</p>
+                <Image
+                  src={sector.image}
+                  alt={sector.name}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <h3 className="font-display font-semibold text-white text-lg">{sector.name}</h3>
+                  <p className="text-white/70 text-sm mt-1">{sector.description}</p>
+                </div>
               </motion.div>
             ))}
           </div>

@@ -8,20 +8,23 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import CounterAnimation from "@/components/animations/CounterAnimation";
 import { MapPin, Calendar, ChevronDown } from "lucide-react";
 
-/* ─── Category → Image mapping ─── */
-const CATEGORY_IMAGES: Record<string, string> = {
-  "Power Transmission": "/images/sectors/power_transmission.png",
-  "Renewable Energy": "/images/sectors/renewable_energy.png",
-  "Infrastructure": "/images/sectors/infrastructure.png",
-  "Aerospace": "/images/divisions/manah_aerospace_hero.png",
-  "Green Hydrogen": "/images/sectors/green_hydrogen.png",
-  "Manufacturing": "/images/sectors/manufacturing.png",
+/* ─── Per-project image mapping ─── */
+const PROJECT_IMAGES: Record<number, string> = {
+  1: "/images/sectors/power_transmission.png",       // 400kV Transmission Line
+  2: "/images/sectors/renewable_energy.png",          // 100 MW Solar Park
+  3: "/images/divisions/manah_aerospace_hero.png",    // MRO Hangar Facility
+  4: "/images/sectors/green_hydrogen.png",            // Green Hydrogen Pilot
+  5: "/images/projects/gis_substation.png",           // 220kV GIS Substation
+  6: "/images/sectors/manufacturing.png",             // Defence Electronics Line
+  7: "/images/projects/wind_solar_hybrid.png",        // Hybrid Wind-Solar Park
+  8: "/images/sectors/infrastructure.png",            // Highway Widening
+  9: "/images/projects/component_mro.png",            // Component MRO Centre
 };
 
 const FALLBACK_IMAGE = "/images/hero/hero_main_infrastructure.png";
 
-function getProjectImage(category: string): string {
-  return CATEGORY_IMAGES[category] ?? FALLBACK_IMAGE;
+function getProjectImage(projectId: number): string {
+  return PROJECT_IMAGES[projectId] ?? FALLBACK_IMAGE;
 }
 
 const FILTERS = [
@@ -264,7 +267,7 @@ export default function ProjectsPage() {
               >
                 <div className="aspect-[16/9] relative overflow-hidden bg-manah-gray-100">
                   <Image
-                    src={getProjectImage(project.category)}
+                    src={getProjectImage(project.id)}
                     alt={project.title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -353,7 +356,7 @@ export default function ProjectsPage() {
                 >
                   <div className="aspect-[2/1] relative overflow-hidden bg-manah-gray-100">
                     <Image
-                      src={getProjectImage(project.category)}
+                      src={getProjectImage(project.id)}
                       alt={project.title}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
