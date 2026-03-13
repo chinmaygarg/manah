@@ -18,7 +18,7 @@ export default function DivisionsSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-24 lg:py-32 bg-manah-navy overflow-hidden"
+      className="relative py-24 lg:py-32 bg-manah-navy overflow-hidden -mt-px"
     >
       {/* Dot pattern */}
       <div

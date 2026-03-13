@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import ScrollRevealImage from "@/components/animations/ScrollRevealImage";
 
 const EXPO_EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
@@ -37,7 +38,7 @@ export default function StorySection() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-manah-gray-50"
+      className="relative overflow-hidden bg-manah-gray-50 -mt-px"
     >
       {/* ── Background layers ── */}
       {/* Subtle geometric crosshatch — pure CSS, no image dependency */}
@@ -186,6 +187,7 @@ export default function StorySection() {
 
           {/* Right column — typographic stat anchor (5 cols) */}
           <div className="lg:col-span-5 xl:col-span-5 xl:col-start-8">
+            <ScrollRevealImage direction="right">
             <motion.div
               className="relative p-8 sm:p-10 rounded-2xl bg-white border border-manah-gray-200/80 shadow-card"
               initial={{ opacity: 0, y: 32, scale: 0.97 }}
@@ -237,6 +239,7 @@ export default function StorySection() {
                 enduring accountability across every market we serve.
               </p>
             </motion.div>
+            </ScrollRevealImage>
           </div>
         </div>
 
@@ -292,7 +295,6 @@ export default function StorySection() {
                     transition: { duration: 0.35, ease: EXPO_EASE },
                   }}
                   whileTap={{ scale: 0.98 }}
-                  style={{ willChange: "transform" }}
                 >
                   {/* Hover glow overlay */}
                   <div
