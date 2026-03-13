@@ -3,6 +3,8 @@
 import { useEffect, useState, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import { Play, ChevronDown } from "lucide-react";
+import ParallaxWrapper from "@/components/animations/ParallaxWrapper";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 const DIVISIONS = [
   {
@@ -33,7 +35,6 @@ const DIVISIONS = [
 ] as const;
 
 const CROSSFADE_DURATION = 4000; // ms per video
-const TRANSITION_DURATION = 1200; // ms for crossfade
 
 function getVideoSrc(basePath: string, isMobile: boolean): string {
   return isMobile ? `${basePath}-480p.mp4` : `${basePath}-720p.mp4`;
@@ -43,6 +44,7 @@ export default function HeroSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const reducedMotion = useReducedMotion();
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -74,11 +76,11 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative h-dvh min-h-[700px] max-h-[1100px] overflow-hidden -mt-20"
+      className="relative h-dvh min-h-[700px] max-h-[1100px] overflow-hidden -mt-20 bg-manah-navy"
       aria-label="Manah Group hero"
     >
       {/* Video backgrounds with crossfade */}
-      <div className="absolute inset-0 bg-manah-navy">
+      <ParallaxWrapper speed={0.3} className="absolute inset-0 bg-manah-navy">
         {DIVISIONS.map((div, i) => (
           <div
             key={div.label}
@@ -103,7 +105,7 @@ export default function HeroSection() {
         {/* Dark overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-manah-navy/70 via-manah-navy/40 to-manah-navy/80" />
         <div className="absolute inset-0 bg-gradient-to-r from-manah-navy/50 via-transparent to-manah-navy/50" />
-      </div>
+      </ParallaxWrapper>
 
       {/* Content — centered, Essar-inspired */}
       <div className="relative h-full section-container flex flex-col items-center justify-center text-center pt-20 pb-44 sm:pb-40">
@@ -181,8 +183,8 @@ export default function HeroSection() {
           {/* Scroll indicator */}
           <motion.div
             className="flex flex-col items-center gap-1 mt-6"
-            animate={{ y: [0, 6, 0] }}
-            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+            animate={reducedMotion ? {} : { y: [0, 6, 0] }}
+            transition={reducedMotion ? {} : { repeat: Infinity, duration: 2, ease: "easeInOut" }}
           >
             <ChevronDown className="w-5 h-5 text-white/25" />
           </motion.div>
