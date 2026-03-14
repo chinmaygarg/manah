@@ -303,8 +303,7 @@ export default function SectorDetailPage() {
                 className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-colors duration-300"
               >
                 <span
-                  className="text-display-sm font-display font-bold mb-4 block opacity-30"
-                  style={{ color: sector.color }}
+                  className="text-display-sm font-display font-bold mb-4 block text-manah-gold opacity-60"
                 >
                   {step.step}
                 </span>

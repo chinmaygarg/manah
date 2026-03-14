@@ -184,9 +184,16 @@
   }
   .stat-number {
     @apply font-display font-bold text-manah-gold tabular-nums;
-    font-size: var(--font-size-display-lg);
-    line-height: var(--font-size-display-lg--line-height);
-    letter-spacing: var(--font-size-display-lg--letter-spacing);
+    font-size: var(--font-size-display-sm);
+    line-height: var(--font-size-display-sm--line-height);
+    letter-spacing: var(--font-size-display-sm--letter-spacing);
+  }
+  @media (min-width: 768px) {
+    .stat-number {
+      font-size: var(--font-size-display-lg);
+      line-height: var(--font-size-display-lg--line-height);
+      letter-spacing: var(--font-size-display-lg--letter-spacing);
+    }
   }
   .skeleton { @apply bg-manah-gray-200 rounded-lg animate-pulse; }
   .no-scrollbar::-webkit-scrollbar { display: none; }
