@@ -320,7 +320,7 @@ export default function StorySection() {
 
                   {/* Accent pill */}
                   <motion.span
-                    className={`relative inline-block text-caption font-semibold tracking-[0.15em] uppercase mb-4 px-2.5 py-1 rounded-full ${
+                    className={`relative inline-block text-[0.625rem] sm:text-caption font-semibold tracking-[0.08em] sm:tracking-[0.15em] uppercase mb-4 px-2 sm:px-2.5 py-1 rounded-full ${
                       isLatest
                         ? "bg-manah-gold/20 text-manah-gold"
                         : "bg-manah-gold/10 text-manah-gold/70 group-hover:bg-manah-gold/15 group-hover:text-manah-gold transition-colors duration-300"

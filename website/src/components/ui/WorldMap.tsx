@@ -46,8 +46,8 @@ export default function WorldMap({
 
     return (
         <div className="relative w-full bg-[#0d1e36] overflow-hidden rounded-2xl">
-            {/* Header */}
-            <div className="absolute top-6 left-8 z-10 pointer-events-none">
+            {/* Header — stacked above map on mobile, overlaid on md+ */}
+            <div className="px-6 pt-5 pb-3 md:absolute md:top-6 md:left-8 md:p-0 z-10 pointer-events-none">
                 <p className="text-[#c8a96e] text-xs font-semibold tracking-widest uppercase mb-1">
                     {eyebrow}
                 </p>
