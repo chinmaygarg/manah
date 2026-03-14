@@ -231,87 +231,145 @@ export default function DivisionPage() {
             title="Services & Capabilities"
             description={`Comprehensive ${division.tagline.toLowerCase()} solutions delivered with engineering excellence.`}
           />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-            {division.services.map((service, i) => (
-              <motion.div
-                key={service.title}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="bg-white rounded-xl p-6 border border-manah-gray-200/60 hover:border-manah-gold/30 hover:shadow-card-hover transition-all duration-500"
-              >
-                <div
-                  className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
-                  style={{ backgroundColor: `${division.color}15` }}
+
+          {division.services.length <= 3 ? (
+            /* Enhanced layout for ≤3 services — full-width horizontal cards */
+            <div className="mt-12 space-y-6">
+              {division.services.map((service, i) => (
+                <motion.div
+                  key={service.title}
+                  variants={i % 2 === 0 ? fadeLeft : fadeRight}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  className="bg-white rounded-xl border border-manah-gray-200/60 hover:border-manah-gold/30 hover:shadow-card-hover transition-all duration-500 overflow-hidden"
                 >
-                  <CheckCircle2 className="w-5 h-5" style={{ color: division.color }} />
-                </div>
-                <h3 className="font-display text-heading-md font-semibold text-manah-navy mb-2">
-                  {service.title}
-                </h3>
-                <p className="text-manah-gray-500 text-body-sm leading-relaxed">
-                  {service.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+                  <div className="flex flex-col sm:flex-row items-stretch">
+                    {/* Numbered accent block */}
+                    <div
+                      className="flex-shrink-0 flex items-center justify-center sm:w-28 py-6 sm:py-0"
+                      style={{ backgroundColor: `${division.color}12` }}
+                    >
+                      <div className="text-center">
+                        <span
+                          className="font-display text-display-md font-bold block"
+                          style={{ color: division.color }}
+                        >
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Gold divider (vertical on sm+, horizontal on mobile) */}
+                    <div className="w-full h-px sm:w-px sm:h-auto bg-manah-gold/30" />
+
+                    {/* Content */}
+                    <div className="flex-1 p-6 sm:p-8 flex flex-col justify-center">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div
+                          className="w-10 h-10 rounded-lg flex items-center justify-center"
+                          style={{ backgroundColor: `${division.color}15` }}
+                        >
+                          <CheckCircle2 className="w-5 h-5" style={{ color: division.color }} />
+                        </div>
+                        <h3 className="font-display text-heading-lg font-semibold text-manah-navy">
+                          {service.title}
+                        </h3>
+                      </div>
+                      <p className="text-manah-gray-500 text-body-md leading-relaxed max-w-2xl">
+                        {service.description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          ) : (
+            /* Standard 3-column grid for >3 services */
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+              {division.services.map((service, i) => (
+                <motion.div
+                  key={service.title}
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08 }}
+                  className="bg-white rounded-xl p-6 border border-manah-gray-200/60 hover:border-manah-gold/30 hover:shadow-card-hover transition-all duration-500"
+                >
+                  <div
+                    className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
+                    style={{ backgroundColor: `${division.color}15` }}
+                  >
+                    <CheckCircle2 className="w-5 h-5" style={{ color: division.color }} />
+                  </div>
+                  <h3 className="font-display text-heading-md font-semibold text-manah-navy mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-manah-gray-500 text-body-sm leading-relaxed">
+                    {service.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
       {/* ─── Sectors Served ─── */}
-      <section className="section-padding bg-manah-navy text-white">
-        <div className="section-container">
-          <SectionHeading
-            eyebrow="Industries"
-            title="Sectors We Serve"
-            mode="dark"
-          />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
-            {division.sectors.map((sector, i) => (
-              <motion.div
-                key={sector.name}
-                variants={scaleIn}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="group relative overflow-hidden rounded-xl aspect-[3/4] cursor-default"
-              >
-                <Image
-                  src={sector.image}
-                  alt={sector.name}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  placeholder="blur"
-                  blurDataURL={BLUR_DATA_URL}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <h3 className="font-display font-semibold text-white text-lg">{sector.name}</h3>
-                  <p className="text-white/70 text-sm mt-1">{sector.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+      {division.sectors.length > 0 && (
+        <section className="section-padding bg-manah-navy text-white">
+          <div className="section-container">
+            <SectionHeading
+              eyebrow="Industries"
+              title="Sectors We Serve"
+              mode="dark"
+            />
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+              {division.sectors.map((sector, i) => (
+                <motion.div
+                  key={sector.name}
+                  variants={scaleIn}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="group relative overflow-hidden rounded-xl aspect-[3/4] cursor-default"
+                >
+                  <Image
+                    src={sector.image}
+                    alt={sector.name}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    placeholder="blur"
+                    blurDataURL={BLUR_DATA_URL}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <h3 className="font-display font-semibold text-white text-lg">{sector.name}</h3>
+                    <p className="text-white/70 text-sm mt-1">{sector.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
 
-          {/* CTA */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="mt-12 text-center"
-          >
-            <Link href="/contact" className="btn-primary">
-              Discuss Your Project
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+            {/* CTA */}
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="mt-12 text-center"
+            >
+              <Link href="/contact" className="btn-primary">
+                Discuss Your Project
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </motion.div>
+          </div>
+        </section>
+      )}
     </main>
   );
 }
