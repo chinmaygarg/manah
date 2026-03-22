@@ -106,7 +106,7 @@
 
 /* Dim only the division NAME text (not the letter) on non-hovered items */
 #slide-cover .cover-divisions:hover .cover-division-item .cover-division {
-  opacity: 0.25;
+  opacity: 0.35;
 }
 
 /* Hovered item's name stays bright and glows gold */
@@ -131,7 +131,7 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.3);
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, opacity 0.3s ease;
 }
 
 /* ─── Slide: Challenge (Split) ─── */
