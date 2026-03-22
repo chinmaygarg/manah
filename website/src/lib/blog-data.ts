@@ -528,25 +528,25 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
   },
   {
     id: 4,
-    slug: "manah-aerospace-easa-part-145",
-    title: "Manah Aerospace Achieves EASA Part 145 Certification",
+    slug: "manah-aerospace-san-marino-car-145",
+    title: "Manah Aerospace Achieves San Marino CAR 145 Certification",
     category: "Company News",
     date: "December 20, 2025",
     isoDate: "2025-12-20",
     readTime: "4 min read",
     author: { name: "Manah Aerospace Division", role: "Aviation & MRO Services" },
     excerpt:
-      "A landmark achievement for our aviation division — EASA Part 145 approval enables Manah Aerospace to service aircraft registered in European Union member states, significantly expanding our addressable MRO market beyond DGCA-registered fleets.",
+      "A landmark achievement for our aviation division — San Marino CAR 145 approval enables Manah Aerospace to service internationally registered aircraft, significantly expanding our addressable MRO market beyond DGCA-registered fleets.",
     image: "/images/news/aerospace-mro.jpg",
     metaDescription:
-      "Manah Aerospace achieves EASA Part 145 certification, enabling MRO services for EU-registered aircraft. Learn how this expands India's aviation maintenance capabilities.",
+      "Manah Aerospace achieves San Marino CAR 145 certification, enabling MRO services for internationally registered aircraft. Learn how this expands India's aviation maintenance capabilities.",
     metaKeywords: [
-      "EASA Part 145",
+      "San Marino CAR 145",
       "MRO certification India",
       "aircraft maintenance",
       "Manah Aerospace",
       "aviation MRO",
-      "EU aircraft servicing",
+      "international aircraft servicing",
     ],
     tags: ["Aviation", "MRO", "Certification", "Company News"],
     content: [
@@ -558,24 +558,24 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
       {
         type: "text",
         content:
-          "Manah Aerospace has secured European Union Aviation Safety Agency (EASA) Part 145 approval — one of the most rigorous maintenance organization certifications in global aviation. This certification authorizes our facilities to perform line and base maintenance on aircraft registered in all 27 EU member states, as well as countries that recognize EASA approvals through bilateral agreements.",
+          "Manah Aerospace has secured San Marino Civil Aviation Registry (CAR) 145 approval — a prestigious international maintenance organization certification in global aviation. This certification authorizes our facilities to perform line and base maintenance on aircraft registered with the San Marino Aircraft Registry, as well as those from countries that recognize San Marino approvals through bilateral agreements.",
       },
       {
         type: "text",
         content:
-          "The achievement is the culmination of an 18-month preparation and audit process involving comprehensive upgrades to our quality management systems, tooling calibration programs, technical library management, and human factors training. EASA auditors conducted multiple site visits, documentation reviews, and competency assessments before granting approval.",
+          "The achievement is the culmination of a rigorous preparation and audit process involving comprehensive upgrades to our quality management systems, tooling calibration programs, technical library management, and human factors training. San Marino CAA auditors conducted multiple site visits, documentation reviews, and competency assessments before granting approval.",
       },
       {
         type: "image",
         src: "/images/gallery/aircraft_mro_hangar.png",
-        alt: "Modern aircraft MRO hangar with wide-body aircraft undergoing maintenance checks and inspection",
+        alt: "Modern aircraft MRO hangar with business jets undergoing maintenance checks and inspection",
         caption:
-          "Manah Aerospace's EASA-certified maintenance hangar — equipped for line and base maintenance on narrow-body and wide-body aircraft.",
+          "Manah Aerospace's certified maintenance hangar at Begumpet, Hyderabad — equipped for business jet maintenance in partnership with AAI.",
       },
       {
         type: "heading",
         level: 2,
-        content: "Why EASA Part 145 Matters for Indian Aviation",
+        content: "Why San Marino CAR 145 Matters for Indian Aviation",
       },
       {
         type: "text",
@@ -585,13 +585,13 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
       {
         type: "text",
         content:
-          "EASA Part 145 certification is a prerequisite for servicing aircraft operated by European carriers and leasing companies — which collectively manage a significant portion of the global narrow-body fleet. For Indian MRO providers, this certification opens doors to third-party maintenance contracts that were previously inaccessible, transforming India from a maintenance importer to a potential maintenance exporter.",
+          "San Marino CAR 145 certification is recognized internationally and is a prerequisite for servicing aircraft registered on the San Marino Aircraft Registry — one of the world's fastest-growing registries for business aviation. For Indian MRO providers, this certification opens doors to international maintenance contracts that were previously inaccessible, transforming India from a maintenance importer to a potential maintenance exporter.",
       },
       {
         type: "quote",
         content:
-          "EASA Part 145 approval is not just a certificate on the wall. It represents a fundamental validation of our quality systems, our people's competencies, and our commitment to the highest safety standards in global aviation.",
-        attribution: "Manah Aerospace, Division Head",
+          "San Marino CAR 145 approval is not just a certificate on the wall. It represents a fundamental validation of our quality systems, our people's competencies, and our commitment to the highest safety standards in global aviation.",
+        attribution: "Col. L S N Murty (Retd.), CEO, Manah Aerospace",
       },
       {
         type: "heading",
@@ -601,29 +601,29 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
       {
         type: "text",
         content:
-          "Airlines and leasing companies operating EU-registered aircraft in India and the broader South Asian region now have a DGCA and EASA dual-certified domestic MRO option. This reduces ferry flight costs, shortens turnaround times, and provides maintenance continuity without cross-border logistics complexity. Our initial EASA scope covers A320 family and ATR 72 aircraft types, with B737 MAX and A330 capabilities to follow within the next 12 months.",
+          "Operators and leasing companies with San Marino-registered aircraft in India and the broader South Asian region now have a DGCA and San Marino dual-certified domestic MRO option. This reduces ferry flight costs, shortens turnaround times, and provides maintenance continuity without cross-border logistics complexity. Combined with our partnership with Jet Aviation Dubai, we offer seamless international MRO coverage for business jet operators.",
       },
       {
         type: "keyTakeaways",
         items: [
-          "Manah Aerospace now holds dual DGCA and EASA Part 145 certification — a rare distinction among Indian MRO providers",
-          "Certification covers 27 EU member states plus countries with EASA bilateral agreements",
+          "Manah Aerospace now holds dual DGCA and San Marino CAR 145 certification — a rare distinction among Indian MRO providers",
+          "Certification enables servicing of internationally registered business jets and aircraft",
           "Over 85% of India's heavy aircraft maintenance is currently outsourced overseas — a $4 billion annual market",
-          "Initial EASA scope covers A320 family and ATR 72, with B737 MAX and A330 planned within 12 months",
-          "The 18-month certification journey required upgrades to quality systems, tooling, and human factors training",
+          "Strategic partnership with AAI for hangar operations at Begumpet Airport, Hyderabad",
+          "International collaboration with Jet Aviation Dubai for global standards and best practices",
         ],
       },
     ],
     faqItems: [
       {
-        question: "What is EASA Part 145 certification?",
+        question: "What is San Marino CAR 145 certification?",
         answer:
-          "EASA Part 145 is the European Union Aviation Safety Agency's approval for aircraft maintenance organizations. It certifies that a facility meets rigorous standards for quality management, tooling, training, and safety to perform maintenance on EU-registered aircraft.",
+          "San Marino CAR 145 is the San Marino Civil Aviation Authority's approval for aircraft maintenance organizations. It certifies that a facility meets rigorous international standards for quality management, tooling, training, and safety to perform maintenance on San Marino-registered aircraft.",
       },
       {
-        question: "Why does India need EASA-certified MRO facilities?",
+        question: "Why does India need internationally certified MRO facilities?",
         answer:
-          "Over 85% of India's heavy aircraft maintenance is currently outsourced to foreign facilities, representing a $4 billion annual market. EASA certification enables Indian MRO providers to service EU-registered aircraft domestically, reducing costs and turnaround times for airlines.",
+          "Over 85% of India's heavy aircraft maintenance is currently outsourced to foreign facilities, representing a $4 billion annual market. International certifications like San Marino CAR 145 enable Indian MRO providers to service internationally registered aircraft domestically, reducing costs and turnaround times.",
       },
     ],
   },
@@ -1143,7 +1143,7 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
       {
         type: "keyTakeaways",
         items: [
-          "50,000 sq ft facility with 8 SMT lines, 3 through-hole stations, and dedicated testing areas",
+          "30,000 sq ft facility with 8 SMT lines, 3 through-hole stations, and dedicated testing areas",
           "Handles prototype runs (10 units) through volume production (100,000+ units/month)",
           "Pick-and-place accuracy of ±25 microns at 80,000 CPH for components down to 0201 size",
           "Nitrogen reflow with 12-zone convection ovens and digital thermal profile traceability",
@@ -1156,7 +1156,7 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
       {
         question: "What manufacturing capabilities does Manah Technology offer?",
         answer:
-          "Manah Technology Division operates a 50,000 sq ft EMS facility with 8 SMT lines handling components from 0201 to BGA packages at 80,000 CPH. Capabilities span rapid prototyping (10 units) to volume production (100,000+ units/month), with nitrogen reflow, AOI, X-ray inspection, and IPC Class 3 quality standards.",
+          "Manah Technology Division operates a 30,000 sq ft EMS facility with 8 SMT lines handling components from 0201 to BGA packages at 80,000 CPH. Capabilities span rapid prototyping (10 units) to volume production (100,000+ units/month), with nitrogen reflow, AOI, X-ray inspection, and IPC Class 3 quality standards.",
       },
       {
         question: "What quality standards does the facility meet?",

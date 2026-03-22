@@ -18,13 +18,11 @@ import { LEADERS } from "@/lib/constants";
 
 /* ─── Timeline Data ─── */
 const MILESTONES = [
-  { year: "2015", title: "Foundation", description: "Manah Group established with a vision to deliver world-class infrastructure solutions." },
-  { year: "2017", title: "First Major EPC Contract", description: "Secured landmark power transmission project, marking entry into large-scale EPC." },
-  { year: "2019", title: "Aerospace Division Launch", description: "Established Manah Aerospace with DGCA-approved MRO facility." },
-  { year: "2020", title: "Green Energy Initiative", description: "Entered green hydrogen and renewable energy sector with PEM electrolyzer technology." },
-  { year: "2022", title: "Tech & Manufacturing", description: "Launched Electronics Manufacturing Services division with 8 SMT production lines." },
-  { year: "2023", title: "$300M+ Portfolio", description: "Crossed $300M in cumulative project value with 500%+ YoY growth." },
-  { year: "2024", title: "Global Expansion", description: "Expanded operations to Middle East and Southeast Asia with strategic partnerships." },
+  { year: "2018", title: "Incorporated", description: "Manah Group incorporated with a vision to deliver world-class infrastructure solutions." },
+  { year: "2020", title: "First Landmark EPC", description: "Secured landmark power transmission project, marking entry into large-scale EPC." },
+  { year: "2021", title: "Aerospace Division Launch", description: "Established Manah Aerospace with DGCA-approved MRO facility at Begumpet, Hyderabad." },
+  { year: "2022", title: "Green Energy Initiative", description: "Entered green hydrogen sector with ARB technology and MoU with Govt of Madhya Pradesh." },
+  { year: "2023", title: "Tech & Manufacturing", description: "Launched Electronics Manufacturing Services division at Cherlapally, Hyderabad." },
   { year: "2025", title: "Industry Recognition", description: "Awarded 'Fastest Growing EPC Company' and achieved ISO 9001, 14001, 45001 certifications." },
 ];
 
@@ -113,7 +111,7 @@ export default function AboutPage() {
                   From high-voltage power transmission corridors stretching across regions to green hydrogen production facilities powering the clean energy revolution, our work shapes the physical and technological backbone of modern infrastructure.
                 </p>
                 <p>
-                  With a project portfolio exceeding $300M and 500%+ year-over-year growth, we combine the agility of a new-age enterprise with the engineering rigour of established industry leaders.
+                  With a $3.6B+ project pipeline and 500%+ year-over-year growth, we combine the agility of a new-age enterprise with the engineering rigour of established industry leaders.
                 </p>
               </div>
             </motion.div>
@@ -456,7 +454,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { value: 500, suffix: "%+", label: "YoY Growth" },
-              { value: 300, prefix: "$", suffix: "M+", label: "Project Portfolio" },
+              { value: 3.6, prefix: "$", suffix: "B+", label: "Project Pipeline" },
               { value: 15, suffix: "+", label: "Regions Covered" },
               { value: 1000, suffix: "+", label: "Team Members" },
             ].map((stat, i) => (

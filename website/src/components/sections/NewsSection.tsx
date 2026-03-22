@@ -27,7 +27,7 @@ const NEWS_ITEMS = [
     category: "Company News",
     date: "Feb 12, 2026",
     title:
-      "Manah Aerospace Achieves EASA Part-145 Certification for Wide-Body Aircraft",
+      "Manah Aerospace Achieves San Marino CAR 145 Certification for International Operations",
     excerpt:
       "A significant milestone positioning Manah as a premier MRO destination for international carriers.",
     href: "/media/news-2",

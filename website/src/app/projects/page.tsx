@@ -138,11 +138,33 @@ const PROJECTS = [
       "Establishment of avionics and hydraulics component repair and overhaul shop with test bench facilities.",
     featured: false,
   },
+  {
+    id: 10,
+    title: "Narangi Military Station — 4x G+4 Residential Buildings",
+    category: "Infrastructure",
+    location: "Guwahati, Assam",
+    year: "2025",
+    value: "$6.3M",
+    description:
+      "Construction of four G+4 residential buildings at Narangi Military Station under GE Guwahati (MES) for defence personnel housing.",
+    featured: false,
+  },
+  {
+    id: 11,
+    title: "HESCOM Smart Meter Deployment — 48,893 DTC Meters",
+    category: "Manufacturing",
+    location: "Karnataka, India",
+    year: "2025",
+    value: "$20.5M",
+    description:
+      "Deployment of 48,893 DTC smart meters across 6 districts in Karnataka with 5-year operations and maintenance contract under HESCOM.",
+    featured: false,
+  },
 ];
 
 const HERO_STATS = [
   { value: 50, suffix: "+", label: "Projects Delivered" },
-  { value: 300, prefix: "$", suffix: "M+", label: "Portfolio Value" },
+  { value: 3.6, prefix: "$", suffix: "B+", label: "Project Pipeline" },
   { value: 6, suffix: "", label: "Sectors" },
   { value: 10, suffix: "+", label: "States Covered" },
 ];

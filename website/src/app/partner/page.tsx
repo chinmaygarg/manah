@@ -82,7 +82,7 @@ const VALUE_PROPS = [
     icon: Shield,
     title: "Proven Execution",
     description:
-      "Over $300M in delivered project value with a 99.2% safety record and on-time delivery track record.",
+      "Over $3.6B in project pipeline with a 99.2% safety record and on-time delivery track record.",
   },
   {
     icon: Globe,
@@ -100,10 +100,10 @@ const VALUE_PROPS = [
 
 /* ─── Stats ─── */
 const STATS = [
-  { value: "$300M+", label: "Portfolio Value" },
+  { value: "$3.6B+", label: "Project Pipeline" },
   { value: "50+", label: "Projects Delivered" },
   { value: "15+", label: "Regions" },
-  { value: "12+", label: "Strategic Partners" },
+  { value: "20+", label: "Strategic Partners" },
 ] as const;
 
 /* ─── Engagement Process ─── */

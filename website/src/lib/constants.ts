@@ -20,8 +20,8 @@ export const SITE_CONFIG = {
 
 export const STATS = [
   { value: 500, suffix: "%+", label: "YoY Growth" },
-  { value: 300, prefix: "$", suffix: "M+", label: "Project Value" },
-  { value: 12, suffix: "+", label: "Strategic Partners" },
+  { value: 3.6, prefix: "$", suffix: "B+", label: "Project Pipeline" },
+  { value: 20, suffix: "+", label: "Strategic Partners" },
 ] as const;
 
 export interface NavChild {
@@ -59,7 +59,7 @@ export const NAVIGATION: NavItem[] = [
     label: "About Us",
     href: "/about",
     megaMenu: {
-      heading: "Building the Future Since 1998",
+      heading: "Building the Future Since 2018",
       description: "Discover who we are and what drives us.",
       ctaText: "Learn More",
       ctaHref: "/about",
@@ -185,9 +185,9 @@ export const DIVISIONS = [
     color: "#0D9488",
     image: "/images/divisions/manah_aerospace_hero.png",
     stats: [
-      { label: "Aircraft Serviced", value: "200+" },
+      { label: "Aircraft Serviced", value: "10" },
       { label: "MRO Capabilities", value: "Full Spectrum" },
-      { label: "Certifications", value: "DGCA/EASA" },
+      { label: "Certifications", value: "DGCA/San Marino" },
     ],
   },
   {
@@ -199,9 +199,9 @@ export const DIVISIONS = [
     color: "#16A34A",
     image: "/images/divisions/green_energy_hero.png",
     stats: [
-      { label: "Green H₂ Capacity", value: "500 TPD" },
-      { label: "Electrolyzer Tech", value: "PEM/AEL" },
-      { label: "Carbon Offset", value: "100K+ Tons" },
+      { label: "Green H₂ Target", value: "18,000 MTPA" },
+      { label: "Technology", value: "ARB" },
+      { label: "Investment Pipeline", value: "$600M+" },
     ],
   },
   {
@@ -236,9 +236,9 @@ export const DIVISIONS = [
 
 export const LEADERS = [
   {
-    name: "Mr. Prem Kumar",
-    title: "MD, Manah Holding Pvt Ltd",
-    bio: "An Information Technology graduate with extensive global experience, providing strategic leadership for Manah Holdings and representing the group across international networks and forums.",
+    name: "Mr. Prem Kumar Pandey",
+    title: "Managing Director, Manah Holdings Pvt Ltd",
+    bio: "An Information Technology graduate with extensive global experience, providing strategic leadership for Manah Holdings. Led large-scale power transmission projects, built the Electric Buses SBU to profitability, and mentors business directors across divisions.",
     image: "/images/leaders/prem_kumar.jpg",
   },
   {
@@ -249,8 +249,8 @@ export const LEADERS = [
   },
   {
     name: "Col. L S N Murty (Retd.)",
-    title: "Director, Manah Aerospace & Engineering Pvt Ltd",
-    bio: "With over 39 years of combined military and civil aviation experience, Col. Murty brings disciplined leadership, deep technical expertise, and strategic insight to drive growth.",
+    title: "CEO, Manah Aerospace & Engineering Pvt Ltd",
+    bio: "With over 39 years of combined military and civil aviation experience, Col. Murty brings disciplined leadership, deep technical expertise, and strategic insight to drive growth. Ensures safe, efficient, and sustainable operations while aligning teams for consistent results.",
     image: "/images/leaders/lsn_murty.jpg",
   },
   {

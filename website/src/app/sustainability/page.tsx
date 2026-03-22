@@ -67,7 +67,7 @@ const SUSTAINABILITY_STATS = [
 const INITIATIVES = [
   {
     title: "Green Hydrogen Mission",
-    description: "Building 500 TPD green hydrogen production capacity to support national green hydrogen initiatives and decarbonize heavy industry worldwide.",
+    description: "Building 18,000 MTPA green hydrogen production capacity at Bina, MP using ARB technology to support India's National Green Hydrogen Mission.",
     icon: Droplets,
   },
   {

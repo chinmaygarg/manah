@@ -36,9 +36,9 @@ const OFFICES = [
   },
   {
     city: "Hyderabad",
-    type: "Aerospace Division",
-    address: "Manah Aerospace, Shamshabad, Ranga Reddy, Telangana 501218",
-    phone: "+91 96769 02243",
+    type: "Corporate Office & Aerospace Division",
+    address: "5th Floor, Trendz Platina, 91/12, Besides Rainbow Hospital Lane, Madhapur, Kondapur, Hyderabad 500081",
+    phone: "+91 738 674 5553",
     email: "aerospace@manah.com",
   },
   {
@@ -331,11 +331,19 @@ export default function ContactPage() {
               </div>
 
               <div className="bg-manah-gray-50 rounded-2xl p-7">
-                <h3 className="font-display text-heading-md font-bold text-manah-navy mb-4">For Specific Queries</h3>
+                <h3 className="font-display text-heading-md font-bold text-manah-navy mb-4">Division Contacts</h3>
                 <div className="space-y-3 text-body-sm">
                   <div>
-                    <p className="font-medium text-manah-navy">Business Development</p>
-                    <a href="mailto:bd@manah.com" className="text-manah-gold hover:underline">bd@manah.com</a>
+                    <p className="font-medium text-manah-navy">Aerospace — Col. LSN Murthy</p>
+                    <a href="tel:+917386745553" className="text-manah-gold hover:underline">+91 738 674 5553</a>
+                    <span className="mx-1.5 text-manah-gray-300">|</span>
+                    <a href="mailto:lsnm@manah.com" className="text-manah-gold hover:underline">lsnm@manah.com</a>
+                  </div>
+                  <div>
+                    <p className="font-medium text-manah-navy">Dynamics — Cdr. Pravin Dixit</p>
+                    <a href="tel:+919676902243" className="text-manah-gold hover:underline">+91 96769 02243</a>
+                    <span className="mx-1.5 text-manah-gray-300">|</span>
+                    <a href="mailto:psd@manah.com" className="text-manah-gold hover:underline">psd@manah.com</a>
                   </div>
                   <div>
                     <p className="font-medium text-manah-navy">Careers & HR</p>

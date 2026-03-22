@@ -96,6 +96,19 @@ IMAGE_PROMPTS = {
             "aspect_ratio": "16:9",
             "purpose": "Homepage hero background - aerospace slide"
         },
+        {
+            "id": "hero_media_centre",
+            "filename": "hero/hero_media_centre.png",
+            "prompt": (
+                BRAND_STYLE +
+                "Modern media centre and press room interior with large screens displaying "
+                "infrastructure project footage. Professional broadcast-quality lighting. "
+                "Sleek podium with microphones, press seating visible. Deep navy and gold "
+                "accent tones. Corporate communications hub. Editorial quality photography."
+            ),
+            "aspect_ratio": "16:9",
+            "purpose": "Media Centre page hero background"
+        },
     ],
 
     # ═══ BUSINESS DIVISION IMAGES ═══
@@ -208,6 +221,32 @@ IMAGE_PROMPTS = {
             "aspect_ratio": "4:3",
             "purpose": "Technology & Manufacturing - detail shot"
         },
+        {
+            "id": "div_investments_01",
+            "filename": "divisions/manah_investments_hero.png",
+            "prompt": (
+                BRAND_STYLE +
+                "Sophisticated financial district skyline at twilight with modern glass towers "
+                "reflecting golden light. Premium corporate investment environment. "
+                "Deep navy sky transitioning to warm gold at horizon. Clean architectural lines. "
+                "Conveying financial strength, strategic vision, and institutional credibility."
+            ),
+            "aspect_ratio": "16:9",
+            "purpose": "Manah Investments division hero"
+        },
+        {
+            "id": "div_investments_02",
+            "filename": "divisions/manah_investments_detail.png",
+            "prompt": (
+                BRAND_STYLE +
+                "Close-up of modern portfolio analysis dashboard on a sleek monitor in an executive office. "
+                "Charts showing growth trajectories, asset allocation pie charts. "
+                "Warm ambient lighting, premium desk accessories. Shallow depth of field. "
+                "Conveying data-driven investment strategy and financial acumen."
+            ),
+            "aspect_ratio": "4:3",
+            "purpose": "Manah Investments - detail/capability shot"
+        },
     ],
 
     # ═══ SECTOR IMAGES ═══
@@ -303,6 +342,19 @@ IMAGE_PROMPTS = {
             ),
             "aspect_ratio": "16:9",
             "purpose": "Manufacturing sector page hero"
+        },
+        {
+            "id": "sector_transportation",
+            "filename": "sectors/transportation.png",
+            "prompt": (
+                BRAND_STYLE +
+                "Modern metro rail system emerging from an underground tunnel into daylight, "
+                "with a futuristic elevated highway interchange visible in the background. "
+                "Indian urban transportation infrastructure. Clean lines, modern design. "
+                "Golden hour light on concrete and steel structures. Conveying connectivity and progress."
+            ),
+            "aspect_ratio": "16:9",
+            "purpose": "Transportation sector page hero"
         },
     ],
 
@@ -474,6 +526,317 @@ IMAGE_PROMPTS = {
             ),
             "aspect_ratio": "16:9",
             "purpose": "Partners page hero"
+        },
+    ],
+
+    # ═══ NEWS IMAGES ═══
+    "news": [
+        {
+            "id": "news_power_transmission",
+            "filename": "news/power-transmission.jpg",
+            "prompt": (
+                BRAND_STYLE +
+                "Dramatic wide shot of high-voltage power transmission towers under construction "
+                "in the Indian countryside. Workers installing conductors at height. "
+                "Golden hour backlighting creating silhouettes. Scale of national grid expansion. "
+                "Editorial news photography style."
+            ),
+            "aspect_ratio": "16:9",
+            "purpose": "News article thumbnail - power transmission contract"
+        },
+        {
+            "id": "news_green_hydrogen",
+            "filename": "news/green-hydrogen.jpg",
+            "prompt": (
+                BRAND_STYLE +
+                "Green hydrogen production facility with electrolyzer stacks and storage tanks. "
+                "Engineers in hard hats inspecting equipment. Clean, modern industrial environment. "
+                "Teal and green accent lighting. Future of clean energy. "
+                "Editorial news photography style."
+            ),
+            "aspect_ratio": "16:9",
+            "purpose": "News article thumbnail - green hydrogen initiative"
+        },
+        {
+            "id": "news_aerospace_mro",
+            "filename": "news/aerospace-mro.jpg",
+            "prompt": (
+                BRAND_STYLE +
+                "Aircraft maintenance hangar with commercial jet undergoing scheduled maintenance. "
+                "Technicians on scaffolding performing inspections. Professional MRO facility. "
+                "Cool blue industrial lighting with warm highlights on aircraft fuselage. "
+                "Editorial news photography style."
+            ),
+            "aspect_ratio": "16:9",
+            "purpose": "News article thumbnail - aerospace MRO partnership"
+        },
+    ],
+
+    # ═══ BLOG IMAGES ═══
+    "blog": [
+        {
+            "id": "blog_green_hydrogen_future",
+            "filename": "blog/green_hydrogen_future.png",
+            "prompt": (
+                BRAND_STYLE +
+                "Futuristic visualization of green hydrogen ecosystem. Electrolyzers powered by "
+                "wind and solar, hydrogen pipelines, fuel cell vehicles. Artistic blend of "
+                "real infrastructure and conceptual design. Green and teal color palette with "
+                "gold accents. Optimistic, forward-looking editorial illustration."
+            ),
+            "aspect_ratio": "16:9",
+            "purpose": "Blog article hero - green hydrogen future"
+        },
+        {
+            "id": "blog_digital_twins",
+            "filename": "blog/digital_twins_infrastructure.png",
+            "prompt": (
+                BRAND_STYLE +
+                "Digital twin visualization of infrastructure project. Split view showing "
+                "physical construction site on one side and holographic 3D BIM model on the other. "
+                "Data streams connecting real and virtual worlds. Blue digital overlay effects. "
+                "Technology meets construction. Editorial quality illustration."
+            ),
+            "aspect_ratio": "16:9",
+            "purpose": "Blog article hero - digital twins in infrastructure"
+        },
+        {
+            "id": "blog_resilient_power_grids",
+            "filename": "blog/resilient_power_grids.png",
+            "prompt": (
+                BRAND_STYLE +
+                "Modern smart grid control room with large monitoring screens showing power "
+                "distribution network. Operators analyzing real-time data. Outside view through "
+                "windows showing transmission towers. Blend of digital and physical infrastructure. "
+                "Deep navy with amber and blue screen glow. Editorial quality."
+            ),
+            "aspect_ratio": "16:9",
+            "purpose": "Blog article hero - resilient power grids"
+        },
+    ],
+
+    # ═══ GALLERY IMAGES ═══
+    "gallery": [
+        {
+            "id": "gallery_transmission_tower",
+            "filename": "gallery/transmission_tower_construction.png",
+            "prompt": (
+                AERIAL_STYLE +
+                "High-voltage transmission tower being assembled by construction crew. "
+                "Workers at height securing steel lattice sections. Dramatic perspective looking up. "
+                "Indian landscape stretching to horizon. Golden hour lighting."
+            ),
+            "aspect_ratio": "4:3",
+            "purpose": "Gallery - transmission tower construction"
+        },
+        {
+            "id": "gallery_solar_farm",
+            "filename": "gallery/solar_farm_aerial.png",
+            "prompt": (
+                AERIAL_STYLE +
+                "Vast solar farm from high aerial perspective. Geometric patterns of solar panels "
+                "stretching across Indian semi-arid terrain. Maintenance roads creating grid lines. "
+                "Bright, clean, industrial scale renewable energy."
+            ),
+            "aspect_ratio": "4:3",
+            "purpose": "Gallery - solar farm aerial view"
+        },
+        {
+            "id": "gallery_wind_farm",
+            "filename": "gallery/wind_farm_dawn.png",
+            "prompt": (
+                BRAND_STYLE +
+                "Row of modern wind turbines on a ridge at dawn. Mist in the valley below. "
+                "First golden rays of sunlight hitting the turbine blades. Majestic, serene, "
+                "powerful. Clean energy at scale in Indian landscape."
+            ),
+            "aspect_ratio": "4:3",
+            "purpose": "Gallery - wind farm at dawn"
+        },
+        {
+            "id": "gallery_highway_construction",
+            "filename": "gallery/highway_construction_aerial.png",
+            "prompt": (
+                AERIAL_STYLE +
+                "Multi-lane highway under construction from aerial view. Concrete pillars for "
+                "elevated section, earthmoving equipment, construction vehicles. Indian terrain. "
+                "Scale of national highway expansion project."
+            ),
+            "aspect_ratio": "4:3",
+            "purpose": "Gallery - highway construction aerial"
+        },
+        {
+            "id": "gallery_metro_tunnel",
+            "filename": "gallery/metro_tunnel_construction.png",
+            "prompt": (
+                BRAND_STYLE +
+                "Inside a metro tunnel under construction. Tunnel boring machine visible in "
+                "background. Workers installing concrete lining segments. Industrial lighting "
+                "creating dramatic perspective down the tunnel. Engineering feat underground."
+            ),
+            "aspect_ratio": "4:3",
+            "purpose": "Gallery - metro tunnel construction"
+        },
+        {
+            "id": "gallery_hydrogen_facility",
+            "filename": "gallery/hydrogen_electrolyzer_facility.png",
+            "prompt": (
+                BRAND_STYLE +
+                "Modern green hydrogen electrolyzer facility interior. Rows of electrolyzer stacks "
+                "with gleaming pipelines. Clean, high-tech industrial environment. "
+                "Green and teal accent lighting. Futuristic clean energy production."
+            ),
+            "aspect_ratio": "4:3",
+            "purpose": "Gallery - hydrogen electrolyzer facility"
+        },
+        {
+            "id": "gallery_aircraft_mro",
+            "filename": "gallery/aircraft_mro_hangar.png",
+            "prompt": (
+                BRAND_STYLE +
+                "Wide-body aircraft in MRO hangar with engine cowling open. Maintenance platforms "
+                "surrounding the aircraft. Technicians performing inspection. Vast, clean industrial "
+                "space. Cool blue lighting with warm spots."
+            ),
+            "aspect_ratio": "4:3",
+            "purpose": "Gallery - aircraft MRO hangar"
+        },
+        {
+            "id": "gallery_electronics_mfg",
+            "filename": "gallery/electronics_manufacturing_line.png",
+            "prompt": (
+                BRAND_STYLE +
+                "Automated electronics manufacturing line with SMT pick-and-place machines. "
+                "Circuit boards on conveyor belts. Clean room environment. Blue-tinted lighting. "
+                "Precision robotics and quality control stations."
+            ),
+            "aspect_ratio": "4:3",
+            "purpose": "Gallery - electronics manufacturing line"
+        },
+        {
+            "id": "gallery_data_center",
+            "filename": "gallery/data_center_corridor.png",
+            "prompt": (
+                BRAND_STYLE +
+                "Modern data center server corridor with rows of rack-mounted servers. "
+                "Blue LED indicator lights, cool air circulation visible. Clean, symmetric "
+                "perspective. Technology infrastructure at scale."
+            ),
+            "aspect_ratio": "4:3",
+            "purpose": "Gallery - data center corridor"
+        },
+        {
+            "id": "gallery_engineers_blueprints",
+            "filename": "gallery/engineers_reviewing_blueprints.png",
+            "prompt": (
+                BRAND_STYLE +
+                "Team of Indian engineers reviewing architectural blueprints spread on a table "
+                "at a construction site. Hard hats, safety vests. Partially built structure "
+                "in background. Collaborative discussion. Golden hour site lighting."
+            ),
+            "aspect_ratio": "4:3",
+            "purpose": "Gallery - engineers reviewing blueprints"
+        },
+        {
+            "id": "gallery_groundbreaking",
+            "filename": "gallery/groundbreaking_ceremony.png",
+            "prompt": (
+                BRAND_STYLE +
+                "Corporate groundbreaking ceremony for infrastructure project. Dignitaries in "
+                "hard hats with golden shovels. Ceremonial banner and construction site backdrop. "
+                "Professional event photography. Warm, celebratory mood."
+            ),
+            "aspect_ratio": "4:3",
+            "purpose": "Gallery - groundbreaking ceremony"
+        },
+        {
+            "id": "gallery_award_ceremony",
+            "filename": "gallery/award_ceremony.png",
+            "prompt": (
+                BRAND_STYLE +
+                "Corporate award ceremony on stage. Executive receiving trophy or plaque. "
+                "Professional event lighting with deep navy backdrop and gold accents. "
+                "Audience visible. Achievement and recognition moment."
+            ),
+            "aspect_ratio": "4:3",
+            "purpose": "Gallery - award ceremony"
+        },
+        {
+            "id": "gallery_safety_briefing",
+            "filename": "gallery/safety_briefing_site.png",
+            "prompt": (
+                BRAND_STYLE +
+                "Safety briefing session at construction site. Group of workers in PPE listening "
+                "to safety officer with clipboard. Safety signage visible. Professional, organized "
+                "site management. Morning light."
+            ),
+            "aspect_ratio": "4:3",
+            "purpose": "Gallery - safety briefing at site"
+        },
+        {
+            "id": "gallery_boardroom",
+            "filename": "gallery/corporate_boardroom_meeting.png",
+            "prompt": (
+                BRAND_STYLE +
+                "Modern corporate boardroom with executives in business meeting. Large conference "
+                "table, presentation screen showing project visuals. Floor-to-ceiling windows "
+                "with city view. Professional, high-level strategic discussion."
+            ),
+            "aspect_ratio": "4:3",
+            "purpose": "Gallery - corporate boardroom meeting"
+        },
+    ],
+
+    # ═══ LEADERSHIP PORTRAITS ═══
+    "leaders": [
+        {
+            "id": "leader_lsn_murty",
+            "filename": "leaders/lsn_murty.jpg",
+            "prompt": (
+                PORTRAIT_STYLE +
+                "Distinguished senior Indian male executive, 55-65 years old. Silver-grey hair, "
+                "confident warm smile. Dark navy suit with subtle gold tie. "
+                "Corporate headshot, professional yet approachable. "
+                "Represents Chairman/Managing Director of major engineering company."
+            ),
+            "aspect_ratio": "3:4",
+            "purpose": "Leadership portrait - Chairman & Managing Director"
+        },
+        {
+            "id": "leader_prem_kumar",
+            "filename": "leaders/prem_kumar.jpg",
+            "prompt": (
+                PORTRAIT_STYLE +
+                "Senior Indian male executive, 50-60 years old. Professional demeanor, "
+                "slight smile. Dark suit, light blue shirt. Corporate headshot. "
+                "Represents Director of major infrastructure group."
+            ),
+            "aspect_ratio": "3:4",
+            "purpose": "Leadership portrait - Director"
+        },
+        {
+            "id": "leader_pravin_dixit",
+            "filename": "leaders/pravin_dixit.jpg",
+            "prompt": (
+                PORTRAIT_STYLE +
+                "Senior Indian male executive, 50-60 years old. Glasses, thoughtful expression. "
+                "Dark navy suit, professional posture. Corporate headshot. "
+                "Represents CFO of major engineering conglomerate."
+            ),
+            "aspect_ratio": "3:4",
+            "purpose": "Leadership portrait - CFO"
+        },
+        {
+            "id": "leader_mohendra_pati",
+            "filename": "leaders/mohendra_pati.jpg",
+            "prompt": (
+                PORTRAIT_STYLE +
+                "Senior Indian male executive, 50-60 years old. Confident expression, "
+                "clean-shaven. Dark suit with subtle pattern. Corporate headshot. "
+                "Represents COO of major EPC company."
+            ),
+            "aspect_ratio": "3:4",
+            "purpose": "Leadership portrait - COO"
         },
     ],
 
@@ -653,8 +1016,7 @@ def get_all_image_prompts():
     all_prompts = []
     for category, prompts in IMAGE_PROMPTS.items():
         for p in prompts:
-            p["category"] = category
-            all_prompts.append(p)
+            all_prompts.append({**p, "category": category})
     return all_prompts
 
 
@@ -663,8 +1025,7 @@ def get_all_video_prompts():
     all_prompts = []
     for category, prompts in VIDEO_PROMPTS.items():
         for p in prompts:
-            p["category"] = category
-            all_prompts.append(p)
+            all_prompts.append({**p, "category": category})
     return all_prompts
 
 

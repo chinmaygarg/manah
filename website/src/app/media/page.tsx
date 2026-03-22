@@ -59,10 +59,10 @@ const PRESS_RELEASES = [
   },
   {
     id: 2,
-    title: "Manah Aerospace Obtains EASA Part 145 Certification",
+    title: "Manah Aerospace Obtains San Marino CAR 145 Certification",
     date: "December 8, 2024",
     excerpt:
-      "Manah Aerospace achieves European Aviation Safety Agency certification, enabling servicing of international carriers at our facilities.",
+      "Manah Aerospace achieves San Marino Civil Aviation Registry certification, enabling servicing of international carriers at our facilities.",
   },
   {
     id: 3,
