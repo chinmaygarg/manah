@@ -104,9 +104,13 @@
   color: var(--gold-light);
 }
 
-/* Dim non-hovered labels slightly to draw focus */
-#slide-cover .cover-divisions:hover .cover-division {
-  color: rgba(255, 255, 255, 0.25);
+/* Dim non-hovered items to draw focus */
+#slide-cover .cover-divisions:hover .cover-division-item {
+  opacity: 0.25;
+}
+
+#slide-cover .cover-divisions:hover .cover-division-item:hover {
+  opacity: 1;
 }
 
 #slide-cover .cover-divisions:hover .cover-division-item:hover .cover-division {
