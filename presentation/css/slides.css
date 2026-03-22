@@ -46,7 +46,7 @@
   width: 240px;
   height: auto;
   margin-bottom: 48px;
-  animation: logoPulse 4s ease-in-out infinite;
+  animation: logoPulse 8s ease-in-out infinite;
 }
 
 #slide-cover .cover-headline {
@@ -104,16 +104,14 @@
   color: var(--gold-light);
 }
 
-/* Dim non-hovered items to draw focus */
-#slide-cover .cover-divisions:hover .cover-division-item {
+/* Dim only the division NAME text (not the letter) on non-hovered items */
+#slide-cover .cover-divisions:hover .cover-division-item .cover-division {
   opacity: 0.25;
 }
 
-#slide-cover .cover-divisions:hover .cover-division-item:hover {
-  opacity: 1;
-}
-
+/* Hovered item's name stays bright and glows gold */
 #slide-cover .cover-divisions:hover .cover-division-item:hover .cover-division {
+  opacity: 1;
   color: var(--gold-light);
 }
 
