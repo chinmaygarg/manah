@@ -209,10 +209,16 @@
   flex-shrink: 0;
 }
 
-/* ─── Cover Slide ─── */
-.cover-content .cover-logo {
-  /* Make dark logo text readable on navy — boost brightness aggressively */
-  filter: brightness(0) invert(1) brightness(1.5) sepia(0.3) saturate(2) hue-rotate(10deg);
+/* ─── Cover Slide — Logo Pulse ─── */
+@keyframes logoPulse {
+  0%, 100% {
+    filter: brightness(0) invert(1) brightness(1.5) sepia(0.3) saturate(2) hue-rotate(10deg);
+    opacity: 0.9;
+  }
+  50% {
+    filter: none;
+    opacity: 1;
+  }
 }
 
 /* ─── M-A-N-A-H Letters — initial state (GSAP handles animation) ─── */

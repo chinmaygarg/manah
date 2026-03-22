@@ -46,7 +46,7 @@
   width: 240px;
   height: auto;
   margin-bottom: 48px;
-  opacity: 0.9;
+  animation: logoPulse 4s ease-in-out infinite;
 }
 
 #slide-cover .cover-headline {
