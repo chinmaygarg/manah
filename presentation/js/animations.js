@@ -159,7 +159,7 @@ var SLIDE_ANIMATIONS = {
   'slide-footprints': function (section) {
     var tl = gsap.timeline();
     safeFrom(section.querySelector('h2'), { y: 30, duration: 0.5 }, 0, tl);
-    safeFrom(section.querySelectorAll('.photo-mosaic img'), { scale: 0.9, duration: 0.3, stagger: 0.06 }, '-=0.2', tl);
+    safeFrom(section.querySelectorAll('.photo-mosaic .mosaic-item'), { scale: 0.9, duration: 0.3, stagger: 0.06 }, '-=0.2', tl);
     return tl;
   },
 
@@ -307,3 +307,207 @@ function runSlideAnimation(slideId) {
     animFn(section);
   }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   Background Decorations — Golden SVG shapes & text watermarks
+   Injected into slides with plain solid backgrounds.
+   All SVG is internally generated (no user input) and parsed
+   via DOMParser for safe DOM insertion.
+   ═══════════════════════════════════════════════════════════ */
+
+(function () {
+  var DECORATED_SLIDES = [
+    'slide-challenge',
+    'slide-glance',
+    'slide-structure',
+    'slide-sectors',
+    'slide-track-record',
+    'slide-footprints',
+    'slide-tech-mfg',
+    'slide-products',
+    'slide-pipeline',
+    'slide-mro-services',
+    'slide-certifications',
+    'slide-mro-map',
+    'slide-green-progress',
+    'slide-financials',
+    'slide-investment-focus',
+    'slide-leadership',
+    'slide-locations',
+    'slide-thankyou'
+  ];
+
+  var GOLD = '#C8A96E';
+  var SVG_NS = 'http://www.w3.org/2000/svg';
+
+  /* ─── Safe SVG parser — converts markup string to DOM node ─── */
+  var parser = new DOMParser();
+  function parseSvg(markup) {
+    var doc = parser.parseFromString(markup, 'image/svg+xml');
+    return doc.documentElement;
+  }
+
+  /* ─── SVG shape generators (return SVG markup strings) ─── */
+
+  function hexagon(size) {
+    var s = size || 60;
+    var h = s * 0.866;
+    var points = [
+      (s * 0.5) + ',' + 0,
+      s + ',' + (h * 0.5),
+      s + ',' + (h * 1.5),
+      (s * 0.5) + ',' + (h * 2),
+      0 + ',' + (h * 1.5),
+      0 + ',' + (h * 0.5)
+    ].join(' ');
+    return '<svg xmlns="' + SVG_NS + '" width="' + s + '" height="' + Math.round(h * 2) + '" viewBox="0 0 ' + s + ' ' + Math.round(h * 2) + '">' +
+      '<polygon points="' + points + '" fill="none" stroke="' + GOLD + '" stroke-width="1.5"/></svg>';
+  }
+
+  function diamond(size) {
+    var s = size || 50;
+    var half = s / 2;
+    var points = half + ',0 ' + s + ',' + half + ' ' + half + ',' + s + ' 0,' + half;
+    return '<svg xmlns="' + SVG_NS + '" width="' + s + '" height="' + s + '" viewBox="0 0 ' + s + ' ' + s + '">' +
+      '<polygon points="' + points + '" fill="none" stroke="' + GOLD + '" stroke-width="1.2"/></svg>';
+  }
+
+  function circle(size) {
+    var s = size || 50;
+    var r = s / 2 - 1;
+    return '<svg xmlns="' + SVG_NS + '" width="' + s + '" height="' + s + '" viewBox="0 0 ' + s + ' ' + s + '">' +
+      '<circle cx="' + (s / 2) + '" cy="' + (s / 2) + '" r="' + r + '" fill="none" stroke="' + GOLD + '" stroke-width="1"/></svg>';
+  }
+
+  function crosshair(size) {
+    var s = size || 40;
+    var mid = s / 2;
+    return '<svg xmlns="' + SVG_NS + '" width="' + s + '" height="' + s + '" viewBox="0 0 ' + s + ' ' + s + '">' +
+      '<line x1="' + mid + '" y1="4" x2="' + mid + '" y2="' + (s - 4) + '" stroke="' + GOLD + '" stroke-width="1"/>' +
+      '<line x1="4" y1="' + mid + '" x2="' + (s - 4) + '" y2="' + mid + '" stroke="' + GOLD + '" stroke-width="1"/></svg>';
+  }
+
+  function angularBracket(size) {
+    var s = size || 60;
+    return '<svg xmlns="' + SVG_NS + '" width="' + s + '" height="' + s + '" viewBox="0 0 ' + s + ' ' + s + '">' +
+      '<polyline points="' + (s * 0.3) + ',4 4,' + (s / 2) + ' ' + (s * 0.3) + ',' + (s - 4) + '" fill="none" stroke="' + GOLD + '" stroke-width="1.2" stroke-linecap="round"/>' +
+      '<polyline points="' + (s * 0.7) + ',4 ' + (s - 4) + ',' + (s / 2) + ' ' + (s * 0.7) + ',' + (s - 4) + '" fill="none" stroke="' + GOLD + '" stroke-width="1.2" stroke-linecap="round"/></svg>';
+  }
+
+  function dotGrid(size) {
+    var s = size || 80;
+    var dots = '';
+    for (var row = 0; row < 4; row++) {
+      for (var col = 0; col < 4; col++) {
+        dots += '<circle cx="' + (10 + col * 20) + '" cy="' + (10 + row * 20) + '" r="2" fill="' + GOLD + '"/>';
+      }
+    }
+    return '<svg xmlns="' + SVG_NS + '" width="' + s + '" height="' + s + '" viewBox="0 0 ' + s + ' ' + s + '">' + dots + '</svg>';
+  }
+
+  function textWatermark(text) {
+    var t = text || 'MANAH';
+    return '<svg xmlns="' + SVG_NS + '" width="320" height="100" viewBox="0 0 320 100">' +
+      '<text x="160" y="70" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="800" font-size="72" fill="' + GOLD + '" letter-spacing="0.15em">' + t + '</text></svg>';
+  }
+
+  /* ─── Decoration config ─── */
+  var DRIFT_ANIMS = ['driftA', 'driftB', 'driftC', 'driftD'];
+
+  var SHAPE_POOL = [
+    function () { return hexagon(55); },
+    function () { return hexagon(40); },
+    function () { return diamond(45); },
+    function () { return diamond(35); },
+    function () { return circle(50); },
+    function () { return circle(35); },
+    function () { return crosshair(36); },
+    function () { return angularBracket(50); },
+    function () { return dotGrid(70); }
+  ];
+
+  function seededPick(arr, seed) {
+    return arr[seed % arr.length];
+  }
+
+  /* ─── Generate non-overlapping edge positions ─── */
+  function generatePlacements(count, seed) {
+    var positions = [];
+    var zones = [
+      { x: 3, y: 8 },
+      { x: 82, y: 5 },
+      { x: 88, y: 75 },
+      { x: 5, y: 78 },
+      { x: 75, y: 40 },
+      { x: 8, y: 45 },
+      { x: 45, y: 85 },
+      { x: 55, y: 3 }
+    ];
+    for (var i = 0; i < count; i++) {
+      var zone = zones[(seed * 3 + i * 2) % zones.length];
+      positions.push({
+        x: zone.x + ((seed + i) % 7) - 3,
+        y: zone.y + ((seed * 2 + i) % 5) - 2
+      });
+    }
+    return positions;
+  }
+
+  /* ─── Inject decorations into each qualifying slide ─── */
+  function injectDecorations() {
+    DECORATED_SLIDES.forEach(function (slideId, slideIndex) {
+      var section = document.getElementById(slideId);
+      if (!section) return;
+      if (section.querySelector('.slide-bg-decor')) return;
+
+      var container = document.createElement('div');
+      container.className = 'slide-bg-decor';
+
+      var shapeCount = 3 + (slideIndex % 3);
+      var placements = generatePlacements(shapeCount, slideIndex);
+
+      placements.forEach(function (pos, i) {
+        var shapeFn = seededPick(SHAPE_POOL, slideIndex * 7 + i * 3);
+        var svgNode = parseSvg(shapeFn());
+        var wrapper = document.createElement('div');
+        wrapper.style.cssText = 'position:absolute;' +
+          'left:' + pos.x + '%;top:' + pos.y + '%;' +
+          'opacity:0.04;' +
+          'animation:' + seededPick(DRIFT_ANIMS, slideIndex + i) + ' ' + (18 + (i * 4)) + 's ease-in-out infinite;' +
+          'animation-delay:' + (i * 2.5) + 's;';
+        wrapper.appendChild(document.adoptNode(svgNode));
+        container.appendChild(wrapper);
+      });
+
+      /* Text watermark on every other slide */
+      if (slideIndex % 2 === 0) {
+        var textSvg = parseSvg(textWatermark('MANAH'));
+        var textEl = document.createElement('div');
+        textEl.style.cssText = 'position:absolute;left:50%;top:50%;' +
+          'transform:translate(-50%,-50%) rotate(-12deg);' +
+          'opacity:0.025;' +
+          'animation:driftText 30s ease-in-out infinite;' +
+          'animation-delay:3s;';
+        textEl.appendChild(document.adoptNode(textSvg));
+        container.appendChild(textEl);
+      }
+
+      /* Ensure slide content stays above decorations */
+      var children = section.children;
+      for (var c = 0; c < children.length; c++) {
+        if (!children[c].classList.contains('slide-bg-decor') && children[c].tagName !== 'ASIDE') {
+          children[c].style.position = children[c].style.position || 'relative';
+          children[c].style.zIndex = children[c].style.zIndex || '1';
+        }
+      }
+
+      section.insertBefore(container, section.firstChild);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', injectDecorations);
+  } else {
+    injectDecorations();
+  }
+})();

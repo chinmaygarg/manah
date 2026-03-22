@@ -218,7 +218,12 @@
 
 /* ─── Slide: Project Footprints ─── */
 #slide-footprints {
-  padding: 40px;
+  padding: 20px 30px;
+}
+
+#slide-footprints .photo-mosaic {
+  grid-template-rows: 250px 220px;
+  gap: 10px;
 }
 
 /* ─── Slide: Pipeline & Charts ─── */
@@ -233,53 +238,116 @@
 
 /* ─── Slide: Partnerships ─── */
 #slide-partnerships {
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
-#slide-partnerships::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(10, 22, 40, 0.92);
-}
-
-#slide-partnerships > * {
-  position: relative;
-  z-index: 2;
+  background-color: #0A1628;
 }
 
 /* ─── Slide: Expansions ─── */
-#slide-expansions .expansion-item {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  padding: 20px 24px !important;
-  flex-direction: row !important;
-  text-align: left !important;
+.expansions-header {
+  margin-bottom: 20px;
 }
 
-.expansion-icon {
-  width: 40px;
-  height: 40px;
-  background: rgba(200, 169, 110, 0.1);
-  border-radius: 8px;
+.expansions-header p {
+  margin: 0;
+  font-size: 0.85em;
+  opacity: 0.7;
+}
+
+.expansions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  width: 100%;
+}
+
+.expansion-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(200, 169, 110, 0.12);
+  border-radius: 14px;
+  padding: 20px 18px 16px;
+  text-align: left;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.expansion-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent, var(--gold));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.expansion-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(200, 169, 110, 0.3);
+  transform: translateY(-4px);
+}
+
+.expansion-card:hover::before {
+  opacity: 1;
+}
+
+.expansion-number {
+  font-size: 0.65em;
+  font-weight: 700;
+  color: rgba(200, 169, 110, 0.25);
+  font-family: 'Inter', monospace;
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  letter-spacing: 0.05em;
+}
+
+.expansion-icon-v2 {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, rgba(200, 169, 110, 0.12), rgba(200, 169, 110, 0.04));
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--gold);
-  flex-shrink: 0;
+  color: var(--accent, var(--gold));
+  margin-bottom: 14px;
+  transition: all 0.3s ease;
 }
 
-#slide-expansions .expansion-item h4 {
-  min-width: 100px;
-  flex-shrink: 0;
+.expansion-card:hover .expansion-icon-v2 {
+  background: linear-gradient(135deg, rgba(200, 169, 110, 0.2), rgba(200, 169, 110, 0.08));
+  transform: scale(1.08);
 }
 
-#slide-expansions .expansion-item p {
-  flex: 1;
-  text-align: left;
+.expansion-content h4 {
+  color: white;
+  font-size: 0.85em;
+  margin: 0 0 4px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.expansion-content p {
+  font-size: 0.7em;
+  margin: 0;
+  opacity: 0.55;
+  line-height: 1.3;
+}
+
+.expansion-tag {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.55em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent, var(--gold));
+  background: rgba(200, 169, 110, 0.08);
+  border: 1px solid rgba(200, 169, 110, 0.15);
 }
 
 /* ─── Slide: Leadership ─── */
@@ -289,21 +357,39 @@
 
 /* ─── Slide: ESG ─── */
 #slide-esg {
-  background-size: cover;
-  background-position: center;
-  position: relative;
+  background-color: #0A1628;
 }
 
-#slide-esg::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(10, 22, 40, 0.88);
+.esg-pillar {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(200, 169, 110, 0.12);
+  border-radius: 14px;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-#slide-esg > * {
-  position: relative;
-  z-index: 2;
+.esg-pillar:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(200, 169, 110, 0.3);
+  transform: translateY(-4px);
+}
+
+.esg-pillar h3 {
+  color: var(--gold);
+}
+
+.esg-pillar .icon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, rgba(200, 169, 110, 0.12), rgba(200, 169, 110, 0.04));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.esg-pillar ul li {
+  border-bottom: 1px solid rgba(200, 169, 110, 0.08);
 }
 
 /* ─── Slide: Locations ─── */
