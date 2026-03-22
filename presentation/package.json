@@ -1,0 +1,7 @@
+{
+  "name": "manah-presentation",
+  "private": true,
+  "scripts": {
+    "build": "node build.js"
+  }
+}
