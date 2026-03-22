@@ -1,0 +1,342 @@
+/* ═══════════════════════════════════════════════════════════
+   MANAH GROUP — Per-Slide Layouts & Backgrounds
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── Global Slide Background ───
+   Background set via data-background-color on each section.
+   Reveal.js manages backgrounds separately from slide content. */
+
+/* ─── Slide: Cover ─── */
+#slide-cover {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#slide-cover::before {
+  display: none; /* Reveal.js data-background handles the image; no inner overlay needed */
+}
+
+#slide-cover > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Cover layout — content pushed toward top */
+#slide-cover .cover-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 120px 80px 0;
+  box-sizing: border-box;
+}
+
+#slide-cover .cover-logo {
+  width: 240px;
+  height: auto;
+  margin-bottom: 48px;
+  opacity: 0.9;
+}
+
+#slide-cover .cover-headline {
+  font-family: var(--font-display);
+  font-size: 5.5em;
+  font-weight: 900;
+  line-height: 1.08;
+  color: white;
+  text-transform: lowercase;
+  letter-spacing: -0.03em;
+  margin-bottom: 36px;
+}
+
+#slide-cover .cover-subtitle {
+  font-size: 1.05em;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.55);
+  max-width: 1100px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Division grid — M A N A H above each division */
+#slide-cover .cover-divisions {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0;
+  padding: 0 60px 100px;
+  margin-top: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#slide-cover .cover-division-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  max-width: 240px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+/* On hover of ANY division, all letters glow gold (MANAH as a whole) */
+#slide-cover .cover-divisions:hover .cover-division-letter {
+  color: var(--gold) !important;
+  text-shadow: 0 0 12px rgba(200, 169, 110, 0.4) !important;
+}
+
+/* The hovered division's label highlights */
+#slide-cover .cover-division-item:hover .cover-division {
+  color: var(--gold-light);
+}
+
+/* Dim non-hovered labels slightly to draw focus */
+#slide-cover .cover-divisions:hover .cover-division {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+#slide-cover .cover-divisions:hover .cover-division-item:hover .cover-division {
+  color: var(--gold-light);
+}
+
+#slide-cover .cover-division-letter {
+  font-family: var(--font-display);
+  font-size: 3em;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.12);
+  line-height: 1;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+#slide-cover .cover-division {
+  font-family: var(--font-display);
+  font-size: 0.7em;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  transition: color 0.3s ease;
+}
+
+/* ─── Slide: Challenge (Split) ─── */
+#slide-challenge .split-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ─── Slide: At a Glance ─── */
+#slide-glance {
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 40%, var(--navy-light) 100%);
+}
+
+#slide-glance .stat-card {
+  text-align: center;
+  padding: 28px 16px;
+}
+
+/* ─── Slide: Group Structure ─── */
+#slide-structure {
+  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%);
+}
+
+/* ─── Division Intro Slides ─── */
+.division-slide {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.division-slide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(10, 22, 40, 0.88) 0%, rgba(10, 22, 40, 0.75) 100%);
+}
+
+.division-slide > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ─── Dynamics Color Accent ─── */
+.division-dynamics .badge {
+  background: rgba(30, 58, 95, 0.2);
+  color: #5B8CC5;
+  border-color: rgba(30, 58, 95, 0.4);
+}
+
+/* ─── Aerospace Color Accent ─── */
+.division-aerospace .badge {
+  background: rgba(13, 148, 136, 0.15);
+  color: var(--aerospace-teal);
+  border-color: rgba(13, 148, 136, 0.3);
+}
+
+/* ─── Green Energy Color Accent ─── */
+.division-green .badge {
+  background: rgba(22, 163, 74, 0.15);
+  color: var(--green-energy);
+  border-color: rgba(22, 163, 74, 0.3);
+}
+
+/* ─── Slide: Sectors Grid ─── */
+#slide-sectors .sector-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px;
+}
+
+#slide-sectors .sector-item h4 {
+  font-size: 0.85em;
+  margin: 0;
+  color: white;
+}
+
+#slide-sectors .sector-item p {
+  font-size: 0.7em;
+  margin: 0;
+  color: var(--gray-400);
+  line-height: 1.4;
+}
+
+/* ─── Slide: Project Footprints ─── */
+#slide-footprints {
+  padding: 40px;
+}
+
+/* ─── Slide: Pipeline & Charts ─── */
+#slide-pipeline {
+  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%);
+}
+
+/* ─── Slide: Financial Charts ─── */
+#slide-financials {
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+}
+
+/* ─── Slide: Partnerships ─── */
+#slide-partnerships {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+#slide-partnerships::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 22, 40, 0.92);
+}
+
+#slide-partnerships > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ─── Slide: Expansions ─── */
+#slide-expansions .expansion-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 20px 24px !important;
+  flex-direction: row !important;
+  text-align: left !important;
+}
+
+.expansion-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(200, 169, 110, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+#slide-expansions .expansion-item h4 {
+  min-width: 100px;
+  flex-shrink: 0;
+}
+
+#slide-expansions .expansion-item p {
+  flex: 1;
+  text-align: left;
+}
+
+/* ─── Slide: Leadership ─── */
+#slide-leadership {
+  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%);
+}
+
+/* ─── Slide: ESG ─── */
+#slide-esg {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+#slide-esg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 22, 40, 0.88);
+}
+
+#slide-esg > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ─── Slide: Locations ─── */
+
+/* ─── Slide: Thank You ─── */
+#slide-thankyou {
+  background: radial-gradient(ellipse at center, var(--navy-light) 0%, var(--navy) 50%, var(--navy-dark) 100%);
+}
+
+/* ─── Responsive Images in Slides ─── */
+.slide-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.slide-image-sm {
+  max-height: 200px;
+  object-fit: cover;
+}
+
+/* ─── Map Container ─── */
+.map-container {
+  width: 100%;
+  height: 420px;
+  position: relative;
+}
+
+/* ─── Horizontal Rule ─── */
+.slide-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200, 169, 110, 0.3), transparent);
+  margin: 20px 0;
+}

@@ -1,0 +1,329 @@
+/* ═══════════════════════════════════════════════════════════
+   MANAH GROUP — Keyframe Animations
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── Fade In Up ─── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+/* ─── Fade In Down ─── */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── Fade In Scale ─── */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ─── SVG Line Drawing ─── */
+@keyframes drawLine {
+  from {
+    stroke-dashoffset: var(--line-length, 200);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.draw-line {
+  stroke-dasharray: var(--line-length, 200);
+  stroke-dashoffset: var(--line-length, 200);
+  animation: drawLine 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ─── Pulse Glow (Map Expansion Pins) ─── */
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(200, 169, 110, 0.4);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px 8px rgba(200, 169, 110, 0.15);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+/* ─── Shimmer (Stat Numbers) ─── */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--gold-dark) 0%,
+    var(--gold-light) 25%,
+    var(--gold) 50%,
+    var(--gold-light) 75%,
+    var(--gold-dark) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ─── Slide In Left ─── */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ─── Slide In Right ─── */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ─── Counter Container ─── */
+.counter-value {
+  display: inline-block;
+  min-width: 80px;
+  text-align: center;
+}
+
+/* ─── Stagger Delays ─── */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+.stagger-7 { animation-delay: 0.7s; }
+.stagger-8 { animation-delay: 0.8s; }
+
+/* ─── Photo Mosaic ─── */
+.photo-mosaic {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 180px);
+  gap: 8px;
+}
+
+.photo-mosaic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.4s var(--ease-out);
+}
+
+.photo-mosaic img:hover {
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+.photo-mosaic .span-2 {
+  grid-column: span 2;
+}
+
+/* ─── Milestone Timeline ─── */
+.milestone-card {
+  position: relative;
+  padding-left: 24px;
+  border-left: 2px solid rgba(200, 169, 110, 0.3);
+}
+
+.milestone-card::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+/* ─── ESG Pillars ─── */
+.esg-pillar {
+  text-align: center;
+  padding: 32px 24px;
+}
+
+.esg-pillar .icon {
+  font-size: 2.5em;
+  margin-bottom: 16px;
+}
+
+/* ─── Location Card ─── */
+.location-card {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.location-card .pin {
+  color: var(--gold);
+  font-size: 1.3em;
+  flex-shrink: 0;
+}
+
+/* ─── Cover Slide ─── */
+.cover-content .cover-logo {
+  /* Make dark logo text readable on navy — boost brightness aggressively */
+  filter: brightness(0) invert(1) brightness(1.5) sepia(0.3) saturate(2) hue-rotate(10deg);
+}
+
+/* ─── M-A-N-A-H Letters — initial state (GSAP handles animation) ─── */
+.cover-division-item .cover-division {
+  opacity: 0;
+}
+
+/* ─── CTA Slide ─── */
+.cta-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.cta-content .cta-btn {
+  display: inline-block;
+  padding: 16px 48px;
+  background: var(--gold);
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1em;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-content .cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(200, 169, 110, 0.3);
+}
+
+/* ─── Product Cards ─── */
+.product-card {
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+/* ─── Certificate Showcase ─── */
+.cert-item {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 16px;
+}
+
+.cert-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(200, 169, 110, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-size: 1.3em;
+  flex-shrink: 0;
+}
+
+/* ─── Division Intro ─── */
+.division-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+  height: 100%;
+  width: 100%;
+}
+
+.division-intro h2 {
+  text-align: center;
+}
+
+.division-intro p {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* ─── Numbered List ─── */
+.numbered-list {
+  list-style: none;
+  padding: 0;
+  counter-reset: item;
+}
+
+.numbered-list li {
+  counter-increment: item;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.numbered-list li::before {
+  content: counter(item, decimal-leading-zero);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.4em;
+  color: var(--gold);
+  flex-shrink: 0;
+  min-width: 40px;
+}
