@@ -457,6 +457,170 @@
   opacity: 1;
 }
 
+/* ─── Access Code Gate ─── */
+#access-gate {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at 50% 40%, #132742 0%, #0a1628 60%, #060e1a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+  overflow: hidden;
+}
+
+#access-gate::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 20%, rgba(200, 169, 110, 0.04) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(200, 169, 110, 0.03) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+#access-gate.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.access-gate-inner {
+  text-align: center;
+  max-width: 400px;
+  padding: 48px 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.access-gate-logo-wrap {
+  display: inline-block;
+  background: white;
+  border-radius: 16px;
+  padding: 18px 28px;
+  margin-bottom: 32px;
+}
+
+.access-gate-logo {
+  width: 140px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.access-gate-divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0 auto 32px;
+  border: none;
+}
+
+.access-gate-title {
+  font-family: var(--font-display);
+  font-size: 2.2em;
+  color: white;
+  margin: 0 0 10px;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.access-gate-subtitle {
+  color: rgba(200, 169, 110, 0.5);
+  font-size: 0.78em;
+  margin: 0 0 36px;
+  font-family: var(--font-body);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.access-gate-input-wrap {
+  display: flex;
+  gap: 0;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(200, 169, 110, 0.2);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.access-gate-input-wrap:focus-within {
+  border-color: var(--gold);
+  box-shadow: 0 0 20px rgba(200, 169, 110, 0.1), 0 0 40px rgba(200, 169, 110, 0.05);
+}
+
+#access-code-input {
+  flex: 1;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: none;
+  color: white;
+  font-size: 1.05em;
+  font-family: var(--font-body);
+  letter-spacing: 0.15em;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+#access-code-input:focus {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+#access-code-input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+  letter-spacing: 0.1em;
+  font-size: 0.9em;
+}
+
+#access-code-submit {
+  padding: 16px 22px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark, #a88b5c));
+  border: none;
+  color: var(--navy-900);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#access-code-submit:hover {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  padding-left: 26px;
+  padding-right: 26px;
+}
+
+#access-code-submit svg {
+  transition: transform 0.3s ease;
+}
+
+#access-code-submit:hover svg {
+  transform: translateX(2px);
+}
+
+.access-gate-error {
+  color: #ef4444;
+  font-size: 0.85em;
+  margin: 0;
+  min-height: 1.2em;
+  letter-spacing: 0.02em;
+}
+
+.access-gate-footer {
+  margin-top: 48px;
+  color: rgba(255, 255, 255, 0.15);
+  font-size: 0.75em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 /* ─── Fullscreen Toggle Button ─── */
 #fullscreen-btn {
   position: fixed;

@@ -202,16 +202,41 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // ─── Auto-fullscreen on first user interaction ───
-  function autoFullscreen() {
-    if (!document.fullscreenElement) {
+  // ─── Access Code Gate ───
+  var accessGate = document.getElementById('access-gate');
+  var accessInput = document.getElementById('access-code-input');
+  var accessSubmit = document.getElementById('access-code-submit');
+  var accessError = document.getElementById('access-error');
+  var ACCESS_CODE = 'Manah505';
+
+  function unlockPresentation() {
+    var code = accessInput.value.trim();
+    if (code === ACCESS_CODE) {
+      accessGate.classList.add('hidden');
       document.documentElement.requestFullscreen().catch(function () {});
+    } else {
+      accessError.textContent = 'Invalid access code';
+      accessInput.value = '';
+      accessInput.focus();
+      accessInput.style.borderColor = '#ef4444';
+      setTimeout(function () {
+        accessInput.style.borderColor = '';
+        accessError.textContent = '';
+      }, 2000);
     }
-    document.removeEventListener('click', autoFullscreen);
-    document.removeEventListener('keydown', autoFullscreen);
   }
-  document.addEventListener('click', autoFullscreen);
-  document.addEventListener('keydown', autoFullscreen);
+
+  accessSubmit.addEventListener('click', unlockPresentation);
+  accessInput.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      e.stopPropagation();
+      unlockPresentation();
+    }
+  });
+
+  // Focus the input on load
+  setTimeout(function () { accessInput.focus(); }, 100);
 
   // ─── Preload Critical Images ───
   var criticalImages = [

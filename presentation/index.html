@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/theme/black.css" id="theme">
 
   <!-- Brand Styles -->
-  <link rel="stylesheet" href="css/theme.css?v=16">
-  <link rel="stylesheet" href="css/slides.css?v=16">
+  <link rel="stylesheet" href="css/theme.css?v=23">
+  <link rel="stylesheet" href="css/slides.css?v=23">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/responsive.css">
 
@@ -21,6 +21,26 @@
   <link rel="icon" type="image/x-icon" href="../website/public/favicon.ico">
 </head>
 <body>
+  <!-- ─── Access Code Gate ─── -->
+  <div id="access-gate">
+    <div class="access-gate-inner">
+      <div class="access-gate-logo-wrap">
+        <img src="../website/public/images/logo.avif" alt="Manah Group" class="access-gate-logo">
+      </div>
+      <hr class="access-gate-divider">
+      <h2 class="access-gate-title">Manah Group</h2>
+      <p class="access-gate-subtitle">Enter access code to continue</p>
+      <div class="access-gate-input-wrap">
+        <input type="password" id="access-code-input" placeholder="Enter Code" autocomplete="off" spellcheck="false">
+        <button id="access-code-submit" aria-label="Submit">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+      </div>
+      <p id="access-error" class="access-gate-error"></p>
+      <p class="access-gate-footer">Confidential Presentation</p>
+    </div>
+  </div>
+
   <div class="reveal">
     <div class="slides">
 
