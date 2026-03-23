@@ -94,13 +94,21 @@ document.addEventListener('DOMContentLoaded', function () {
       setTimeout(resizeAllCharts, 400);
     });
 
-    // ─── Trigger first slide animation ───
+    // ─── Trigger first slide animation after access gate is unlocked ───
     var firstSlide = Reveal.getCurrentSlide();
     if (firstSlide && firstSlide.id) {
       animatedSlides[firstSlide.id] = true;
-      setTimeout(function () {
-        runSlideAnimation(firstSlide.id);
-      }, 600);
+      // Store trigger function globally so access gate can call it
+      window.__triggerCoverAnimation = function () {
+        setTimeout(function () {
+          runSlideAnimation(firstSlide.id);
+        }, 400);
+      };
+      // If no access gate, trigger immediately
+      var gate = document.getElementById('access-gate');
+      if (!gate || gate.classList.contains('hidden')) {
+        window.__triggerCoverAnimation();
+      }
     }
   });
 
@@ -214,6 +222,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if (code === ACCESS_CODE) {
       accessGate.classList.add('hidden');
       document.documentElement.requestFullscreen().catch(function () {});
+      // Trigger the cover slide M-A-N-A-H glow animation
+      if (window.__triggerCoverAnimation) {
+        window.__triggerCoverAnimation();
+      }
     } else {
       accessError.textContent = 'Invalid access code';
       accessInput.value = '';
