@@ -142,6 +142,17 @@
   border-radius: 12px;
 }
 
+/* ─── Slide: Who We Are ─── */
+#slide-whoweare {
+  text-align: center;
+}
+
+#slide-whoweare p {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ─── Slide: At a Glance ─── */
 #slide-glance {
   background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 40%, var(--navy-light) 100%);
@@ -395,6 +406,18 @@
 }
 
 /* ─── Slide: Locations ─── */
+
+/* ─── Slide: MRO Services — gradient bg ─── */
+#slide-mro-services {
+  background: radial-gradient(ellipse at 20% 50%, rgba(13, 148, 136, 0.08) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 30%, rgba(200, 169, 110, 0.06) 0%, transparent 40%),
+              linear-gradient(180deg, #0A1628 0%, #0D1B2E 50%, #0A1628 100%) !important;
+}
+
+#slide-mro-services .grid-3 {
+  position: relative;
+  z-index: 2;
+}
 
 /* ─── Slide: Thank You ─── */
 #slide-thankyou {

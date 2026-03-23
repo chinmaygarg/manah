@@ -377,6 +377,15 @@
   100% { transform: translate(30px, 15px) rotate(-8deg); opacity: 0; }
 }
 
+/* Aircraft takeoff — rises upward with slight tilt */
+@keyframes takeoff {
+  0%   { transform: scaleX(-1) translate(0, 0) rotate(0deg); opacity: 0; }
+  10%  { opacity: 0.8; }
+  50%  { transform: scaleX(-1) translate(40px, -80px) rotate(-8deg); opacity: 1; }
+  85%  { opacity: 0.6; }
+  100% { transform: scaleX(-1) translate(100px, -180px) rotate(-12deg); opacity: 0; }
+}
+
 /* Text watermark drift — very slow horizontal pan */
 @keyframes driftText {
   0%   { transform: translateX(0) rotate(-12deg); opacity: 0; }

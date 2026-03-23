@@ -202,6 +202,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  // ─── Auto-fullscreen on first user interaction ───
+  function autoFullscreen() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(function () {});
+    }
+    document.removeEventListener('click', autoFullscreen);
+    document.removeEventListener('keydown', autoFullscreen);
+  }
+  document.addEventListener('click', autoFullscreen);
+  document.addEventListener('keydown', autoFullscreen);
+
   // ─── Preload Critical Images ───
   var criticalImages = [
     '../website/public/images/logo.avif',

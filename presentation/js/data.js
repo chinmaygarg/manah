@@ -20,7 +20,7 @@ const MANAH_DATA = {
     { value: 500, suffix: '%', label: 'YoY Revenue Growth', icon: '📈' },
     { value: 3.6, suffix: 'B+', prefix: '₹', label: 'Project Pipeline', icon: '🏗️' },
     { value: 20, suffix: '+', label: 'Strategic Partners', icon: '🤝' },
-    { value: 5, suffix: '', label: 'Subsidiaries', icon: '🏢' },
+    { value: 5, suffix: '', label: 'Divisions', icon: '🏢' },
     { value: 1000, suffix: '+', label: 'Team Members', icon: '👥' },
     { value: 15, suffix: '+', label: 'States Active', icon: '📍' },
   ],
@@ -99,7 +99,7 @@ const MANAH_DATA = {
     { name: 'Oil & Gas', desc: 'Downstream processing', icon: '🛢️' },
     { name: 'Renewables', desc: 'Solar, Wind, Hydel', icon: '☀️' },
     { name: 'M&A', desc: 'Strategic growth', icon: '📊' },
-    { name: 'Disaster Mgmt', desc: 'Training & response', icon: '🚨' },
+    { name: 'Disaster Management', desc: 'Training & response', icon: '🚨' },
   ],
 
   // ─── MRO Locations ───
