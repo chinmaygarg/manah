@@ -41,6 +41,12 @@ fs.mkdirSync(DIST, { recursive: true })
 const html = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf8')
 fs.writeFileSync(path.join(DIST, 'index.html'), processHtml(html))
 
+// Copy robots.txt
+const robotsSrc = path.join(__dirname, 'robots.txt')
+if (fs.existsSync(robotsSrc)) {
+  fs.copyFileSync(robotsSrc, path.join(DIST, 'robots.txt'))
+}
+
 // Copy CSS
 copyRecursive(path.join(__dirname, 'css'), path.join(DIST, 'css'))
 

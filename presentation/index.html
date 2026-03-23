@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Manah Group — Diversified Enterprise Group</title>
   <meta name="description" content="Manah Holdings corporate presentation — Diversified Enterprise Group building with awareness, integrity, and responsibility.">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 
   <!-- Reveal.js 4.6.x (stable transform-based positioning) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css">
@@ -14,6 +15,7 @@
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/slides.css">
   <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="../website/public/favicon.ico">
@@ -167,11 +169,11 @@
                style="padding:30px 40px;">
 
         <!-- Header row -->
-        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:16px;">
+        <div class="structure-header" style="display:flex; align-items:center; justify-content:space-between; margin-bottom:16px;">
           <div>
             <h2 style="margin:0; font-size:2.4em;">Group <span class="text-gradient-gold">Structure</span></h2>
           </div>
-          <div style="display:flex; align-items:center; gap:20px;">
+          <div class="structure-badges" style="display:flex; align-items:center; gap:20px;">
             <span class="badge badge-gold" style="font-size:0.8em; padding:8px 20px;">5 Divisions</span>
             <span class="badge badge-gold" style="font-size:0.8em; padding:8px 20px;">11 Sectors</span>
             <span class="badge badge-gold" style="font-size:0.8em; padding:8px 20px;">15+ States</span>
@@ -179,133 +181,133 @@
         </div>
 
         <!-- Parent Node — full width bar -->
-        <div style="display:flex; align-items:center; justify-content:center; gap:16px; padding:18px 40px; border-radius:14px; background:linear-gradient(135deg, var(--gold), var(--gold-dark)); color:var(--navy); font-family:var(--font-display); font-weight:700; font-size:1.3em; box-shadow:0 6px 32px rgba(200,169,110,0.3); max-width:480px; margin:0 auto;">
+        <div class="structure-parent" style="display:flex; align-items:center; justify-content:center; gap:16px; padding:18px 40px; border-radius:14px; background:linear-gradient(135deg, var(--gold), var(--gold-dark)); color:var(--navy); font-family:var(--font-display); font-weight:700; font-size:1.3em; box-shadow:0 6px 32px rgba(200,169,110,0.3); max-width:480px; margin:0 auto;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/></svg>
           Manah Holdings Pvt Ltd
         </div>
 
         <!-- SVG Connectors — full width -->
-        <svg width="100%" height="50" viewBox="0 0 1840 50" preserveAspectRatio="xMidYMid meet" style="display:block; overflow:visible;">
+        <svg class="structure-connectors" width="100%" height="50" viewBox="0 0 1840 50" preserveAspectRatio="xMidYMid meet" style="display:block; overflow:visible;">
           <line x1="920" y1="0" x2="920" y2="18" stroke="var(--gold)" stroke-width="3" stroke-opacity="0.5"/>
           <line x1="184" y1="18" x2="1656" y2="18" stroke="var(--gold)" stroke-width="3" stroke-opacity="0.35"/>
-          <line x1="184" y1="18" x2="184" y2="50" stroke="#5B8CC5" stroke-width="3" stroke-opacity="0.7"/>
-          <line x1="552" y1="18" x2="552" y2="50" stroke="var(--aerospace-teal)" stroke-width="3" stroke-opacity="0.7"/>
-          <line x1="920" y1="18" x2="920" y2="50" stroke="var(--green-energy)" stroke-width="3" stroke-opacity="0.7"/>
-          <line x1="1288" y1="18" x2="1288" y2="50" stroke="var(--tech-purple)" stroke-width="3" stroke-opacity="0.7"/>
-          <line x1="1656" y1="18" x2="1656" y2="50" stroke="var(--investments-amber)" stroke-width="3" stroke-opacity="0.7"/>
-          <circle cx="184" cy="18" r="5" fill="#5B8CC5"/>
-          <circle cx="552" cy="18" r="5" fill="var(--aerospace-teal)"/>
-          <circle cx="920" cy="18" r="5" fill="var(--green-energy)"/>
-          <circle cx="1288" cy="18" r="5" fill="var(--tech-purple)"/>
-          <circle cx="1656" cy="18" r="5" fill="var(--investments-amber)"/>
+          <line x1="184" y1="18" x2="184" y2="50" stroke="var(--gold)" stroke-width="3" stroke-opacity="0.7"/>
+          <line x1="552" y1="18" x2="552" y2="50" stroke="var(--gold)" stroke-width="3" stroke-opacity="0.7"/>
+          <line x1="920" y1="18" x2="920" y2="50" stroke="var(--gold)" stroke-width="3" stroke-opacity="0.7"/>
+          <line x1="1288" y1="18" x2="1288" y2="50" stroke="var(--gold)" stroke-width="3" stroke-opacity="0.7"/>
+          <line x1="1656" y1="18" x2="1656" y2="50" stroke="var(--gold)" stroke-width="3" stroke-opacity="0.7"/>
+          <circle cx="184" cy="18" r="5" fill="var(--gold)"/>
+          <circle cx="552" cy="18" r="5" fill="var(--gold)"/>
+          <circle cx="920" cy="18" r="5" fill="var(--gold)"/>
+          <circle cx="1288" cy="18" r="5" fill="var(--gold)"/>
+          <circle cx="1656" cy="18" r="5" fill="var(--gold)"/>
         </svg>
 
         <!-- 5 Division Cards — FULL WIDTH, no max-width cap -->
-        <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:24px; width:100%;">
+        <div class="structure-divisions" style="display:grid; grid-template-columns:repeat(5,1fr); gap:24px; width:100%;">
 
           <!-- Manah Dynamics -->
-          <div class="card" style="padding:0; overflow:hidden; border-top:4px solid #5B8CC5; background:rgba(30,58,95,0.12); border-color:rgba(30,58,95,0.25); border-top-color:#5B8CC5;">
+          <div class="card" style="padding:0; overflow:hidden; border-top:4px solid var(--gold); background:rgba(200,169,110,0.08); border-color:rgba(200,169,110,0.2); border-top-color:var(--gold);">
             <div style="height:200px; overflow:hidden; position:relative;">
               <img src="../website/public/images/divisions/manah_dynamics_hero.png" alt="Manah Dynamics" style="width:100%; height:100%; object-fit:cover;">
               <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 30%, rgba(10,22,40,0.95) 100%);"></div>
               <div style="position:absolute; bottom:14px; left:18px; z-index:2;">
                 <h4 style="color:white; font-size:1.2em; margin:0; line-height:1.2;">Manah Dynamics</h4>
-                <p style="font-size:0.85em; color:#5B8CC5; margin:4px 0 0; font-weight:600;">Projects & Infrastructure</p>
+                <p style="font-size:0.85em; color:var(--gold); margin:4px 0 0; font-weight:600;">Projects & Infrastructure</p>
               </div>
             </div>
             <div style="padding:16px 18px 20px;">
               <div style="display:flex; flex-direction:column; gap:8px;">
-                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:#5B8CC5; flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">EPC across 11 sectors</span></div>
-                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:#5B8CC5; flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">Power T&D up to 765 kV</span></div>
-                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:#5B8CC5; flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">50+ projects delivered</span></div>
-                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:#5B8CC5; flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">$27M under execution</span></div>
+                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">EPC across 11 sectors</span></div>
+                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">Power T&D up to 765 kV</span></div>
+                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">50+ projects delivered</span></div>
+                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">$27M under execution</span></div>
               </div>
             </div>
           </div>
 
           <!-- Manah Aerospace -->
-          <div class="card" style="padding:0; overflow:hidden; border-top:4px solid var(--aerospace-teal); background:rgba(13,148,136,0.08); border-color:rgba(13,148,136,0.2); border-top-color:var(--aerospace-teal);">
+          <div class="card" style="padding:0; overflow:hidden; border-top:4px solid var(--gold); background:rgba(200,169,110,0.08); border-color:rgba(200,169,110,0.2); border-top-color:var(--gold);">
             <div style="height:200px; overflow:hidden; position:relative;">
               <img src="../website/public/images/divisions/manah_aerospace_hero.png" alt="Manah Aerospace" style="width:100%; height:100%; object-fit:cover;">
               <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 30%, rgba(10,22,40,0.95) 100%);"></div>
               <div style="position:absolute; bottom:14px; left:18px; z-index:2;">
                 <h4 style="color:white; font-size:1.2em; margin:0; line-height:1.2;">Manah Aerospace</h4>
-                <p style="font-size:0.85em; color:var(--aerospace-teal); margin:4px 0 0; font-weight:600;">Aviation & MRO Services</p>
+                <p style="font-size:0.85em; color:var(--gold); margin:4px 0 0; font-weight:600;">Aviation & MRO Services</p>
               </div>
             </div>
             <div style="padding:16px 18px 20px;">
               <div style="display:flex; flex-direction:column; gap:8px;">
-                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--aerospace-teal); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">DGCA-certified MRO</span></div>
-                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--aerospace-teal); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">Business jet maintenance</span></div>
-                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--aerospace-teal); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">CAR 147 training approved</span></div>
-                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--aerospace-teal); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">4 MRO locations</span></div>
+                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">DGCA-certified MRO</span></div>
+                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">Business jet maintenance</span></div>
+                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">CAR 147 training approved</span></div>
+                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">4 MRO locations</span></div>
               </div>
             </div>
           </div>
 
           <!-- Green Energy -->
-          <div class="card" style="padding:0; overflow:hidden; border-top:4px solid var(--green-energy); background:rgba(22,163,74,0.08); border-color:rgba(22,163,74,0.2); border-top-color:var(--green-energy);">
+          <div class="card" style="padding:0; overflow:hidden; border-top:4px solid var(--gold); background:rgba(200,169,110,0.08); border-color:rgba(200,169,110,0.2); border-top-color:var(--gold);">
             <div style="height:200px; overflow:hidden; position:relative;">
               <img src="../website/public/images/divisions/green_energy_hero.png" alt="Green Energy" style="width:100%; height:100%; object-fit:cover;">
               <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 30%, rgba(10,22,40,0.95) 100%);"></div>
               <div style="position:absolute; bottom:14px; left:18px; z-index:2;">
                 <h4 style="color:white; font-size:1.2em; margin:0; line-height:1.2;">Green Energy</h4>
-                <p style="font-size:0.85em; color:var(--green-energy); margin:4px 0 0; font-weight:600;">Green Hydrogen & Renewables</p>
+                <p style="font-size:0.85em; color:var(--gold); margin:4px 0 0; font-weight:600;">Green Hydrogen & Renewables</p>
               </div>
             </div>
             <div style="padding:16px 18px 20px;">
               <div style="display:flex; flex-direction:column; gap:8px;">
-                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--green-energy); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">Green H₂ production</span></div>
-                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--green-energy); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">Renewable energy assets</span></div>
-                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--green-energy); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">Net Zero 2070 aligned</span></div>
-                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--green-energy); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">Subsidiary of Dynamics</span></div>
+                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">Green H₂ production</span></div>
+                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">Renewable energy assets</span></div>
+                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">Net Zero 2070 aligned</span></div>
+                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">Subsidiary of Dynamics</span></div>
               </div>
             </div>
           </div>
 
           <!-- Tech & Manufacturing -->
-          <div class="card" style="padding:0; overflow:hidden; border-top:4px solid var(--tech-purple); background:rgba(124,58,237,0.08); border-color:rgba(124,58,237,0.2); border-top-color:var(--tech-purple);">
+          <div class="card" style="padding:0; overflow:hidden; border-top:4px solid var(--gold); background:rgba(200,169,110,0.08); border-color:rgba(200,169,110,0.2); border-top-color:var(--gold);">
             <div style="height:200px; overflow:hidden; position:relative;">
               <img src="../website/public/images/divisions/tech_manufacturing_hero.png" alt="Tech & Manufacturing" style="width:100%; height:100%; object-fit:cover;">
               <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 30%, rgba(10,22,40,0.95) 100%);"></div>
               <div style="position:absolute; bottom:14px; left:18px; z-index:2;">
                 <h4 style="color:white; font-size:1.2em; margin:0; line-height:1.2;">Tech & Manufacturing</h4>
-                <p style="font-size:0.85em; color:var(--tech-purple); margin:4px 0 0; font-weight:600;">Electronics Manufacturing</p>
+                <p style="font-size:0.85em; color:var(--gold); margin:4px 0 0; font-weight:600;">Electronics Manufacturing</p>
               </div>
             </div>
             <div style="padding:16px 18px 20px;">
               <div style="display:flex; flex-direction:column; gap:8px;">
-                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--tech-purple); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">PCB & PCBA assembly</span></div>
-                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--tech-purple); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">Defence electronics</span></div>
-                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--tech-purple); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">IoT & smart devices</span></div>
-                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--tech-purple); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">Contract manufacturing</span></div>
+                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">PCB & PCBA assembly</span></div>
+                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">Defence electronics</span></div>
+                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">IoT & smart devices</span></div>
+                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">Contract manufacturing</span></div>
               </div>
             </div>
           </div>
 
           <!-- Manah Investments -->
-          <div class="card" style="padding:0; overflow:hidden; border-top:4px solid var(--investments-amber); background:rgba(217,119,6,0.08); border-color:rgba(217,119,6,0.2); border-top-color:var(--investments-amber);">
+          <div class="card" style="padding:0; overflow:hidden; border-top:4px solid var(--gold); background:rgba(200,169,110,0.08); border-color:rgba(200,169,110,0.2); border-top-color:var(--gold);">
             <div style="height:200px; overflow:hidden; position:relative;">
               <img src="../website/public/images/divisions/manah_investments_hero.png" alt="Manah Investments" style="width:100%; height:100%; object-fit:cover;">
               <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 30%, rgba(10,22,40,0.95) 100%);"></div>
               <div style="position:absolute; bottom:14px; left:18px; z-index:2;">
                 <h4 style="color:white; font-size:1.2em; margin:0; line-height:1.2;">Manah Investments</h4>
-                <p style="font-size:0.85em; color:var(--investments-amber); margin:4px 0 0; font-weight:600;">Strategic Investments</p>
+                <p style="font-size:0.85em; color:var(--gold); margin:4px 0 0; font-weight:600;">Strategic Investments</p>
               </div>
             </div>
             <div style="padding:16px 18px 20px;">
               <div style="display:flex; flex-direction:column; gap:8px;">
-                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--investments-amber); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">Strategic capital deployment</span></div>
-                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--investments-amber); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">Portfolio management</span></div>
-                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--investments-amber); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">Growth-stage ventures</span></div>
-                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--investments-amber); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">Sector-aligned bets</span></div>
+                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">Strategic capital deployment</span></div>
+                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">Portfolio management</span></div>
+                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">Growth-stage ventures</span></div>
+                <div style="display:flex; align-items:center; gap:8px;"><div style="width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0;"></div><span style="font-size:0.85em; color:var(--gray-300);">Sector-aligned bets</span></div>
               </div>
             </div>
           </div>
         </div>
 
         <!-- Bottom bar -->
-        <div style="display:flex; align-items:center; justify-content:center; gap:32px; margin-top:24px;">
+        <div class="structure-footer" style="display:flex; align-items:center; justify-content:center; gap:32px; margin-top:24px;">
           <div style="display:flex; align-items:center; gap:10px;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
             <span style="font-size:0.85em; color:var(--gold); font-weight:500;">ISO 9001 · 14001 · 45001 Certified</span>
@@ -338,7 +340,7 @@
           <p style="max-width:1100px; font-size:1em; line-height:1.8;">As the strategic arm of Manah Holdings, Manah Dynamics delivers end-to-end infrastructure and technology solutions with a dual focus on <strong>Projects & Infrastructure</strong> and <strong>Technology & Manufacturing</strong>.</p>
 
           <!-- Key highlights row -->
-          <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:24px; width:100%; max-width:1400px; margin-top:12px;">
+          <div class="mobile-grid-2" style="display:grid; grid-template-columns:repeat(4, 1fr); gap:24px; width:100%; max-width:1400px; margin-top:12px;">
             <div class="card card-highlight" style="text-align:center; padding:28px 16px; border-top:3px solid var(--gold);">
               <div style="font-family:var(--font-display); font-size:2.8em; font-weight:700; color:var(--gold); line-height:1;">11</div>
               <div style="font-size:0.85em; color:var(--gray-400); margin-top:10px;">Industry Sectors</div>
@@ -358,7 +360,7 @@
           </div>
 
           <!-- Two pillars -->
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; width:100%; max-width:1400px; margin-top:8px;">
+          <div class="mobile-grid-1" style="display:grid; grid-template-columns:1fr 1fr; gap:24px; width:100%; max-width:1400px; margin-top:8px;">
             <div class="card" style="padding:22px 28px; border-left:4px solid var(--gold); text-align:center;">
               <h4 style="color:var(--gold); font-size:1.05em; margin:0 0 8px;">Projects & Infrastructure</h4>
               <p style="font-size:0.85em; color:var(--gray-400); margin:0; line-height:1.7;">Power T&D, Buildings & Roads, Telecom, Defence, Irrigation & Water, Mining, Oil & Gas, Renewables, BESS/SCADA</p>
@@ -382,7 +384,7 @@
           <h2>Projects & Infrastructure — <span class="text-gold">11 Sectors</span></h2>
           <p style="margin:0;">Executing high-value projects with proven expertise across diverse delivery models: DBFOOT, DBOOT, BOO, BOOT</p>
         </div>
-        <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:16px;">
+        <div class="sectors-grid" style="display:grid; grid-template-columns:repeat(4, 1fr); gap:16px;">
           <div class="card sector-item"><div class="sector-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h4>Power T&D</h4><p>EHV lines, substations, cables — up to 765 kV</p></div>
           <div class="card sector-item"><div class="sector-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M12 6v4"/><path d="M6 2v4"/><path d="M18 2v4"/></svg></div><h4>Building & Roads</h4><p>Civil infrastructure projects</p></div>
           <div class="card sector-item"><div class="sector-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12L7 2"/><path d="M7 2l5 10"/><path d="M12 12l5-10"/><path d="M17 2l5 10"/><circle cx="12" cy="16" r="2"/><path d="M12 18v4"/><path d="M10 22h4"/></svg></div><h4>Telecom</h4><p>Towers, BharatNet, fiber networks</p></div>
@@ -595,7 +597,7 @@
           <p style="max-width:1100px; font-size:1em; line-height:1.8;">Advanced aerospace and engineering solutions that enable safer, smarter skies. DGCA certified. Partnered with <strong>Jet Aviation Dubai</strong> for global standards.</p>
 
           <!-- Key highlights row -->
-          <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:24px; width:100%; max-width:1400px; margin-top:12px;">
+          <div class="mobile-grid-2" style="display:grid; grid-template-columns:repeat(4, 1fr); gap:24px; width:100%; max-width:1400px; margin-top:12px;">
             <div class="card card-highlight" style="text-align:center; padding:28px 16px; border-top:3px solid var(--gold);">
               <div style="font-family:var(--font-display); font-size:2.8em; font-weight:700; color:var(--gold); line-height:1;">10+</div>
               <div style="font-size:0.85em; color:var(--gray-400); margin-top:10px;">Aircraft Serviced</div>
@@ -615,7 +617,7 @@
           </div>
 
           <!-- Three service pillars -->
-          <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; width:100%; max-width:1400px; margin-top:8px;">
+          <div class="mobile-grid-1" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; width:100%; max-width:1400px; margin-top:8px;">
             <div class="card" style="padding:22px 28px; border-left:4px solid var(--gold); text-align:left;">
               <h4 style="color:var(--gold); font-size:1.05em; margin:0 0 8px;">Aircraft Maintenance</h4>
               <p style="font-size:0.85em; color:var(--gray-400); margin:0; line-height:1.7;">Business jet MRO, parts procurement, regulatory compliance & dedicated engineering team</p>
@@ -802,7 +804,7 @@
           <p style="max-width:1100px; font-size:1em; line-height:1.8;">Driving innovation in green hydrogen production through advanced renewable technologies. Supporting India's clean energy transition and <strong>Net Zero 2070</strong> vision.</p>
 
           <!-- Key highlights row -->
-          <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:24px; width:100%; max-width:1400px; margin-top:12px;">
+          <div class="mobile-grid-2" style="display:grid; grid-template-columns:repeat(4, 1fr); gap:24px; width:100%; max-width:1400px; margin-top:12px;">
             <div class="card card-highlight" style="text-align:center; padding:28px 16px; border-top:3px solid var(--gold);">
               <div style="font-family:var(--font-display); font-size:2.2em; font-weight:700; color:var(--gold); line-height:1;">₹5,000</div>
               <div style="font-size:0.85em; color:var(--gray-400); margin-top:10px;">Cr Investment Plan</div>
@@ -822,7 +824,7 @@
           </div>
 
           <!-- Value chain -->
-          <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; width:100%; max-width:1400px; margin-top:8px;">
+          <div class="mobile-grid-1" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; width:100%; max-width:1400px; margin-top:8px;">
             <div class="card" style="padding:22px 28px; border-left:4px solid var(--gold); text-align:left;">
               <h4 style="color:var(--gold); font-size:1.05em; margin:0 0 8px;">Green H₂ Production</h4>
               <p style="font-size:0.85em; color:var(--gray-400); margin:0; line-height:1.7;">Electrolyzer manufacturing & hydrogen generation plants at scale</p>
@@ -901,7 +903,7 @@
           <p style="max-width:1100px; font-size:1em; line-height:1.8;">Deploying strategic capital across infrastructure, energy, and technology ventures — identifying high-impact opportunities aligned with global growth trajectories and strategic priorities.</p>
 
           <!-- Key highlights row -->
-          <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:24px; width:100%; max-width:1400px; margin-top:12px;">
+          <div class="mobile-grid-2" style="display:grid; grid-template-columns:repeat(4, 1fr); gap:24px; width:100%; max-width:1400px; margin-top:12px;">
             <div class="card card-highlight" style="text-align:center; padding:28px 16px; border-top:3px solid var(--gold);">
               <div style="font-family:var(--font-display); font-size:2.2em; font-weight:700; color:var(--gold); line-height:1;">$500M+</div>
               <div style="font-size:0.85em; color:var(--gray-400); margin-top:10px;">Portfolio Value</div>
@@ -921,7 +923,7 @@
           </div>
 
           <!-- Focus areas -->
-          <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:24px; width:100%; max-width:1400px; margin-top:8px;">
+          <div class="mobile-grid-2" style="display:grid; grid-template-columns:repeat(4, 1fr); gap:24px; width:100%; max-width:1400px; margin-top:8px;">
             <div class="card" style="padding:22px 24px; border-left:4px solid var(--gold); text-align:left;">
               <h4 style="color:var(--gold); font-size:1.05em; margin:0 0 8px;">Infrastructure PE</h4>
               <p style="font-size:0.85em; color:var(--gray-400); margin:0; line-height:1.7;">Power, roads, logistics & urban development</p>

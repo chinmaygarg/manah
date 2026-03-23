@@ -3,18 +3,49 @@
    ═══════════════════════════════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', function () {
+  // ─── Viewport Detection for Responsive Canvas ───
+  function getSlideConfig() {
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    var isPortrait = h > w;
+    var isMobile = w <= 768;
+    var isLandscapeMobile = !isPortrait && h <= 500;
+
+    if (isMobile && isPortrait) {
+      // Portrait phone — switch to portrait canvas
+      document.body.classList.add('mobile-scroll');
+      document.body.classList.remove('landscape-mobile');
+      return { width: 1080, height: 1920, margin: 0.01, center: true };
+    }
+    if (isLandscapeMobile) {
+      // Landscape phone — match canvas aspect ratio to viewport
+      // so the slide fills the entire screen with zero black bars
+      var canvasWidth = 1920;
+      var canvasHeight = Math.round(canvasWidth * (h / w));
+      document.body.classList.remove('mobile-scroll');
+      document.body.classList.add('landscape-mobile');
+      return { width: canvasWidth, height: canvasHeight, margin: 0.01, center: true };
+    }
+    // Tablet or desktop — standard 16:9
+    document.body.classList.remove('mobile-scroll');
+    document.body.classList.remove('landscape-mobile');
+    return { width: 1920, height: 1080, margin: 0.02, center: true };
+  }
+
+  var slideConfig = getSlideConfig();
+
   // ─── Initialize Reveal.js ───
   Reveal.initialize({
-    width: 1920,
-    height: 1080,
-    margin: 0.02,
+    width: slideConfig.width,
+    height: slideConfig.height,
+    margin: slideConfig.margin,
+    center: slideConfig.center,
     minScale: 0.2,
     maxScale: 2.0,
 
     // Navigation
     hash: true,
     history: true,
-    center: true,
     controls: true,
     controlsLayout: 'bottom-right',
     progress: true,
@@ -71,6 +102,41 @@ document.addEventListener('DOMContentLoaded', function () {
         runSlideAnimation(firstSlide.id);
       }, 600);
     }
+  });
+
+  // ─── Reconfigure Reveal.js on orientation change ───
+  var resizeTimer;
+  function handleViewportChange() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      var newConfig = getSlideConfig();
+      var currentWidth = Reveal.getConfig().width;
+      var currentHeight = Reveal.getConfig().height;
+
+      // Only reconfigure if dimensions actually changed
+      if (newConfig.width !== currentWidth || newConfig.height !== currentHeight) {
+        Reveal.configure({
+          width: newConfig.width,
+          height: newConfig.height,
+          margin: newConfig.margin,
+          center: newConfig.center,
+        });
+        // Force layout recalculation
+        Reveal.layout();
+        // Re-trigger chart resize after layout settles
+        setTimeout(function () {
+          if (typeof resizeAllCharts === 'function') {
+            resizeAllCharts();
+          }
+        }, 500);
+      }
+    }, 300);
+  }
+
+  window.addEventListener('resize', handleViewportChange);
+  window.addEventListener('orientationchange', function () {
+    // orientationchange fires before dimensions update, so delay
+    setTimeout(handleViewportChange, 100);
   });
 
   // ─── Fullscreen Toggle ───
