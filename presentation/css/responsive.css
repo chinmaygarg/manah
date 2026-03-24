@@ -447,12 +447,20 @@
     border-radius: 8px !important;
   }
 
-  /* ─── Fullscreen Button ─── */
+  /* ─── Fullscreen Button: hide on mobile portrait ─── */
   #fullscreen-btn {
-    width: 36px !important;
-    height: 36px !important;
-    bottom: 10px !important;
-    left: 10px !important;
+    display: none !important;
+  }
+
+  /* ─── Theme Toggle: top-right corner on mobile ─── */
+  #theme-toggle-btn {
+    top: 10px !important;
+    bottom: auto !important;
+    right: 10px !important;
+    left: auto !important;
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 14px !important;
   }
 
   /* ─── Slide Number ─── */
@@ -930,12 +938,20 @@
     padding: 12px 40px !important;
   }
 
-  /* ─── Fullscreen Button ─── */
+  /* ─── Fullscreen Button: hide on small mobile ─── */
   #fullscreen-btn {
+    display: none !important;
+  }
+
+  /* ─── Theme Toggle: top-right on small mobile ─── */
+  #theme-toggle-btn {
+    top: 6px !important;
+    bottom: auto !important;
+    right: 6px !important;
+    left: auto !important;
     width: 28px !important;
     height: 28px !important;
-    bottom: 6px !important;
-    left: 6px !important;
+    font-size: 12px !important;
   }
 
   /* ─── Slide Number ─── */
