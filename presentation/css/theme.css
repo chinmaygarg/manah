@@ -648,6 +648,245 @@
   transform: scale(1.1);
 }
 
+/* ═══════════════════════════════════════════════════════════
+   LIGHT THEME OVERRIDES
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── Light Theme: CSS Custom Properties ─── */
+body.light-theme {
+  --navy: #F5F5F0;
+  --navy-light: #FFFFFF;
+  --navy-dark: #E8E8E0;
+  --gold: #9A7B3C;
+  --gold-light: #B8954E;
+  --gold-dark: #7A6230;
+  --slate: #C8C8C0;
+  --gray-50: #111111;
+  --gray-100: #1A1A1A;
+  --gray-200: #333333;
+  --gray-300: #4A4A48;
+  --gray-400: #6B6B68;
+  --gray-500: #8A8A87;
+  --gray-600: #BFBFBC;
+  --gray-700: #E0E0DC;
+  --gray-800: #F0F0EC;
+  --gray-900: #FAFAF8;
+}
+
+/* ─── Light Theme: Typography ─── */
+body.light-theme .reveal {
+  color: #333333;
+}
+
+body.light-theme .reveal h1,
+body.light-theme .reveal h2 {
+  color: #1A1A1A;
+}
+
+body.light-theme .reveal h3 {
+  color: var(--gold);
+}
+
+body.light-theme .reveal h4 {
+  color: var(--gold-light);
+}
+
+body.light-theme .reveal p {
+  color: #4A4A48;
+}
+
+body.light-theme .reveal strong {
+  color: var(--gold);
+}
+
+/* Override inline color:white */
+body.light-theme [style*="color:white"],
+body.light-theme [style*="color: white"] {
+  color: #1A1A1A !important;
+}
+
+/* ─── Light Theme: Cards ─── */
+body.light-theme .card {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .card:hover {
+  border-color: rgba(154, 123, 60, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .card-highlight {
+  background: rgba(154, 123, 60, 0.06);
+  border-color: rgba(154, 123, 60, 0.2);
+}
+
+/* ─── Light Theme: Badges ─── */
+body.light-theme .badge-gold {
+  background: rgba(154, 123, 60, 0.1);
+  border-color: rgba(154, 123, 60, 0.3);
+}
+
+/* ─── Light Theme: Table ─── */
+body.light-theme .reveal table th {
+  background: rgba(154, 123, 60, 0.08);
+  border-bottom-color: rgba(154, 123, 60, 0.2);
+}
+
+body.light-theme .reveal table td {
+  border-bottom-color: rgba(0, 0, 0, 0.06);
+  color: #4A4A48;
+}
+
+body.light-theme .reveal table tr:hover td {
+  background: rgba(154, 123, 60, 0.04);
+}
+
+/* ─── Light Theme: Org Nodes ─── */
+body.light-theme .org-node-primary {
+  background: var(--gold);
+  color: #FFFFFF;
+}
+
+body.light-theme .org-node-secondary {
+  background: rgba(154, 123, 60, 0.08);
+  border-color: rgba(154, 123, 60, 0.25);
+}
+
+/* ─── Light Theme: Leader Cards ─── */
+body.light-theme .leader-card h4 {
+  color: #1A1A1A;
+}
+
+body.light-theme .leader-card .title {
+  color: var(--gold);
+}
+
+body.light-theme .leader-card p {
+  color: #6B6B68;
+}
+
+/* ─── Light Theme: Stat ─── */
+body.light-theme .stat-label {
+  color: #6B6B68;
+}
+
+/* ─── Light Theme: Slide Background Overlay ─── */
+body.light-theme .slide-bg-overlay::before {
+  background: linear-gradient(135deg, rgba(245, 245, 240, 0.88) 0%, rgba(245, 245, 240, 0.75) 100%);
+}
+
+/* ─── Light Theme: Partner Logos ─── */
+body.light-theme .logo-grid img {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* ─── Light Theme: Sector Icons ─── */
+body.light-theme .sector-icon {
+  background: rgba(154, 123, 60, 0.08);
+}
+
+/* ─── Light Theme: Gold Line ─── */
+body.light-theme .gold-line {
+  background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+}
+
+/* ─── Light Theme: Slide Number & Progress ─── */
+body.light-theme .reveal .slide-number {
+  color: var(--gold);
+}
+
+body.light-theme .reveal .progress span {
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-light));
+}
+
+/* ─── Light Theme: Access Gate ─── */
+body.light-theme #access-gate {
+  background: radial-gradient(ellipse at 50% 40%, #FFFFFF 0%, #F5F5F0 60%, #E8E8E0 100%);
+}
+
+body.light-theme #access-gate::before {
+  background: radial-gradient(circle at 30% 20%, rgba(154, 123, 60, 0.04) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(154, 123, 60, 0.03) 0%, transparent 40%);
+}
+
+body.light-theme .access-gate-title {
+  color: #1A1A1A;
+}
+
+body.light-theme .access-gate-subtitle {
+  color: rgba(154, 123, 60, 0.6);
+}
+
+body.light-theme .access-gate-input-wrap {
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+body.light-theme .access-gate-input-wrap:focus-within {
+  border-color: var(--gold);
+  box-shadow: 0 0 20px rgba(154, 123, 60, 0.1);
+}
+
+body.light-theme #access-code-input {
+  background: rgba(0, 0, 0, 0.03);
+  color: #1A1A1A;
+}
+
+body.light-theme #access-code-input:focus {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme #access-code-input::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+body.light-theme .access-gate-footer {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+/* ─── Light Theme: Fullscreen & Theme Toggle Buttons ─── */
+body.light-theme #fullscreen-btn,
+body.light-theme #theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.12);
+  color: var(--gold);
+}
+
+body.light-theme #fullscreen-btn:hover,
+body.light-theme #theme-toggle-btn:hover {
+  background: rgba(154, 123, 60, 0.1);
+  border-color: var(--gold);
+}
+
+/* ─── Theme Toggle Button (shared dark/light) ─── */
+#theme-toggle-btn {
+  position: fixed;
+  bottom: 16px;
+  left: 64px;
+  z-index: 100;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 22, 40, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(200, 169, 110, 0.3);
+  border-radius: 8px;
+  color: var(--gold);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0;
+}
+
+#theme-toggle-btn:hover {
+  background: rgba(200, 169, 110, 0.15);
+  border-color: var(--gold);
+  transform: scale(1.1);
+}
+
 /* ─── Scrollbar ─── */
 ::-webkit-scrollbar {
   width: 4px;
@@ -660,4 +899,13 @@
 ::-webkit-scrollbar-thumb {
   background: var(--gold-dark);
   border-radius: 2px;
+}
+
+/* ─── Light Theme: Scrollbar ─── */
+body.light-theme ::-webkit-scrollbar-track {
+  background: #E8E8E0;
+}
+
+body.light-theme ::-webkit-scrollbar-thumb {
+  background: #B8954E;
 }

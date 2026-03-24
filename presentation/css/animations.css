@@ -419,3 +419,29 @@
   flex-shrink: 0;
   min-width: 40px;
 }
+
+/* ═══════════════════════════════════════════════════════════
+   LIGHT THEME — Animation Overrides
+   ═══════════════════════════════════════════════════════════ */
+
+/* Logo: no white inversion filter in light mode */
+body.light-theme #slide-cover .cover-logo {
+  animation: none;
+  filter: none;
+  opacity: 1;
+}
+
+/* Numbered list borders */
+body.light-theme .numbered-list li {
+  border-bottom-color: rgba(0, 0, 0, 0.06);
+}
+
+/* Milestone border */
+body.light-theme .milestone-card {
+  border-left-color: rgba(154, 123, 60, 0.3);
+}
+
+/* Background decorations: slightly more visible on light */
+body.light-theme .slide-bg-decor > div {
+  opacity: 0.06;
+}

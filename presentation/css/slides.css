@@ -451,3 +451,159 @@
   background: linear-gradient(90deg, transparent, rgba(200, 169, 110, 0.3), transparent);
   margin: 20px 0;
 }
+
+/* ═══════════════════════════════════════════════════════════
+   LIGHT THEME — Slide-Specific Overrides
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── Cover Slide — always dark regardless of theme ─── */
+body.light-theme #slide-cover .cover-headline {
+  color: white;
+}
+
+body.light-theme #slide-cover .cover-subtitle {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+body.light-theme #slide-cover .cover-division-letter {
+  color: rgba(255, 255, 255, 0.12);
+}
+
+body.light-theme #slide-cover .cover-division {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+body.light-theme #slide-cover .cover-divisions:hover .cover-division-letter {
+  color: #C8A96E !important;
+  text-shadow: 0 0 12px rgba(200, 169, 110, 0.4) !important;
+}
+
+body.light-theme #slide-cover .cover-division-item:hover .cover-division {
+  color: #D4BC8A;
+}
+
+body.light-theme #slide-cover .cover-divisions:hover .cover-division-item:hover .cover-division {
+  color: #D4BC8A;
+}
+
+/* ─── Gradient Slides ─── */
+body.light-theme #slide-glance {
+  background: linear-gradient(135deg, #E8E8E0 0%, #F5F5F0 40%, #FFFFFF 100%) !important;
+}
+
+body.light-theme #slide-structure {
+  background: linear-gradient(180deg, #F5F5F0 0%, #E8E8E0 100%) !important;
+}
+
+body.light-theme #slide-pipeline {
+  background: linear-gradient(180deg, #F5F5F0 0%, #E8E8E0 100%) !important;
+}
+
+body.light-theme #slide-financials {
+  background: linear-gradient(135deg, #E8E8E0 0%, #F5F5F0 100%) !important;
+}
+
+body.light-theme #slide-leadership {
+  background: linear-gradient(180deg, #F5F5F0 0%, #E8E8E0 100%) !important;
+}
+
+body.light-theme #slide-thankyou {
+  background: radial-gradient(ellipse at center, #FFFFFF 0%, #F5F5F0 50%, #E8E8E0 100%) !important;
+}
+
+/* ─── Division Intro Slides — lighter overlay over bg images ─── */
+body.light-theme .division-slide::before {
+  background: linear-gradient(135deg, rgba(245, 245, 240, 0.9) 0%, rgba(245, 245, 240, 0.8) 100%);
+}
+
+/* ─── MRO Services ─── */
+body.light-theme #slide-mro-services {
+  background: radial-gradient(ellipse at 20% 50%, rgba(13, 148, 136, 0.06) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 30%, rgba(154, 123, 60, 0.04) 0%, transparent 40%),
+              linear-gradient(180deg, #F5F5F0 0%, #EDEDEA 50%, #F5F5F0 100%) !important;
+}
+
+/* ─── Hardcoded bg-color slides ─── */
+body.light-theme #slide-partnerships {
+  background-color: #F5F5F0 !important;
+}
+
+body.light-theme #slide-esg {
+  background-color: #F5F5F0 !important;
+}
+
+body.light-theme #slide-whoweare {
+  background-color: #F5F5F0 !important;
+}
+
+body.light-theme #slide-expansions {
+  background-color: #F5F5F0 !important;
+}
+
+/* ─── ESG & Expansion Cards ─── */
+body.light-theme .esg-pillar {
+  background: rgba(0, 0, 0, 0.02);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .esg-pillar:hover {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(154, 123, 60, 0.3);
+}
+
+body.light-theme .expansion-card {
+  background: rgba(0, 0, 0, 0.02);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .expansion-card:hover {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(154, 123, 60, 0.3);
+}
+
+body.light-theme .expansion-number {
+  color: rgba(154, 123, 60, 0.3);
+}
+
+body.light-theme .expansion-icon-v2 {
+  background: linear-gradient(135deg, rgba(154, 123, 60, 0.08), rgba(154, 123, 60, 0.02));
+}
+
+body.light-theme .expansion-tag {
+  background: rgba(154, 123, 60, 0.06);
+  border-color: rgba(154, 123, 60, 0.15);
+}
+
+/* ─── Sectors ─── */
+body.light-theme #slide-sectors .sector-item h4 {
+  color: #1A1A1A;
+}
+
+body.light-theme #slide-sectors .sector-item p {
+  color: #6B6B68;
+}
+
+/* ─── Slide Image Shadow ─── */
+body.light-theme .slide-image {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* ─── Slide Divider ─── */
+body.light-theme .slide-divider {
+  background: linear-gradient(90deg, transparent, rgba(154, 123, 60, 0.25), transparent);
+}
+
+/* ─── Expansion content text ─── */
+body.light-theme .expansion-content h4 {
+  color: #1A1A1A;
+}
+
+/* ─── CTA Button ─── */
+body.light-theme .cta-content .cta-btn {
+  background: var(--gold);
+  color: #FFFFFF;
+}
+
+body.light-theme .cta-content .cta-btn:hover {
+  box-shadow: 0 8px 32px rgba(154, 123, 60, 0.25);
+}

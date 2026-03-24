@@ -47,22 +47,31 @@ var SLIDE_ANIMATIONS = {
     var letters = section.querySelectorAll('.cover-division-letter');
     var labels = section.querySelectorAll('.cover-division-item .cover-division');
 
+    /* Theme-aware colors */
+    var isLight = document.body.classList.contains('light-theme');
+    var letterBase = isLight ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.12)';
+    var letterFade = isLight ? 'rgba(0,0,0,0.12)' : 'rgba(255,255,255,0.15)';
+    var glowColor = isLight ? '#9A7B3C' : '#C8A96E';
+    var glowShadow = isLight
+      ? '0 0 20px rgba(154,123,60,0.5), 0 0 40px rgba(154,123,60,0.25), 0 0 80px rgba(154,123,60,0.1)'
+      : '0 0 20px rgba(200,169,110,0.6), 0 0 40px rgba(200,169,110,0.3), 0 0 80px rgba(200,169,110,0.15)';
+
     /* Reset letters and labels for re-trigger */
-    gsap.set(letters, { color: 'rgba(255,255,255,0.12)', textShadow: 'none', scale: 1 });
+    gsap.set(letters, { color: letterBase, textShadow: 'none', scale: 1 });
     gsap.set(labels, { opacity: 0, y: 8 });
 
     letters.forEach(function (letter, i) {
       /* Each letter glows gold then fades back */
       tl.to(letter, {
-        color: '#C8A96E',
-        textShadow: '0 0 20px rgba(200,169,110,0.6), 0 0 40px rgba(200,169,110,0.3), 0 0 80px rgba(200,169,110,0.15)',
+        color: glowColor,
+        textShadow: glowShadow,
         scale: 1.08,
         duration: 0.4,
         ease: 'power2.out'
       }, 1.2 + i * 0.3);
 
       tl.to(letter, {
-        color: 'rgba(255,255,255,0.15)',
+        color: letterFade,
         textShadow: 'none',
         scale: 1,
         duration: 0.6,

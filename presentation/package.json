@@ -3,5 +3,8 @@
   "private": true,
   "scripts": {
     "build": "node build.js"
+  },
+  "dependencies": {
+    "puppeteer": "^24.40.0"
   }
 }

@@ -16,14 +16,17 @@
    ═══════════════════════════════════════════════════════════ */
 @media (max-width: 768px) and (orientation: portrait) {
 
-  /* ─── Base Typography ─── */
+  /* ─── Base Typography ───
+     The 1080×1920 canvas is scaled ~0.36× to fit a 390px phone.
+     To keep text readable, the base font must be ~2.5× larger
+     than desktop so it renders at a comfortable mobile size. */
   .reveal {
-    font-size: 28px !important;
+    font-size: 48px !important;
   }
 
   /* ─── Slide Padding & Top-Align ─── */
   .reveal .slides > section {
-    padding: 24px 28px !important;
+    padding: 40px 48px !important;
     overflow-y: auto !important;
     overflow-x: hidden !important;
   }
@@ -85,48 +88,93 @@
   }
 
   /* ─── Cover Slide ─── */
+  #slide-cover {
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 0 !important;
+  }
+
+  /* Vertically center content, leave just enough room for divisions */
   #slide-cover .cover-content {
-    padding: 60px 24px 0 !important;
+    padding: 0 20px !important;
+    justify-content: center !important;
+    flex: 1 !important;
   }
 
   #slide-cover .cover-logo {
-    width: 140px !important;
-    margin-bottom: 28px !important;
+    width: 360px !important;
+    margin-bottom: 48px !important;
   }
 
   #slide-cover .cover-headline {
-    font-size: 3.2em !important;
-    margin-bottom: 20px !important;
+    font-size: 2.2em !important;
+    margin-bottom: 28px !important;
+    line-height: 1.1 !important;
   }
 
   #slide-cover .cover-subtitle {
     font-size: 1em !important;
     max-width: 100% !important;
+    line-height: 1.65 !important;
+    padding: 0 16px !important;
+    color: rgba(255, 255, 255, 0.65) !important;
+    text-align: center !important;
   }
 
   #slide-cover .cover-subtitle br {
     display: none;
   }
 
+  /* Division grid — 5 across in a single row */
   #slide-cover .cover-divisions {
-    flex-wrap: wrap !important;
-    gap: 8px !important;
-    padding: 0 20px 40px !important;
-    justify-content: center !important;
+    flex-wrap: nowrap !important;
+    gap: 0 !important;
+    padding: 0 16px 80px !important;
+    justify-content: space-evenly !important;
+    margin-top: 0 !important;
+    flex: 0 0 auto !important;
   }
 
   #slide-cover .cover-division-item {
-    max-width: 160px !important;
-    flex: 0 0 auto !important;
-    width: calc(33.33% - 8px) !important;
+    max-width: none !important;
+    flex: 1 1 0 !important;
+    width: auto !important;
+    gap: 10px !important;
+    min-width: 0 !important;
   }
 
   #slide-cover .cover-division-letter {
-    font-size: 2.2em !important;
+    font-size: 2em !important;
+    color: rgba(255, 255, 255, 0.35) !important;
   }
 
   #slide-cover .cover-division {
-    font-size: 0.6em !important;
+    font-size: 0.38em !important;
+    letter-spacing: 0.06em !important;
+    color: rgba(255, 255, 255, 0.55) !important;
+    white-space: nowrap !important;
+  }
+
+  /* ─── Who We Are (Slide 3) ─── */
+  #slide-whoweare {
+    padding: 40px 48px !important;
+  }
+
+  #slide-whoweare .mobile-grid-2 {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+  }
+
+  #slide-whoweare .mobile-grid-2 .card {
+    padding: 20px 16px !important;
+  }
+
+  #slide-whoweare .mobile-grid-2 .card h4 {
+    font-size: 0.85em !important;
+  }
+
+  #slide-whoweare .mobile-grid-2 .card p {
+    font-size: 0.7em !important;
   }
 
   /* ─── Cards ─── */
@@ -968,23 +1016,27 @@
 @media (max-width: 390px) and (orientation: portrait) {
 
   .reveal {
-    font-size: 26px !important;
+    font-size: 44px !important;
   }
 
   .reveal .slides > section {
-    padding: 20px 20px !important;
+    padding: 36px 40px !important;
   }
 
   #slide-cover .cover-headline {
-    font-size: 2.6em !important;
+    font-size: 2.8em !important;
   }
 
   #slide-cover .cover-logo {
-    width: 120px !important;
+    width: 260px !important;
   }
 
-  #slide-cover .cover-division-item {
-    width: calc(50% - 8px) !important;
+  #slide-cover .cover-division-letter {
+    font-size: 2.2em !important;
+  }
+
+  #slide-cover .cover-division {
+    font-size: 0.48em !important;
   }
 
   .grid-3 {

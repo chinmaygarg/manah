@@ -5,7 +5,7 @@
 
 const CHART_INSTANCES = {};
 
-const CHART_COLORS = {
+const CHART_COLORS_DARK = {
   navy: '#0A1628',
   navyLight: '#132240',
   gold: '#C8A96E',
@@ -18,13 +18,46 @@ const CHART_COLORS = {
   amber: '#D97706',
   textLight: '#E8E8E0',
   textMuted: '#A3A39C',
+  splitLine: 'rgba(255,255,255,0.06)',
+  axisLine: 'rgba(200,169,110,0.3)',
+  tooltipBorder: 'rgba(200,169,110,0.3)',
+  geoArea: '#132240',
+  geoBorder: 'rgba(200,169,110,0.25)',
 };
+
+const CHART_COLORS_LIGHT = {
+  navy: '#F5F5F0',
+  navyLight: '#FFFFFF',
+  gold: '#9A7B3C',
+  goldLight: '#B8954E',
+  goldDark: '#7A6230',
+  teal: '#0D9488',
+  blue: '#1E3A5F',
+  purple: '#7C3AED',
+  green: '#16A34A',
+  amber: '#D97706',
+  textLight: '#1A1A1A',
+  textMuted: '#6B6B68',
+  splitLine: 'rgba(0,0,0,0.06)',
+  axisLine: 'rgba(154,123,60,0.3)',
+  tooltipBorder: 'rgba(154,123,60,0.2)',
+  geoArea: '#E8E8E0',
+  geoBorder: 'rgba(154,123,60,0.2)',
+};
+
+function getChartColors() {
+  return document.body.classList.contains('light-theme') ? CHART_COLORS_LIGHT : CHART_COLORS_DARK;
+}
+
+// Backward compat alias
+var CHART_COLORS = CHART_COLORS_DARK;
 
 /* ─── Chart 1: Revenue Forecast Bar ─── */
 function initRevenueChart(containerId) {
   const el = document.getElementById(containerId);
   if (!el) return null;
 
+  const c = getChartColors();
   const chart = echarts.init(el, null, { renderer: 'canvas' });
   CHART_INSTANCES.revenue = chart;
 
@@ -34,17 +67,17 @@ function initRevenueChart(containerId) {
     xAxis: {
       type: 'category',
       data: MANAH_DATA.revenue.labels,
-      axisLine: { lineStyle: { color: 'rgba(200,169,110,0.3)' } },
-      axisLabel: { color: CHART_COLORS.textMuted, fontSize: 13, fontFamily: 'Outfit' },
+      axisLine: { lineStyle: { color: c.axisLine } },
+      axisLabel: { color: c.textMuted, fontSize: 13, fontFamily: 'Outfit' },
       axisTick: { show: false },
     },
     yAxis: {
       type: 'value',
       name: 'Revenue (₹ Cr)',
-      nameTextStyle: { color: CHART_COLORS.textMuted, fontSize: 12, fontFamily: 'Inter' },
+      nameTextStyle: { color: c.textMuted, fontSize: 12, fontFamily: 'Inter' },
       axisLine: { show: false },
-      axisLabel: { color: CHART_COLORS.textMuted, fontSize: 11 },
-      splitLine: { lineStyle: { color: 'rgba(255,255,255,0.06)' } },
+      axisLabel: { color: c.textMuted, fontSize: 11 },
+      splitLine: { lineStyle: { color: c.splitLine } },
     },
     series: [{
       type: 'bar',
@@ -53,18 +86,18 @@ function initRevenueChart(containerId) {
       itemStyle: {
         borderRadius: [6, 6, 0, 0],
         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-          { offset: 0, color: CHART_COLORS.goldLight },
-          { offset: 1, color: CHART_COLORS.goldDark },
+          { offset: 0, color: c.goldLight },
+          { offset: 1, color: c.goldDark },
         ]),
       },
       emphasis: {
-        itemStyle: { color: CHART_COLORS.gold },
+        itemStyle: { color: c.gold },
       },
       label: {
         show: true,
         position: 'top',
         formatter: (p) => `₹${p.value.toLocaleString()} Cr`,
-        color: CHART_COLORS.gold,
+        color: c.gold,
         fontSize: 13,
         fontWeight: 'bold',
         fontFamily: 'Outfit',
@@ -75,9 +108,9 @@ function initRevenueChart(containerId) {
     }],
     tooltip: {
       trigger: 'axis',
-      backgroundColor: CHART_COLORS.navyLight,
-      borderColor: 'rgba(200,169,110,0.3)',
-      textStyle: { color: CHART_COLORS.textLight },
+      backgroundColor: c.navyLight,
+      borderColor: c.tooltipBorder,
+      textStyle: { color: c.textLight },
       formatter: (params) => {
         const p = params[0];
         return `<strong>${p.name}</strong><br/>Revenue: ₹${p.value.toLocaleString()} Cr`;
@@ -94,6 +127,7 @@ function initOrderBookingsChart(containerId) {
   const el = document.getElementById(containerId);
   if (!el) return null;
 
+  const c = getChartColors();
   const chart = echarts.init(el, null, { renderer: 'canvas' });
   CHART_INSTANCES.orderBookings = chart;
 
@@ -115,7 +149,7 @@ function initOrderBookingsChart(containerId) {
     grid: { left: 60, right: 30, top: 40, bottom: 70 },
     legend: {
       bottom: 0,
-      textStyle: { color: CHART_COLORS.textMuted, fontSize: 11, fontFamily: 'Inter' },
+      textStyle: { color: c.textMuted, fontSize: 11, fontFamily: 'Inter' },
       itemWidth: 12,
       itemHeight: 12,
       itemGap: 16,
@@ -123,24 +157,24 @@ function initOrderBookingsChart(containerId) {
     xAxis: {
       type: 'category',
       data: MANAH_DATA.orderBookings.years,
-      axisLine: { lineStyle: { color: 'rgba(200,169,110,0.3)' } },
-      axisLabel: { color: CHART_COLORS.textMuted, fontSize: 13, fontFamily: 'Outfit' },
+      axisLine: { lineStyle: { color: c.axisLine } },
+      axisLabel: { color: c.textMuted, fontSize: 13, fontFamily: 'Outfit' },
       axisTick: { show: false },
     },
     yAxis: {
       type: 'value',
       name: 'Orders (₹ Cr)',
-      nameTextStyle: { color: CHART_COLORS.textMuted, fontSize: 12 },
+      nameTextStyle: { color: c.textMuted, fontSize: 12 },
       axisLine: { show: false },
-      axisLabel: { color: CHART_COLORS.textMuted, fontSize: 11 },
-      splitLine: { lineStyle: { color: 'rgba(255,255,255,0.06)' } },
+      axisLabel: { color: c.textMuted, fontSize: 11 },
+      splitLine: { lineStyle: { color: c.splitLine } },
     },
     series,
     tooltip: {
       trigger: 'axis',
-      backgroundColor: CHART_COLORS.navyLight,
-      borderColor: 'rgba(200,169,110,0.3)',
-      textStyle: { color: CHART_COLORS.textLight },
+      backgroundColor: c.navyLight,
+      borderColor: c.tooltipBorder,
+      textStyle: { color: c.textLight },
     },
   };
 
@@ -153,6 +187,7 @@ function initPipelineChart(containerId) {
   const el = document.getElementById(containerId);
   if (!el) return null;
 
+  const c = getChartColors();
   const chart = echarts.init(el, null, { renderer: 'canvas' });
   CHART_INSTANCES.pipeline = chart;
 
@@ -173,7 +208,7 @@ function initPipelineChart(containerId) {
       axisLine: { show: false },
       axisTick: { show: false },
       axisLabel: {
-        color: CHART_COLORS.textLight,
+        color: getChartColors().textLight,
         fontSize: 14,
         fontFamily: 'Outfit',
         fontWeight: 500,
@@ -192,7 +227,7 @@ function initPipelineChart(containerId) {
         show: true,
         position: 'right',
         formatter: (p) => `₹${p.value.toLocaleString()} Cr`,
-        color: CHART_COLORS.gold,
+        color: getChartColors().gold,
         fontSize: 14,
         fontWeight: 'bold',
         fontFamily: 'Outfit',
@@ -212,6 +247,7 @@ function initMROMap(containerId) {
   const el = document.getElementById(containerId);
   if (!el) return null;
 
+  const c = getChartColors();
   const chart = echarts.init(el, null, { renderer: 'canvas' });
   CHART_INSTANCES.mroMap = chart;
 
@@ -234,8 +270,8 @@ function initMROMap(containerId) {
       zoom: 1.2,
       center: [80, 22],
       itemStyle: {
-        areaColor: CHART_COLORS.navyLight,
-        borderColor: 'rgba(200,169,110,0.25)',
+        areaColor: c.geoArea,
+        borderColor: c.geoBorder,
         borderWidth: 1,
       },
       emphasis: {
@@ -253,12 +289,12 @@ function initMROMap(containerId) {
         symbolSize: 14,
         showEffectOn: 'render',
         rippleEffect: { brushType: 'stroke', scale: 3, period: 4 },
-        itemStyle: { color: CHART_COLORS.gold },
+        itemStyle: { color: c.gold },
         label: {
           show: true,
           position: 'right',
           formatter: '{b}',
-          color: CHART_COLORS.textLight,
+          color: c.textLight,
           fontSize: 12,
           fontFamily: 'Inter',
         },
@@ -271,12 +307,12 @@ function initMROMap(containerId) {
         symbolSize: 10,
         showEffectOn: 'render',
         rippleEffect: { brushType: 'stroke', scale: 4, period: 3 },
-        itemStyle: { color: CHART_COLORS.teal },
+        itemStyle: { color: c.teal },
         label: {
           show: true,
           position: 'right',
           formatter: '{b}',
-          color: CHART_COLORS.teal,
+          color: c.teal,
           fontSize: 11,
           fontFamily: 'Inter',
           fontStyle: 'italic',
@@ -286,7 +322,7 @@ function initMROMap(containerId) {
     legend: {
       bottom: 10,
       data: ['Current', 'Expansion'],
-      textStyle: { color: CHART_COLORS.textMuted, fontSize: 12 },
+      textStyle: { color: c.textMuted, fontSize: 12 },
       itemWidth: 14,
       itemHeight: 14,
     },
@@ -319,12 +355,12 @@ function initMROMap(containerId) {
           symbolSize: 20,
           showEffectOn: 'render',
           rippleEffect: { brushType: 'stroke', scale: 3.5, period: 4 },
-          itemStyle: { color: CHART_COLORS.gold, shadowBlur: 10, shadowColor: CHART_COLORS.gold },
+          itemStyle: { color: c.gold, shadowBlur: 10, shadowColor: c.gold },
           label: {
             show: true,
             position: 'top',
             formatter: (p) => MANAH_DATA.mroLocations.current[p.dataIndex].name,
-            color: CHART_COLORS.textLight,
+            color: c.textLight,
             fontSize: 13,
             fontFamily: 'Outfit',
             fontWeight: 600,
@@ -338,12 +374,12 @@ function initMROMap(containerId) {
           symbolSize: 14,
           showEffectOn: 'render',
           rippleEffect: { brushType: 'stroke', scale: 5, period: 2.5 },
-          itemStyle: { color: CHART_COLORS.teal, shadowBlur: 8, shadowColor: CHART_COLORS.teal },
+          itemStyle: { color: c.teal, shadowBlur: 8, shadowColor: c.teal },
           label: {
             show: true,
             position: 'top',
             formatter: (p) => MANAH_DATA.mroLocations.expansion[p.dataIndex].name,
-            color: CHART_COLORS.teal,
+            color: c.teal,
             fontSize: 12,
             fontFamily: 'Outfit',
             fontStyle: 'italic',
@@ -355,7 +391,7 @@ function initMROMap(containerId) {
       legend: {
         bottom: 10,
         data: ['Current Locations', 'Expansion Planned'],
-        textStyle: { color: CHART_COLORS.textMuted, fontSize: 12, fontFamily: 'Inter' },
+        textStyle: { color: c.textMuted, fontSize: 12, fontFamily: 'Inter' },
         itemWidth: 14,
         itemHeight: 14,
       },
@@ -376,6 +412,25 @@ function resizeAllCharts() {
 }
 
 window.addEventListener('resize', resizeAllCharts);
+
+/* ─── Refresh Charts for Theme Toggle ─── */
+function refreshChartsForTheme() {
+  Object.keys(CHART_INSTANCES).forEach(function (key) {
+    if (CHART_INSTANCES[key]) {
+      CHART_INSTANCES[key].dispose();
+      CHART_INSTANCES[key] = null;
+    }
+  });
+  if (typeof Reveal !== 'undefined' && Reveal.isReady()) {
+    var currentSlide = Reveal.getCurrentSlide();
+    if (currentSlide && currentSlide.id) {
+      initChartForSlide(currentSlide.id);
+    }
+  }
+}
+
+// Expose for theme manager
+window.__refreshChartsForTheme = refreshChartsForTheme;
 
 /* ─── Initialize Chart on Slide Entry ─── */
 function initChartForSlide(slideId) {

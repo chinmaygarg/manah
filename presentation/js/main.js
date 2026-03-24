@@ -3,6 +3,11 @@
    ═══════════════════════════════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', function () {
+  // ─── Store original slide backgrounds for theme toggling ───
+  if (window.__themeManager) {
+    window.__themeManager.storeOriginalBackgrounds();
+  }
+
   // ─── Viewport Detection for Responsive Canvas ───
   function getSlideConfig() {
     var w = window.innerWidth;
@@ -71,6 +76,14 @@ document.addEventListener('DOMContentLoaded', function () {
     loop: false,
     mouseWheel: false,
   }).then(function () {
+    // ─── Apply saved theme after Reveal is ready ───
+    if (window.__themeManager) {
+      var saved = window.__themeManager.getSavedTheme();
+      if (saved === 'light') {
+        window.__themeManager.applyTheme('light');
+      }
+    }
+
     // ─── Track animated slides to avoid re-triggering ───
     var animatedSlides = {};
 
