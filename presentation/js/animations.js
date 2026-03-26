@@ -3,6 +3,36 @@
    Uses gsap.fromTo() for safety — never leaves elements invisible.
    ═══════════════════════════════════════════════════════════ */
 
+/* ─── Project Background Slideshow ─── */
+(function() {
+  var intervalMs = 3000;
+  document.querySelectorAll('.project-bg-slideshow').forEach(function(slideshow) {
+    var imgs = slideshow.querySelectorAll('.project-bg-img');
+    if (imgs.length <= 1) return;
+    var current = 0;
+    setInterval(function() {
+      imgs[current].classList.remove('active');
+      current = (current + 1) % imgs.length;
+      imgs[current].classList.add('active');
+    }, intervalMs);
+  });
+})();
+
+/* ─── Project Footprints Gallery Transitions ─── */
+(function() {
+  document.querySelectorAll('.gallery-slot').forEach(function(slot, index) {
+    var imgs = slot.querySelectorAll('.gallery-img');
+    if (imgs.length <= 1) return;
+    var current = 0;
+    var delay = 3000 + (index * 800);
+    setInterval(function() {
+      imgs[current].classList.remove('active');
+      current = (current + 1) % imgs.length;
+      imgs[current].classList.add('active');
+    }, delay);
+  });
+})();
+
 /* ─── Counter Animation ─── */
 function animateCounter(element, target, duration, prefix, suffix) {
   var p = prefix || '';
