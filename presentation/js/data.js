@@ -84,7 +84,7 @@ const MANAH_DATA = {
     { label: 'EPC Bids', value: 10500, color: '#C8A96E' },
     { label: 'Investments', value: 8500, color: '#5B8CC5' },
     { label: 'HAM Projects', value: 11500, color: '#0D9488' },
-    { label: 'Under Execution', value: 224, color: '#D97706' },
+    { label: 'Under Execution', value: 2240, color: '#D97706' },
   ],
 
   // ─── Dynamics Sectors ───
