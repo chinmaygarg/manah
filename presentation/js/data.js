@@ -192,16 +192,6 @@ const MANAH_DATA = {
     },
   ],
 
-  // ─── Future Expansions (deduplicated against the 10 Dynamics sectors) ───
-  expansions: [
-    { title: 'Green Hydrogen', desc: 'Production & distribution at scale' },
-    { title: 'Nuclear (SMR)', desc: 'Small Modular Reactors & licensing' },
-    { title: 'Sovereign AI & Data Centers', desc: 'LLM/SLM training & hyperscaler DCs' },
-    { title: 'Mergers & Acquisitions', desc: 'Strategic acquisitions & consolidation' },
-    { title: 'Smart Metering', desc: 'Energy & water meters at scale' },
-    { title: 'OEM Collaborations', desc: 'Advanced tech integration' },
-  ],
-
   // ─── ESG Data ───
   esg: {
     environmental: {
