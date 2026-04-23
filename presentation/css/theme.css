@@ -50,7 +50,7 @@
 /* ─── Reveal.js Overrides ─── */
 .reveal {
   font-family: var(--font-body);
-  font-size: 22px;
+  font-size: 25px;
   color: var(--gray-100);
 }
 
@@ -76,30 +76,30 @@
 }
 
 .reveal h1 {
-  font-size: 3.2em;
+  font-size: 3.4em;
   font-weight: 800;
 }
 
 .reveal h2 {
-  font-size: 2.2em;
+  font-size: 2.4em;
 }
 
 .reveal h3 {
-  font-size: 1.4em;
+  font-size: 1.5em;
   font-weight: 600;
   color: var(--gold);
 }
 
 .reveal h4 {
-  font-size: 1.1em;
+  font-size: 1.2em;
   font-weight: 600;
   color: var(--gold-light);
 }
 
 .reveal p {
-  line-height: 1.7;
+  line-height: 1.65;
   color: var(--gray-300);
-  max-width: 800px;
+  max-width: 900px;
 }
 
 .reveal strong {
@@ -318,6 +318,47 @@
 
 .logo-grid img:hover {
   opacity: 1;
+}
+
+/* ─── Partner Tile (mixed image / text grid) ─── */
+.partner-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 8px;
+  min-height: 84px;
+  text-align: center;
+}
+
+.partner-tile img {
+  max-height: 44px;
+  max-width: 100%;
+  width: auto;
+  background: white;
+  border-radius: 4px;
+  padding: 4px 6px;
+  opacity: 0.95;
+}
+
+.partner-tile span {
+  font-size: 0.65em;
+  color: var(--gray-300);
+  line-height: 1.2;
+}
+
+.partner-tile.partner-text {
+  background: rgba(200, 169, 110, 0.06);
+  border-left: 2px solid var(--gold);
+}
+
+.partner-tile .partner-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--gold);
+  font-size: 0.78em;
+  line-height: 1.25;
 }
 
 /* ─── Leader Cards ─── */

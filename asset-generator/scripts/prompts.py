@@ -222,6 +222,49 @@ IMAGE_PROMPTS = {
             "purpose": "Technology & Manufacturing - detail shot"
         },
         {
+            "id": "div_atomic_01",
+            "filename": "divisions/manah_atomic_hero.png",
+            "prompt": (
+                BRAND_STYLE +
+                "Cinematic wide-angle view of a next-generation Small Modular Reactor (SMR) "
+                "nuclear facility at dusk. Sleek modern containment structures with soft "
+                "internal blue-white glow, set against a deep navy sky with subtle gold-lit "
+                "horizon. Engineered landscape with cooling towers emitting clean white vapour. "
+                "Architectural precision, high-security industrial aesthetic. No text, no logos. "
+                "Conveys clean nuclear energy, safety, and national-scale infrastructure."
+            ),
+            "aspect_ratio": "16:9",
+            "purpose": "Manah Atomic (Nuclear / SMR) division hero"
+        },
+        {
+            "id": "div_atomic_02",
+            "filename": "divisions/manah_atomic_detail.png",
+            "prompt": (
+                BRAND_STYLE +
+                "Macro detail of a reactor pressure vessel interior or SMR core assembly — "
+                "precision-machined stainless steel surfaces, blue Cherenkov-radiation-like "
+                "glow in background, gold accent lighting on structural ribs. Shallow depth "
+                "of field, high-resolution technical beauty shot. No people. Conveys "
+                "engineering mastery and nuclear safety."
+            ),
+            "aspect_ratio": "4:3",
+            "purpose": "Manah Atomic - capability detail shot"
+        },
+        {
+            "id": "div_ai_01",
+            "filename": "divisions/manah_ai_hero.png",
+            "prompt": (
+                BRAND_STYLE +
+                "Cinematic interior of a modern hyperscale data center — long symmetrical "
+                "corridor of server racks, cool blue indicator LEDs, warm gold spotlights "
+                "accenting the aisle. Subtle holographic AI/neural-network motifs as bokeh "
+                "overlays. Clean, premium, government-grade sovereign compute aesthetic. "
+                "No text. Conveys scale, security, and next-generation AI infrastructure."
+            ),
+            "aspect_ratio": "16:9",
+            "purpose": "Manah AI (Generative AI & Data Centers) division hero"
+        },
+        {
             "id": "div_investments_01",
             "filename": "divisions/manah_investments_hero.png",
             "prompt": (

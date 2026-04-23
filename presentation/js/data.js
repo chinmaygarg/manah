@@ -20,18 +20,29 @@ const MANAH_DATA = {
     { value: 500, suffix: '%', label: 'YoY Revenue Growth', icon: '📈' },
     { value: 3.6, suffix: 'B+', prefix: '₹', label: 'Project Pipeline', icon: '🏗️' },
     { value: 20, suffix: '+', label: 'Strategic Partners', icon: '🤝' },
-    { value: 5, suffix: '', label: 'Divisions', icon: '🏢' },
+    { value: 6, suffix: '', label: 'Divisions', icon: '🏢' },
     { value: 1000, suffix: '+', label: 'Team Members', icon: '👥' },
     { value: 15, suffix: '+', label: 'States Active', icon: '📍' },
   ],
 
-  // ─── Subsidiaries ───
+  // ─── Subsidiaries (6 divisions, new sequence) ───
   subsidiaries: [
     {
       name: 'Manah Dynamics',
-      focus: 'Projects & Infrastructure, Technology & Manufacturing',
+      focus: 'Projects, Infrastructure & Electronics Manufacturing',
       color: '#1E3A5F',
       icon: '⚡',
+    },
+    {
+      name: 'Manah Green Energy',
+      focus: 'Green Hydrogen & Renewables',
+      color: '#16A34A',
+      icon: '🌱',
+    },
+    {
+      name: 'Manah Atomic',
+      focus: 'Nuclear Energy Solutions — SMRs & Advanced Reactors',
+      color: '#7C3AED',
     },
     {
       name: 'Manah Aerospace',
@@ -40,22 +51,15 @@ const MANAH_DATA = {
       icon: '✈️',
     },
     {
-      name: 'Manah Green Energy',
-      focus: 'Green Hydrogen Production',
-      color: '#16A34A',
-      icon: '🌱',
+      name: 'Manah AI',
+      focus: 'Generative AI & Data Centers',
+      color: '#5B8CC5',
     },
     {
       name: 'Manah Investments',
       focus: 'Strategic Capital Deployment',
       color: '#D97706',
       icon: '📊',
-    },
-    {
-      name: 'Manah Steel & Engineering',
-      focus: 'Steel & Engineering Services',
-      color: '#78716C',
-      icon: '🔧',
     },
   ],
 
@@ -79,12 +83,12 @@ const MANAH_DATA = {
     totals: [1500, 6300, 9500],
   },
 
-  // ─── Pipeline Breakdown ───
+  // ─── Pipeline Breakdown (client mockup — ₹20,000+ Cr combined) ───
   pipeline: [
-    { label: 'EPC Bids', value: 10500, color: '#C8A96E' },
-    { label: 'Investments', value: 8500, color: '#5B8CC5' },
-    { label: 'HAM Projects', value: 11500, color: '#0D9488' },
-    { label: 'Under Execution', value: 2240, color: '#D97706' },
+    { label: 'EPC Bids', value: 5500, color: '#5B8CC5' },
+    { label: 'Investments', value: 8000, color: '#F4F6FA' },
+    { label: 'HAM Projects', value: 6500, color: '#16A34A' },
+    { label: 'M&A Targets', value: 3, color: '#D97706', unit: 'deals' },
   ],
 
   // ─── Dynamics Sectors ───
@@ -102,26 +106,26 @@ const MANAH_DATA = {
     { name: 'Disaster Management', desc: 'Training & response', icon: '🚨' },
   ],
 
-  // ─── MRO Locations ───
+  // ─── MRO Locations (6 current + 2 planned) ───
   mroLocations: {
     current: [
       { name: 'Hyderabad', lat: 17.385, lng: 78.4867 },
       { name: 'Koppal', lat: 15.3468, lng: 76.1549 },
       { name: 'Ahmedabad', lat: 23.0225, lng: 72.5714 },
       { name: 'Bhubaneshwar', lat: 20.2961, lng: 85.8245 },
+      { name: 'Chennai', lat: 13.0827, lng: 80.2707 },
+      { name: 'Bangalore', lat: 12.9716, lng: 77.5946 },
     ],
     expansion: [
       { name: 'Pune', lat: 18.5204, lng: 73.8567 },
-      { name: 'Bangalore', lat: 12.9716, lng: 77.5946 },
-      { name: 'Chennai', lat: 13.0827, lng: 80.2707 },
       { name: 'Kolkata', lat: 22.5726, lng: 88.3639 },
     ],
   },
 
   // ─── Green Hydrogen Milestones ───
   greenHydrogen: [
-    { milestone: 'MoU & Agreement', detail: 'Signed with Government of Madhya Pradesh for Hydrogen Production Plant at Bina' },
-    { milestone: 'Technology Partnership', detail: 'Strategic partnership with SoHHytec SA, Switzerland for ARB technology' },
+    { milestone: 'MoU & Agreement', detail: 'Signed with Government of Madhya Pradesh for Hydrogen Production Plant at Bina, based on ARB and Electrolysis technologies' },
+    { milestone: 'Technology Partnerships', detail: 'Strategic partnerships with multiple global technology partners for water-splitting and electrolysis hydrogen production' },
     { milestone: 'Investment & Scale', detail: '₹5,000 Cr investment for 18,000 MTPA green hydrogen in 4 phases over 350 acres' },
     { milestone: 'Project Progress', detail: 'Offtake agreements and land allotment activities currently in progress' },
   ],
@@ -134,26 +138,26 @@ const MANAH_DATA = {
     { name: 'Real Estate', desc: 'Commercial, industrial & mixed-use in high-growth corridors', icon: '🏢' },
   ],
 
-  // ─── Partners ───
+  // ─── Partners (client mockup — 20+ partners) ───
   partners: [
-    'KELTRON', 'C-DAC', 'BSNL', 'SoHHytec', 'PowerGrid',
-    'NPCIL', 'PFC', 'REC', 'EIL', 'SECI',
-    'AP Transco', 'MES', 'TCIL', 'APSFL', 'NBCC',
-    'PVR', 'Generic', 'Vere Max', 'Cypress', 'GRIL',
+    'KELTRON', 'C-DAC', 'BSNL', 'PVR', 'MANUR Group',
+    'PowerGrid', 'CIKARCO', 'Roorkee Projects',
+    'NPCIL', 'PFC Consulting', 'REC Power Development',
+    'Engineers India Limited', 'GRIL', 'SECI',
+    'MES', 'TCIL', 'APSFL', 'NBCC', 'PVR Projects',
+    'Generic', 'Vere Max', 'Cypress Solutions',
   ],
 
   partnerLogos: {
     'KELTRON': 'keltron.png',
     'C-DAC': 'cdac.png',
     'BSNL': 'bsnl.png',
-    'SoHHytec': 'sohhytec.png',
     'PowerGrid': 'powergrid.png',
     'SECI': 'seci.png',
-    'AP Transco': 'ap-transco.png',
     'MES': 'mes.png',
     'TCIL': 'tcil.png',
     'APSFL': 'apsfl.png',
-    'TG Transco': 'tgtransco.png',
+    'Generic': 'generic.png',
   },
 
   // ─── Leaders ───
@@ -188,16 +192,14 @@ const MANAH_DATA = {
     },
   ],
 
-  // ─── Future Expansions ───
+  // ─── Future Expansions (deduplicated against the 10 Dynamics sectors) ───
   expansions: [
-    { title: 'Telecom Sector', desc: 'Towers, BharatNet, Fiber Network', icon: '📡' },
-    { title: 'Green Hydrogen (GH₂)', desc: 'Production & distribution', icon: '🌿' },
-    { title: 'Mergers & Acquisitions', desc: 'Strategic growth via M&A', icon: '🤝' },
-    { title: 'EHV Infrastructure', desc: 'Lines, substations, cables', icon: '⚡' },
-    { title: 'Global Oil & Gas', desc: 'International EPC expansion', icon: '🌍' },
-    { title: 'Smart Metering', desc: 'Energy & water meters', icon: '📊' },
-    { title: 'Civil Infrastructure', desc: 'Roads, buildings, tunnels', icon: '🏗️' },
-    { title: 'OEM Collaborations', desc: 'Advanced tech integration', icon: '🔬' },
+    { title: 'Green Hydrogen', desc: 'Production & distribution at scale' },
+    { title: 'Nuclear (SMR)', desc: 'Small Modular Reactors & licensing' },
+    { title: 'Sovereign AI & Data Centers', desc: 'LLM/SLM training & hyperscaler DCs' },
+    { title: 'Mergers & Acquisitions', desc: 'Strategic acquisitions & consolidation' },
+    { title: 'Smart Metering', desc: 'Energy & water meters at scale' },
+    { title: 'OEM Collaborations', desc: 'Advanced tech integration' },
   ],
 
   // ─── ESG Data ───
@@ -221,10 +223,12 @@ const MANAH_DATA = {
 
   // ─── Office Locations ───
   offices: [
-    { city: 'Hyderabad', type: 'Corporate HQ', address: '5th Floor, Trendz Platina, Madhapur' },
-    { city: 'Jaipur', type: 'Regional Office', address: 'Rajasthan Operations' },
+    { city: 'Hyderabad', type: 'Corporate HQ', address: 'Trendz Platina, Madhapur' },
     { city: 'New Delhi (Gurugram)', type: 'Regional Office', address: 'NCR Operations' },
-    { city: 'Bangalore', type: 'Regional Office', address: 'South India Operations' },
+    { city: 'Dubai', type: 'International Business', address: 'Global Operations' },
+    { city: 'Vishakhapatnam', type: 'Regional Office', address: 'Andhra Pradesh' },
+    { city: 'Bhopal', type: 'Regional Office', address: 'Madhya Pradesh' },
+    { city: 'Bangalore', type: 'Regional Office', address: 'Karnataka' },
   ],
 
   // ─── Aerospace Services ───
