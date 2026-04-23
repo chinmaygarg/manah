@@ -320,45 +320,31 @@
   opacity: 1;
 }
 
-/* ─── Partner Tile (mixed image / text grid) ─── */
+/* ─── Partner Tile (PPT-extracted logos) ─── */
 .partner-tile {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  padding: 10px 8px;
-  min-height: 84px;
-  text-align: center;
+  padding: 16px 18px;
+  min-height: 120px;
+  background: #ffffff;
+  border: 1px solid rgba(200, 169, 110, 0.25);
+  border-radius: 10px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.partner-tile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(200, 169, 110, 0.2);
 }
 
 .partner-tile img {
-  max-height: 44px;
+  max-height: 80px;
   max-width: 100%;
   width: auto;
-  background: white;
-  border-radius: 4px;
-  padding: 4px 6px;
-  opacity: 0.95;
-}
-
-.partner-tile span {
-  font-size: 0.65em;
-  color: var(--gray-300);
-  line-height: 1.2;
-}
-
-.partner-tile.partner-text {
-  background: rgba(200, 169, 110, 0.06);
-  border-left: 2px solid var(--gold);
-}
-
-.partner-tile .partner-name {
-  font-family: var(--font-display);
-  font-weight: 600;
-  color: var(--gold);
-  font-size: 0.78em;
-  line-height: 1.25;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 /* ─── Leader Cards ─── */
