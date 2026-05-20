@@ -36,7 +36,7 @@ if not REPLICATE_TOKEN:
 
 os.environ["REPLICATE_API_TOKEN"] = REPLICATE_TOKEN
 
-VIDEO_MODEL = "google/veo-3-fast"
+VIDEO_MODEL = os.getenv("REPLICATE_HERO_VIDEO_MODEL", "lightricks/ltx-2-fast")
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), '..', 'output', 'replicate', 'videos', 'hero')
 WEBSITE_VIDEO_DIR = "/Users/chinmay/Desktop/Manah/website/public/videos/hero"
 
@@ -90,20 +90,38 @@ HERO_VIDEOS = [
         "purpose": "Division 3: Manah Green Energy — Renewables & Green Hydrogen"
     },
     {
-        "id": "technology",
-        "filename": "hero_technology.mp4",
+        "id": "atomic",
+        "filename": "hero_atomic.mp4",
         "duration": 4,
         "prompt": (
-            "Cinematic slow tracking shot inside a state-of-the-art electronics manufacturing "
-            "cleanroom. Camera glides smoothly past automated SMT (Surface Mount Technology) pick-and-place "
-            "machines operating with robotic precision. Micro-components being placed on circuit boards "
-            "at high speed. Cool blue-violet ambient lighting with warm golden accent lights on the "
-            "machinery. LED indicators glowing. Shallow depth of field creating beautiful bokeh on "
-            "background equipment. Atmosphere of advanced technological precision and defence-grade "
-            "quality. Ultra-smooth dolly motion. Shot on Sony Venice 2 with Cooke anamorphic lenses. "
+            "Cinematic wide dolly shot inside a modern Small Modular Reactor (SMR) facility. "
+            "Camera glides smoothly along pristine white reactor containment structures with elegant "
+            "blue-gold accent lighting. Polished steel safety bulkheads and radiation-shielded "
+            "viewing windows reflect gentle ambient glow. In the foreground, subtle blue Cherenkov-like "
+            "glow emanates from a reactor core visible through thick observation glass. Engineers in "
+            "sterile uniforms coordinate at minimalist control consoles with holographic dashboards. "
+            "Deep navy shadows contrast with soft gold highlights and faint electric blue. "
+            "Ultra-smooth cinematic motion. Atmosphere of clean, safe, futuristic nuclear technology. "
+            "Shot on Arri Alexa 65mm. Photorealistic, 4K cinematic quality. No text, no people close-up."
+        ),
+        "purpose": "Division: Manah Atomic — Nuclear Energy / SMRs"
+    },
+    {
+        "id": "ai",
+        "filename": "hero_ai.mp4",
+        "duration": 4,
+        "prompt": (
+            "Cinematic slow dolly shot through a modern AI data center hall. Camera glides between "
+            "towering rows of illuminated GPU server racks with pulsing amber and cool blue LED status "
+            "lights. Liquid cooling pipes glow with a faint blue sheen. Volumetric light beams cut "
+            "through subtle haze. Reflections on polished black epoxy floor. In the background, a soft "
+            "holographic visualization of neural network nodes and generative AI patterns floats "
+            "transparently over the racks. Atmosphere of sovereign high-performance compute, "
+            "precision, and intelligent infrastructure. Deep navy and charcoal tones with warm amber "
+            "and electric blue accents. Ultra-smooth cinematic motion. Shot on Sony Venice 2. "
             "Photorealistic, 4K cinematic quality. No text, no people close-up."
         ),
-        "purpose": "Division 4: Manah Technology — Electronics Manufacturing"
+        "purpose": "Division: Manah AI — Generative AI & Data Centers"
     },
     {
         "id": "investments",
@@ -124,8 +142,29 @@ HERO_VIDEOS = [
 ]
 
 
+def build_video_input(model, prompt, duration):
+    """Build the model-specific Replicate input dict for a video model."""
+    name = model.lower()
+    if "ltx" in name:
+        # LTX-2: duration enum 6/8/10/...; resolution 1080p/2k/4k; no aspect_ratio
+        allowed = (6, 8, 10, 12, 14, 16, 18, 20)
+        return {
+            "prompt": prompt,
+            "duration": min(allowed, key=lambda d: abs(d - duration)),
+            "resolution": "1080p",
+            "generate_audio": False,
+        }
+    # veo / seedance and similar accept aspect_ratio + resolution
+    return {
+        "prompt": prompt,
+        "duration": duration,
+        "aspect_ratio": "16:9",
+        "resolution": "720p",
+    }
+
+
 def generate_video(prompt_data):
-    """Generate a single hero video using Veo 3 Fast on Replicate."""
+    """Generate a single hero video on Replicate using the configured model."""
     out_path = os.path.join(OUTPUT_DIR, prompt_data["filename"])
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
 
@@ -141,12 +180,9 @@ def generate_video(prompt_data):
     try:
         output = replicate.run(
             VIDEO_MODEL,
-            input={
-                "prompt": prompt_data["prompt"],
-                "duration": prompt_data["duration"],
-                "aspect_ratio": "16:9",
-                "resolution": "720p",
-            }
+            input=build_video_input(
+                VIDEO_MODEL, prompt_data["prompt"], prompt_data["duration"]
+            )
         )
 
         if output:

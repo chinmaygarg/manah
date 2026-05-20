@@ -23,7 +23,7 @@ if not REPLICATE_TOKEN:
 
 os.environ["REPLICATE_API_TOKEN"] = REPLICATE_TOKEN
 
-IMAGE_MODEL = "black-forest-labs/flux-2-pro"
+IMAGE_MODEL = os.getenv("REPLICATE_THUMBNAIL_MODEL", "black-forest-labs/flux-2-klein-4b")
 OUTPUT_DIR = "/Users/chinmay/Desktop/Manah/website/public/images/news"
 
 BRAND_STYLE = (
@@ -95,8 +95,6 @@ def generate_image(img_data):
             "aspect_ratio": img_data["aspect_ratio"],
             "output_format": "jpg",
             "output_quality": 95,
-            "safety_tolerance": 2,
-            "steps": 30,
         }
     )
 
@@ -141,7 +139,7 @@ def optimize_to_webp(jpg_path, name):
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     print("=" * 50)
-    print("  Generating News Section Images (FLUX 2 Pro)")
+    print(f"  Generating News Section Images ({IMAGE_MODEL})")
     print("=" * 50)
 
     for i, img in enumerate(NEWS_IMAGES):

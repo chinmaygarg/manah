@@ -29,7 +29,7 @@ if not REPLICATE_TOKEN:
 
 os.environ["REPLICATE_API_TOKEN"] = REPLICATE_TOKEN
 
-IMAGE_MODEL = "black-forest-labs/flux-2-pro"
+IMAGE_MODEL = os.getenv("REPLICATE_IMAGE_MODEL", "black-forest-labs/flux-2-pro")
 
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), '..', 'output', 'replicate', 'images')
 WEBSITE_IMAGES_DIR = "/Users/chinmay/Desktop/Manah/website/public/images"

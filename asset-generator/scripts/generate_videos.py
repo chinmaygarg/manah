@@ -3,7 +3,7 @@
 ═══════════════════════════════════════════════════════════════
 MANAH GROUP — Video Asset Generator
 ═══════════════════════════════════════════════════════════════
-Uses Google Veo 2 (via Gemini API) to generate website videos.
+Uses Google Veo 3.1 (via Gemini API) to generate website videos.
 
 Video generation is asynchronous — Veo returns an operation ID
 that must be polled until the video is ready.
@@ -41,7 +41,7 @@ from dotenv import load_dotenv
 load_dotenv(os.path.join(os.path.dirname(__file__), '..', '.env'))
 
 API_KEY = os.getenv("GOOGLE_API_KEY", "")
-VIDEO_MODEL = os.getenv("VIDEO_MODEL", "veo-2.0-generate-001")
+VIDEO_MODEL = os.getenv("VIDEO_MODEL", "veo-3.1-generate-preview")
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), '..', 'output', 'videos')
 OPERATIONS_FILE = os.path.join(os.path.dirname(__file__), '..', 'output', 'pending_video_operations.json')
 

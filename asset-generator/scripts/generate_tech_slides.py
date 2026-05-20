@@ -16,7 +16,7 @@ except ImportError:
     sys.exit(1)
 
 API_KEY = os.getenv("GOOGLE_API_KEY", "")
-IMAGE_MODEL = "imagen-4.0-generate-001"
+IMAGE_MODEL = os.getenv("IMAGEN_MODEL", "imagen-4.0-fast-generate-001")
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), '..', '..', 'presentation', 'images')
 
 PROMPTS = [

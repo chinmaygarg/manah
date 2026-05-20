@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 Manah Group — Replicate Asset Generator
-Uses FLUX 2 Pro for images and Veo 3 Fast for videos.
+Uses FLUX 2 Pro for images and LTX-2 Fast for videos.
+Models are configurable via .env (REPLICATE_IMAGE_MODEL / REPLICATE_HERO_VIDEO_MODEL).
 Outputs optimized WebP images + compressed MP4 videos for fast web loading.
 """
 
@@ -30,8 +31,8 @@ if not REPLICATE_TOKEN:
 
 os.environ["REPLICATE_API_TOKEN"] = REPLICATE_TOKEN
 
-IMAGE_MODEL = "black-forest-labs/flux-2-pro"
-VIDEO_MODEL = "google/veo-3-fast"
+IMAGE_MODEL = os.getenv("REPLICATE_IMAGE_MODEL", "black-forest-labs/flux-2-pro")
+VIDEO_MODEL = os.getenv("REPLICATE_HERO_VIDEO_MODEL", "lightricks/ltx-2-fast")
 
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), '..', 'output', 'replicate')
 WEBSITE_IMAGES_DIR = "/Users/chinmay/Desktop/Manah/website/public/images"
@@ -279,8 +280,29 @@ def generate_image(prompt_data):
         return {"status": "error", "id": prompt_data["id"], "error": str(e)}
 
 
+def build_video_input(model, prompt, duration):
+    """Build the model-specific Replicate input dict for a video model."""
+    name = model.lower()
+    if "ltx" in name:
+        # LTX-2: duration enum 6/8/10/...; resolution 1080p/2k/4k; no aspect_ratio
+        allowed = (6, 8, 10, 12, 14, 16, 18, 20)
+        return {
+            "prompt": prompt,
+            "duration": min(allowed, key=lambda d: abs(d - duration)),
+            "resolution": "1080p",
+            "generate_audio": False,
+        }
+    # veo / seedance and similar accept aspect_ratio + resolution
+    return {
+        "prompt": prompt,
+        "duration": duration,
+        "aspect_ratio": "16:9",
+        "resolution": "720p",
+    }
+
+
 def generate_video(prompt_data):
-    """Generate a video using Veo 3 Fast on Replicate."""
+    """Generate a video on Replicate using the configured video model."""
     out_path = os.path.join(OUTPUT_DIR, "videos", prompt_data["filename"])
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
 
@@ -295,12 +317,9 @@ def generate_video(prompt_data):
     try:
         output = replicate.run(
             VIDEO_MODEL,
-            input={
-                "prompt": prompt_data["prompt"],
-                "duration": prompt_data.get("duration", 8),
-                "aspect_ratio": "16:9",
-                "resolution": "720p",
-            }
+            input=build_video_input(
+                VIDEO_MODEL, prompt_data["prompt"], prompt_data.get("duration", 8)
+            )
         )
 
         if output:

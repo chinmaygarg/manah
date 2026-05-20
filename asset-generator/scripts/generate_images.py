@@ -3,7 +3,9 @@
 ═══════════════════════════════════════════════════════════════
 MANAH GROUP — Image Asset Generator
 ═══════════════════════════════════════════════════════════════
-Uses Google Imagen 3 (via Gemini API) to generate all website images.
+Uses Google Imagen 4 Fast (via Gemini API) to generate all website images.
+Model is configurable via .env (IMAGEN_MODEL). Note: the Imagen API requires
+a paid Google AI Studio plan.
 
 Usage:
     python scripts/generate_images.py                  # Generate all images
@@ -39,7 +41,7 @@ from dotenv import load_dotenv
 load_dotenv(os.path.join(os.path.dirname(__file__), '..', '.env'))
 
 API_KEY = os.getenv("GOOGLE_API_KEY", "")
-IMAGE_MODEL = os.getenv("IMAGE_MODEL", "imagen-3.0-generate-002")
+IMAGE_MODEL = os.getenv("IMAGEN_MODEL", "imagen-4.0-fast-generate-001")
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), '..', 'output', 'images')
 
 # Rate limiting
