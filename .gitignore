@@ -10,3 +10,11 @@ node_modules/
 .DS_Store
 Thumbs.db
 .vercel
+
+# Tooling artifacts
+.playwright-mcp/
+__pycache__/
+*.pyc
+
+# Local trash / debug
+_trash/

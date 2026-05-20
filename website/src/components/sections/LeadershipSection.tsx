@@ -24,7 +24,7 @@ export default function LeadershipSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12"
+          className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 mt-12"
         >
           {LEADERS.map((leader, i) => (
             <motion.div
@@ -39,8 +39,8 @@ export default function LeadershipSection() {
                   src={leader.image}
                   alt={leader.name}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover grayscale transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
                   placeholder="blur"
                   blurDataURL={BLUR_DATA_URL}
                 />

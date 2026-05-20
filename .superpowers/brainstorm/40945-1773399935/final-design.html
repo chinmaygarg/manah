@@ -1,0 +1,163 @@
+<h2>Final Design — Vision & Mission Bento Grid</h2>
+<p class="subtitle">Full-width dark section with asymmetric bento layout, glass cards, and geometric accent. Scroll down for mobile view.</p>
+
+<!-- Desktop mockup -->
+<div class="mockup">
+  <div class="mockup-header">Desktop (1440px) — Vision & Mission Section</div>
+  <div class="mockup-body" style="background: #0A1628; padding: 48px 40px; position: relative; overflow: hidden;">
+    <!-- Ambient glows -->
+    <div style="position: absolute; top: -100px; left: 20%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(200,169,110,0.04), transparent 70%); pointer-events: none;"></div>
+    <div style="position: absolute; bottom: -80px; right: 20%; width: 350px; height: 350px; background: radial-gradient(circle, rgba(30,58,95,0.06), transparent 70%); pointer-events: none;"></div>
+
+    <!-- Section eyebrow -->
+    <div style="text-align: center; margin-bottom: 32px;">
+      <div style="color: #C8A96E; font-size: 11px; text-transform: uppercase; letter-spacing: 3px; font-weight: 600; margin-bottom: 8px;">What Guides Us</div>
+      <div style="width: 48px; height: 3px; background: linear-gradient(90deg, #C8A96E, #D4BC8A); margin: 0 auto; border-radius: 2px;"></div>
+    </div>
+
+    <!-- Bento Grid -->
+    <div style="display: grid; grid-template-columns: 1.4fr 0.6fr; grid-template-rows: auto auto; gap: 16px; max-width: 960px; margin: 0 auto;">
+
+      <!-- VISION — Hero card spanning full width -->
+      <div style="grid-column: 1 / -1; background: linear-gradient(135deg, rgba(200,169,110,0.07), rgba(200,169,110,0.01)); border: 1px solid rgba(200,169,110,0.15); border-radius: 16px; padding: 36px; position: relative; overflow: hidden;">
+        <!-- Decorative circles -->
+        <div style="position: absolute; top: -50px; right: -50px; width: 180px; height: 180px; border-radius: 50%; background: rgba(200,169,110,0.04);"></div>
+        <div style="position: absolute; bottom: -30px; right: 80px; width: 100px; height: 100px; border-radius: 50%; background: rgba(30,58,95,0.06);"></div>
+
+        <div style="position: relative; z-index: 1;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+            <div style="width: 32px; height: 32px; border-radius: 8px; background: rgba(200,169,110,0.12); display: flex; align-items: center; justify-content: center;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C8A96E" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            </div>
+            <span style="color: #C8A96E; font-size: 12px; text-transform: uppercase; letter-spacing: 2.5px; font-weight: 600;">Our Vision</span>
+          </div>
+          <div style="color: white; font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 700; line-height: 1.15; margin-bottom: 12px; max-width: 75%;">
+            To be the world's most <span style="background: linear-gradient(90deg, #C8A96E, #D4BC8A); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">trusted and innovative</span> EPC enterprise.
+          </div>
+          <div style="color: rgba(255,255,255,0.45); font-size: 14px; line-height: 1.7; max-width: 65%;">
+            Delivering world-class infrastructure and technology solutions that power sustainable development across markets worldwide.
+          </div>
+        </div>
+      </div>
+
+      <!-- MISSION — Bottom-left card -->
+      <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 28px; transition: border-color 0.4s;">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+          <div style="width: 32px; height: 32px; border-radius: 8px; background: rgba(200,169,110,0.12); display: flex; align-items: center; justify-content: center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C8A96E" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <span style="color: #C8A96E; font-size: 12px; text-transform: uppercase; letter-spacing: 2.5px; font-weight: 600;">Our Mission</span>
+        </div>
+        <div style="color: white; font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 600; line-height: 1.25; margin-bottom: 10px;">
+          Engineering excellence through <span style="color: #C8A96E;">mindful enterprising.</span>
+        </div>
+        <div style="color: rgba(255,255,255,0.4); font-size: 13px; line-height: 1.6;">
+          Combining cutting-edge technology, sustainable practices, and unwavering commitment to quality in every project we undertake.
+        </div>
+      </div>
+
+      <!-- GEOMETRIC ACCENT — Bottom-right -->
+      <div style="background: rgba(200,169,110,0.03); border: 1px solid rgba(200,169,110,0.1); border-radius: 16px; padding: 24px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; min-height: 180px;">
+        <!-- Concentric circles -->
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 120px; height: 120px; border: 1px solid rgba(200,169,110,0.12); border-radius: 50%;"></div>
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 85px; height: 85px; border: 1px solid rgba(200,169,110,0.1); border-radius: 50%;"></div>
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 50px; height: 50px; border: 1px solid rgba(200,169,110,0.08); border-radius: 50%;"></div>
+        <!-- Rotating square -->
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(45deg); width: 90px; height: 90px; border: 1px solid rgba(200,169,110,0.07);"></div>
+        <!-- Center dot -->
+        <div style="width: 10px; height: 10px; background: rgba(200,169,110,0.5); border-radius: 50%; position: relative; z-index: 1; box-shadow: 0 0 20px rgba(200,169,110,0.2);"></div>
+        <!-- Corner accent lines -->
+        <div style="position: absolute; top: 12px; left: 12px; width: 20px; height: 1px; background: rgba(200,169,110,0.15);"></div>
+        <div style="position: absolute; top: 12px; left: 12px; width: 1px; height: 20px; background: rgba(200,169,110,0.15);"></div>
+        <div style="position: absolute; bottom: 12px; right: 12px; width: 20px; height: 1px; background: rgba(200,169,110,0.15);"></div>
+        <div style="position: absolute; bottom: 12px; right: 12px; width: 1px; height: 20px; background: rgba(200,169,110,0.15);"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile mockup -->
+<div class="mockup" style="margin-top: 24px;">
+  <div class="mockup-header">Mobile (375px) — Stacked Layout</div>
+  <div class="mockup-body" style="background: #0A1628; padding: 32px 20px; max-width: 375px; margin: 0 auto; position: relative; overflow: hidden;">
+    <!-- Eyebrow -->
+    <div style="text-align: center; margin-bottom: 24px;">
+      <div style="color: #C8A96E; font-size: 10px; text-transform: uppercase; letter-spacing: 3px; font-weight: 600; margin-bottom: 6px;">What Guides Us</div>
+      <div style="width: 36px; height: 2px; background: linear-gradient(90deg, #C8A96E, #D4BC8A); margin: 0 auto; border-radius: 1px;"></div>
+    </div>
+
+    <!-- Stacked cards -->
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <!-- Vision -->
+      <div style="background: linear-gradient(135deg, rgba(200,169,110,0.07), rgba(200,169,110,0.01)); border: 1px solid rgba(200,169,110,0.15); border-radius: 14px; padding: 24px; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: -30px; right: -30px; width: 100px; height: 100px; border-radius: 50%; background: rgba(200,169,110,0.04);"></div>
+        <div style="position: relative;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+            <div style="width: 28px; height: 28px; border-radius: 6px; background: rgba(200,169,110,0.12); display: flex; align-items: center; justify-content: center;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C8A96E" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2"/></svg>
+            </div>
+            <span style="color: #C8A96E; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 600;">Our Vision</span>
+          </div>
+          <div style="color: white; font-size: 18px; font-weight: 700; line-height: 1.2; margin-bottom: 8px;">
+            To be the world's most <span style="color: #C8A96E;">trusted and innovative</span> EPC enterprise.
+          </div>
+          <div style="color: rgba(255,255,255,0.45); font-size: 13px; line-height: 1.6;">Delivering world-class infrastructure and technology solutions that power sustainable development.</div>
+        </div>
+      </div>
+
+      <!-- Mission -->
+      <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 24px;">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+          <div style="width: 28px; height: 28px; border-radius: 6px; background: rgba(200,169,110,0.12); display: flex; align-items: center; justify-content: center;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C8A96E" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <span style="color: #C8A96E; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 600;">Our Mission</span>
+        </div>
+        <div style="color: white; font-size: 16px; font-weight: 600; line-height: 1.3; margin-bottom: 8px;">Engineering excellence through <span style="color: #C8A96E;">mindful enterprising.</span></div>
+        <div style="color: rgba(255,255,255,0.4); font-size: 12px; line-height: 1.6;">Combining cutting-edge technology, sustainable practices, and unwavering commitment to quality.</div>
+      </div>
+
+      <!-- Geometric (hidden on mobile, shown here for reference) -->
+      <div style="background: rgba(200,169,110,0.03); border: 1px solid rgba(200,169,110,0.1); border-radius: 14px; height: 80px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; opacity: 0.6;">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; border: 1px solid rgba(200,169,110,0.12); border-radius: 50%;"></div>
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(45deg); width: 45px; height: 45px; border: 1px solid rgba(200,169,110,0.07);"></div>
+        <div style="width: 6px; height: 6px; background: rgba(200,169,110,0.4); border-radius: 50%; position: relative; z-index: 1;"></div>
+        <div style="position: absolute; bottom: 8px; right: 12px; color: rgba(255,255,255,0.2); font-size: 9px;">Optional on mobile — can be hidden</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top: 24px;">
+  <h3>Design Specifications</h3>
+  <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+    <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+      <td style="padding: 8px 0; color: rgba(255,255,255,0.5); width: 35%;">Background</td>
+      <td style="padding: 8px 0;">bg-manah-navy + ambient gold/blue radial glows (same as current)</td>
+    </tr>
+    <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+      <td style="padding: 8px 0; color: rgba(255,255,255,0.5);">Grid</td>
+      <td style="padding: 8px 0;">CSS Grid: 1.4fr 0.6fr desktop → single column mobile</td>
+    </tr>
+    <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+      <td style="padding: 8px 0; color: rgba(255,255,255,0.5);">Vision Card</td>
+      <td style="padding: 8px 0;">Full-width span, gold gradient border, decorative circles, display-lg heading</td>
+    </tr>
+    <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+      <td style="padding: 8px 0; color: rgba(255,255,255,0.5);">Mission Card</td>
+      <td style="padding: 8px 0;">Glass-dark style, subtle white border, heading-xl text</td>
+    </tr>
+    <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+      <td style="padding: 8px 0; color: rgba(255,255,255,0.5);">Geometric Accent</td>
+      <td style="padding: 8px 0;">Concentric circles + rotated square + center dot + corner accents. Subtle CSS animation (slow rotate on square)</td>
+    </tr>
+    <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+      <td style="padding: 8px 0; color: rgba(255,255,255,0.5);">Animations</td>
+      <td style="padding: 8px 0;">Cards: staggered fadeUp on scroll. Geometric: slow continuous rotate (20s). Hover: border brightens on cards.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 0; color: rgba(255,255,255,0.5);">Mobile</td>
+      <td style="padding: 8px 0;">Single column stack. Geometric cell optional (hidden or compact).</td>
+    </tr>
+  </table>
+</div>

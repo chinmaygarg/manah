@@ -65,19 +65,20 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-3">
               {[
-                { icon: Linkedin, href: SITE_CONFIG.socials.linkedin },
-                { icon: Twitter, href: SITE_CONFIG.socials.twitter },
-                { icon: Youtube, href: SITE_CONFIG.socials.youtube },
-                { icon: Instagram, href: SITE_CONFIG.socials.instagram },
-              ].map(({ icon: Icon, href }, i) => (
+                { icon: Linkedin, href: SITE_CONFIG.socials.linkedin, label: "LinkedIn" },
+                { icon: Twitter, href: SITE_CONFIG.socials.twitter, label: "X (Twitter)" },
+                { icon: Youtube, href: SITE_CONFIG.socials.youtube, label: "YouTube" },
+                { icon: Instagram, href: SITE_CONFIG.socials.instagram, label: "Instagram" },
+              ].map(({ icon: Icon, href, label }) => (
                 <a
-                  key={i}
+                  key={label}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`${SITE_CONFIG.shortName} on ${label}`}
                   className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-white/50 hover:bg-manah-gold hover:text-manah-navy transition-all duration-300"
                 >
-                  <Icon className="w-4 h-4" />
+                  <Icon className="w-4 h-4" aria-hidden="true" />
                 </a>
               ))}
             </div>
@@ -85,7 +86,7 @@ export default function Footer() {
 
           {/* Column 2: Company */}
           <div>
-            <h4 className="font-display font-semibold text-white text-body-md mb-5">Company</h4>
+            <h3 className="font-display font-semibold text-white text-body-md mb-5">Company</h3>
             <ul className="space-y-3">
               {FOOTER_LINKS.company.map((link) => (
                 <li key={link.href}>
@@ -99,7 +100,7 @@ export default function Footer() {
 
           {/* Column 3: Sectors */}
           <div>
-            <h4 className="font-display font-semibold text-white text-body-md mb-5">Sectors</h4>
+            <h3 className="font-display font-semibold text-white text-body-md mb-5">Sectors</h3>
             <ul className="space-y-3">
               {FOOTER_LINKS.sectors.map((link) => (
                 <li key={link.href}>
@@ -113,7 +114,7 @@ export default function Footer() {
 
           {/* Column 4: Contact */}
           <div>
-            <h4 className="font-display font-semibold text-white text-body-md mb-5">Get in Touch</h4>
+            <h3 className="font-display font-semibold text-white text-body-md mb-5">Get in Touch</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-manah-gold mt-1 shrink-0" />
@@ -136,12 +137,12 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="section-container py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-caption text-white/40">
+            <p className="text-caption text-white/60">
               &copy; {currentYear} {SITE_CONFIG.name}. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
               {FOOTER_LINKS.legal.map((link) => (
-                <Link key={link.href} href={link.href} className="text-caption text-white/40 hover:text-manah-gold transition-colors">
+                <Link key={link.href} href={link.href} className="text-caption text-white/60 hover:text-manah-gold transition-colors">
                   {link.label}
                 </Link>
               ))}

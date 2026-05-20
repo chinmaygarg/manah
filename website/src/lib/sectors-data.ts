@@ -35,7 +35,7 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
     heroDescription:
       "End-to-end EPC solutions for high-voltage power transmission and distribution — 66kV distribution networks through 765kV EHV transmission corridors powering national grids.",
     color: "#1E3A5F",
-    image: "/images/sectors/power_transmission.png",
+    image: "/images/sectors/power_transmission.webp",
     overview: [
       "Manah Group delivers comprehensive power transmission and distribution solutions spanning the full voltage spectrum — from 66kV distribution networks to ultra-high-voltage 765kV transmission corridors. Our integrated EPC approach covers route surveying, tower design and fabrication, foundation engineering, stringing, and commissioning.",
       "With over 3,000 km of transmission lines constructed and multiple substation projects delivered, we are a trusted partner for national utilities, state distribution companies, and independent power producers.",
@@ -77,7 +77,7 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
     heroDescription:
       "Utility-scale solar, wind, and hybrid renewable energy EPC — from feasibility studies through construction to long-term operations and maintenance.",
     color: "#F59E0B",
-    image: "/images/sectors/renewable_energy.png",
+    image: "/images/sectors/renewable_energy.webp",
     overview: [
       "Manah Group accelerates India's energy transition through large-scale renewable project development and EPC execution. Our portfolio spans utility-scale solar parks, onshore wind farms, hybrid plants, and energy storage — delivering clean energy that meets ambitious carbon reduction targets.",
       "We operate across the full project lifecycle: resource assessment through engineering, procurement, construction, and long-term O&M. Green hydrogen, electrolyzers, and nuclear baseload are delivered by sibling divisions — see Manah Green Energy and Manah Atomic.",
@@ -119,7 +119,7 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
     heroDescription:
       "Roads, bridges, industrial and residential buildings, and urban infrastructure — built to international standards of safety, quality, and longevity.",
     color: "#6B7280",
-    image: "/images/sectors/infrastructure.png",
+    image: "/images/sectors/infrastructure.webp",
     overview: [
       "Manah Group executes large-scale civil infrastructure projects that form the foundation of modern economies. From national highways and urban road networks to industrial parks and residential complexes, our construction capabilities deliver projects of national significance on time and within budget.",
       "We combine advanced engineering, modern equipment fleets, digital project management, and stringent safety protocols to deliver infrastructure that serves communities for decades. Active mandates include 4× G+4 residential buildings for MES at Narangi Military Station (₹53 Cr).",
@@ -161,7 +161,7 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
     heroDescription:
       "Defence systems and networks, tactical communication, electronic warfare, surveillance, and mission-critical electronics for India's armed forces.",
     color: "#059669",
-    image: "/images/sectors/defence_electronics.png",
+    image: "/images/sectors/defence_electronics.webp",
     overview: [
       "Manah Group supports India's defence modernization through mission-critical systems integration, defence electronics manufacturing, and secure communication infrastructure. Our defence work spans tactical communications, radar sub-assemblies, electronic warfare, surveillance, and weapon electronics — all manufactured to MIL-STD and JSS quality.",
       "As a licensed defence manufacturer, we contribute to national self-reliance objectives by indigenizing critical electronic sub-systems. Our Cherlapally facility features classified work areas, MIL-STD testing, and secure data handling for the most sensitive defence programs. Sovereign AI compute for defence applications is delivered by Manah AI.",
@@ -196,48 +196,6 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
     relatedDivisions: ["Manah Dynamics", "Manah AI"],
   },
 
-  aviation: {
-    id: "aviation",
-    title: "Aviation & MRO",
-    tagline: "Air Transport",
-    heroDescription:
-      "DGCA-certified business jet MRO, CAR 147 training, and aviation consultancy — serving civil and defence aviation with safety, reliability, and airworthiness to global standards.",
-    color: "#0D9488",
-    image: "/images/sectors/aviation.png",
-    overview: [
-      "Manah Aerospace operates a DGCA-certified MRO facility at Begumpet Airport, Hyderabad in partnership with AAI, specializing in business jet maintenance for light and midsize aircraft. With DGCA CAR 145 and San Marino CAR 145 certifications, we serve general aviation operators across 6 locations (Hyderabad, Koppal, Ahmedabad, Bhubaneshwar, Chennai, Bangalore) with an international partnership with Jet Aviation Dubai.",
-      "Aviation capabilities extend beyond maintenance to include CAR 147 approved training and aviation consultancy. Next-phase expansion targets Pune and Kolkata, with roadmap into Boeing and Airbus narrow-body and wide-body servicing.",
-    ],
-    keyStats: [
-      { value: "18+", label: "MRO Services" },
-      { value: "6", label: "Current Locations" },
-      { value: "2", label: "Expansion Cities" },
-      { value: "DGCA/San Marino", label: "Certifications" },
-      { value: "CAR 147", label: "Training Approved" },
-      { value: "24/7", label: "AOG Response" },
-    ],
-    services: [
-      { title: "Business Jet Maintenance", description: "Customized maintenance for light and midsize business jets including parts procurement, quality control, and airworthiness management." },
-      { title: "Airworthiness Management", description: "Continuous airworthiness management, regulatory compliance documentation, and aircraft certification services." },
-      { title: "Parts & Procurement", description: "Global sourcing of aircraft parts, rotable component management, and warranty administration for fleet operators." },
-      { title: "Aviation Training (CAR 147)", description: "DGCA-approved Level III training for Embraer and ATR types, plus Level I & II foundational aviation training." },
-      { title: "Aviation Consultancy", description: "Aircraft acquisition advisory, fleet analysis and research, regulatory compliance guidance, and operational efficiency advisory." },
-      { title: "Expansion Services", description: "Narrow-body and wide-body MRO capability under development for Boeing 737/777/787 and Airbus A320/A330/A350 families." },
-    ],
-    projects: [
-      { title: "Fleet MRO Program", location: "Pan-India Operations", value: "$18M", description: "Multi-year line and base maintenance contract covering 45 aircraft across 12 stations." },
-      { title: "Hangar Complex Development", location: "Begumpet, Hyderabad", value: "$15M", description: "State-of-the-art MRO hangar with twin-bay capacity, component shops, and NDT laboratory." },
-      { title: "Regional Airport Infrastructure", location: "Tier-2 Cities, India", value: "$25M", description: "Runway extension, terminal expansion, and ground lighting upgrade for three regional airports." },
-    ],
-    process: [
-      { step: "01", title: "Assessment & Planning", description: "Aircraft inspection, maintenance planning, parts provisioning, and TAT estimation with customer coordination." },
-      { step: "02", title: "Execution & Quality Control", description: "Maintenance task execution by licensed engineers with concurrent quality inspections and documentation." },
-      { step: "03", title: "Testing & Certification", description: "Functional checks, ground runs, test flights (if required), and release to service with all regulatory documentation." },
-      { step: "04", title: "Delivery & Support", description: "Aircraft delivery, post-maintenance support, warranty tracking, and fleet health monitoring services." },
-    ],
-    relatedDivisions: ["Manah Aerospace"],
-  },
-
   telecom: {
     id: "telecom",
     title: "Telecom",
@@ -245,7 +203,7 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
     heroDescription:
       "Telecom tower rollout, BharatNet fiber execution, and network infrastructure — enabling the connectivity backbone for a digital India.",
     color: "#0EA5E9",
-    image: "/images/sectors/telecom_equipment.png",
+    image: "/images/sectors/telecom_equipment.webp",
     overview: [
       "Manah Group delivers end-to-end telecom infrastructure for public and private operators, anchored by large-scale rollouts under BharatNet, BSNL, and private tower programs. Our telecom capability spans tower erection, optical fiber cable (OFC) laying, passive and active network integration, and base-station electronics.",
       "From rural connectivity programs to urban 5G densification, we combine civil construction, RF engineering, and electronics manufacturing under one roof — enabling accelerated, cost-competitive rollouts backed by EMS-grade supply reliability from our Cherlapally facility.",
@@ -287,7 +245,7 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
     heroDescription:
       "Downstream processing, refinery allied works, pipeline construction, and LNG terminal support — serving India's oil and gas majors with turnkey EPC delivery.",
     color: "#A16207",
-    image: "/images/sectors/manufacturing.png",
+    image: "/images/sectors/manufacturing.webp",
     overview: [
       "Manah Group delivers EPC for downstream oil and gas infrastructure — refinery allied works, process package construction, cross-country pipelines, LNG terminal support, and storage facilities. Our scope spans civil, mechanical, piping, electrical, and instrumentation disciplines under tight safety and quality envelopes.",
       "We work with national oil companies, private refiners, and EPC majors on allied packages that complement primary process units. The Bina hydrogen production facility sits adjacent to BPCL Bina Refinery; refinery decarbonization through clean hydrogen and potential SMR heat is delivered by Manah Green Energy and Manah Atomic.",
@@ -329,7 +287,7 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
     heroDescription:
       "Mining operations, balance-of-plant engineering, and infrastructure construction for India's coal, mineral, and metal mining sector.",
     color: "#92400E",
-    image: "/images/sectors/manufacturing.png",
+    image: "/images/sectors/manufacturing.webp",
     overview: [
       "Manah Group supports India's mining industry with construction of mine infrastructure, mineral processing plants, overburden removal, and allied civil works. We serve coal, iron-ore, limestone, and non-ferrous metal operators with EPC scope covering civil foundations, crushing and screening plants, conveying systems, and mine support structures.",
       "Our integrated approach combines heavy civil construction with electrical and automation capabilities — enabling single-source delivery for greenfield mines, capacity expansions, and mine closure programs.",
@@ -371,7 +329,7 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
     heroDescription:
       "Water treatment, irrigation systems, and urban water infrastructure — ensuring clean water supply and efficient water management for agriculture and communities.",
     color: "#0891B2",
-    image: "/images/sectors/infrastructure.png",
+    image: "/images/sectors/infrastructure.webp",
     overview: [
       "Manah Group delivers water and irrigation infrastructure for state governments, municipal bodies, and industrial clients. Scope spans drinking water supply schemes, lift-irrigation systems, canal networks, water-treatment plants, and sewage-treatment plants — supporting India's Jal Jeevan Mission and urban water security goals.",
       "We combine heavy civil construction, mechanical-hydraulic engineering, and electrical-automation to deliver end-to-end water infrastructure with operator training, O&M, and long-term performance guarantees.",
@@ -402,6 +360,90 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
       { step: "02", title: "Detailed Engineering", description: "Process design, pump sizing, pipeline routing, and civil-structural engineering with environmental compliance." },
       { step: "03", title: "Construction", description: "Civil works, equipment installation, pipe-laying, electrical and automation integration." },
       { step: "04", title: "Commissioning & O&M", description: "Plant startup, operator training, performance guarantee testing, and long-term O&M support." },
+    ],
+    relatedDivisions: ["Manah Dynamics"],
+  },
+
+  "bess-scada": {
+    id: "bess-scada",
+    title: "BESS / SCADA",
+    tagline: "Storage & Grid Automation",
+    heroDescription:
+      "Grid-scale battery energy storage and SCADA automation — stabilising renewable-heavy grids with real-time monitoring, control, and dispatch.",
+    color: "#0D9488",
+    image: "/images/sectors/bess_scada.webp",
+    overview: [
+      "As renewable generation scales across India's grid, Manah Group delivers the storage and control layer that keeps it stable — utility-scale Battery Energy Storage Systems (BESS) and SCADA automation engineered for round-the-clock reliability. Our scope covers battery container integration, power conversion systems, grid interconnection, and the control software that dispatches stored energy on demand.",
+      "From renewable firming and peak shaving to frequency regulation and black-start support, our BESS deployments are paired with SCADA and energy-management systems that give operators real-time visibility and automated control across substations, storage assets, and distributed resources.",
+    ],
+    keyStats: [
+      { value: "Grid-Scale", label: "BESS Capability" },
+      { value: "Real-Time", label: "SCADA Control" },
+      { value: "Li-ion", label: "Battery Technology" },
+      { value: "24/7", label: "Dispatch & Monitoring" },
+      { value: "Full EPC", label: "Scope" },
+      { value: "Renewable", label: "Firming & Peak Shaving" },
+    ],
+    services: [
+      { title: "Battery Energy Storage Systems", description: "Turnkey utility-scale BESS — battery container integration, thermal management, and safety systems for renewable firming and grid support." },
+      { title: "Power Conversion & Interconnection", description: "Bidirectional inverters, transformers, and switchgear for grid-tied storage, with protection coordination and interconnection compliance." },
+      { title: "SCADA & Automation", description: "Substation and plant SCADA, RTUs, and communication networks for real-time supervision, control, and data acquisition." },
+      { title: "Energy Management Systems", description: "EMS software for dispatch optimisation, state-of-charge management, and automated participation in ancillary-service markets." },
+      { title: "Grid Stabilisation Services", description: "Frequency regulation, peak shaving, load shifting, and black-start support to stabilise renewable-heavy networks." },
+      { title: "O&M & Performance Monitoring", description: "Predictive maintenance, battery-health analytics, and SLA-backed monitoring across the asset lifecycle." },
+    ],
+    projects: [
+      { title: "Renewable Firming BESS", location: "India", value: "Grid-Scale", description: "Battery storage co-located with a renewable park for round-the-clock dispatch and grid firming." },
+      { title: "Substation SCADA Modernisation", location: "India", value: "Turnkey EPC", description: "SCADA and automation upgrade across transmission substations for real-time monitoring and control." },
+      { title: "Peak-Shaving Storage System", location: "India", value: "Multi-Site", description: "Distributed BESS deployment for industrial peak shaving and demand-charge reduction." },
+    ],
+    process: [
+      { step: "01", title: "Grid & Load Study", description: "Grid-impact analysis, storage sizing, use-case modelling, and interconnection feasibility." },
+      { step: "02", title: "Engineering & Design", description: "BESS layout, power-conversion design, protection coordination, and SCADA/EMS architecture." },
+      { step: "03", title: "Integration & Commissioning", description: "Battery container installation, electrical integration, SCADA configuration, and grid synchronisation." },
+      { step: "04", title: "Operations & Optimisation", description: "Dispatch tuning, battery-health monitoring, and SLA-backed O&M with performance analytics." },
+    ],
+    relatedDivisions: ["Manah Dynamics", "Manah Green Energy"],
+  },
+
+  "disaster-management": {
+    id: "disaster-management",
+    title: "Disaster Management",
+    tagline: "Resilience & Emergency Response",
+    heroDescription:
+      "Emergency response infrastructure, resilience planning, and disaster-preparedness training — the systems and skills that protect communities and critical assets.",
+    color: "#DC2626",
+    image: "/images/sectors/disaster_management.webp",
+    overview: [
+      "Manah Group brings engineering discipline to disaster resilience — building the infrastructure, command systems, and trained capability that communities and institutions rely on when crisis strikes. Our scope spans emergency operations centres, early-warning and communication networks, and resilient infrastructure designed to withstand and recover from natural and man-made hazards.",
+      "Beyond infrastructure, we deliver preparedness training and response capability — equipping teams with the drills, coordination protocols, and command-and-control tools needed for rapid, organised action. The approach reflects the Group's Mindful Enterprising philosophy of building with awareness of long-term impact on people and communities.",
+    ],
+    keyStats: [
+      { value: "End-to-End", label: "Response Capability" },
+      { value: "24/7", label: "Command & Control" },
+      { value: "Resilient", label: "Infrastructure Design" },
+      { value: "Multi-Hazard", label: "Coverage" },
+      { value: "Training", label: "Preparedness Programs" },
+      { value: "Community", label: "Focused" },
+    ],
+    services: [
+      { title: "Emergency Operations Centres", description: "Design and construction of command-and-control centres with communication, monitoring, and coordination infrastructure." },
+      { title: "Early-Warning & Communication Networks", description: "Sensor networks, alert systems, and resilient communication links for timely hazard detection and public warning." },
+      { title: "Resilient Infrastructure", description: "Hazard-resistant civil infrastructure engineered to withstand seismic, flood, and extreme-weather events." },
+      { title: "Preparedness Training", description: "Drills, simulation exercises, and capability-building programs for response teams and institutions." },
+      { title: "Crisis Coordination Systems", description: "Incident-management platforms, mobile command units, and inter-agency coordination tools for organised response." },
+      { title: "Recovery & Reconstruction", description: "Post-disaster damage assessment, rehabilitation, and reconstruction of critical infrastructure and services." },
+    ],
+    projects: [
+      { title: "Emergency Operations Centre", location: "India", value: "Turnkey EPC", description: "Command-and-control facility with integrated communication, monitoring, and coordination systems." },
+      { title: "Resilient Infrastructure Program", location: "India", value: "Multi-Site", description: "Hazard-resistant upgrades to critical public infrastructure across vulnerable regions." },
+      { title: "Response Training Initiative", location: "India", value: "Capability Building", description: "Preparedness and drill programs equipping response teams with coordinated crisis-response capability." },
+    ],
+    process: [
+      { step: "01", title: "Risk & Hazard Assessment", description: "Multi-hazard risk mapping, vulnerability analysis, and resilience-gap identification." },
+      { step: "02", title: "Planning & Design", description: "Response-system design, infrastructure engineering, and preparedness-program development." },
+      { step: "03", title: "Implementation", description: "Construction of resilient infrastructure, deployment of command systems, and rollout of training." },
+      { step: "04", title: "Drills & Readiness", description: "Simulation exercises, readiness audits, and continuous improvement of response capability." },
     ],
     relatedDivisions: ["Manah Dynamics"],
   },

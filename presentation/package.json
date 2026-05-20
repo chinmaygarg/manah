@@ -2,7 +2,8 @@
   "name": "manah-presentation",
   "private": true,
   "scripts": {
-    "build": "node build.js"
+    "build": "node build.js",
+    "pdf": "node capture-pdf.js"
   },
   "dependencies": {
     "puppeteer": "^24.40.0"

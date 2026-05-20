@@ -1,0 +1,30 @@
+# Manah Group of Companies
+
+> Manah Group is a diversified enterprise group founded in 2018 and headquartered in Hyderabad, India, delivering engineering, procurement and construction (EPC) and engineering excellence across six divisions: Manah Dynamics, Manah Green Energy, Manah Atomic, Manah Aerospace, Manah AI, and Manah Investments.
+
+Manah Group operates across power transmission and distribution, renewable energy, green hydrogen, nuclear energy (Small Modular Reactors), aviation MRO, generative AI and data centers, and strategic investments. The group is active in 15+ Indian states with a project pipeline exceeding ₹20,000 Cr.
+
+## Divisions
+
+- [Manah Dynamics](https://www.manah.com/divisions/dynamics): Projects, infrastructure and electronics manufacturing — the flagship EPC division.
+- [Manah Green Energy](https://www.manah.com/divisions/green-energy): Green hydrogen production and renewable energy infrastructure.
+- [Manah Atomic](https://www.manah.com/divisions/atomic): Nuclear energy solutions — Small Modular Reactors and advanced reactors.
+- [Manah Aerospace](https://www.manah.com/divisions/aerospace): Aviation MRO, training and consultancy (DGCA-certified).
+- [Manah AI](https://www.manah.com/divisions/ai): Generative AI, agentic systems, LLM/SLM training, and data centers.
+- [Manah Investments](https://www.manah.com/divisions/investments): Strategic capital deployment across infrastructure, energy and deep tech.
+
+## Key Pages
+
+- [About Us](https://www.manah.com/about): Company story, leadership, mission and values.
+- [Sectors](https://www.manah.com/sectors): Power T&D, building & roads, telecom, defence, renewables, mining, oil & gas and more.
+- [Landmark Projects](https://www.manah.com/projects): Portfolio of delivered and active EPC projects.
+- [Capabilities](https://www.manah.com/capabilities): End-to-end engineering, procurement and construction capabilities.
+- [Sustainability](https://www.manah.com/sustainability): Environmental, social and governance (ESG) commitments.
+- [Blog & Insights](https://www.manah.com/blog): Analysis on EPC, energy transition and technology.
+- [Careers](https://www.manah.com/careers): Open roles across engineering, energy, aerospace and AI.
+- [Contact](https://www.manah.com/contact): Hyderabad headquarters and inquiry channels.
+
+## Contact
+
+- Headquarters: 5th Floor, Trendz Platina, 91/12, Madhapur, Hyderabad, Telangana 500081, India
+- Sitemap: https://www.manah.com/sitemap.xml

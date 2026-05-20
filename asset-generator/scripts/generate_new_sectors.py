@@ -1,0 +1,137 @@
+#!/usr/bin/env python3
+"""
+Manah Group — New Sector Image Generator (Replicate / FLUX 2 Pro)
+Generates the two sector hero images added in the deck content sync:
+BESS/SCADA and Disaster Management.
+
+Used because the Google Gemini image quota is exhausted. Outputs JPG straight
+to website/public/images/sectors/, then runs an optimize pass (cap long edge,
+recompress) so the source files stay web-weight.
+"""
+
+import os
+import sys
+import subprocess
+import urllib.request
+
+try:
+    import replicate
+except ImportError:
+    print("ERROR: replicate package not installed. Run: pip3 install replicate")
+    sys.exit(1)
+
+from dotenv import load_dotenv
+load_dotenv(os.path.join(os.path.dirname(__file__), '..', '.env'))
+
+REPLICATE_TOKEN = os.getenv("REPLICATE_API_TOKEN", "")
+if not REPLICATE_TOKEN:
+    print("ERROR: REPLICATE_API_TOKEN not set in .env")
+    sys.exit(1)
+os.environ["REPLICATE_API_TOKEN"] = REPLICATE_TOKEN
+
+IMAGE_MODEL = os.getenv("REPLICATE_IMAGE_MODEL", "black-forest-labs/flux-2-pro")
+SECTORS_DIR = "/Users/chinmay/Desktop/Manah/website/public/images/sectors"
+MAX_EDGE = 2560  # optimize: cap long edge
+
+BRAND_STYLE = (
+    "Ultra-premium corporate photography style. Deep navy blue (#0A1628) and warm gold (#C8A96E) "
+    "color accents. Cinematic lighting with dramatic shadows. Shot on medium format camera. "
+    "Professional grade, editorial quality. No text, no logos, no watermarks. "
+    "Clean composition with clear focal point. "
+)
+
+SECTOR_IMAGES = [
+    {
+        "id": "bess_scada",
+        "filename": "bess_scada.jpg",
+        "prompt": (
+            BRAND_STYLE +
+            "Utility-scale battery energy storage system at a grid substation — long rows of "
+            "containerised lithium-ion battery units in a fenced compound, connected to "
+            "high-voltage switchgear. A modern SCADA control room visible through glass, "
+            "operators monitoring large dashboards of real-time grid data. Dusk lighting, "
+            "deep navy sky, warm gold accent light on the equipment. Engineering precision "
+            "and clean-energy reliability."
+        ),
+    },
+    {
+        "id": "disaster_management",
+        "filename": "disaster_management.jpg",
+        "prompt": (
+            BRAND_STYLE +
+            "Professional disaster response and emergency training operation — coordinated "
+            "rescue teams in high-visibility gear, command-and-control vehicles, a mobile "
+            "operations centre with communication antennas and a deployed control tent. "
+            "Organised, calm-under-pressure atmosphere conveying readiness and resilience. "
+            "Dramatic overcast light with warm gold rescue-vehicle lighting against a "
+            "navy-toned scene."
+        ),
+    },
+]
+
+
+def generate(img):
+    out_path = os.path.join(SECTORS_DIR, img["filename"])
+    if os.path.exists(out_path):
+        print(f"  SKIP (exists): {img['filename']}")
+        return "skipped"
+
+    print(f"  Generating: {img['id']} via {IMAGE_MODEL}")
+    try:
+        output = replicate.run(
+            IMAGE_MODEL,
+            input={
+                "prompt": img["prompt"],
+                "aspect_ratio": "16:9",
+                "output_format": "jpg",
+                "output_quality": 95,
+                "safety_tolerance": 2,
+                "steps": 30,
+            },
+        )
+        if not output:
+            print(f"  No output for {img['id']}")
+            return "error"
+
+        if hasattr(output, "read"):
+            with open(out_path, "wb") as f:
+                f.write(output.read())
+        elif isinstance(output, list) and output:
+            urllib.request.urlretrieve(str(output[0]), out_path)
+        else:
+            urllib.request.urlretrieve(str(output), out_path)
+
+        print(f"  Saved: {out_path} ({os.path.getsize(out_path) / 1024:.0f} KB)")
+        optimize(out_path)
+        return "success"
+    except Exception as e:
+        print(f"  Error: {str(e)[:200]}")
+        return "error"
+
+
+def optimize(path):
+    """Cap the long edge and recompress so the source file stays lean."""
+    try:
+        subprocess.run(
+            ["sips", "-Z", str(MAX_EDGE), "-s", "formatOptions", "85", path],
+            capture_output=True, check=True,
+        )
+        print(f"  Optimized: {os.path.getsize(path) / 1024:.0f} KB")
+    except (subprocess.CalledProcessError, FileNotFoundError) as e:
+        print(f"  Optimize skipped ({str(e)[:80]})")
+
+
+def main():
+    print("=" * 60)
+    print("  New Sector Images — Replicate / FLUX 2 Pro")
+    print(f"  Output: {SECTORS_DIR}")
+    print("=" * 60)
+    results = [generate(img) for img in SECTOR_IMAGES]
+    print("=" * 60)
+    print(f"  Done: {results.count('success')} generated, "
+          f"{results.count('skipped')} skipped, {results.count('error')} errors")
+    print("=" * 60)
+
+
+if __name__ == "__main__":
+    main()

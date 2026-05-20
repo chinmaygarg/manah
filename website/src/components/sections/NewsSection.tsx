@@ -20,7 +20,7 @@ const NEWS_ITEMS = [
     excerpt:
       "Group announces Manah Atomic, its nuclear energy division focused on Small Modular Reactors, advanced nuclear fuel cycle, and reactor safety and compliance \u2014 powering India's clean energy transition.",
     href: "/divisions/atomic",
-    image: "/images/hero/hero_atomic.png",
+    image: "/images/hero/hero_atomic.webp",
   },
   {
     id: 2,
@@ -30,7 +30,7 @@ const NEWS_ITEMS = [
     excerpt:
       "New AI division establishes Manah's capability in agentic AI, LLM and SLM training, and sovereign data center infrastructure for enterprise, government, and defence use cases.",
     href: "/divisions/ai",
-    image: "/images/hero/hero_ai.png",
+    image: "/images/hero/hero_ai.webp",
   },
   {
     id: 3,
@@ -40,7 +40,7 @@ const NEWS_ITEMS = [
     excerpt:
       "Manah Dynamics to deploy 48,893 DTC smart meters across six districts in Karnataka for HESCOM under a \u20b9171 Cr utility modernisation programme.",
     href: "/projects",
-    image: "/images/news/power-transmission.jpg",
+    image: "/images/news/power-transmission.webp",
   },
 ];
 

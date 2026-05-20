@@ -16,6 +16,11 @@ export interface DivisionDetail {
   sectors: { name: string; image: string; description: string }[];
   certifications: string[];
   cta: { text: string; href: string };
+  ems?: {
+    heading: string;
+    intro: string;
+    phases: { title: string; description: string }[];
+  };
 }
 
 export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
@@ -51,17 +56,29 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
       { title: "Electronics Manufacturing Services (EMS)", description: "30,000 sq ft Cherlapally facility delivering PCB assembly, SMT box build, and system integration for Smart Meters, EV Chargers, and Defence RF Systems — MIL-STD and JSS compliant." },
     ],
     sectors: [
-      { name: "Power T&D", image: "/images/sectors/power_transmission.png", description: "EHV/HV transmission lines up to 765 kV and substation infrastructure across 15+ states." },
-      { name: "Renewables", image: "/images/sectors/renewable_energy.png", description: "Solar, wind, and hydel EPC at utility scale." },
-      { name: "Building & Roads", image: "/images/sectors/infrastructure.png", description: "Civil infrastructure — roads, bridges, residential and industrial buildings." },
-      { name: "Defence", image: "/images/sectors/defence_electronics.png", description: "Defence systems, tactical communication networks, and MIL-STD electronics." },
-      { name: "Telecom", image: "/images/sectors/telecom_equipment.png", description: "Towers, BharatNet rollout, optical fiber cabling, and telecom network infrastructure." },
-      { name: "Oil & Gas", image: "/images/sectors/manufacturing.png", description: "Downstream oil & gas processing, refinery allied works, and pipeline construction." },
-      { name: "Mining", image: "/images/sectors/manufacturing.png", description: "Mining operations and balance-of-plant engineering and construction." },
-      { name: "Irrigation & Water", image: "/images/sectors/infrastructure.png", description: "Water treatment, irrigation systems, and urban water infrastructure." },
+      { name: "Power T&D", image: "/images/sectors/power_transmission.webp", description: "EHV/HV transmission lines up to 765 kV and substation infrastructure across 15+ states." },
+      { name: "Renewables", image: "/images/sectors/renewable_energy.webp", description: "Solar, wind, and hydel EPC at utility scale." },
+      { name: "Building & Roads", image: "/images/sectors/infrastructure.webp", description: "Civil infrastructure — roads, bridges, residential and industrial buildings." },
+      { name: "Defence", image: "/images/sectors/defence_electronics.webp", description: "Defence systems, tactical communication networks, and MIL-STD electronics." },
+      { name: "Telecom", image: "/images/sectors/telecom_equipment.webp", description: "Towers, BharatNet rollout, optical fiber cabling, and telecom network infrastructure." },
+      { name: "Oil & Gas", image: "/images/sectors/manufacturing.webp", description: "Downstream oil & gas processing, refinery allied works, and pipeline construction." },
+      { name: "Mining", image: "/images/sectors/manufacturing.webp", description: "Mining operations and balance-of-plant engineering and construction." },
+      { name: "Irrigation & Water", image: "/images/sectors/infrastructure.webp", description: "Water treatment, irrigation systems, and urban water infrastructure." },
     ],
     certifications: ["ISO 9001:2015", "ISO 14001:2015", "ISO 45001:2018", "IPC-A-610 Class 3", "MIL-STD / JSS", "CEA Compliant"],
     cta: { text: "View Projects", href: "/projects?division=dynamics" },
+    ems: {
+      heading: "Electronics Manufacturing Services",
+      intro:
+        "A 30,000 sq ft facility in Cherlapally, Hyderabad delivering end-to-end electronics manufacturing — from prototyping to final integration across 8+ SMT lines and 1M+ products per year.",
+      phases: [
+        { title: "Design & Engineering", description: "Product development and prototyping." },
+        { title: "Manufacturing", description: "PCB assembly, box build, and system integration." },
+        { title: "Testing & QA", description: "Compliance testing and reliability validation." },
+        { title: "Supply Chain", description: "Strategic sourcing and logistics optimization." },
+        { title: "After-Sales", description: "Repair, maintenance, and warranty management." },
+      ],
+    },
   },
 
   aerospace: {
@@ -123,10 +140,10 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
       { title: "Carbon Advisory", description: "Carbon credit generation, ESG reporting support, and sustainability roadmap development for industrial clients." },
     ],
     sectors: [
-      { name: "Green Hydrogen", image: "/images/sectors/green_hydrogen.png", description: "Large-scale green hydrogen production powering net-zero ambitions." },
-      { name: "Renewable Energy", image: "/images/sectors/renewable_energy.png", description: "Dedicated solar and wind parks for captive hydrogen generation." },
-      { name: "Industrial Decarbonization", image: "/images/sectors/manufacturing.png", description: "Decarbonizing steel, chemicals, and heavy industry with clean energy." },
-      { name: "Clean Transport", image: "/images/sectors/transportation.png", description: "Hydrogen fuel cell solutions for commercial vehicles and logistics." },
+      { name: "Green Hydrogen", image: "/images/sectors/green_hydrogen.webp", description: "Large-scale green hydrogen production powering net-zero ambitions." },
+      { name: "Renewable Energy", image: "/images/sectors/renewable_energy.webp", description: "Dedicated solar and wind parks for captive hydrogen generation." },
+      { name: "Industrial Decarbonization", image: "/images/sectors/manufacturing.webp", description: "Decarbonizing steel, chemicals, and heavy industry with clean energy." },
+      { name: "Clean Transport", image: "/images/sectors/transportation.webp", description: "Hydrogen fuel cell solutions for commercial vehicles and logistics." },
     ],
     certifications: ["ISO 9001:2015", "ISO 14001:2015", "BIS Standards", "MNRE Approved"],
     cta: { text: "Learn More", href: "/sustainability" },
@@ -145,12 +162,12 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
       "We pursue strategic collaborations with global SMR technology providers and domestic nuclear programs to deliver safe, scalable, and economically viable nuclear solutions aligned with India's long-term nuclear roadmap and clean energy commitments.",
     ],
     keyStats: [
-      { value: "SMR", label: "Reactor Focus" },
-      { value: "Advanced", label: "Nuclear Fuel Cycle" },
-      { value: "Safety-First", label: "Design Philosophy" },
-      { value: "Zero", label: "Carbon Baseload" },
-      { value: "Global", label: "Technology Partners" },
-      { value: "Division 3 of 6", label: "Manah Group" },
+      { value: "SMR", label: "Technology Focus" },
+      { value: "100 GW", label: "Targeted by 2047" },
+      { value: "100+ MW", label: "Per Reactor Unit" },
+      { value: "₹10,000 Cr", label: "Investment Plan" },
+      { value: "50–300 MW", label: "SMR Unit Range" },
+      { value: "IAEA & AERB", label: "Safety Standards" },
     ],
     services: [
       { title: "Small Modular Reactors (SMR)", description: "Deployment and integration of next-generation small modular reactor technology, offering scalable, factory-built nuclear capacity for industrial and grid-scale applications." },
@@ -192,10 +209,10 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
       { title: "AI Consulting & Integration", description: "Strategic AI roadmap, model evaluation, MLOps, and system integration services for organizations operationalizing AI at scale." },
     ],
     sectors: [
-      { name: "Enterprise AI", image: "/images/sectors/enterprise_ai.png", description: "Agentic systems and generative AI deployed across business operations and decision workflows." },
-      { name: "Data Centers", image: "/images/sectors/data_centers.png", description: "High-density GPU compute infrastructure for AI training and inference." },
-      { name: "Government & Defence", image: "/images/sectors/government_defence.png", description: "Sovereign AI compute and secure AI systems for public sector and defence." },
-      { name: "Deep Tech Research", image: "/images/sectors/deep_tech.png", description: "Foundational model research, LLM/SLM development, and applied AI research." },
+      { name: "Enterprise AI", image: "/images/sectors/industrial_iot.webp", description: "Agentic systems and generative AI deployed across business operations and decision workflows." },
+      { name: "Data Centers", image: "/images/divisions/manah_ai_detail.webp", description: "High-density GPU compute infrastructure for AI training and inference." },
+      { name: "Government & Defence", image: "/images/sectors/defence_electronics.webp", description: "Sovereign AI compute and secure AI systems for public sector and defence." },
+      { name: "Deep Tech Research", image: "/images/divisions/manah_ai_hero.webp", description: "Foundational model research, LLM/SLM development, and applied AI research." },
     ],
     certifications: ["ISO 9001:2015", "ISO 27001 (in progress)", "DPDP Act Aligned"],
     cta: { text: "Request Demo", href: "/contact" },
@@ -216,7 +233,7 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
     keyStats: [
       { value: "$500M+", label: "Portfolio Value" },
       { value: "15+", label: "Active Ventures" },
-      { value: "6+", label: "Sectors Covered" },
+      { value: "4", label: "Focus Verticals" },
       { value: "3x", label: "Avg. Return Multiple" },
       { value: "8+", label: "Strategic Partners" },
       { value: "$2B+", label: "Co-Investment Mobilized" },
@@ -230,10 +247,10 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
       { title: "Advisory & Asset Management", description: "Investment advisory services and fund management for institutional investors seeking exposure to global infrastructure growth." },
     ],
     sectors: [
-      { name: "Infrastructure", image: "/images/sectors/infrastructure.png", description: "Direct equity in power, roads, logistics, and urban development." },
-      { name: "Energy & Cleantech", image: "/images/sectors/renewable_energy.png", description: "Capital allocation for renewables, hydrogen, and battery storage." },
-      { name: "Technology & Defence", image: "/images/sectors/defence_electronics.png", description: "Growth-stage investments in deep tech and defence technology." },
-      { name: "Real Estate", image: "/images/sectors/real_estate.png", description: "Strategic positions in commercial and mixed-use developments." },
+      { name: "Infrastructure", image: "/images/sectors/infrastructure.webp", description: "Direct equity in power, roads, logistics, and urban development." },
+      { name: "Energy & Cleantech", image: "/images/sectors/renewable_energy.webp", description: "Capital allocation for renewables, hydrogen, and battery storage." },
+      { name: "Technology & Defence", image: "/images/sectors/defence_electronics.webp", description: "Growth-stage investments in deep tech and defence technology." },
+      { name: "Real Estate", image: "/images/sectors/real_estate.webp", description: "Strategic positions in commercial and mixed-use developments." },
     ],
     certifications: ["SEBI Registered", "DPIIT Recognized", "ISO 9001:2015", "ESG Compliant"],
     cta: { text: "Explore Opportunities", href: "/contact" },

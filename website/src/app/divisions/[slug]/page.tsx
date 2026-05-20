@@ -1,63 +1,66 @@
-"use client";
-
-import { useParams, notFound } from "next/navigation";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import {
-  fadeUp,
-  fadeLeft,
-  fadeRight,
-  staggerContainer,
-  scaleIn,
-} from "@/lib/animations";
-import MotionSection from "@/components/animations/MotionSection";
-import SectionHeading from "@/components/ui/SectionHeading";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { DIVISION_DETAILS } from "@/lib/divisions-data";
-import {
-  ArrowRight,
-  CheckCircle2,
-  ChevronRight,
-  Shield,
-} from "lucide-react";
-import Image from "next/image";
-import { BLUR_DATA_URL } from "@/lib/blur";
+import { SITE_CONFIG } from "@/lib/constants";
+import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
+import DivisionDetailContent from "./DivisionDetailContent";
 
-const DIVISION_IMAGES: Record<string, { hero: string; detail: string; video?: string; videoMobile?: string }> = {
-  dynamics: {
-    hero: "/images/divisions/manah_dynamics_hero.png",
-    detail: "/images/divisions/manah_dynamics_projects.png",
-    video: "/videos/divisions/dynamics_reel-720p.mp4",
-    videoMobile: "/videos/divisions/dynamics_reel-480p.mp4",
-  },
-  aerospace: {
-    hero: "/images/divisions/manah_aerospace_hero.png",
-    detail: "/images/divisions/manah_aerospace_detail.png",
-  },
-  "green-energy": {
-    hero: "/images/divisions/green_energy_hero.png",
-    detail: "/images/divisions/green_energy_hydrogen.png",
-    video: "/videos/divisions/green_energy_reel-720p.mp4",
-    videoMobile: "/videos/divisions/green_energy_reel-480p.mp4",
-  },
-  atomic: {
-    hero: "/images/divisions/manah_atomic_hero.png",
-    detail: "/images/divisions/manah_atomic_detail.png",
-  },
-  ai: {
-    hero: "/images/divisions/manah_ai_hero.png",
-    detail: "/images/divisions/manah_ai_detail.png",
-  },
-  investments: {
-    hero: "/images/divisions/manah_investments_hero.png",
-    detail: "/images/divisions/manah_investments_detail.png",
-    video: "/videos/divisions/investments_reel-720p.mp4",
-    videoMobile: "/videos/divisions/investments_reel-480p.mp4",
-  },
-};
+// ─── Static Params (pre-render every division) ───
 
-export default function DivisionPage() {
-  const params = useParams();
-  const slug = params.slug as string;
+export function generateStaticParams() {
+  return Object.keys(DIVISION_DETAILS).map((slug) => ({ slug }));
+}
+
+// ─── SEO Metadata ───
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const division = DIVISION_DETAILS[slug];
+
+  if (!division) {
+    return { title: "Division Not Found" };
+  }
+
+  const fullTitle = `${division.name} | ${SITE_CONFIG.shortName}`;
+
+  return {
+    title: division.name,
+    description: division.heroDescription,
+    alternates: {
+      canonical: `/divisions/${slug}`,
+    },
+    openGraph: {
+      type: "website",
+      locale: SITE_CONFIG.locale,
+      url: `${SITE_CONFIG.url}/divisions/${slug}`,
+      siteName: SITE_CONFIG.name,
+      title: fullTitle,
+      description: division.heroDescription,
+      images: [
+        { url: "/og-image.jpg", width: 1200, height: 630, alt: division.name },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: fullTitle,
+      description: division.heroDescription,
+      images: ["/og-image.jpg"],
+    },
+  };
+}
+
+// ─── Page (server component) ───
+
+export default async function DivisionPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
   const division = DIVISION_DETAILS[slug];
 
   if (!division) {
@@ -65,315 +68,15 @@ export default function DivisionPage() {
   }
 
   return (
-    <main>
-      {/* ─── Hero ─── */}
-      <section className="relative text-white overflow-hidden -mt-20 pt-20 bg-manah-navy">
-        {/* Background image/video */}
-        {DIVISION_IMAGES[slug] && (
-          DIVISION_IMAGES[slug].video ? (
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-              poster={DIVISION_IMAGES[slug].hero}
-              className="absolute inset-0 w-full h-full object-cover"
-            >
-              <source src={DIVISION_IMAGES[slug].video} type="video/mp4" />
-            </video>
-          ) : (
-            <Image
-              src={DIVISION_IMAGES[slug].hero}
-              alt=""
-              fill
-              className="object-cover"
-              priority
-              sizes="100vw"
-              placeholder="blur"
-              blurDataURL={BLUR_DATA_URL}
-            />
-          )
-        )}
-        {/* Dark overlays for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-manah-navy/80 via-manah-navy/50 to-manah-navy/90" />
-        <div className="absolute inset-0 bg-gradient-to-r from-manah-navy/70 via-transparent to-manah-navy/40" />
-        {/* Subtle division color accent */}
-        <div
-          className="absolute inset-0 opacity-[0.12]"
-          style={{ background: `radial-gradient(ellipse at 70% 30%, ${division.color}, transparent 60%)` }}
-        />
-        <div className="section-container py-24 md:py-32 relative z-10">
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            animate="visible"
-            className="max-w-3xl"
-          >
-            {/* Breadcrumb */}
-            <motion.nav variants={fadeUp} className="flex items-center gap-2 text-white/60 text-body-sm mb-6">
-              <Link href="/" className="hover:text-white transition-colors">Home</Link>
-              <ChevronRight className="w-4 h-4" />
-              <Link href="/divisions" className="hover:text-white transition-colors">Divisions</Link>
-              <ChevronRight className="w-4 h-4" />
-              <span className="text-white">{division.name}</span>
-            </motion.nav>
-
-            <motion.p
-              variants={fadeUp}
-              className="text-body-sm font-semibold tracking-widest uppercase mb-4"
-              style={{ color: division.color === "#1E3A5F" ? "#C8A96E" : division.color.replace(")", ",0.8)").replace("rgb", "rgba") }}
-            >
-              {division.tagline}
-            </motion.p>
-            <motion.h1 variants={fadeUp} className="font-display text-display-lg md:text-display-xl font-bold mb-6">
-              {division.name}
-            </motion.h1>
-            <motion.p variants={fadeUp} className="text-white/80 text-body-lg max-w-2xl">
-              {division.heroDescription}
-            </motion.p>
-            <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-4">
-              <Link href={division.cta.href} className="btn-primary">
-                {division.cta.text}
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link href="/contact" className="btn-secondary">
-                Get in Touch
-              </Link>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ─── Key Stats ─── */}
-      <section className="bg-white border-b border-manah-gray-200">
-        <div className="section-container py-12">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {division.keyStats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="text-center"
-              >
-                <p className="font-display text-heading-xl font-bold text-manah-navy">{stat.value}</p>
-                <p className="text-manah-gray-500 text-body-sm mt-1">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── Overview ─── */}
-      <MotionSection className="section-padding bg-white">
-        <div className="section-container">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
-            <motion.div variants={fadeLeft} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-              <SectionHeading
-                eyebrow="Overview"
-                title={`About ${division.name}`}
-                align="left"
-              />
-              <div className="mt-6 space-y-4 text-manah-gray-500 text-body-md">
-                {division.overview.map((para, i) => (
-                  <p key={i}>{para}</p>
-                ))}
-              </div>
-
-              {/* Certifications */}
-              <div className="mt-8">
-                <h4 className="font-semibold text-manah-navy text-body-md mb-3">Certifications</h4>
-                <div className="flex flex-wrap gap-2">
-                  {division.certifications.map((cert) => (
-                    <span
-                      key={cert}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-manah-gray-100 text-manah-gray-600 text-body-sm rounded-full"
-                    >
-                      <Shield className="w-3.5 h-3.5 text-manah-gold" />
-                      {cert}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              variants={fadeRight}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-manah-gray-100"
-            >
-              {DIVISION_IMAGES[slug] ? (
-                <Image
-                  src={DIVISION_IMAGES[slug].detail}
-                  alt={`${division.name} facility`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  placeholder="blur"
-                  blurDataURL={BLUR_DATA_URL}
-                />
-              ) : (
-                <div className="absolute inset-0 flex items-center justify-center text-manah-gray-400 text-body-sm">
-                  {division.name} Facility Image
-                </div>
-              )}
-            </motion.div>
-          </div>
-        </div>
-      </MotionSection>
-
-      {/* ─── Services ─── */}
-      <section className="section-padding bg-manah-gray-50">
-        <div className="section-container">
-          <SectionHeading
-            eyebrow="What We Do"
-            title="Services & Capabilities"
-            description={`Comprehensive ${division.tagline.toLowerCase()} solutions delivered with engineering excellence.`}
-          />
-
-          {division.services.length <= 3 ? (
-            /* Enhanced layout for ≤3 services — full-width horizontal cards */
-            <div className="mt-12 space-y-6">
-              {division.services.map((service, i) => (
-                <motion.div
-                  key={service.title}
-                  variants={i % 2 === 0 ? fadeLeft : fadeRight}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  className="bg-white rounded-xl border border-manah-gray-200/60 hover:border-manah-gold/30 hover:shadow-card-hover transition-all duration-500 overflow-hidden"
-                >
-                  <div className="flex flex-col sm:flex-row items-stretch">
-                    {/* Numbered accent block */}
-                    <div
-                      className="flex-shrink-0 flex items-center justify-center sm:w-28 py-6 sm:py-0"
-                      style={{ backgroundColor: `${division.color}12` }}
-                    >
-                      <div className="text-center">
-                        <span
-                          className="font-display text-display-md font-bold block"
-                          style={{ color: division.color }}
-                        >
-                          {String(i + 1).padStart(2, "0")}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Gold divider (vertical on sm+, horizontal on mobile) */}
-                    <div className="w-full h-px sm:w-px sm:h-auto bg-manah-gold/30" />
-
-                    {/* Content */}
-                    <div className="flex-1 p-6 sm:p-8 flex flex-col justify-center">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div
-                          className="w-10 h-10 rounded-lg flex items-center justify-center"
-                          style={{ backgroundColor: `${division.color}15` }}
-                        >
-                          <CheckCircle2 className="w-5 h-5" style={{ color: division.color }} />
-                        </div>
-                        <h3 className="font-display text-heading-lg font-semibold text-manah-navy">
-                          {service.title}
-                        </h3>
-                      </div>
-                      <p className="text-manah-gray-500 text-body-md leading-relaxed max-w-2xl">
-                        {service.description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          ) : (
-            /* Standard 3-column grid for >3 services */
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-              {division.services.map((service, i) => (
-                <motion.div
-                  key={service.title}
-                  variants={fadeUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08 }}
-                  className="bg-white rounded-xl p-6 border border-manah-gray-200/60 hover:border-manah-gold/30 hover:shadow-card-hover transition-all duration-500"
-                >
-                  <div
-                    className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
-                    style={{ backgroundColor: `${division.color}15` }}
-                  >
-                    <CheckCircle2 className="w-5 h-5" style={{ color: division.color }} />
-                  </div>
-                  <h3 className="font-display text-heading-md font-semibold text-manah-navy mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-manah-gray-500 text-body-sm leading-relaxed">
-                    {service.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* ─── Sectors Served ─── */}
-      {division.sectors.length > 0 && (
-        <section className="section-padding bg-manah-navy text-white">
-          <div className="section-container">
-            <SectionHeading
-              eyebrow="Industries"
-              title="Sectors We Serve"
-              mode="dark"
-            />
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
-              {division.sectors.map((sector, i) => (
-                <motion.div
-                  key={sector.name}
-                  variants={scaleIn}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="group relative overflow-hidden rounded-xl aspect-[3/4] cursor-default"
-                >
-                  <Image
-                    src={sector.image}
-                    alt={sector.name}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    placeholder="blur"
-                    blurDataURL={BLUR_DATA_URL}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <h3 className="font-display font-semibold text-white text-lg">{sector.name}</h3>
-                    <p className="text-white/70 text-sm mt-1">{sector.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* CTA */}
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="mt-12 text-center"
-            >
-              <Link href="/contact" className="btn-primary">
-                Discuss Your Project
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </motion.div>
-          </div>
-        </section>
-      )}
-    </main>
+    <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Divisions", href: "/divisions" },
+          { name: division.name, href: `/divisions/${slug}` },
+        ]}
+      />
+      <DivisionDetailContent slug={slug} />
+    </>
   );
 }

@@ -9,6 +9,17 @@ export function OrganizationJsonLd() {
     url: SITE_CONFIG.url,
     logo: `${SITE_CONFIG.url}/images/logo.svg`,
     description: SITE_CONFIG.description,
+    slogan: SITE_CONFIG.tagline,
+    knowsAbout: [
+      "Engineering, Procurement and Construction",
+      "Power transmission and distribution",
+      "Renewable energy",
+      "Green hydrogen",
+      "Nuclear energy and Small Modular Reactors",
+      "Aviation MRO",
+      "Generative AI and data centers",
+      "Strategic investments",
+    ],
     foundingDate: "2018",
     address: {
       "@type": "PostalAddress",
@@ -54,11 +65,13 @@ export function WebSiteJsonLd() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: SITE_CONFIG.name,
+    alternateName: SITE_CONFIG.shortName,
     url: SITE_CONFIG.url,
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${SITE_CONFIG.url}/search?q={search_term_string}`,
-      "query-input": "required name=search_term_string",
+    description: SITE_CONFIG.description,
+    inLanguage: "en-IN",
+    publisher: {
+      "@type": "Organization",
+      name: SITE_CONFIG.name,
     },
   };
 

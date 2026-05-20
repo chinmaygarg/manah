@@ -1,0 +1,91 @@
+{
+  "timestamp": "2026-02-27T01:06:17.850821",
+  "model": "black-forest-labs/flux-2-pro",
+  "results": [
+    {
+      "status": "success",
+      "id": "blog_green_hydrogen",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/replicate/images/blog/green_hydrogen_future.jpg"
+    },
+    {
+      "status": "success",
+      "id": "blog_digital_twins",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/replicate/images/blog/digital_twins_infrastructure.jpg"
+    },
+    {
+      "status": "success",
+      "id": "blog_power_grids",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/replicate/images/blog/resilient_power_grids.jpg"
+    },
+    {
+      "status": "success",
+      "id": "gallery_transmission_construction",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/replicate/images/gallery/transmission_tower_construction.jpg"
+    },
+    {
+      "status": "success",
+      "id": "gallery_solar_aerial",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/replicate/images/gallery/solar_farm_aerial.jpg"
+    },
+    {
+      "status": "success",
+      "id": "gallery_tunnel_boring",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/replicate/images/gallery/metro_tunnel_construction.jpg"
+    },
+    {
+      "status": "success",
+      "id": "gallery_hydrogen_plant",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/replicate/images/gallery/hydrogen_electrolyzer_facility.jpg"
+    },
+    {
+      "status": "success",
+      "id": "gallery_mro_hangar",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/replicate/images/gallery/aircraft_mro_hangar.jpg"
+    },
+    {
+      "status": "success",
+      "id": "gallery_engineers_site",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/replicate/images/gallery/engineers_reviewing_blueprints.jpg"
+    },
+    {
+      "status": "success",
+      "id": "gallery_smt_manufacturing",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/replicate/images/gallery/electronics_manufacturing_line.jpg"
+    },
+    {
+      "status": "success",
+      "id": "gallery_boardroom",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/replicate/images/gallery/corporate_boardroom_meeting.jpg"
+    },
+    {
+      "status": "success",
+      "id": "gallery_groundbreaking",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/replicate/images/gallery/groundbreaking_ceremony.jpg"
+    },
+    {
+      "status": "success",
+      "id": "gallery_award_ceremony",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/replicate/images/gallery/award_ceremony.jpg"
+    },
+    {
+      "status": "success",
+      "id": "gallery_highway_aerial",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/replicate/images/gallery/highway_construction_aerial.jpg"
+    },
+    {
+      "status": "success",
+      "id": "gallery_wind_turbines",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/replicate/images/gallery/wind_farm_dawn.jpg"
+    },
+    {
+      "status": "success",
+      "id": "gallery_safety_briefing",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/replicate/images/gallery/safety_briefing_site.jpg"
+    },
+    {
+      "status": "success",
+      "id": "gallery_data_center",
+      "file": "/Users/chinmay/Desktop/Manah/asset-generator/scripts/../output/replicate/images/gallery/data_center_corridor.jpg"
+    }
+  ]
+}

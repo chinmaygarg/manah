@@ -73,8 +73,12 @@ export default function CookieConsent() {
                   <p className="text-manah-gray-500 text-body-sm">
                     We use cookies to enhance your browsing experience, analyse site traffic, and personalize content.
                     You can manage your preferences or accept all cookies.{" "}
-                    <Link href="/cookies" className="text-manah-gold hover:underline">
-                      Learn more
+                    <Link
+                      href="/cookies"
+                      className="text-manah-gold hover:underline"
+                      aria-label="Learn more about our cookie policy"
+                    >
+                      Learn more about our cookie policy
                     </Link>
                   </p>
                 </div>

@@ -183,17 +183,20 @@
     line-height: var(--font-size-body-sm--line-height);
   }
   .stat-number {
-    @apply font-display font-bold text-manah-gold tabular-nums;
-    font-size: var(--font-size-display-sm);
-    line-height: var(--font-size-display-sm--line-height);
-    letter-spacing: var(--font-size-display-sm--letter-spacing);
+    @apply font-display font-bold text-manah-gold tabular-nums whitespace-nowrap;
+    font-size: 2rem;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
   }
   @media (min-width: 768px) {
     .stat-number {
-      font-size: var(--font-size-display-lg);
-      line-height: var(--font-size-display-lg--line-height);
-      letter-spacing: var(--font-size-display-lg--letter-spacing);
+      font-size: 2.5rem;
     }
+  }
+  .stat-suffix {
+    font-size: 0.5em;
+    font-weight: 600;
+    letter-spacing: 0;
   }
   .skeleton { @apply bg-manah-gray-200 rounded-lg animate-pulse; }
   .no-scrollbar::-webkit-scrollbar { display: none; }

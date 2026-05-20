@@ -10,32 +10,32 @@ const DIVISIONS = [
   {
     label: "Dynamics",
     video: "/videos/hero/hero_infrastructure",
-    poster: "/images/hero/hero_main_infrastructure.png",
+    poster: "/images/hero/hero_main_infrastructure.webp",
   },
   {
     label: "Green Energy",
     video: "/videos/hero/hero_green_energy",
-    poster: "/images/hero/hero_renewable_energy.png",
+    poster: "/images/hero/hero_renewable_energy.webp",
   },
   {
     label: "Atomic",
     video: "/videos/hero/hero_atomic",
-    poster: "/images/hero/hero_atomic.png",
+    poster: "/images/hero/hero_atomic.webp",
   },
   {
     label: "Aerospace",
     video: "/videos/hero/hero_aerospace",
-    poster: "/images/hero/hero_aviation_mro.png",
+    poster: "/images/hero/hero_aviation_mro.webp",
   },
   {
     label: "AI",
     video: "/videos/hero/hero_ai",
-    poster: "/images/hero/hero_ai.png",
+    poster: "/images/hero/hero_ai.webp",
   },
   {
     label: "Investments",
     video: "/videos/hero/hero_investments",
-    poster: "/images/hero/hero_construction_site.png",
+    poster: "/images/hero/hero_construction_site.webp",
   },
 ] as const;
 
@@ -114,10 +114,12 @@ export default function HeroSection() {
 
       {/* Content — centered, Essar-inspired */}
       <div className="relative h-full section-container flex flex-col items-center justify-center text-center pt-20 pb-44 sm:pb-40">
-        {/* Headline — lowercase, calm, confident */}
+        {/* Headline — lowercase, calm, confident.
+            Rendered visible on first paint (no opacity:0 in SSR) so it can
+            serve as the LCP element; only a subtle slide-up on hydration. */}
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+          initial={{ y: 24 }}
+          animate={isLoaded ? { y: 0 } : { y: 24 }}
           transition={{ delay: 0.3, duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="font-display text-[3.3rem] leading-[1.1] sm:text-[4.25rem] lg:text-[5.5rem] lg:leading-[1.05] xl:text-[6.5rem] font-bold text-white mb-6 max-w-5xl tracking-tight lowercase"
         >

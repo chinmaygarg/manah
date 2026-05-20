@@ -92,7 +92,7 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
     author: { name: "Manah Research Team", role: "Strategic Research & Analysis" },
     excerpt:
       "India's power transmission network requires an estimated $50 billion in investment over the next decade to integrate 500 GW of renewable energy capacity. With ageing 220kV corridors struggling to handle bidirectional power flows, the shift to 765kV and HVDC super-highways is no longer optional — it is an engineering imperative that will redefine how the nation moves electrons from source to load.",
-    image: "/images/news/power-transmission.jpg",
+    image: "/images/news/power-transmission.webp",
     metaDescription:
       "India needs $50 billion in power transmission upgrades to integrate 500 GW of renewables. Explore why 765kV and HVDC corridors are critical for the nation's energy future.",
     metaKeywords: [
@@ -122,7 +122,7 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
       },
       {
         type: "image",
-        src: "/images/gallery/transmission_tower_construction.png",
+        src: "/images/gallery/transmission_tower_construction.webp",
         alt: "Transmission tower construction in progress showing a 765kV extra-high-voltage lattice tower being erected in rural India",
         caption:
           "765kV EHV transmission towers under construction — these corridors form the backbone of India's next-generation power grid.",
@@ -213,7 +213,7 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
     author: { name: "Manah Green Energy Division", role: "Green Energy & Sustainability" },
     excerpt:
       "As India targets 5 million tonnes of green hydrogen production annually by 2030, the EPC ecosystem must rapidly scale electrolyzer manufacturing, water treatment infrastructure, and dedicated renewable energy corridors to make the National Green Hydrogen Mission a reality.",
-    image: "/images/news/green-hydrogen.jpg",
+    image: "/images/news/green-hydrogen.webp",
     metaDescription:
       "India targets 5 million tonnes of green hydrogen by 2030 under the National Green Hydrogen Mission. Learn about electrolyzer technology, infrastructure needs, and EPC opportunities.",
     metaKeywords: [
@@ -243,7 +243,7 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
       },
       {
         type: "image",
-        src: "/images/gallery/hydrogen_electrolyzer_facility.png",
+        src: "/images/gallery/hydrogen_electrolyzer_facility.webp",
         alt: "Green hydrogen electrolyzer facility with PEM electrolysis stacks and renewable energy integration systems",
         caption:
           "A green hydrogen production facility — PEM electrolyzers split purified water into hydrogen and oxygen using renewable electricity.",
@@ -319,7 +319,7 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
     author: { name: "Manah Dynamics — Electronics Manufacturing", role: "Electronics & Defence Manufacturing" },
     excerpt:
       "The defence electronics segment is witnessing unprecedented growth as India's offset policies drive local manufacturing of radar subsystems, electronic warfare suites, and avionics. Companies with SMT lines capable of military-grade soldering standards are positioned to capture a $12 billion addressable market.",
-    image: "/images/sectors/defence_electronics.png",
+    image: "/images/sectors/defence_electronics.webp",
     metaDescription:
       "India's defence electronics market reaches $12 billion as Make in India policies drive local manufacturing of radar, EW suites, and avionics. Explore the EPC and manufacturing opportunity.",
     metaKeywords: [
@@ -349,7 +349,7 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
       },
       {
         type: "image",
-        src: "/images/gallery/electronics_manufacturing_line.png",
+        src: "/images/gallery/electronics_manufacturing_line.webp",
         alt: "Advanced SMT production line manufacturing military-grade electronic assemblies with automated optical inspection",
         caption:
           "High-speed SMT lines capable of 0201 component placement at 80,000 CPH — essential for defence-grade PCB assembly.",
@@ -420,7 +420,7 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
     author: { name: "Manah Dynamics Engineering Team", role: "Power Infrastructure Engineering" },
     excerpt:
       "Designing and constructing 765kV extra-high-voltage transmission lines presents unique engineering challenges — from tower foundation design in varying soil conditions to sag-tension calculations for long-span crossings. This deep-dive explores how modern simulation tools and field engineering practices are overcoming these hurdles.",
-    image: "/images/sectors/power_transmission.png",
+    image: "/images/sectors/power_transmission.webp",
     metaDescription:
       "A deep-dive into the engineering challenges of 765kV EHV transmission lines: tower design, foundation engineering, sag-tension calculations, and modern simulation tools used by EPC firms.",
     metaKeywords: [
@@ -450,7 +450,7 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
       },
       {
         type: "image",
-        src: "/images/gallery/transmission_tower_construction.png",
+        src: "/images/gallery/transmission_tower_construction.webp",
         alt: "765kV extra-high-voltage transmission tower under construction with crane operations in a rural landscape",
         caption:
           "A 765kV lattice tower being assembled — each tower contains 15-25 tonnes of galvanized steel and requires precision erection sequences.",
@@ -537,7 +537,7 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
     author: { name: "Manah Aerospace Division", role: "Aviation & MRO Services" },
     excerpt:
       "A landmark achievement for our aviation division — San Marino CAR 145 approval enables Manah Aerospace to service internationally registered aircraft, significantly expanding our addressable MRO market beyond DGCA-registered fleets.",
-    image: "/images/news/aerospace-mro.jpg",
+    image: "/images/news/aerospace-mro.webp",
     metaDescription:
       "Manah Aerospace achieves San Marino CAR 145 certification, enabling MRO services for internationally registered aircraft. Learn how this expands India's aviation maintenance capabilities.",
     metaKeywords: [
@@ -567,7 +567,7 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
       },
       {
         type: "image",
-        src: "/images/gallery/aircraft_mro_hangar.png",
+        src: "/images/gallery/aircraft_mro_hangar.webp",
         alt: "Modern aircraft MRO hangar with business jets undergoing maintenance checks and inspection",
         caption:
           "Manah Aerospace's certified maintenance hangar at Begumpet, Hyderabad — equipped for business jet maintenance in partnership with AAI.",
@@ -638,7 +638,7 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
     author: { name: "Manah Renewable Energy Team", role: "Green Energy & Solar EPC" },
     excerpt:
       "Bifacial solar modules paired with single-axis trackers are delivering 15-25% higher energy yields compared to fixed-tilt monofacial installations. For EPC contractors, this shift demands new design methodologies for ground clearance, albedo optimization, and tracker foundation engineering.",
-    image: "/images/sectors/renewable_energy.png",
+    image: "/images/sectors/renewable_energy.webp",
     metaDescription:
       "Bifacial solar modules with single-axis trackers deliver 15-25% higher energy yields. Learn about design changes, albedo optimization, and EPC challenges for next-gen solar plants.",
     metaKeywords: [
@@ -668,7 +668,7 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
       },
       {
         type: "image",
-        src: "/images/gallery/solar_farm_aerial.png",
+        src: "/images/gallery/solar_farm_aerial.webp",
         alt: "Aerial view of a large-scale solar farm with single-axis tracker systems arranged in rows across semi-arid terrain",
         caption:
           "Utility-scale solar installation with single-axis trackers — each row independently tracks the sun from east to west throughout the day.",
@@ -739,7 +739,7 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
     author: { name: "Manah Research Team", role: "Strategic Research & Analysis" },
     excerpt:
       "The convergence of IoT sensors, advanced metering infrastructure, and AI-driven load forecasting is transforming passive distribution networks into intelligent, self-healing grids. Utilities investing in these technologies are seeing 30% reductions in aggregate technical and commercial losses.",
-    image: "/images/news/power-transmission.jpg",
+    image: "/images/news/power-transmission.webp",
     metaDescription:
       "Smart grid technologies — IoT sensors, AMI, and AI load forecasting — are cutting distribution losses by 30%. Explore the transformation of India's power distribution networks.",
     metaKeywords: [
@@ -769,7 +769,7 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
       },
       {
         type: "image",
-        src: "/images/blog/resilient_power_grids.png",
+        src: "/images/blog/resilient_power_grids.webp",
         alt: "Modern smart grid control centre with digital displays showing real-time power distribution network monitoring",
         caption:
           "A smart grid operations centre — real-time monitoring of distribution networks enables predictive maintenance and automated fault isolation.",
@@ -845,7 +845,7 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
     author: { name: "Manah Aerospace Division", role: "Aviation & MRO Services" },
     excerpt:
       "India's commercial aviation fleet is projected to exceed 1,500 aircraft by 2030, creating a $4 billion annual MRO demand. With over 85% of heavy maintenance currently outsourced overseas, the opportunity for domestic MRO facilities with global certifications is immense and immediate.",
-    image: "/images/hero/hero_aviation_mro.png",
+    image: "/images/hero/hero_aviation_mro.webp",
     metaDescription:
       "India's aviation MRO market will reach $4 billion annually by 2030 with 1,500+ aircraft. Explore why 85% of maintenance is outsourced and the domestic MRO opportunity.",
     metaKeywords: [
@@ -875,7 +875,7 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
       },
       {
         type: "image",
-        src: "/images/gallery/aircraft_mro_hangar.png",
+        src: "/images/gallery/aircraft_mro_hangar.webp",
         alt: "Wide-body aircraft inside a modern MRO hangar undergoing scheduled maintenance with specialized equipment and tooling",
         caption:
           "A wide-body aircraft undergoing C-check maintenance — each heavy check requires 30,000-50,000 man-hours of skilled labour.",
@@ -952,7 +952,7 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
     author: { name: "Manah Corporate Strategy", role: "Corporate Strategy & ESG" },
     excerpt:
       "With SEBI's BRSR framework mandating ESG disclosures for the top 1,000 listed companies, infrastructure and EPC firms face heightened scrutiny on carbon emissions, water usage, and supply chain ethics. Companies that embed ESG into project delivery — not just annual reports — will win more bids.",
-    image: "/images/news/green-hydrogen.jpg",
+    image: "/images/news/green-hydrogen.webp",
     metaDescription:
       "SEBI's BRSR framework mandates ESG reporting for India's top 1,000 companies. Learn why infrastructure and EPC firms must embed sustainability into project delivery to win bids.",
     metaKeywords: [
@@ -982,7 +982,7 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
       },
       {
         type: "image",
-        src: "/images/blog/green_hydrogen_future.png",
+        src: "/images/blog/green_hydrogen_future.webp",
         alt: "Sustainability reporting dashboard showing carbon emissions tracking, water usage metrics, and ESG compliance indicators",
         caption:
           "ESG dashboards are becoming essential infrastructure for EPC companies — real-time tracking enables project-level sustainability management.",
@@ -1059,7 +1059,7 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
     author: { name: "Manah Dynamics — Electronics Manufacturing", role: "Electronics & Defence Manufacturing" },
     excerpt:
       "A behind-the-scenes look at Manah's electronics manufacturing services facility — from eight SMT production lines running 0201 components at 80,000 placements per hour to automated optical inspection systems achieving 99.97% defect detection rates on complex PCB assemblies.",
-    image: "/images/sectors/manufacturing.png",
+    image: "/images/sectors/manufacturing.webp",
     metaDescription:
       "Tour Manah's electronics manufacturing facility: 8 SMT lines, 80,000 CPH placement speed, 99.97% AOI detection, and capabilities spanning prototype to volume production.",
     metaKeywords: [
@@ -1089,7 +1089,7 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
       },
       {
         type: "image",
-        src: "/images/gallery/data_center_corridor.png",
+        src: "/images/gallery/data_center_corridor.webp",
         alt: "Interior of an advanced electronics manufacturing facility showing SMT production lines with automated pick-and-place machines",
         caption:
           "Inside the EMS facility — automated pick-and-place machines handle components as small as 0201 (0.6mm × 0.3mm) at 80,000 placements per hour.",
