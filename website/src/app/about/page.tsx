@@ -19,11 +19,13 @@ import { LEADERS } from "@/lib/constants";
 /* ─── Timeline Data ─── */
 const MILESTONES = [
   { year: "2018", title: "Incorporated", description: "Manah Group incorporated with a vision to deliver world-class infrastructure solutions." },
-  { year: "2020", title: "First Landmark EPC", description: "Secured landmark power transmission project, marking entry into large-scale EPC." },
-  { year: "2021", title: "Aerospace Division Launch", description: "Established Manah Aerospace with DGCA-approved MRO facility at Begumpet, Hyderabad." },
-  { year: "2022", title: "Green Energy Initiative", description: "Entered green hydrogen sector with ARB technology and MoU with Govt of Madhya Pradesh." },
-  { year: "2023", title: "Tech & Manufacturing", description: "Launched Electronics Manufacturing Services division at Cherlapally, Hyderabad." },
-  { year: "2025", title: "Industry Recognition", description: "Awarded 'Fastest Growing EPC Company' and achieved ISO 9001, 14001, 45001 certifications." },
+  { year: "2020", title: "First Landmark EPC", description: "Secured landmark power transmission project, marking entry into large-scale EPC execution." },
+  { year: "2021", title: "Aerospace Division Launch", description: "Established Manah Aerospace with DGCA-approved MRO facility at Begumpet, Hyderabad, in partnership with AAI." },
+  { year: "2022", title: "Green Energy Initiative", description: "Entered green hydrogen with ARB & Electrolysis technology and an MoU with the Government of Madhya Pradesh for 18,000 MTPA production at Bina." },
+  { year: "2023", title: "Electronics Manufacturing", description: "Launched a 30,000 sq ft EMS facility at Cherlapally, Hyderabad — now operating as part of Manah Dynamics." },
+  { year: "2025", title: "Manah Atomic Launched", description: "Entered nuclear energy with focus on Small Modular Reactors (SMRs), advanced nuclear fuel cycle, and reactor safety & compliance." },
+  { year: "2025", title: "Manah AI Launched", description: "Generative AI and sovereign data centre division established — agentic AI, LLM/SLM training, and India-native AI compute." },
+  { year: "2026", title: "Scale & Recognition", description: "Group reaches six divisions, 20+ strategic partners, 1000+ team members, and ISO 9001 / 14001 / 45001 certifications across core divisions." },
 ];
 
 /* ─── Policies (compact list) ─── */
@@ -88,8 +90,8 @@ export default function AboutPage() {
               <span className="text-gradient-gold">Building What&apos;s Next.</span>
             </motion.h1>
             <motion.p variants={fadeUp} className="text-manah-gray-300 text-body-lg max-w-2xl">
-              A diversified EPC enterprise delivering excellence across Projects &amp; Infrastructure,
-              Aviation &amp; MRO, Green Energy, and Technology &amp; Manufacturing.
+              A diversified enterprise group delivering excellence across six divisions — Manah Dynamics,
+              Manah Green Energy, Manah Atomic, Manah Aerospace, Manah AI, and Manah Investments.
             </motion.p>
           </motion.div>
         </div>
@@ -451,12 +453,14 @@ export default function AboutPage() {
       {/* ─── Investor Relations ─── */}
       <section id="investors" className="bg-manah-navy py-16">
         <div className="section-container">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {[
               { value: 500, suffix: "%+", label: "YoY Growth" },
               { value: 3.6, prefix: "$", suffix: "B+", label: "Project Pipeline" },
-              { value: 15, suffix: "+", label: "Regions Covered" },
+              { value: 6, suffix: "", label: "Divisions" },
+              { value: 20, suffix: "+", label: "Strategic Partners" },
               { value: 1000, suffix: "+", label: "Team Members" },
+              { value: 15, suffix: "+", label: "States Active" },
             ].map((stat, i) => (
               <motion.div
                 key={stat.label}

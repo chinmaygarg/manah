@@ -316,7 +316,7 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
     date: "January 15, 2026",
     isoDate: "2026-01-15",
     readTime: "7 min read",
-    author: { name: "Manah Technology Division", role: "Electronics & Defence Manufacturing" },
+    author: { name: "Manah Dynamics — Electronics Manufacturing", role: "Electronics & Defence Manufacturing" },
     excerpt:
       "The defence electronics segment is witnessing unprecedented growth as India's offset policies drive local manufacturing of radar subsystems, electronic warfare suites, and avionics. Companies with SMT lines capable of military-grade soldering standards are positioned to capture a $12 billion addressable market.",
     image: "/images/sectors/defence_electronics.png",
@@ -383,7 +383,7 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
       {
         type: "text",
         content:
-          "The defence electronics boom creates significant downstream demand for EPC companies. New manufacturing facilities require cleanroom construction, specialised HVAC systems with HEPA filtration, ESD-protected flooring, backup power with zero-transfer-time UPS systems, and sophisticated fire suppression designed for electronics environments. Manah Technology Division's capabilities in facility construction, equipment installation, and production line commissioning position it uniquely at this intersection of construction and technology.",
+          "The defence electronics boom creates significant downstream demand for EPC companies. New manufacturing facilities require cleanroom construction, specialised HVAC systems with HEPA filtration, ESD-protected flooring, backup power with zero-transfer-time UPS systems, and sophisticated fire suppression designed for electronics environments. Manah Dynamics — Electronics Manufacturing's capabilities in facility construction, equipment installation, and production line commissioning position it uniquely at this intersection of construction and technology.",
       },
       {
         type: "keyTakeaways",
@@ -1056,7 +1056,7 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
     date: "October 15, 2025",
     isoDate: "2025-10-15",
     readTime: "6 min read",
-    author: { name: "Manah Technology Division", role: "Electronics & Defence Manufacturing" },
+    author: { name: "Manah Dynamics — Electronics Manufacturing", role: "Electronics & Defence Manufacturing" },
     excerpt:
       "A behind-the-scenes look at Manah's electronics manufacturing services facility — from eight SMT production lines running 0201 components at 80,000 placements per hour to automated optical inspection systems achieving 99.97% defect detection rates on complex PCB assemblies.",
     image: "/images/sectors/manufacturing.png",
@@ -1080,7 +1080,7 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
       {
         type: "text",
         content:
-          "Manah Technology Division's electronics manufacturing services (EMS) facility represents one of India's most advanced contract manufacturing operations. Spanning 50,000 square feet of climate-controlled production space, the facility houses eight surface mount technology (SMT) production lines, three through-hole assembly stations, a conformal coating line, and dedicated areas for box build, system integration, and final testing.",
+          "Manah Dynamics — Electronics Manufacturing's electronics manufacturing services (EMS) facility represents one of India's most advanced contract manufacturing operations. Spanning 30,000 square feet of climate-controlled production space at Cherlapally, Hyderabad, the facility houses eight surface mount technology (SMT) production lines, three through-hole assembly stations, a conformal coating line, and dedicated areas for box build, system integration, and final testing.",
       },
       {
         type: "text",
@@ -1128,7 +1128,7 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
         type: "quote",
         content:
           "In electronics manufacturing, quality is not inspected in — it is built in. Every parameter, from solder paste viscosity to reflow peak temperature, must be controlled within tight tolerances to achieve the defect rates our customers demand.",
-        attribution: "Manah Technology Division, Quality Assurance Director",
+        attribution: "Manah Dynamics — Electronics Manufacturing, Quality Assurance Director",
       },
       {
         type: "heading",
@@ -1156,7 +1156,7 @@ const ARTICLES_LIST: readonly BlogArticle[] = [
       {
         question: "What manufacturing capabilities does Manah Technology offer?",
         answer:
-          "Manah Technology Division operates a 30,000 sq ft EMS facility with 8 SMT lines handling components from 0201 to BGA packages at 80,000 CPH. Capabilities span rapid prototyping (10 units) to volume production (100,000+ units/month), with nitrogen reflow, AOI, X-ray inspection, and IPC Class 3 quality standards.",
+          "Manah Dynamics — Electronics Manufacturing operates a 30,000 sq ft EMS facility with 8 SMT lines handling components from 0201 to BGA packages at 80,000 CPH. Capabilities span rapid prototyping (10 units) to volume production (100,000+ units/month), with nitrogen reflow, AOI, X-ray inspection, and IPC Class 3 quality standards.",
       },
       {
         question: "What quality standards does the facility meet?",

@@ -14,34 +14,33 @@ import { ArrowRight, ArrowUpRight, Calendar } from "lucide-react";
 const NEWS_ITEMS = [
   {
     id: 1,
-    category: "Press Release",
-    date: "Feb 20, 2026",
-    title: "Manah Dynamics Secures $20M Power Transmission Contract",
+    category: "Division Launch",
+    date: "Apr 2026",
+    title: "Manah Atomic Launched \u2014 Entering Nuclear Energy with SMR Focus",
     excerpt:
-      "The project involves 220kV transmission line construction spanning 180km across the Thar Desert region.",
-    href: "/media/press-1",
-    image: "/images/news/power-transmission.jpg",
+      "Group announces Manah Atomic, its nuclear energy division focused on Small Modular Reactors, advanced nuclear fuel cycle, and reactor safety and compliance \u2014 powering India's clean energy transition.",
+    href: "/divisions/atomic",
+    image: "/images/hero/hero_atomic.png",
   },
   {
     id: 2,
-    category: "Company News",
-    date: "Feb 12, 2026",
-    title:
-      "Manah Aerospace Achieves San Marino CAR 145 Certification for International Operations",
+    category: "Division Launch",
+    date: "Apr 2026",
+    title: "Manah AI Launched \u2014 Generative AI & Sovereign Data Centers",
     excerpt:
-      "A significant milestone positioning Manah as a premier MRO destination for international carriers.",
-    href: "/media/news-2",
-    image: "/images/news/aerospace-mro.jpg",
+      "New AI division establishes Manah's capability in agentic AI, LLM and SLM training, and sovereign data center infrastructure for enterprise, government, and defence use cases.",
+    href: "/divisions/ai",
+    image: "/images/hero/hero_ai.png",
   },
   {
     id: 3,
-    category: "Sustainability",
-    date: "Jan 30, 2026",
-    title: "Green Hydrogen Pilot Plant Achieves 100 TPD Production Milestone",
+    category: "Contract Win",
+    date: "Feb 2026",
+    title: "HESCOM Awards Manah \u20b9171 Cr Smart Metering Contract \u2014 48,893 DTC Meters Across 6 Districts",
     excerpt:
-      "The electrolyzer facility in Gujarat has successfully demonstrated commercial-scale green H\u2082 production.",
-    href: "/media/news-3",
-    image: "/images/news/green-hydrogen.jpg",
+      "Manah Dynamics to deploy 48,893 DTC smart meters across six districts in Karnataka for HESCOM under a \u20b9171 Cr utility modernisation programme.",
+    href: "/projects",
+    image: "/images/news/power-transmission.jpg",
   },
 ];
 

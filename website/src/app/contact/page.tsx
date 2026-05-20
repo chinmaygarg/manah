@@ -21,39 +21,46 @@ import WorldMap from "@/components/ui/WorldMap";
 
 const OFFICES = [
   {
-    city: "New Delhi",
+    city: "Hyderabad",
     type: "Corporate Headquarters",
-    address: "Manah House, Plot 12, Sector 44, Gurugram, Haryana 122003",
-    phone: "+91 96769 02243",
+    address: "5th Floor, Trendz Platina, 91/12, Besides Rainbow Hospital Lane, Madhapur, Kondapur, Hyderabad, Telangana 500081",
+    phone: "+91 738 674 5553",
     email: "info@manah.com",
   },
   {
-    city: "Jaipur",
-    type: "EPC & Projects Office",
-    address: "Tower C, World Trade Park, Malviya Nagar, Jaipur, Rajasthan 302017",
+    city: "New Delhi (Gurugram)",
+    type: "Regional Office",
+    address: "Gurugram, Haryana (NCR Operations)",
     phone: "+91 96769 02243",
-    email: "projects@manah.com",
-  },
-  {
-    city: "Hyderabad",
-    type: "Corporate Office & Aerospace Division",
-    address: "5th Floor, Trendz Platina, 91/12, Besides Rainbow Hospital Lane, Madhapur, Kondapur, Hyderabad 500081",
-    phone: "+91 738 674 5553",
-    email: "aerospace@manah.com",
-  },
-  {
-    city: "Bangalore",
-    type: "Technology & Manufacturing",
-    address: "Electronic City Phase II, Hosur Road, Bangalore, Karnataka 560100",
-    phone: "+91 96769 02243",
-    email: "tech@manah.com",
+    email: "ncr@manah.com",
   },
   {
     city: "Dubai",
-    type: "Middle East Office",
+    type: "International Business",
     address: "Dubai, United Arab Emirates",
     phone: "+91 96769 02243",
     email: "me@manah.com",
+  },
+  {
+    city: "Vishakhapatnam",
+    type: "Regional Office",
+    address: "Vishakhapatnam, Andhra Pradesh",
+    phone: "+91 96769 02243",
+    email: "ap@manah.com",
+  },
+  {
+    city: "Bhopal",
+    type: "Regional Office",
+    address: "Bhopal, Madhya Pradesh",
+    phone: "+91 96769 02243",
+    email: "mp@manah.com",
+  },
+  {
+    city: "Bangalore",
+    type: "Regional Office",
+    address: "Bangalore, Karnataka",
+    phone: "+91 96769 02243",
+    email: "karnataka@manah.com",
   },
 ];
 
@@ -68,9 +75,10 @@ const INQUIRY_TYPE_OPTIONS: readonly SelectOption[] = [
 
 const DIVISION_OPTIONS: readonly SelectOption[] = [
   { value: "dynamics", label: "Manah Dynamics" },
+  { value: "green-energy", label: "Manah Green Energy" },
+  { value: "atomic", label: "Manah Atomic" },
   { value: "aerospace", label: "Manah Aerospace" },
-  { value: "green-energy", label: "Green Energy" },
-  { value: "technology", label: "Tech & Manufacturing" },
+  { value: "ai", label: "Manah AI" },
   { value: "investments", label: "Manah Investments" },
 ];
 

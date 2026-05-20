@@ -1,6 +1,8 @@
 /* ═══════════════════════════════════════════════════════════
    MANAH GROUP — Sector Detail Data
-   Complete content for each industry sector page
+   End-market (customer industry) content — one page per sector.
+   Capabilities and products (BESS, EMS, Nuclear, AI, H₂) live on
+   division pages, linked from relatedDivisions below.
    ═══════════════════════════════════════════════════════════ */
 
 export interface SectorProject {
@@ -28,15 +30,15 @@ export interface SectorDetail {
 export const SECTOR_DETAILS: Record<string, SectorDetail> = {
   "power-transmission": {
     id: "power-transmission",
-    title: "Power Transmission",
-    tagline: "Oil, Gas & Energy",
+    title: "Power T&D",
+    tagline: "Grid Infrastructure",
     heroDescription:
-      "End-to-end EPC solutions for high-voltage power transmission infrastructure — from 66kV distribution networks to 765kV EHV transmission corridors powering national grids worldwide.",
+      "End-to-end EPC solutions for high-voltage power transmission and distribution — 66kV distribution networks through 765kV EHV transmission corridors powering national grids.",
     color: "#1E3A5F",
     image: "/images/sectors/power_transmission.png",
     overview: [
-      "Manah Group delivers comprehensive power transmission solutions spanning the full spectrum of voltage levels — from 66kV distribution networks to ultra-high-voltage 765kV transmission corridors. Our integrated EPC approach covers route surveying, tower design and fabrication, foundation engineering, stringing, and commissioning.",
-      "With over 3,000 km of transmission lines constructed and multiple substation projects delivered, we are a trusted partner for national utilities, state distribution companies, and independent power producers. Our projects form the backbone of electricity supply to millions of homes and businesses.",
+      "Manah Group delivers comprehensive power transmission and distribution solutions spanning the full voltage spectrum — from 66kV distribution networks to ultra-high-voltage 765kV transmission corridors. Our integrated EPC approach covers route surveying, tower design and fabrication, foundation engineering, stringing, and commissioning.",
+      "With over 3,000 km of transmission lines constructed and multiple substation projects delivered, we are a trusted partner for national utilities, state distribution companies, and independent power producers.",
     ],
     keyStats: [
       { value: "3,000+ km", label: "Lines Constructed" },
@@ -52,7 +54,7 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
       { title: "AIS Substations", description: "Turnkey air-insulated switchgear substations up to 400kV with complete civil, electrical, protection, and SCADA systems." },
       { title: "GIS Substations", description: "Compact gas-insulated switchgear substations for space-constrained urban and industrial environments with superior reliability." },
       { title: "Underground Cable Systems", description: "XLPE and fluid-filled underground cable systems for critical urban corridors where overhead lines are not feasible." },
-      { title: "Grid Modernization", description: "Smart grid upgrades including FACTS devices, reactive power compensation, advanced metering infrastructure, and grid automation." },
+      { title: "Grid Modernization & SCADA", description: "Smart grid upgrades including FACTS devices, reactive power compensation, AMI, BESS integration, and SCADA automation." },
     ],
     projects: [
       { title: "765kV Transmission Corridor", location: "Andhra Pradesh, India", value: "$45M", description: "Double-circuit 765kV transmission line spanning 180 km connecting major generation hubs to load centers." },
@@ -70,36 +72,36 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
 
   "renewable-energy": {
     id: "renewable-energy",
-    title: "Renewable Energy",
-    tagline: "Power & Renewables",
+    title: "Renewables",
+    tagline: "Clean Power",
     heroDescription:
-      "Utility-scale solar parks, wind farms, and hybrid renewable energy solutions — from feasibility studies through construction to long-term operations and maintenance.",
+      "Utility-scale solar, wind, and hybrid renewable energy EPC — from feasibility studies through construction to long-term operations and maintenance.",
     color: "#F59E0B",
     image: "/images/sectors/renewable_energy.png",
     overview: [
-      "Manah Group is accelerating the global energy transition through large-scale renewable energy project development and EPC execution. Our portfolio spans utility-scale solar parks, onshore wind farms, hybrid power plants, and energy storage systems — delivering clean energy solutions that meet ambitious carbon reduction targets.",
-      "We operate across the full project lifecycle: from resource assessment and land acquisition through engineering, procurement, and construction to long-term O&M. Our deep understanding of grid integration challenges ensures that every megawatt we install delivers reliable, bankable power.",
+      "Manah Group accelerates India's energy transition through large-scale renewable project development and EPC execution. Our portfolio spans utility-scale solar parks, onshore wind farms, hybrid plants, and energy storage — delivering clean energy that meets ambitious carbon reduction targets.",
+      "We operate across the full project lifecycle: resource assessment through engineering, procurement, construction, and long-term O&M. Green hydrogen, electrolyzers, and nuclear baseload are delivered by sibling divisions — see Manah Green Energy and Manah Atomic.",
     ],
     keyStats: [
       { value: "1,200+ MW", label: "Capacity Installed" },
       { value: "15+", label: "Solar Parks" },
       { value: "500+ MW", label: "Wind Capacity" },
-      { value: "100K+ Tons", label: "CO₂ Avoided/Year" },
-      { value: "25+ Years", label: "Asset Life" },
+      { value: "100K+ tons", label: "CO₂ Avoided / Year" },
+      { value: "25+ years", label: "Asset Life" },
       { value: "99.5%", label: "Plant Availability" },
     ],
     services: [
       { title: "Solar EPC (Utility Scale)", description: "Complete EPC for ground-mounted solar parks from 10 MW to 500 MW+ including single-axis trackers, inverter stations, and pooling substations." },
       { title: "Wind Farm Development", description: "Turnkey onshore wind projects including micrositing, foundation design, turbine erection, and electrical balance of plant." },
-      { title: "Hybrid Power Plants", description: "Co-located solar-wind-storage hybrid plants optimizing land use, grid connectivity, and capacity utilization factors." },
-      { title: "Energy Storage Systems", description: "Battery energy storage (BESS) solutions for renewable firming, peak shaving, and grid ancillary services." },
-      { title: "Rooftop & C&I Solar", description: "Commercial and industrial rooftop solar installations with net metering, wheeling arrangements, and PPA structures." },
-      { title: "O&M Services", description: "Comprehensive plant operations, predictive maintenance, performance monitoring, and vegetation management for renewable assets." },
+      { title: "Hybrid Power Plants", description: "Co-located solar-wind-storage hybrids optimizing land use, grid connectivity, and capacity utilization factors." },
+      { title: "BESS Integration", description: "Battery energy storage solutions for renewable firming, peak shaving, and grid ancillary services." },
+      { title: "Rooftop & C&I Solar", description: "Commercial and industrial rooftop solar with net metering, wheeling arrangements, and PPA structures." },
+      { title: "O&M Services", description: "Plant operations, predictive maintenance, performance monitoring, and vegetation management for renewable assets." },
     ],
     projects: [
       { title: "300 MW Solar Park", location: "Rajasthan, India", value: "$120M", description: "Utility-scale solar park with single-axis trackers and 132kV pooling substation, powering 150,000 homes annually." },
       { title: "150 MW Wind Farm", location: "Tamil Nadu, India", value: "$85M", description: "Onshore wind farm with latest-generation turbines achieving 35% capacity utilization factor." },
-      { title: "50 MW Hybrid Plant", location: "Karnataka, India", value: "$40M", description: "Co-located solar-wind hybrid with 20 MWh battery storage for round-the-clock renewable power supply." },
+      { title: "50 MW Hybrid Plant", location: "Karnataka, India", value: "$40M", description: "Co-located solar-wind hybrid with 20 MWh battery storage for round-the-clock renewable power." },
     ],
     process: [
       { step: "01", title: "Resource Assessment", description: "Solar irradiance measurement, wind data analysis, land survey, and grid connectivity study with bankability reports." },
@@ -107,20 +109,20 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
       { step: "03", title: "EPC Execution", description: "Civil works, module/turbine installation, electrical BOS, substation construction, and grid synchronization." },
       { step: "04", title: "O&M & Monitoring", description: "24/7 remote monitoring, preventive maintenance, performance analytics, and warranty management." },
     ],
-    relatedDivisions: ["Manah Dynamics", "Green Energy"],
+    relatedDivisions: ["Manah Dynamics", "Manah Green Energy", "Manah Atomic"],
   },
 
-  infrastructure: {
-    id: "infrastructure",
-    title: "Infrastructure",
-    tagline: "Urban Infrastructure",
+  "building-roads": {
+    id: "building-roads",
+    title: "Building & Roads",
+    tagline: "Civil Infrastructure",
     heroDescription:
-      "Building smart cities with modern utilities, drainage systems, and sustainable urban environments — connecting communities through world-class transportation and civic infrastructure.",
+      "Roads, bridges, industrial and residential buildings, and urban infrastructure — built to international standards of safety, quality, and longevity.",
     color: "#6B7280",
     image: "/images/sectors/infrastructure.png",
     overview: [
-      "Manah Group executes large-scale civil infrastructure projects that form the foundation of modern economies. From national highways and urban road networks to industrial parks and commercial complexes, our construction capabilities deliver projects of national significance on time and within budget.",
-      "Our infrastructure division combines advanced engineering with proven construction methodologies. We deploy modern equipment fleets, digital project management tools, and stringent safety protocols to deliver quality infrastructure that serves communities for decades. Every project we undertake is designed to withstand the test of time.",
+      "Manah Group executes large-scale civil infrastructure projects that form the foundation of modern economies. From national highways and urban road networks to industrial parks and residential complexes, our construction capabilities deliver projects of national significance on time and within budget.",
+      "We combine advanced engineering, modern equipment fleets, digital project management, and stringent safety protocols to deliver infrastructure that serves communities for decades. Active mandates include 4× G+4 residential buildings for MES at Narangi Military Station (₹53 Cr).",
     ],
     keyStats: [
       { value: "500+ km", label: "Roads Constructed" },
@@ -133,14 +135,14 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
     services: [
       { title: "Highway & Expressway Construction", description: "Multi-lane highway construction with bituminous and concrete pavements, toll plazas, service roads, and intelligent transportation systems." },
       { title: "Bridge & Flyover Engineering", description: "Reinforced concrete and steel bridges, elevated corridors, grade separators, and pedestrian overpasses with seismic-resilient design." },
-      { title: "Urban Development", description: "Smart city infrastructure including underground utilities, stormwater drainage, streetscaping, and public space development." },
-      { title: "Industrial & Commercial Construction", description: "Pre-engineered buildings, warehouses, data center shells, manufacturing facilities, and commercial complexes." },
-      { title: "Water & Sewerage Infrastructure", description: "Water treatment plants, sewage treatment facilities, pipeline networks, and pumping stations for municipal utilities." },
+      { title: "Residential & Military Buildings", description: "Multi-storey residential complexes, barracks, and military station infrastructure delivered to MES specifications." },
+      { title: "Industrial & Commercial Construction", description: "Pre-engineered buildings, warehouses, data-center shells, manufacturing facilities, and commercial complexes." },
+      { title: "Urban Development", description: "Smart-city infrastructure including underground utilities, stormwater drainage, streetscaping, and public-space development." },
       { title: "Railway & Metro Infrastructure", description: "Station buildings, viaducts, depot construction, and allied infrastructure for metro rail and railway projects." },
     ],
     projects: [
+      { title: "4× G+4 Residential Buildings", location: "Narangi Military Station, Guwahati", value: "₹53 Cr", description: "Residential barrack complex for Military Engineer Services (MES) on an active military station." },
       { title: "4-Lane National Highway", location: "Telangana, India", value: "$65M", description: "120 km four-lane divided highway with 8 bridges, 3 interchanges, and full intelligent transportation system." },
-      { title: "Smart City Infrastructure", location: "Visakhapatnam, India", value: "$35M", description: "Comprehensive urban infrastructure upgrade including underground utilities, LED lighting, and smart parking." },
       { title: "Industrial Park Development", location: "Andhra Pradesh, India", value: "$22M", description: "500-acre industrial park with internal roads, water treatment, power distribution, and common effluent treatment." },
     ],
     process: [
@@ -154,15 +156,15 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
 
   defence: {
     id: "defence",
-    title: "Defence Electronics",
-    tagline: "Advanced Technology",
+    title: "Defence",
+    tagline: "Strategic & Mission-Critical",
     heroDescription:
-      "Mission-critical electronic systems for modern defence forces — from tactical communication equipment and radar sub-systems to advanced electronic warfare solutions meeting global military standards.",
+      "Defence systems and networks, tactical communication, electronic warfare, surveillance, and mission-critical electronics for India's armed forces.",
     color: "#059669",
     image: "/images/sectors/defence_electronics.png",
     overview: [
-      "Manah Group manufactures and integrates mission-critical electronic systems for armed forces worldwide. Our defence electronics portfolio spans tactical communication systems, radar sub-assemblies, electronic warfare equipment, surveillance systems, and weapon electronics — all manufactured to the most stringent military quality standards.",
-      "As a licensed defence manufacturer, we contribute to national self-reliance objectives by indigenizing critical electronic sub-systems. Our facility is equipped with classified work areas, MIL-STD testing capabilities, and secure data handling infrastructure to support defence programs of the highest sensitivity.",
+      "Manah Group supports India's defence modernization through mission-critical systems integration, defence electronics manufacturing, and secure communication infrastructure. Our defence work spans tactical communications, radar sub-assemblies, electronic warfare, surveillance, and weapon electronics — all manufactured to MIL-STD and JSS quality.",
+      "As a licensed defence manufacturer, we contribute to national self-reliance objectives by indigenizing critical electronic sub-systems. Our Cherlapally facility features classified work areas, MIL-STD testing, and secure data handling for the most sensitive defence programs. Sovereign AI compute for defence applications is delivered by Manah AI.",
     ],
     keyStats: [
       { value: "200+", label: "Systems Delivered" },
@@ -177,8 +179,8 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
       { title: "Radar Sub-Systems", description: "Radar receiver modules, signal processing units, antenna control systems, and radar data processing for surveillance and tracking radar programs." },
       { title: "Electronic Warfare", description: "ECM/ECCM systems, signal intelligence receivers, direction finding equipment, and RF jamming systems for multi-domain warfare." },
       { title: "Surveillance & Reconnaissance", description: "Electro-optical systems, thermal imaging assemblies, border surveillance electronics, and unmanned system payloads." },
-      { title: "Weapon Electronics", description: "Fuze electronics, guidance system components, fire control computers, and weapon interface units meeting MIL-STD-1316 standards." },
-      { title: "System Integration & Testing", description: "Rack-level system integration, environmental qualification testing (MIL-STD-810), EMI/EMC testing, and acceptance test procedures." },
+      { title: "Weapon Electronics", description: "Fuze electronics, guidance-system components, fire-control computers, and weapon interface units meeting MIL-STD-1316 standards." },
+      { title: "System Integration & Testing", description: "Rack-level integration, environmental qualification (MIL-STD-810), EMI/EMC (MIL-STD-461), and acceptance test procedures." },
     ],
     projects: [
       { title: "Tactical Radio Program", location: "Indian Armed Forces", value: "Classified", description: "Indigenous software-defined radio platform for tri-service tactical communication modernization program." },
@@ -191,36 +193,36 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
       { step: "03", title: "Qualification Testing", description: "Environmental testing per MIL-STD-810, EMI/EMC per MIL-STD-461, and reliability testing per MIL-HDBK-217." },
       { step: "04", title: "Production & Delivery", description: "Series production with in-process inspection, final acceptance testing, DGQA clearance, and depot-level support documentation." },
     ],
-    relatedDivisions: ["Tech & Manufacturing"],
+    relatedDivisions: ["Manah Dynamics", "Manah AI"],
   },
 
   aviation: {
     id: "aviation",
-    title: "Aviation",
-    tagline: "Transportation",
+    title: "Aviation & MRO",
+    tagline: "Air Transport",
     heroDescription:
-      "Comprehensive aircraft MRO services, airport infrastructure development, and aviation support systems — ensuring airworthiness, safety, and operational excellence across civil and defence aviation.",
+      "DGCA-certified business jet MRO, CAR 147 training, and aviation consultancy — serving civil and defence aviation with safety, reliability, and airworthiness to global standards.",
     color: "#0D9488",
     image: "/images/sectors/aviation.png",
     overview: [
-      "Manah Group operates a DGCA-certified MRO facility at Begumpet Airport, Hyderabad in partnership with AAI, specializing in business jet maintenance for light and midsize aircraft. With DGCA CAR 145 and San Marino CAR 145 certifications, we serve general aviation operators across 4 locations with an international partnership with Jet Aviation Dubai.",
-      "Our aviation capabilities extend beyond maintenance to include CAR 147 approved training programs and aviation consultancy services. We are expanding into narrow-body and wide-body aircraft servicing, with planned facilities in Pune, Bangalore, Chennai, and Kolkata.",
+      "Manah Aerospace operates a DGCA-certified MRO facility at Begumpet Airport, Hyderabad in partnership with AAI, specializing in business jet maintenance for light and midsize aircraft. With DGCA CAR 145 and San Marino CAR 145 certifications, we serve general aviation operators across 6 locations (Hyderabad, Koppal, Ahmedabad, Bhubaneshwar, Chennai, Bangalore) with an international partnership with Jet Aviation Dubai.",
+      "Aviation capabilities extend beyond maintenance to include CAR 147 approved training and aviation consultancy. Next-phase expansion targets Pune and Kolkata, with roadmap into Boeing and Airbus narrow-body and wide-body servicing.",
     ],
     keyStats: [
-      { value: "10", label: "Aircraft Serviced" },
+      { value: "18+", label: "MRO Services" },
+      { value: "6", label: "Current Locations" },
+      { value: "2", label: "Expansion Cities" },
       { value: "DGCA/San Marino", label: "Certifications" },
-      { value: "4", label: "MRO Locations" },
-      { value: "24/7", label: "AOG Response" },
       { value: "CAR 147", label: "Training Approved" },
-      { value: "4", label: "Expansion Cities" },
+      { value: "24/7", label: "AOG Response" },
     ],
     services: [
-      { title: "Business Jet Maintenance", description: "Customized maintenance programs for light and midsize business jets with parts procurement and quality control." },
+      { title: "Business Jet Maintenance", description: "Customized maintenance for light and midsize business jets including parts procurement, quality control, and airworthiness management." },
       { title: "Airworthiness Management", description: "Continuous airworthiness management, regulatory compliance documentation, and aircraft certification services." },
       { title: "Parts & Procurement", description: "Global sourcing of aircraft parts, rotable component management, and warranty administration for fleet operators." },
       { title: "Aviation Training (CAR 147)", description: "DGCA-approved Level III training for Embraer and ATR types, plus Level I & II foundational aviation training." },
-      { title: "Aviation Consultancy", description: "Aircraft acquisition advisory, fleet analysis, regulatory compliance guidance, and strategic aviation planning." },
-      { title: "Expansion Services", description: "Narrow-body and wide-body MRO capabilities under development for Boeing 737/777/787 and Airbus A320/A330/A350 families." },
+      { title: "Aviation Consultancy", description: "Aircraft acquisition advisory, fleet analysis and research, regulatory compliance guidance, and operational efficiency advisory." },
+      { title: "Expansion Services", description: "Narrow-body and wide-body MRO capability under development for Boeing 737/777/787 and Airbus A320/A330/A350 families." },
     ],
     projects: [
       { title: "Fleet MRO Program", location: "Pan-India Operations", value: "$18M", description: "Multi-year line and base maintenance contract covering 45 aircraft across 12 stations." },
@@ -236,87 +238,171 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
     relatedDivisions: ["Manah Aerospace"],
   },
 
-  "green-hydrogen": {
-    id: "green-hydrogen",
-    title: "Green Hydrogen",
-    tagline: "Water & Environment",
+  telecom: {
+    id: "telecom",
+    title: "Telecom",
+    tagline: "Connectivity Infrastructure",
     heroDescription:
-      "Pioneering the hydrogen economy — from electrolyzer manufacturing and green hydrogen production to end-to-end water treatment, desalination, and river rejuvenation solutions for a sustainable future.",
-    color: "#16A34A",
-    image: "/images/sectors/green_hydrogen.png",
+      "Telecom tower rollout, BharatNet fiber execution, and network infrastructure — enabling the connectivity backbone for a digital India.",
+    color: "#0EA5E9",
+    image: "/images/sectors/telecom_equipment.png",
     overview: [
-      "Manah Group is building the critical infrastructure for the global hydrogen economy. Our green hydrogen capabilities span the entire value chain — from electrolyzer manufacturing and renewable energy integration to hydrogen compression, storage, distribution, and end-use applications. We are committed to making green hydrogen cost-competitive with fossil alternatives.",
-      "Complementing our hydrogen expertise, we deliver comprehensive water and environment solutions including water treatment plants, desalination facilities, sewage treatment systems, and river rejuvenation projects. Our environmental engineering capabilities address the growing global demand for clean water and sustainable water management.",
+      "Manah Group delivers end-to-end telecom infrastructure for public and private operators, anchored by large-scale rollouts under BharatNet, BSNL, and private tower programs. Our telecom capability spans tower erection, optical fiber cable (OFC) laying, passive and active network integration, and base-station electronics.",
+      "From rural connectivity programs to urban 5G densification, we combine civil construction, RF engineering, and electronics manufacturing under one roof — enabling accelerated, cost-competitive rollouts backed by EMS-grade supply reliability from our Cherlapally facility.",
     ],
     keyStats: [
-      { value: "18,000 MTPA", label: "Green H₂ Target" },
-      { value: "ARB", label: "Technology" },
-      { value: "350", label: "Acres at Bina" },
-      { value: "$600M+", label: "Investment Pipeline" },
-      { value: "4", label: "Production Phases" },
-      { value: "1", label: "Production Site" },
+      { value: "5,000+", label: "Tower Sites" },
+      { value: "10,000+ km", label: "OFC Laid" },
+      { value: "BharatNet", label: "Empanelled" },
+      { value: "20+", label: "Telecom Programs" },
+      { value: "99.5%", label: "Site Uptime" },
+      { value: "24/7", label: "NOC Support" },
     ],
     services: [
-      { title: "Green Hydrogen Production", description: "Large-scale green hydrogen plants powered by dedicated renewable energy, serving refineries, fertilizer plants, and steel manufacturers." },
-      { title: "Electrolyzer Systems", description: "PEM and alkaline electrolyzer stack assembly, balance of plant integration, and containerized hydrogen generation units." },
-      { title: "Water Treatment Plants", description: "Conventional and advanced water treatment facilities including filtration, disinfection, membrane processes, and sludge management." },
-      { title: "Desalination", description: "Reverse osmosis and thermal desalination plants for coastal industrial zones and municipal water supply augmentation." },
-      { title: "Sewage Treatment", description: "STP design and construction using SBR, MBBR, and MBR technologies with treated water reuse for industrial and irrigation purposes." },
-      { title: "River Rejuvenation", description: "Integrated river cleaning programs including sewage interception, treatment, riverfront development, and ecological restoration." },
+      { title: "Telecom Towers (GBT & RTT)", description: "Ground-based and rooftop tower design, fabrication, erection, and commissioning for macro and small-cell deployments." },
+      { title: "Optical Fiber Cabling (OFC)", description: "Underground and aerial OFC execution, splicing, OTDR testing, and last-mile connectivity for BharatNet and private fiber." },
+      { title: "Active Network Integration", description: "BTS/BBU/RRU installation, microwave link commissioning, antenna alignment, and RAN integration." },
+      { title: "Power & Battery Backup", description: "SMPS systems, VRLA/Li-ion battery banks, DG integration, and hybrid solar-diesel solutions for remote sites." },
+      { title: "Base Station Electronics (EMS)", description: "In-house manufacturing of antenna controllers, network management units, and telecom sub-assemblies at our Cherlapally facility." },
+      { title: "Site O&M & NOC", description: "Preventive and corrective site maintenance, 24/7 network operations center support, and SLA-backed response." },
     ],
     projects: [
-      { title: "Green Hydrogen Facility", location: "Gujarat, India", value: "$75M", description: "50 TPD green hydrogen production facility with dedicated 200 MW solar park and on-site compression." },
-      { title: "100 MLD Water Treatment Plant", location: "Hyderabad, India", value: "$30M", description: "Advanced water treatment facility with multi-stage filtration serving 500,000 urban residents." },
-      { title: "River Rejuvenation Program", location: "Andhra Pradesh, India", value: "$20M", description: "Integrated sewage interception, 25 MLD STP construction, and 15 km riverfront ecological restoration." },
+      { title: "BharatNet Phase III", location: "Multi-State", value: "$12M", description: "OFC laying and last-mile connectivity across 1,500+ gram panchayats under BharatNet Phase III." },
+      { title: "Tower Rollout Program", location: "Pan-India", value: "$18M", description: "Turnkey erection and commissioning of 800 GBT/RTT sites for a Tier-1 telecom operator." },
+      { title: "Network Densification", location: "Tier-2 Cities, India", value: "$8M", description: "5G densification with small cells, fronthaul OFC, and active RAN integration." },
     ],
     process: [
-      { step: "01", title: "Feasibility & Assessment", description: "Water quality analysis, hydrogen demand assessment, renewable resource evaluation, and techno-economic feasibility study." },
-      { step: "02", title: "Detailed Engineering", description: "Process design, equipment sizing, P&ID development, civil and structural engineering, and environmental compliance." },
-      { step: "03", title: "Construction & Installation", description: "Civil works, equipment installation, piping, electrical, instrumentation, and process commissioning." },
-      { step: "04", title: "Operations & Optimization", description: "Plant startup, operator training, performance guarantee testing, and ongoing process optimization." },
+      { step: "01", title: "Site Survey & Design", description: "RF and civil site surveys, tower selection, foundation design, and power sizing." },
+      { step: "02", title: "Procurement & Fabrication", description: "Tower and hardware sourcing, OFC procurement, and in-house electronics manufacturing where applicable." },
+      { step: "03", title: "Installation & Commissioning", description: "Tower erection, OFC laying and splicing, active equipment installation, and link commissioning." },
+      { step: "04", title: "Handover & O&M", description: "Acceptance testing, SLA-backed O&M, and NOC-based remote monitoring." },
     ],
-    relatedDivisions: ["Green Energy", "Manah Dynamics"],
+    relatedDivisions: ["Manah Dynamics"],
   },
 
-  manufacturing: {
-    id: "manufacturing",
-    title: "Manufacturing",
-    tagline: "Electronics Manufacturing Services",
+  "oil-gas": {
+    id: "oil-gas",
+    title: "Oil & Gas",
+    tagline: "Hydrocarbon Infrastructure",
     heroDescription:
-      "State-of-the-art electronics manufacturing with advanced SMT lines, precision assembly, and defence-grade quality systems — supporting strategic and commercial manufacturing across critical sectors.",
-    color: "#7C3AED",
-    image: "/images/sectors/defence_electronics.png",
+      "Downstream processing, refinery allied works, pipeline construction, and LNG terminal support — serving India's oil and gas majors with turnkey EPC delivery.",
+    color: "#A16207",
+    image: "/images/sectors/manufacturing.png",
     overview: [
-      "Manah Group's manufacturing capabilities deliver high-reliability electronic assemblies for defence, aerospace, telecom, and industrial applications. Our 30,000 sq ft facility in Cherlapally, Hyderabad houses advanced SMT production lines, through-hole assembly stations, conformal coating systems, and comprehensive test infrastructure — all operating under defence-grade quality management.",
-      "We specialize in Smart Energy Meters, Smart Water Meters, EV Chargers, Room Chargers, and Defense RF Systems. From bare board loading to fully tested box-build systems, our manufacturing process is designed for zero-defect production with complete material traceability and industry-leading first-pass yield rates.",
+      "Manah Group delivers EPC for downstream oil and gas infrastructure — refinery allied works, process package construction, cross-country pipelines, LNG terminal support, and storage facilities. Our scope spans civil, mechanical, piping, electrical, and instrumentation disciplines under tight safety and quality envelopes.",
+      "We work with national oil companies, private refiners, and EPC majors on allied packages that complement primary process units. The Bina hydrogen production facility sits adjacent to BPCL Bina Refinery; refinery decarbonization through clean hydrogen and potential SMR heat is delivered by Manah Green Energy and Manah Atomic.",
     ],
     keyStats: [
-      { value: "8+", label: "SMT Lines" },
-      { value: "1M+", label: "Assemblies/Year" },
-      { value: "99.5%", label: "First Pass Yield" },
-      { value: "30,000 sq ft", label: "Factory Floor" },
-      { value: "IPC Class 3", label: "Assembly Standard" },
-      { value: "100+", label: "Active SKUs" },
+      { value: "15+", label: "O&G Projects" },
+      { value: "500+ km", label: "Pipelines Executed" },
+      { value: "ISO 9001", label: "Quality Standard" },
+      { value: "Zero", label: "Major Safety Incidents" },
+      { value: "ASME", label: "Code Compliance" },
+      { value: "24/7", label: "Construction Mode" },
     ],
     services: [
-      { title: "SMT Assembly", description: "High-speed pick-and-place with solder paste inspection, reflow profiling, automatic optical inspection, and X-ray for BGA verification." },
-      { title: "Through-Hole & Mixed Technology", description: "Wave soldering and selective soldering for mixed-technology PCBAs with hand soldering for fine-pitch and odd-form components." },
-      { title: "Box Build & Integration", description: "Complete system assembly including wire harnessing, cable routing, enclosure integration, firmware loading, and system-level testing." },
-      { title: "Conformal Coating", description: "Selective and spray conformal coating using acrylic, silicone, and polyurethane materials for harsh environment protection." },
-      { title: "Testing & Quality", description: "In-circuit testing, functional testing, boundary scan, environmental stress screening, burn-in, and reliability testing." },
-      { title: "NPI & Prototyping", description: "Rapid prototype assembly, DFM/DFA review, component engineering, and seamless transition from prototype to production." },
+      { title: "Refinery Allied Works", description: "Civil, structural, piping, and tankage works supporting refinery turnarounds, expansions, and brownfield upgrades." },
+      { title: "Cross-Country Pipelines", description: "Oil, gas, and product pipeline construction including trenching, welding, coating, hydro-testing, and commissioning." },
+      { title: "Storage Terminals", description: "Above-ground storage tanks (AST), cryogenic storage, bunds, fire-protection systems, and terminal automation." },
+      { title: "LNG Terminal Support", description: "Civil and balance-of-plant works for LNG receiving terminals, regasification units, and send-out systems." },
+      { title: "Process Packages", description: "Modular process package construction, skid integration, and mechanical completion for downstream operators." },
+      { title: "Instrumentation & Automation", description: "SCADA, DCS, leak-detection, pipeline integrity monitoring, and asset-management systems." },
     ],
     projects: [
-      { title: "Defence Communication Systems", location: "Indian Armed Forces", value: "$15M", description: "Series production of tactical communication equipment including SDR platforms and encrypted terminals." },
-      { title: "Telecom Infrastructure Equipment", location: "Pan-India Deployment", value: "$10M", description: "High-volume production of base station electronics, antenna controllers, and network management units." },
-      { title: "Industrial IoT Platform", location: "Manufacturing Sector", value: "$5M", description: "Edge computing modules, sensor interface boards, and gateway controllers for smart factory deployments." },
+      { title: "Refinery Piping Package", location: "Western India", value: "$22M", description: "Piping and structural works for a brownfield refinery upgrade including 400+ tonnes of fabrication." },
+      { title: "Cross-Country Pipeline", location: "Central India", value: "$35M", description: "180 km natural gas pipeline with HDD crossings, cathodic protection, and SCADA integration." },
+      { title: "LNG Terminal BoP", location: "Coastal India", value: "$15M", description: "Balance-of-plant works for an LNG receiving terminal including utilities and firefighting systems." },
     ],
     process: [
-      { step: "01", title: "NPI & DFM Review", description: "Design for manufacturability analysis, BOM optimization, component alternates identification, and test strategy development." },
-      { step: "02", title: "Procurement & Kitting", description: "Component sourcing, incoming inspection, moisture sensitivity management, and line-side kitting for production." },
-      { step: "03", title: "Production & Inspection", description: "SMT/THT assembly, solder paste/AOI/X-ray inspection, conformal coating, and box build with in-process quality gates." },
-      { step: "04", title: "Test & Ship", description: "ICT, functional testing, final quality audit, ESD-safe packaging, and logistics coordination with full traceability." },
+      { step: "01", title: "FEED Review & Planning", description: "Front-end engineering design review, constructability analysis, and HSE planning." },
+      { step: "02", title: "Procurement & Fabrication", description: "Long-lead equipment tracking, shop fabrication of piping and structural, third-party inspection." },
+      { step: "03", title: "Site Execution", description: "Civil works, erection, welding (SMAW/GTAW), NDT, hydro-testing, and mechanical completion." },
+      { step: "04", title: "Commissioning & Handover", description: "Loop checks, pre-commissioning, start-up support, and performance guarantee testing." },
     ],
-    relatedDivisions: ["Tech & Manufacturing"],
+    relatedDivisions: ["Manah Dynamics", "Manah Green Energy", "Manah Atomic"],
+  },
+
+  mining: {
+    id: "mining",
+    title: "Mining",
+    tagline: "Resource Extraction",
+    heroDescription:
+      "Mining operations, balance-of-plant engineering, and infrastructure construction for India's coal, mineral, and metal mining sector.",
+    color: "#92400E",
+    image: "/images/sectors/manufacturing.png",
+    overview: [
+      "Manah Group supports India's mining industry with construction of mine infrastructure, mineral processing plants, overburden removal, and allied civil works. We serve coal, iron-ore, limestone, and non-ferrous metal operators with EPC scope covering civil foundations, crushing and screening plants, conveying systems, and mine support structures.",
+      "Our integrated approach combines heavy civil construction with electrical and automation capabilities — enabling single-source delivery for greenfield mines, capacity expansions, and mine closure programs.",
+    ],
+    keyStats: [
+      { value: "10+", label: "Mining Projects" },
+      { value: "50+ km", label: "Conveyor Systems" },
+      { value: "ISO 45001", label: "HSE Certified" },
+      { value: "99%", label: "Dispatch Availability" },
+      { value: "Zero", label: "LTI Target" },
+      { value: "Full EPC", label: "Scope" },
+    ],
+    services: [
+      { title: "Mine Infrastructure", description: "Haul roads, workshops, administrative buildings, labor colonies, and weighbridges for greenfield and brownfield mines." },
+      { title: "Mineral Processing Plants", description: "Crushing, screening, beneficiation, and washery plant construction with EPC-scope civil, mechanical, and electrical." },
+      { title: "Overburden & Conveyors", description: "Overburden removal works, in-pit crushing-and-conveying systems, overland belt conveyors, and stacker-reclaimers." },
+      { title: "Tailings & Water Management", description: "Tailings storage facilities, water treatment, mine dewatering, and discharge management infrastructure." },
+      { title: "Mine Electricals & Automation", description: "Substation construction, MV/LV distribution, SCADA for production tracking, and mine-wide IIoT instrumentation." },
+      { title: "Mine Closure & Reclamation", description: "Slope stabilization, revegetation, water-body restoration, and long-term reclamation plans." },
+    ],
+    projects: [
+      { title: "Coal Washery Expansion", location: "Eastern India", value: "$18M", description: "Brownfield expansion of a 3 MTPA coal washery including civil, mechanical, and conveyor works." },
+      { title: "Iron Ore Crushing Plant", location: "Central India", value: "$12M", description: "Greenfield primary and secondary crushing plant with 5 km overland belt conveyor." },
+      { title: "Mine Infrastructure Package", location: "Western India", value: "$8M", description: "Haul roads, workshops, administrative complex, and water treatment for a new coal mine." },
+    ],
+    process: [
+      { step: "01", title: "Geotech & Feasibility", description: "Geotechnical investigation, traffic-and-haulage study, and process plant capacity planning." },
+      { step: "02", title: "Engineering & Procurement", description: "Civil-structural design, mechanical sizing, equipment selection, and long-lead-item tracking." },
+      { step: "03", title: "Site Execution", description: "Earthwork, foundations, structural erection, conveyor installation, and E&I works." },
+      { step: "04", title: "Commissioning & O&M", description: "No-load and load trials, performance guarantee tests, and post-commissioning support." },
+    ],
+    relatedDivisions: ["Manah Dynamics"],
+  },
+
+  "irrigation-water": {
+    id: "irrigation-water",
+    title: "Irrigation & Water",
+    tagline: "Water Infrastructure",
+    heroDescription:
+      "Water treatment, irrigation systems, and urban water infrastructure — ensuring clean water supply and efficient water management for agriculture and communities.",
+    color: "#0891B2",
+    image: "/images/sectors/infrastructure.png",
+    overview: [
+      "Manah Group delivers water and irrigation infrastructure for state governments, municipal bodies, and industrial clients. Scope spans drinking water supply schemes, lift-irrigation systems, canal networks, water-treatment plants, and sewage-treatment plants — supporting India's Jal Jeevan Mission and urban water security goals.",
+      "We combine heavy civil construction, mechanical-hydraulic engineering, and electrical-automation to deliver end-to-end water infrastructure with operator training, O&M, and long-term performance guarantees.",
+    ],
+    keyStats: [
+      { value: "100+ MLD", label: "Treatment Capacity" },
+      { value: "500K+", label: "Lives Served" },
+      { value: "10+", label: "Schemes Delivered" },
+      { value: "Jal Jeevan", label: "Mission Aligned" },
+      { value: "ISO 9001", label: "Quality Certified" },
+      { value: "Full EPC", label: "Scope" },
+    ],
+    services: [
+      { title: "Drinking Water Supply", description: "Bulk water supply schemes, intake structures, treatment plants, and distribution networks for urban and rural coverage." },
+      { title: "Water Treatment Plants (WTP)", description: "Conventional and advanced WTPs including coagulation, filtration, disinfection, membrane processes, and sludge management." },
+      { title: "Sewage Treatment (STP)", description: "STP design and construction using SBR, MBBR, and MBR technologies with treated water reuse for irrigation and industry." },
+      { title: "Lift Irrigation Systems", description: "Pump stations, rising mains, delivery networks, and field-level distribution for agricultural water supply." },
+      { title: "Canal & Distributary Networks", description: "Main canal, distributary, and minor canal construction including lining, cross-regulators, and automation." },
+      { title: "SCADA & Water Automation", description: "Flow monitoring, leak detection, pressure management, and SCADA-based water-distribution control for NRW reduction." },
+    ],
+    projects: [
+      { title: "100 MLD Water Treatment Plant", location: "Hyderabad, India", value: "$30M", description: "Advanced water treatment facility with multi-stage filtration serving 500,000 urban residents." },
+      { title: "Lift Irrigation Scheme", location: "Andhra Pradesh, India", value: "$20M", description: "Lift irrigation scheme with pump stations and 45 km rising main covering 20,000 hectares." },
+      { title: "25 MLD Sewage Treatment", location: "Central India", value: "$12M", description: "SBR-technology STP with treated-water reuse for industrial and irrigation applications." },
+    ],
+    process: [
+      { step: "01", title: "Hydrological Study", description: "Source identification, water-quality analysis, demand assessment, and hydrological modeling." },
+      { step: "02", title: "Detailed Engineering", description: "Process design, pump sizing, pipeline routing, and civil-structural engineering with environmental compliance." },
+      { step: "03", title: "Construction", description: "Civil works, equipment installation, pipe-laying, electrical and automation integration." },
+      { step: "04", title: "Commissioning & O&M", description: "Plant startup, operator training, performance guarantee testing, and long-term O&M support." },
+    ],
+    relatedDivisions: ["Manah Dynamics"],
   },
 };

@@ -76,7 +76,7 @@ const VALUE_PROPS = [
     icon: Layers,
     title: "Multi-Sector Expertise",
     description:
-      "Access capabilities across 5 business divisions and 7 industry sectors \u2014 from power transmission to aerospace MRO.",
+      "Access capabilities across 6 business divisions and 9 industry sectors \u2014 from nuclear SMRs and generative AI to power transmission and aerospace MRO.",
   },
   {
     icon: Shield,
@@ -136,17 +136,29 @@ const PROCESS_STEPS = [
 
 /* ─── Partner Logos ─── */
 const PARTNER_LOGOS = [
-  { src: "/images/partners/logos/powergrid.png", alt: "PowerGrid Corporation of India" },
-  { src: "/images/partners/logos/ap-transco.png", alt: "AP Transco" },
-  { src: "/images/partners/logos/tgtransco.png", alt: "TG Transco" },
-  { src: "/images/partners/logos/apsfl.png", alt: "APSFL" },
-  { src: "/images/partners/logos/sohhytec.png", alt: "SoHHytec" },
-  { src: "/images/partners/logos/keltron.png", alt: "Keltron" },
+  { src: "/images/partners/logos/keltron.png", alt: "KELTRON" },
   { src: "/images/partners/logos/cdac.png", alt: "C-DAC" },
-  { src: "/images/partners/logos/tcil.png", alt: "TCIL" },
+  { src: "/images/partners/logos/bsnl.png", alt: "BSNL" },
+  { src: "/images/partners/logos/powergrid.png", alt: "PowerGrid Corporation of India" },
+  { src: "/images/partners/logos/npcil.gif", alt: "NPCIL" },
+  { src: "/images/partners/logos/eil.png", alt: "Engineers India Limited" },
+  { src: "/images/partners/logos/pfc-consulting.jpeg", alt: "PFC Consulting Ltd" },
+  { src: "/images/partners/logos/rec-power-development.png", alt: "REC Power Development" },
   { src: "/images/partners/logos/seci.png", alt: "SECI" },
   { src: "/images/partners/logos/mes.png", alt: "MES" },
-  { src: "/images/partners/logos/bsnl.png", alt: "BSNL" },
+  { src: "/images/partners/logos/tcil.png", alt: "TCIL" },
+  { src: "/images/partners/logos/apsfl.png", alt: "APSFL" },
+  { src: "/images/partners/logos/ap-transco.png", alt: "AP Transco" },
+  { src: "/images/partners/logos/tgtransco.png", alt: "TGTRANSCO" },
+  { src: "/images/partners/logos/nbcc.png", alt: "NBCC (India) Limited" },
+  { src: "/images/partners/logos/gril.png", alt: "GRIL" },
+  { src: "/images/partners/logos/pvr-constructions.png", alt: "PVR Constructions" },
+  { src: "/images/partners/logos/pvr-projects.png", alt: "PVR Projects Ltd" },
+  { src: "/images/partners/logos/maiwir-group.png", alt: "MAIWIR Group" },
+  { src: "/images/partners/logos/roorkee.png", alt: "Roorkee Projects" },
+  { src: "/images/partners/logos/generic.png", alt: "Generic Engineering Construction & Projects Ltd." },
+  { src: "/images/partners/logos/vere-max.png", alt: "Vere Max" },
+  { src: "/images/partners/logos/cypress-solutions.png", alt: "Cypress Solutions" },
 ] as const;
 
 /* ─── Form Select Options ─── */

@@ -39,9 +39,13 @@ const DIVISION_IMAGES: Record<string, { hero: string; detail: string; video?: st
     video: "/videos/divisions/green_energy_reel-720p.mp4",
     videoMobile: "/videos/divisions/green_energy_reel-480p.mp4",
   },
-  technology: {
-    hero: "/images/divisions/tech_manufacturing_hero.png",
-    detail: "/images/divisions/tech_manufacturing_pcb.png",
+  atomic: {
+    hero: "/images/divisions/manah_atomic_hero.png",
+    detail: "/images/divisions/manah_atomic_detail.png",
+  },
+  ai: {
+    hero: "/images/divisions/manah_ai_hero.png",
+    detail: "/images/divisions/manah_ai_detail.png",
   },
   investments: {
     hero: "/images/divisions/manah_investments_hero.png",

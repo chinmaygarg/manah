@@ -360,8 +360,8 @@ export default function PrivacyPolicyPage() {
                         Group companies and affiliates:
                       </span>{" "}
                       We may share information within the Manah Group of Companies, including Manah
-                      Dynamics, Manah Aerospace, and our technology divisions, to coordinate
-                      services and manage cross-divisional operations.
+                      Dynamics, Manah Green Energy, Manah Atomic, Manah Aerospace, Manah AI, and
+                      Manah Investments, to coordinate services and manage cross-divisional operations.
                     </li>
                     <li>
                       <span className="font-medium text-manah-gray-700">

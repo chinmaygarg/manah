@@ -2,17 +2,17 @@
 
 import { useRef, useState, useCallback } from "react";
 import { motion, useInView } from "framer-motion";
-import { TrendingUp, DollarSign, LayoutGrid, Handshake } from "lucide-react";
+import { TrendingUp, DollarSign, LayoutGrid, Handshake, Users, MapPin } from "lucide-react";
 import CounterAnimation from "@/components/animations/CounterAnimation";
 import { STATS, DIVISIONS } from "@/lib/constants";
 
 const DYNAMIC_STATS = [
   ...STATS.slice(0, 2),
-  { value: DIVISIONS.length, suffix: "+", label: "Business Divisions" } as const,
+  { value: DIVISIONS.length, suffix: "", label: "Divisions" } as const,
   ...STATS.slice(2),
 ];
 
-const STAT_ICONS = [TrendingUp, DollarSign, LayoutGrid, Handshake] as const;
+const STAT_ICONS = [TrendingUp, DollarSign, LayoutGrid, Handshake, Users, MapPin] as const;
 
 const EXPO_EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
@@ -153,7 +153,7 @@ export default function StatsSection() {
         </motion.div>
 
         {/* Stats grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
           {DYNAMIC_STATS.map((stat, i) => (
             <StatCard
               key={stat.label}

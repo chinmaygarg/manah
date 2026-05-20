@@ -7,18 +7,29 @@ import Image from "next/image";
 const EXPO_EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 const PARTNERS = [
-  { name: "Generic Engineering Construction & Projects Ltd.", logo: "/images/partners/logos/generic.png" },
   { name: "KELTRON", logo: "/images/partners/logos/keltron.png" },
-  { name: "PowerGrid Corporation of India", logo: "/images/partners/logos/powergrid.png" },
-  { name: "SoHHytec", logo: "/images/partners/logos/sohhytec.png" },
-  { name: "SECI - Solar Energy Corporation of India", logo: "/images/partners/logos/seci.png" },
-  { name: "APSFL - Andhra Pradesh State FiberNet Ltd.", logo: "/images/partners/logos/apsfl.png" },
-  { name: "TGTRANSCO", logo: "/images/partners/logos/tgtransco.png" },
   { name: "C-DAC", logo: "/images/partners/logos/cdac.png" },
   { name: "BSNL", logo: "/images/partners/logos/bsnl.png" },
-  { name: "AP TRANSCO", logo: "/images/partners/logos/ap-transco.png" },
+  { name: "PowerGrid Corporation of India", logo: "/images/partners/logos/powergrid.png" },
+  { name: "NPCIL", logo: "/images/partners/logos/npcil.gif" },
+  { name: "Engineers India Limited", logo: "/images/partners/logos/eil.png" },
+  { name: "PFC Consulting Ltd", logo: "/images/partners/logos/pfc-consulting.jpeg" },
+  { name: "REC Power Development", logo: "/images/partners/logos/rec-power-development.png" },
+  { name: "SECI - Solar Energy Corporation of India", logo: "/images/partners/logos/seci.png" },
   { name: "Military Engineering Service (MES)", logo: "/images/partners/logos/mes.png" },
   { name: "TCIL", logo: "/images/partners/logos/tcil.png" },
+  { name: "APSFL - Andhra Pradesh State FiberNet Ltd.", logo: "/images/partners/logos/apsfl.png" },
+  { name: "AP Transco", logo: "/images/partners/logos/ap-transco.png" },
+  { name: "TGTRANSCO", logo: "/images/partners/logos/tgtransco.png" },
+  { name: "NBCC (India) Limited", logo: "/images/partners/logos/nbcc.png" },
+  { name: "GRIL", logo: "/images/partners/logos/gril.png" },
+  { name: "PVR Constructions", logo: "/images/partners/logos/pvr-constructions.png" },
+  { name: "PVR Projects Ltd", logo: "/images/partners/logos/pvr-projects.png" },
+  { name: "MAIWIR Group", logo: "/images/partners/logos/maiwir-group.png" },
+  { name: "Roorkee Projects", logo: "/images/partners/logos/roorkee.png" },
+  { name: "Generic Engineering Construction & Projects Ltd.", logo: "/images/partners/logos/generic.png" },
+  { name: "Vere Max", logo: "/images/partners/logos/vere-max.png" },
+  { name: "Cypress Solutions", logo: "/images/partners/logos/cypress-solutions.png" },
 ] as const;
 
 function LogoItem({ partner }: { partner: (typeof PARTNERS)[number] }) {

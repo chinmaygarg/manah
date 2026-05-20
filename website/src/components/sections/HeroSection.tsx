@@ -8,14 +8,9 @@ import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 const DIVISIONS = [
   {
-    label: "Infrastructure",
+    label: "Dynamics",
     video: "/videos/hero/hero_infrastructure",
     poster: "/images/hero/hero_main_infrastructure.png",
-  },
-  {
-    label: "Aerospace",
-    video: "/videos/hero/hero_aerospace",
-    poster: "/images/hero/hero_aviation_mro.png",
   },
   {
     label: "Green Energy",
@@ -23,9 +18,19 @@ const DIVISIONS = [
     poster: "/images/hero/hero_renewable_energy.png",
   },
   {
-    label: "Technology",
-    video: "/videos/hero/hero_technology",
-    poster: "/images/hero/hero_construction_site.png",
+    label: "Atomic",
+    video: "/videos/hero/hero_atomic",
+    poster: "/images/hero/hero_atomic.png",
+  },
+  {
+    label: "Aerospace",
+    video: "/videos/hero/hero_aerospace",
+    poster: "/images/hero/hero_aviation_mro.png",
+  },
+  {
+    label: "AI",
+    video: "/videos/hero/hero_ai",
+    poster: "/images/hero/hero_ai.png",
   },
   {
     label: "Investments",

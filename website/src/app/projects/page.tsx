@@ -1,5 +1,18 @@
 "use client";
 
+// TODO(client-review): Project list needs client verification. Only 2 entries
+// match the client-approved deck (MES Narangi ₹53 Cr residential buildings;
+// HESCOM 48,893 DTC meters ₹171 Cr). The remaining 9 entries — 400kV Rajasthan
+// transmission, 100 MW Gujarat solar, DGCA MRO hangar, 5 TPD green hydrogen,
+// 220kV MP GIS substation, Bangalore defence electronics line, 50 MW Karnataka
+// hybrid, NH-48 widening, Delhi NCR MRO component centre — are unverified
+// placeholders. Filter categories (Power Transmission, Renewable Energy, etc.)
+// also need remap to new 9-sector taxonomy (Power T&D, Renewables, Building &
+// Roads, Defence, Aviation & MRO, Telecom, Oil & Gas, Mining, Irrigation & Water).
+// Hero stats: "6 Sectors" → "9 Sectors"; "10+ States" → "15+ States" (deck).
+// Currency: deck uses ₹ Cr; page uses $. Reconcile once list is confirmed.
+// Do not remove/edit entries until client confirms which projects are real.
+
 import { useState } from "react";
 import Image from "next/image";
 import { BLUR_DATA_URL } from "@/lib/blur";

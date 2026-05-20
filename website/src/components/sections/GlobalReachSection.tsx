@@ -9,19 +9,20 @@ import CounterAnimation from "@/components/animations/CounterAnimation";
 import WorldMap, { type MapLocation } from "@/components/ui/WorldMap";
 
 const GLOBAL_STATS = [
-  { icon: MapPin, value: 15, suffix: "+", label: "Operating Regions" },
-  { icon: Globe, value: 5, suffix: "+", label: "Countries" },
-  { icon: Briefcase, value: 50, suffix: "+", label: "Major Projects" },
+  { icon: Briefcase, value: 6, suffix: "", label: "Global Offices" },
+  { icon: MapPin, value: 15, suffix: "+", label: "States Active" },
+  { icon: Globe, value: 50, suffix: "+", label: "Major Projects" },
   { icon: Users, value: 1000, suffix: "+", label: "Team Members" },
 ];
 
 // Real [lon, lat] coordinates
 const LOCATIONS: MapLocation[] = [
-  { id: "hyderabad", label: "Hyderabad", sublabel: "Global Headquarters", coordinates: [78.487, 17.385] },
-  { id: "mumbai", label: "Mumbai", sublabel: "Regional Office", coordinates: [72.877, 19.076] },
-  { id: "delhi", label: "Delhi NCR", sublabel: "Regional Office", coordinates: [77.209, 28.614] },
-  { id: "chennai", label: "Chennai", sublabel: "Operations Hub", coordinates: [80.270, 13.083] },
-  { id: "dubai", label: "Dubai", sublabel: "Middle East Office", coordinates: [55.296, 25.276] },
+  { id: "hyderabad", label: "Hyderabad", sublabel: "Corporate HQ", coordinates: [78.487, 17.385] },
+  { id: "gurugram", label: "New Delhi (Gurugram)", sublabel: "Regional Office", coordinates: [77.029, 28.457] },
+  { id: "dubai", label: "Dubai", sublabel: "International Business", coordinates: [55.296, 25.276] },
+  { id: "vishakhapatnam", label: "Vishakhapatnam", sublabel: "Regional Office", coordinates: [83.301, 17.686] },
+  { id: "bhopal", label: "Bhopal", sublabel: "Regional Office", coordinates: [77.412, 23.259] },
+  { id: "bangalore", label: "Bangalore", sublabel: "Regional Office", coordinates: [77.594, 12.972] },
 ];
 
 export default function GlobalReachSection() {

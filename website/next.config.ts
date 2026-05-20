@@ -9,6 +9,12 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: true,
   },
+  redirects: async () => [
+    { source: "/divisions/technology", destination: "/divisions/ai", permanent: true },
+    { source: "/sectors/infrastructure", destination: "/sectors/building-roads", permanent: true },
+    { source: "/sectors/green-hydrogen", destination: "/divisions/green-energy", permanent: true },
+    { source: "/sectors/manufacturing", destination: "/divisions/dynamics", permanent: true },
+  ],
   headers: async () => [
     {
       source: "/(.*)",

@@ -32,6 +32,15 @@ import {
   Crosshair,
   ShieldCheck,
   Server,
+  Atom,
+  Plane,
+  Leaf,
+  Brain,
+  TrendingUp,
+  Gauge,
+  Droplets,
+  Car,
+  PlugZap,
 } from "lucide-react";
 
 /* ─── Core Capabilities Data ─── */
@@ -107,6 +116,123 @@ const CAPABILITIES = [
       "Risk Management",
       "Stakeholder Reporting",
     ],
+  },
+];
+
+/* ─── Division-Specific Capabilities ─── */
+const DIVISION_CAPABILITIES = [
+  {
+    id: "dynamics",
+    icon: Factory,
+    name: "Manah Dynamics",
+    tagline: "Projects, Infrastructure & Electronics Manufacturing",
+    href: "/divisions/dynamics",
+    color: "#1E3A5F",
+    capabilities: [
+      "EPC execution across Power T&D, Renewables, Telecom, Building & Roads, Oil & Gas, Mining, Irrigation & Defence",
+      "Electronics Manufacturing Services (EMS) — 30,000 sq ft Cherlapally facility with 8+ SMT lines",
+      "Smart metering, SCADA, BESS integration, and grid modernisation",
+      "O&M for power and generation assets; strategic M&A advisory",
+    ],
+  },
+  {
+    id: "green-energy",
+    icon: Leaf,
+    name: "Manah Green Energy",
+    tagline: "Green Hydrogen & Renewables",
+    href: "/divisions/green-energy",
+    color: "#16A34A",
+    capabilities: [
+      "Green hydrogen production — ARB and electrolysis-type technology",
+      "18,000 MTPA target across 4 production phases on 350 acres at Bina (BPCL)",
+      "Electrolyzer systems, hydrogen storage, compression, and distribution",
+      "Dedicated renewable parks for captive hydrogen generation",
+    ],
+  },
+  {
+    id: "atomic",
+    icon: Atom,
+    name: "Manah Atomic",
+    tagline: "Nuclear Energy Solutions",
+    href: "/divisions/atomic",
+    color: "#7C3AED",
+    capabilities: [
+      "Small Modular Reactor (SMR) deployment and integration",
+      "Advanced nuclear fuel cycle engineering",
+      "Reactor safety and regulatory compliance (AERB, IAEA)",
+      "Clean energy transition advisory — nuclear baseload with renewables and hydrogen",
+    ],
+  },
+  {
+    id: "aerospace",
+    icon: Plane,
+    name: "Manah Aerospace",
+    tagline: "Aviation MRO, Training & Consultancy",
+    href: "/divisions/aerospace",
+    color: "#0D9488",
+    capabilities: [
+      "DGCA / San Marino CAR 145 certified business jet MRO across 6 locations",
+      "18+ MRO services; next-phase expansion to Pune and Kolkata",
+      "CAR 147 approved aviation training — Level I, II, III (Embraer, ATR)",
+      "Aviation consultancy — aircraft acquisition, fleet analysis, regulatory compliance",
+    ],
+  },
+  {
+    id: "ai",
+    icon: Brain,
+    name: "Manah AI",
+    tagline: "Generative AI & Data Centers",
+    href: "/divisions/ai",
+    color: "#5B8CC5",
+    capabilities: [
+      "Agentic AI systems for enterprise workflow automation",
+      "LLM and SLM training and fine-tuning pipelines",
+      "Generative AI applications for content, code, document, and multi-modal use cases",
+      "Purpose-built AI data centres — high-density GPU compute, sovereign and secure",
+    ],
+  },
+  {
+    id: "investments",
+    icon: TrendingUp,
+    name: "Manah Investments",
+    tagline: "Strategic Capital Deployment",
+    href: "/divisions/investments",
+    color: "#D97706",
+    capabilities: [
+      "Infrastructure private equity — power, roads, logistics, urban development",
+      "Energy transition capital — renewables, green hydrogen, battery storage, clean mobility",
+      "Deep-tech and defence technology growth investments",
+      "Commercial, industrial, and mixed-use real estate in high-growth corridors",
+    ],
+  },
+];
+
+/* ─── Products (Dynamics EMS portfolio) ─── */
+const PRODUCTS = [
+  {
+    icon: Gauge,
+    name: "Smart Energy Meters",
+    description: "Single-phase and three-phase smart meters for DTC and consumer deployment with AMI integration.",
+  },
+  {
+    icon: Droplets,
+    name: "Smart Water Meters",
+    description: "Ultrasonic and mechanical water meters with wireless telemetry for utility and industrial use.",
+  },
+  {
+    icon: Car,
+    name: "EV Chargers",
+    description: "AC and DC fast EV chargers for commercial, fleet, and public charging infrastructure.",
+  },
+  {
+    icon: PlugZap,
+    name: "Room Chargers",
+    description: "High-density charging infrastructure for hospitality, co-working, and residential environments.",
+  },
+  {
+    icon: Radio,
+    name: "Defence RF Systems",
+    description: "MIL-STD tactical communication equipment, RF sub-assemblies, and SDR platforms for armed forces.",
   },
 ];
 
@@ -251,10 +377,10 @@ export default function CapabilitiesPage() {
               variants={fadeUp}
               className="text-manah-gray-300 text-body-lg max-w-2xl"
             >
-              Integrated EPC capabilities spanning design, engineering,
-              procurement, construction, and lifecycle management — delivering
-              complex projects across power, energy, infrastructure, aviation,
-              and advanced manufacturing.
+              Integrated capabilities across six divisions — Projects &amp;
+              Infrastructure, Green Hydrogen &amp; Renewables, Nuclear Energy,
+              Aviation MRO &amp; Training, Generative AI &amp; Data Centers, and
+              Strategic Investments — delivered with end-to-end EPC rigour.
             </motion.p>
             <motion.div variants={fadeUp} className="mt-8">
               <Link href="/divisions" className="btn-primary">
@@ -304,6 +430,107 @@ export default function CapabilitiesPage() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Capabilities by Division ─── */}
+      <section className="section-padding bg-manah-gray-50">
+        <div className="section-container">
+          <SectionHeading
+            eyebrow="Six Divisions, One Vision"
+            title="Capabilities by Division"
+            description="Group-wide EPC rigour plus deep, division-specific expertise — from nuclear reactors and generative AI to refinery allied works and aviation MRO."
+          />
+          <div className="grid md:grid-cols-2 gap-6 mt-12">
+            {DIVISION_CAPABILITIES.map((div, i) => (
+              <motion.div
+                key={div.id}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ delay: i * 0.08 }}
+                className="group bg-white rounded-2xl p-8 border border-manah-gray-200/60 hover:border-manah-gold/40 hover:shadow-card-hover transition-all duration-500"
+              >
+                <div className="flex items-start gap-4 mb-5">
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
+                    style={{ backgroundColor: `${div.color}15` }}
+                  >
+                    <div.icon className="w-6 h-6" style={{ color: div.color }} />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-heading-lg font-bold text-manah-navy">
+                      {div.name}
+                    </h3>
+                    <p className="text-manah-gray-500 text-body-sm mt-1">
+                      {div.tagline}
+                    </p>
+                  </div>
+                </div>
+                <ul className="space-y-2.5 mb-6">
+                  {div.capabilities.map((cap) => (
+                    <li key={cap} className="flex items-start gap-2.5">
+                      <CheckCircle2 className="w-4 h-4 shrink-0 mt-1 text-manah-gold" />
+                      <span className="text-manah-gray-600 text-body-sm leading-relaxed">
+                        {cap}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href={div.href}
+                  className="inline-flex items-center gap-2 text-manah-navy font-semibold text-body-sm hover:text-manah-gold transition-colors"
+                >
+                  Explore division
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Products Portfolio ─── */}
+      <section className="section-padding bg-white">
+        <div className="section-container">
+          <SectionHeading
+            eyebrow="Manufactured in India"
+            title="Products Portfolio"
+            description="In-house electronics products manufactured by Manah Dynamics at our Cherlapally, Hyderabad EMS facility — serving utilities, defence, and mobility."
+          />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5 mt-12">
+            {PRODUCTS.map((product, i) => (
+              <motion.div
+                key={product.name}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="bg-white rounded-xl p-6 border border-manah-gray-200/60 hover:border-manah-gold/40 hover:shadow-card transition-all duration-400"
+              >
+                <div className="w-11 h-11 rounded-lg bg-manah-gold/10 flex items-center justify-center mb-4">
+                  <product.icon className="w-5 h-5 text-manah-gold" />
+                </div>
+                <h4 className="font-display text-heading-sm font-semibold text-manah-navy mb-2">
+                  {product.name}
+                </h4>
+                <p className="text-manah-gray-500 text-body-sm leading-relaxed">
+                  {product.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link
+              href="/divisions/dynamics"
+              className="inline-flex items-center gap-2 text-manah-navy font-semibold hover:text-manah-gold transition-colors"
+            >
+              See the EMS capability at Manah Dynamics
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>

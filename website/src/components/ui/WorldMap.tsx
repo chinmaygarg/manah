@@ -30,11 +30,12 @@ interface WorldMapProps {
 
 // Manah offices — real coordinates [lon, lat]
 const DEFAULT_LOCATIONS: MapLocation[] = [
-    { id: "delhi", label: "New Delhi", sublabel: "Corporate HQ", coordinates: [77.209, 28.614] },
-    { id: "jaipur", label: "Jaipur", sublabel: "EPC & Projects", coordinates: [75.787, 26.912] },
-    { id: "hyderabad", label: "Hyderabad", sublabel: "Aerospace Division", coordinates: [78.487, 17.385] },
-    { id: "bangalore", label: "Bangalore", sublabel: "Tech & Manufacturing", coordinates: [77.594, 12.972] },
-    { id: "dubai", label: "Dubai", sublabel: "Middle East Office", coordinates: [55.296, 25.276] },
+    { id: "hyderabad", label: "Hyderabad", sublabel: "Corporate HQ", coordinates: [78.487, 17.385] },
+    { id: "gurugram", label: "New Delhi (Gurugram)", sublabel: "Regional Office", coordinates: [77.029, 28.457] },
+    { id: "dubai", label: "Dubai", sublabel: "International Business", coordinates: [55.296, 25.276] },
+    { id: "vishakhapatnam", label: "Vishakhapatnam", sublabel: "Regional Office", coordinates: [83.301, 17.686] },
+    { id: "bhopal", label: "Bhopal", sublabel: "Regional Office", coordinates: [77.412, 23.259] },
+    { id: "bangalore", label: "Bangalore", sublabel: "Regional Office", coordinates: [77.594, 12.972] },
 ];
 
 export default function WorldMap({

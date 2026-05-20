@@ -61,7 +61,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-body-sm text-white/50 mb-6 leading-relaxed">
-              {SITE_CONFIG.tagline}. A diversified enterprise driving excellence across infrastructure, aviation, green energy, and technology.
+              {SITE_CONFIG.tagline}. A diversified enterprise group driving excellence across infrastructure, nuclear, green energy, aviation, AI & data centers, and strategic investments.
             </p>
             <div className="flex items-center gap-3">
               {[
