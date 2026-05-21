@@ -74,9 +74,9 @@ const INQUIRY_TYPE_OPTIONS: readonly SelectOption[] = [
 
 const DIVISION_OPTIONS: readonly SelectOption[] = [
   { value: "dynamics", label: "Manah Dynamics" },
+  { value: "aerospace", label: "Manah Aerospace" },
   { value: "green-energy", label: "Manah Green Energy" },
   { value: "atomic", label: "Manah Atomic" },
-  { value: "aerospace", label: "Manah Aerospace" },
   { value: "ai", label: "Manah AI" },
   { value: "investments", label: "Manah Investments" },
 ];

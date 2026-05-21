@@ -2,40 +2,43 @@
 
 import { useEffect, useState, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
-import { Play, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import ParallaxWrapper from "@/components/animations/ParallaxWrapper";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
+// Spells M-A-N-A-H — one letter per division, mirroring the presentation
+// cover slide. Order is authoritative (presentation deck); Investments has
+// no letter and is shown elsewhere on the site, not in this hero strip.
 const DIVISIONS = [
   {
+    letter: "M",
     label: "Dynamics",
     video: "/videos/hero/hero_infrastructure",
     poster: "/images/hero/hero_main_infrastructure.webp",
   },
   {
-    label: "Green Energy",
-    video: "/videos/hero/hero_green_energy",
-    poster: "/images/hero/hero_renewable_energy.webp",
-  },
-  {
-    label: "Atomic",
-    video: "/videos/hero/hero_atomic",
-    poster: "/images/hero/hero_atomic.webp",
-  },
-  {
+    letter: "A",
     label: "Aerospace",
     video: "/videos/hero/hero_aerospace",
     poster: "/images/hero/hero_aviation_mro.webp",
   },
   {
+    letter: "N",
+    label: "Green Energy",
+    video: "/videos/hero/hero_green_energy",
+    poster: "/images/hero/hero_renewable_energy.webp",
+  },
+  {
+    letter: "A",
+    label: "Atomic",
+    video: "/videos/hero/hero_atomic",
+    poster: "/images/hero/hero_atomic.webp",
+  },
+  {
+    letter: "H",
     label: "AI",
     video: "/videos/hero/hero_ai",
     poster: "/images/hero/hero_ai.webp",
-  },
-  {
-    label: "Investments",
-    video: "/videos/hero/hero_investments",
-    poster: "/images/hero/hero_construction_site.webp",
   },
 ] as const;
 
@@ -113,7 +116,7 @@ export default function HeroSection() {
       </ParallaxWrapper>
 
       {/* Content — centered, Essar-inspired */}
-      <div className="relative h-full section-container flex flex-col items-center justify-center text-center pt-20 pb-44 sm:pb-40">
+      <div className="relative h-full section-container flex flex-col items-center justify-center text-center pt-20 pb-56 sm:pb-52">
         {/* Headline — lowercase, calm, confident.
             Rendered visible on first paint (no opacity:0 in SSR) so it can
             serve as the LCP element; only a subtle slide-up on hydration. */}
@@ -140,20 +143,6 @@ export default function HeroSection() {
           world.
         </motion.p>
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 1.0, duration: 0.6 }}
-        >
-          <button className="group flex items-center gap-3 px-8 py-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-body-md font-medium transition-all duration-300 hover:bg-white/20 hover:border-white/30 hover:scale-[1.02]">
-            <span className="flex items-center justify-center w-10 h-10 rounded-full bg-manah-gold/20 group-hover:bg-manah-gold/30 transition-colors">
-              <Play className="w-4 h-4 text-manah-gold fill-manah-gold" />
-            </span>
-            Watch Our Story
-          </button>
-        </motion.div>
-
         {/* Bottom: Division indicator */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -165,25 +154,60 @@ export default function HeroSection() {
           <div className="mx-auto max-w-4xl px-4 sm:px-6">
             <div className="h-px bg-gradient-to-r from-transparent via-white/15 to-transparent mb-6" />
 
-            {/* Division names */}
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 sm:gap-x-8 lg:gap-x-10">
-              {DIVISIONS.map((div, i) => (
-                <button
-                  key={div.label}
-                  onClick={() => {
-                    setActiveIndex(i);
-                    if (intervalRef.current) clearInterval(intervalRef.current);
-                    startCrossfade();
-                  }}
-                  className={`py-1.5 text-caption sm:text-body-sm tracking-[0.15em] uppercase transition-all duration-500 ${
-                    i === activeIndex
-                      ? "text-manah-gold font-medium"
-                      : "text-white/30 hover:text-white/50"
-                  }`}
-                >
-                  {div.label}
-                </button>
-              ))}
+            {/* MANAH letter strip — each letter glows gold in sync with the
+                background-video crossfade; clicking jumps to that division */}
+            <div className="flex items-end justify-center gap-x-3 sm:gap-x-8 lg:gap-x-12">
+              {DIVISIONS.map((div, i) => {
+                const active = i === activeIndex;
+                return (
+                  <button
+                    key={div.label}
+                    onClick={() => {
+                      setActiveIndex(i);
+                      if (intervalRef.current) clearInterval(intervalRef.current);
+                      startCrossfade();
+                    }}
+                    aria-label={`Show ${div.label}`}
+                    aria-pressed={active}
+                    className="flex flex-col items-center gap-1.5 sm:gap-2"
+                  >
+                    <span
+                      className={`font-display font-extrabold leading-none text-4xl sm:text-5xl lg:text-6xl transition-all duration-500 ${
+                        active
+                          ? "text-manah-gold scale-110"
+                          : "text-white/25 sm:text-white/15 scale-100 hover:text-white/40"
+                      }`}
+                      style={
+                        active
+                          ? { textShadow: "0 0 24px rgba(200,169,110,0.45)" }
+                          : undefined
+                      }
+                    >
+                      {div.letter}
+                    </span>
+                    <span
+                      className={`hidden sm:block text-caption tracking-[0.15em] uppercase transition-colors duration-500 ${
+                        active ? "text-manah-gold font-medium" : "text-white/30"
+                      }`}
+                    >
+                      {div.label}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Mobile-only: single active division label below the strip */}
+            <div className="sm:hidden mt-3 h-4 text-center">
+              <motion.span
+                key={activeIndex}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.4 }}
+                className="text-caption tracking-[0.15em] uppercase text-manah-gold font-medium"
+              >
+                {DIVISIONS[activeIndex].label}
+              </motion.span>
             </div>
           </div>
 

@@ -86,9 +86,9 @@ export const NAVIGATION: NavItem[] = [
     },
     children: [
       { label: "Manah Dynamics", href: "/divisions/dynamics", description: "Projects, Infrastructure & Electronics Manufacturing", image: "/images/divisions/manah_dynamics_hero.webp", featured: true },
+      { label: "Manah Aerospace", href: "/divisions/aerospace", description: "Aviation MRO, Training & Consultancy", image: "/images/divisions/manah_aerospace_hero.webp", featured: true },
       { label: "Manah Green Energy", href: "/divisions/green-energy", description: "Green Hydrogen & Renewables", image: "/images/divisions/green_energy_hero.webp", featured: true },
       { label: "Manah Atomic", href: "/divisions/atomic", description: "Nuclear Energy Solutions — SMRs & Advanced Reactors", image: "/images/divisions/manah_atomic_hero.webp", featured: true },
-      { label: "Manah Aerospace", href: "/divisions/aerospace", description: "Aviation MRO, Training & Consultancy", image: "/images/divisions/manah_aerospace_hero.webp", featured: true },
       { label: "Manah AI", href: "/divisions/ai", description: "Generative AI & Data Centers", image: "/images/divisions/manah_ai_hero.webp", featured: true },
       { label: "Manah Investments", href: "/divisions/investments", description: "Strategic Capital Deployment", image: "/images/divisions/manah_investments_hero.webp", featured: true },
     ],
@@ -182,6 +182,20 @@ export const DIVISIONS = [
     ],
   },
   {
+    id: "aerospace",
+    name: "Manah Aerospace",
+    tagline: "Aviation MRO, Training & Consultancy",
+    description: "DGCA-certified business jet MRO, CAR 147 training, and aviation consultancy — delivering safety, reliability, and airworthiness to global standards.",
+    href: "/divisions/aerospace",
+    color: "#0D9488",
+    image: "/images/divisions/manah_aerospace_hero.webp",
+    stats: [
+      { label: "MRO Services", value: "18+" },
+      { label: "MRO Locations", value: "6" },
+      { label: "Certifications", value: "DGCA/San Marino" },
+    ],
+  },
+  {
     id: "green-energy",
     name: "Manah Green Energy",
     tagline: "Green Hydrogen & Renewables",
@@ -207,20 +221,6 @@ export const DIVISIONS = [
       { label: "Technology Focus", value: "SMR" },
       { label: "Clean Energy Target", value: "100 GW by 2047" },
       { label: "Investment Plan", value: "₹10,000 Cr" },
-    ],
-  },
-  {
-    id: "aerospace",
-    name: "Manah Aerospace",
-    tagline: "Aviation MRO, Training & Consultancy",
-    description: "DGCA-certified business jet MRO, CAR 147 training, and aviation consultancy — delivering safety, reliability, and airworthiness to global standards.",
-    href: "/divisions/aerospace",
-    color: "#0D9488",
-    image: "/images/divisions/manah_aerospace_hero.webp",
-    stats: [
-      { label: "MRO Services", value: "18+" },
-      { label: "MRO Locations", value: "6" },
-      { label: "Certifications", value: "DGCA/San Marino" },
     ],
   },
   {

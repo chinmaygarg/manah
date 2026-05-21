@@ -135,6 +135,20 @@ const DIVISION_CAPABILITIES = [
     ],
   },
   {
+    id: "aerospace",
+    icon: Plane,
+    name: "Manah Aerospace",
+    tagline: "Aviation MRO, Training & Consultancy",
+    href: "/divisions/aerospace",
+    color: "#0D9488",
+    capabilities: [
+      "DGCA / San Marino CAR 145 certified business jet MRO across 6 locations",
+      "18+ MRO services; next-phase expansion to Pune and Kolkata",
+      "CAR 147 approved aviation training — Level I, II, III (Embraer, ATR)",
+      "Aviation consultancy — aircraft acquisition, fleet analysis, regulatory compliance",
+    ],
+  },
+  {
     id: "green-energy",
     icon: Leaf,
     name: "Manah Green Energy",
@@ -160,20 +174,6 @@ const DIVISION_CAPABILITIES = [
       "Advanced nuclear fuel cycle engineering",
       "Reactor safety and regulatory compliance (AERB, IAEA)",
       "Clean energy transition advisory — nuclear baseload with renewables and hydrogen",
-    ],
-  },
-  {
-    id: "aerospace",
-    icon: Plane,
-    name: "Manah Aerospace",
-    tagline: "Aviation MRO, Training & Consultancy",
-    href: "/divisions/aerospace",
-    color: "#0D9488",
-    capabilities: [
-      "DGCA / San Marino CAR 145 certified business jet MRO across 6 locations",
-      "18+ MRO services; next-phase expansion to Pune and Kolkata",
-      "CAR 147 approved aviation training — Level I, II, III (Embraer, ATR)",
-      "Aviation consultancy — aircraft acquisition, fleet analysis, regulatory compliance",
     ],
   },
   {
