@@ -25,5 +25,36 @@ AUTO-GENERATED — do not edit it by hand.**
 automatically via the `prebuild` script, but run it manually during `dev`.
 Commit the updated `src/lib/blur-map.ts`.
 
+This applies to **AI-generated images too** — anything the `asset-generator`
+pipeline (`asset-generator/scripts/*.py`) writes into `public/images/` is a
+new image: regenerate the blur map after running it. An image missing from
+`blur-map.ts` falls back to a plain neutral shimmer instead of its own
+colour-matched blur.
+
 Use `<BlurImage>` (not raw `next/image`) for content photos. Logos and icons
 can stay as plain `<Image>` — they don't need a blur placeholder.
+
+## SEO / AEO / GEO
+
+**Whenever site content changes — adding, removing, or renaming a sector,
+division, or key page — update these surfaces in the same change:**
+
+- **`public/llms.txt`** — flat file read directly by answer/generative engines
+  (ChatGPT, Perplexity, etc.). Hand-maintained: keep its Divisions, Sectors, and
+  Key Pages lists and their URLs in sync. A dead link here misroutes citations.
+- **`src/app/sitemap.ts`** — hand-maintained route list; add/remove paths.
+- **Renamed or removed routes** — add a permanent redirect in `next.config.ts`
+  so old indexed URLs don't 404.
+
+Structured data is **data-driven, no manual edit needed**: JSON-LD in
+`src/components/seo/JsonLd.tsx` (Service, FAQPage, Breadcrumb) and page
+`<title>`/description/canonical via `generateMetadata` are all generated from
+`SECTOR_DETAILS` / division data — new sector/division pages get correct schema
+automatically.
+
+## Before pushing to git
+
+- `npm run build` must pass; `npm run lint` should not gain new errors.
+- New or replaced images: recompress to **<~200 KB webp**, then `npm run gen:blur`,
+  and commit the updated `src/lib/blur-map.ts`.
+- If content changed, update the SEO / AEO / GEO surfaces above.
