@@ -8,7 +8,7 @@
     "prebuild": "node scripts/generate-blur.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
