@@ -18,8 +18,10 @@ function post(body: unknown, ip = "7.7.7.7"): Request {
 }
 
 function mockTurnstile(success: boolean) {
-  vi.spyOn(globalThis, "fetch").mockResolvedValue(
-    new Response(JSON.stringify({ success }), { status: 200 }),
+  vi.spyOn(globalThis, "fetch").mockImplementation(() =>
+    Promise.resolve(
+      new Response(JSON.stringify({ success }), { status: 200 }),
+    ),
   );
 }
 
@@ -68,5 +70,26 @@ describe("POST /api/newsletter", () => {
     addAudienceContact.mockRejectedValue(new Error("down"));
     const res = await POST(post(VALID, "3.0.0.5"));
     expect(res.status).toBe(502);
+  });
+
+  it("returns 429 once the per-IP rate limit is exceeded", async () => {
+    mockTurnstile(true);
+    const ip = "4.4.4.4";
+    for (let i = 0; i < 5; i++) await POST(post(VALID, ip));
+    const res = await POST(post(VALID, ip));
+    expect(res.status).toBe(429);
+  });
+
+  it("returns 400 when the request body is not valid JSON", async () => {
+    mockTurnstile(true);
+    const res = await POST(
+      new Request("http://localhost/api/newsletter", {
+        method: "POST",
+        headers: { "content-type": "application/json", "x-forwarded-for": "3.0.0.9" },
+        body: "{not json",
+      }),
+    );
+    expect(res.status).toBe(400);
+    expect(addAudienceContact).not.toHaveBeenCalled();
   });
 });
