@@ -1,6 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import TurnstileWidget from "@/components/forms/TurnstileWidget";
+import HoneypotField from "@/components/forms/HoneypotField";
+import { useFormSubmit } from "@/components/forms/useFormSubmit";
 import BlurImage from "@/components/ui/BlurImage";
 import { motion } from "framer-motion";
 import { fadeUp, fadeLeft, fadeRight, staggerContainer } from "@/lib/animations";
@@ -82,7 +85,6 @@ const DIVISION_OPTIONS: readonly SelectOption[] = [
 ];
 
 export default function ContactContent() {
-  const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -92,11 +94,20 @@ export default function ContactContent() {
     division: "",
     message: "",
   });
+  const [honeypot, setHoneypot] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const { status, error, submit } = useFormSubmit("/api/contact");
+  const submitted = status === "success";
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In production, this would call an API endpoint
-    setSubmitted(true);
+    if (!turnstileToken) return;
+    await submit({
+      ...formData,
+      company_website: honeypot,
+      turnstileToken,
+    });
   };
 
   const handleChange = (
@@ -297,9 +308,29 @@ export default function ContactContent() {
                     />
                   </div>
 
-                  <button type="submit" className="btn-primary w-full sm:w-auto">
+                  <HoneypotField value={honeypot} onChange={setHoneypot} />
+
+                  <TurnstileWidget
+                    onVerify={setTurnstileToken}
+                    onReset={() => setTurnstileToken("")}
+                  />
+
+                  {status === "error" && error && (
+                    <p
+                      role="alert"
+                      className="text-body-sm text-red-600"
+                    >
+                      {error}
+                    </p>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={status === "submitting" || !turnstileToken}
+                    className="btn-primary w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
                     <Send className="w-4 h-4" />
-                    Send Message
+                    {status === "submitting" ? "Sending…" : "Send Message"}
                   </button>
                 </form>
               )}
