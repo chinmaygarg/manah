@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { BLUR_DATA_URL } from "@/lib/blur";
+import BlurImage from "@/components/ui/BlurImage";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -76,14 +75,12 @@ export default function MegaMenuPanel({ item, onClose }: MegaMenuPanelProps) {
                   >
                     {child.image && (
                       <div className="relative aspect-[16/10] overflow-hidden bg-manah-gray-100">
-                        <Image
+                        <BlurImage
                           src={child.image}
                           alt={child.label}
                           fill
                           className="object-cover transition-transform duration-500 group-hover/card:scale-105"
                           sizes="(max-width: 1024px) 50vw, 20vw"
-                          placeholder="blur"
-                          blurDataURL={BLUR_DATA_URL}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-manah-navy/40 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300" />
                       </div>

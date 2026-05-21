@@ -2,8 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { BLUR_DATA_URL } from "@/lib/blur";
+import BlurImage from "@/components/ui/BlurImage";
 import { motion } from "framer-motion";
 import {
   fadeUp,
@@ -75,14 +74,12 @@ function renderContentBlock(block: ContentBlock, index: number) {
         <MotionSection key={index}>
           <figure className="my-10">
             <div className="relative aspect-[16/9] rounded-xl overflow-hidden">
-              <Image
+              <BlurImage
                 src={block.src}
                 alt={block.alt}
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 768px"
-                placeholder="blur"
-                blurDataURL={BLUR_DATA_URL}
               />
             </div>
             {block.caption && (
@@ -285,14 +282,12 @@ function RelatedArticleCard({ article }: { readonly article: BlogArticle }) {
     <Link href={`/blog/${article.slug}`} className="group block">
       <article className="bg-white rounded-2xl overflow-hidden border border-manah-gray-200/60 hover:shadow-card-hover hover:-translate-y-1 transition-all duration-500">
         <div className="relative aspect-[16/10] overflow-hidden">
-          <Image
+          <BlurImage
             src={article.image}
             alt={article.title}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            placeholder="blur"
-            blurDataURL={BLUR_DATA_URL}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-manah-navy/20 to-transparent" />
           <span className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-sm text-manah-navy text-caption font-semibold rounded-full">
@@ -344,15 +339,13 @@ export default function BlogPostContent({
     <main>
       {/* ─── Article Hero ─── */}
       <section className="relative bg-manah-navy text-white overflow-hidden -mt-20 pt-20">
-        <Image
+        <BlurImage
           src={article.image}
           alt=""
           fill
           className="object-cover opacity-20"
           priority
           sizes="100vw"
-          placeholder="blur"
-          blurDataURL={BLUR_DATA_URL}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-manah-navy/80 via-manah-navy/50 to-manah-navy/90" />
         <div className="absolute inset-0 bg-gradient-to-r from-manah-navy/60 via-transparent to-manah-navy/40" />

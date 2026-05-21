@@ -5,7 +5,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { BLUR_DATA_URL } from "@/lib/blur";
+import BlurImage from "@/components/ui/BlurImage";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -317,14 +317,12 @@ export default function ProjectsContent() {
                 className="group bg-white rounded-2xl border border-manah-gray-200/60 overflow-hidden hover:shadow-card-hover transition-all duration-500"
               >
                 <div className="aspect-[16/9] relative overflow-hidden bg-manah-gray-100">
-                  <Image
+                  <BlurImage
                     src={getProjectImage(project.id)}
                     alt={project.title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                     sizes="(max-width: 1024px) 100vw, 33vw"
-                    placeholder="blur"
-                    blurDataURL={BLUR_DATA_URL}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-manah-navy/40 via-transparent to-transparent" />
                   <div className="absolute top-3 left-3">
@@ -402,14 +400,12 @@ export default function ProjectsContent() {
                   className="group bg-white rounded-xl border border-manah-gray-200/60 overflow-hidden hover:shadow-card-hover transition-all duration-400"
                 >
                   <div className="aspect-[2/1] relative overflow-hidden bg-manah-gray-100">
-                    <Image
+                    <BlurImage
                       src={getProjectImage(project.id)}
                       alt={project.title}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      placeholder="blur"
-                      blurDataURL={BLUR_DATA_URL}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-manah-navy/30 via-transparent to-transparent" />
                     <div className="absolute top-2.5 left-2.5">
@@ -507,14 +503,12 @@ export default function ProjectsContent() {
                 transition={{ delay: (i % 4) * 0.08 }}
                 className="group relative aspect-[4/3] rounded-xl overflow-hidden bg-white/5"
               >
-                <Image
+                <BlurImage
                   src={item.src}
                   alt={item.caption}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  placeholder="blur"
-                  blurDataURL={BLUR_DATA_URL}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-manah-navy via-manah-navy/30 to-transparent" />
                 <p className="absolute bottom-0 left-0 right-0 p-3 text-white/90 text-caption leading-snug">

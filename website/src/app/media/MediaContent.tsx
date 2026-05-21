@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect } from "react";
-import Image from "next/image";
-import { BLUR_DATA_URL } from "@/lib/blur";
+import BlurImage from "@/components/ui/BlurImage";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeUp, staggerContainer } from "@/lib/animations";
@@ -290,15 +289,13 @@ export default function MediaContent() {
       {/* ─── Hero ─── */}
       <section className="relative bg-manah-navy text-white overflow-hidden -mt-20 pt-20">
         {/* Background image */}
-        <Image
+        <BlurImage
           src="/images/hero/hero_media_centre.webp"
           alt="Manah Group media centre — news, insights, and press coverage"
           fill
           className="object-cover"
           priority
           sizes="100vw"
-          placeholder="blur"
-          blurDataURL={BLUR_DATA_URL}
         />
 
         {/* Overlay gradients */}
@@ -452,14 +449,12 @@ export default function MediaContent() {
                   >
                     {/* Card Image */}
                     <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-manah-navy/10 to-manah-gold/5">
-                      <Image
+                      <BlurImage
                         src={item.image}
                         alt={item.title}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        placeholder="blur"
-                        blurDataURL={BLUR_DATA_URL}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-manah-navy/20 to-transparent" />
                       <span className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-sm text-manah-navy text-caption font-semibold rounded-full">
@@ -575,7 +570,7 @@ export default function MediaContent() {
                             item.featured ? "aspect-square" : "aspect-[4/3]"
                           }`}
                         >
-                          <Image
+                          <BlurImage
                             src={item.image}
                             alt={item.title}
                             fill
@@ -585,8 +580,6 @@ export default function MediaContent() {
                                 ? "(max-width: 768px) 100vw, 50vw"
                                 : "(max-width: 768px) 50vw, 25vw"
                             }
-                            placeholder="blur"
-                            blurDataURL={BLUR_DATA_URL}
                           />
 
                           {/* Hover Overlay */}
@@ -667,15 +660,13 @@ export default function MediaContent() {
               className="relative w-[90vw] h-[80vh] max-w-5xl"
               onClick={(e) => e.stopPropagation()}
             >
-              <Image
+              <BlurImage
                 src={filteredGallery[lightboxIndex].image}
                 alt={filteredGallery[lightboxIndex].title}
                 fill
                 className="object-contain"
                 sizes="90vw"
                 priority
-                placeholder="blur"
-                blurDataURL={BLUR_DATA_URL}
               />
             </motion.div>
 

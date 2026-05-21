@@ -12,8 +12,7 @@ import MotionSection from "@/components/animations/MotionSection";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CounterAnimation from "@/components/animations/CounterAnimation";
 import { Award, Target, Eye, Heart, Shield, Users, Clock, Globe } from "lucide-react";
-import Image from "next/image";
-import { BLUR_DATA_URL } from "@/lib/blur";
+import BlurImage from "@/components/ui/BlurImage";
 import { LEADERS } from "@/lib/constants";
 
 /* ─── Timeline Data ─── */
@@ -82,14 +81,12 @@ function LeaderCard({
           featured ? "lg:mb-0 lg:w-1/2 lg:shrink-0" : ""
         }`}
       >
-        <Image
+        <BlurImage
           src={leader.image}
           alt={leader.name}
           fill
           className="object-cover grayscale"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-          placeholder="blur"
-          blurDataURL={BLUR_DATA_URL}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-manah-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
@@ -170,14 +167,12 @@ export default function AboutContent() {
               viewport={{ once: true }}
               className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-manah-gray-100"
             >
-              <Image
+              <BlurImage
                 src="/images/about/about_hero.webp"
                 alt="Manah Group company overview"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                placeholder="blur"
-                blurDataURL={BLUR_DATA_URL}
               />
               <div className="absolute inset-0 bg-gradient-to-br from-manah-navy/10 to-manah-gold/5" />
             </motion.div>
@@ -196,14 +191,12 @@ export default function AboutContent() {
               viewport={{ once: true }}
               className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-manah-gray-100 order-2 lg:order-1"
             >
-              <Image
+              <BlurImage
                 src="/images/hero/hero_construction_site.webp"
                 alt="Global infrastructure construction"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                placeholder="blur"
-                blurDataURL={BLUR_DATA_URL}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-manah-navy/80 via-manah-navy/15 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -278,14 +271,12 @@ export default function AboutContent() {
               className="relative lg:col-span-2 rounded-2xl p-8 md:p-12 bg-gradient-to-br from-manah-gold/[0.07] to-manah-gold/[0.01] border border-manah-gold/15 overflow-hidden"
             >
               {/* Background image */}
-              <Image
+              <BlurImage
                 src="/images/about/vision_mission_bg.webp"
                 alt=""
                 fill
                 className="object-cover opacity-30"
                 sizes="(max-width: 1024px) 100vw, 80vw"
-                placeholder="blur"
-                blurDataURL={BLUR_DATA_URL}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-manah-navy/90 via-manah-navy/75 to-manah-navy/50" />
 
@@ -422,7 +413,7 @@ export default function AboutContent() {
 
       {/* ─── History Timeline ─── */}
       <section id="history" className="section-padding bg-manah-navy text-white overflow-hidden relative">
-        <Image src="/images/about/timeline_background.webp" alt="" fill className="object-cover opacity-10" placeholder="blur" blurDataURL={BLUR_DATA_URL} />
+        <BlurImage src="/images/about/timeline_background.webp" alt="" fill className="object-cover opacity-10" />
         <div className="section-container">
           <SectionHeading
             eyebrow="Our Journey"

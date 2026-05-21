@@ -21,3 +21,6 @@ _trash/
 
 # Local-only image archive (original PNGs kept off-repo)
 website/archive/
+
+# Raw image-generation output (regeneratable; webp assets are committed)
+asset-generator/output/replicate/images/projects/

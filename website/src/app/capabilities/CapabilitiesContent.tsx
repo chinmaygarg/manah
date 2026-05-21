@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { BLUR_DATA_URL } from "@/lib/blur";
+import BlurImage from "@/components/ui/BlurImage";
 import { motion } from "framer-motion";
 import {
   fadeUp,
@@ -343,14 +342,12 @@ export default function CapabilitiesContent() {
     <main>
       {/* ─── Hero ─── */}
       <section className="relative bg-manah-navy text-white overflow-hidden -mt-20 pt-20">
-        <Image
+        <BlurImage
           src="/images/hero/hero_main_infrastructure.webp"
           alt=""
           fill
           className="object-cover opacity-15"
           priority
-          placeholder="blur"
-          blurDataURL={BLUR_DATA_URL}
         />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_20%,rgba(200,169,110,0.12),transparent_60%)]" />
         <div className="section-container py-24 md:py-32 relative z-10">

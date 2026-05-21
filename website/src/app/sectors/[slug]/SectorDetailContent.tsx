@@ -2,8 +2,7 @@
 
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
-import { BLUR_DATA_URL } from "@/lib/blur";
+import BlurImage from "@/components/ui/BlurImage";
 import { motion } from "framer-motion";
 import {
   fadeUp,
@@ -34,14 +33,12 @@ export default function SectorDetailContent({ slug }: { slug: string }) {
     <main>
       {/* ─── Hero ─── */}
       <section className="relative text-white overflow-hidden bg-manah-navy -mt-20 pt-20">
-        <Image
+        <BlurImage
           src={sector.image}
           alt=""
           fill
           className="object-cover opacity-20"
           priority
-          placeholder="blur"
-          blurDataURL={BLUR_DATA_URL}
         />
         <div
           className="absolute inset-0"
@@ -181,14 +178,12 @@ export default function SectorDetailContent({ slug }: { slug: string }) {
               viewport={{ once: true }}
               className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-manah-gray-100"
             >
-              <Image
+              <BlurImage
                 src={sector.image}
                 alt={`${sector.title} operations`}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                placeholder="blur"
-                blurDataURL={BLUR_DATA_URL}
               />
             </motion.div>
           </div>

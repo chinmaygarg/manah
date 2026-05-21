@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { BLUR_DATA_URL } from "@/lib/blur";
+import BlurImage from "@/components/ui/BlurImage";
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer, scaleIn } from "@/lib/animations";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -160,14 +159,12 @@ export default function SectorsContent() {
                   className="group block h-full bg-white rounded-2xl border border-manah-gray-200/60 overflow-hidden hover:border-manah-gold/30 hover:shadow-card-hover transition-all duration-500"
                 >
                   <div className="relative h-40 overflow-hidden">
-                    <Image
+                    <BlurImage
                       src={sector.image}
                       alt={sector.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      placeholder="blur"
-                      blurDataURL={BLUR_DATA_URL}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
                   </div>

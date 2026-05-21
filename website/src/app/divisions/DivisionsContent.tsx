@@ -1,9 +1,8 @@
 "use client";
 
-import Image from "next/image";
+import BlurImage from "@/components/ui/BlurImage";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { BLUR_DATA_URL } from "@/lib/blur";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { DIVISIONS } from "@/lib/constants";
@@ -67,14 +66,12 @@ export default function DivisionsContent() {
               >
                 {/* Division image */}
                 <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-manah-gray-100" style={{ direction: "ltr" }}>
-                  <Image
+                  <BlurImage
                     src={division.image}
                     alt={`${division.name} — ${division.tagline}`}
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    placeholder="blur"
-                    blurDataURL={BLUR_DATA_URL}
                   />
                   <div
                     className="absolute inset-0 opacity-20"

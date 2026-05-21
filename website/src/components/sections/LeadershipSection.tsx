@@ -4,8 +4,7 @@ import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 import { LEADERS } from "@/lib/constants";
 import SectionHeading from "@/components/ui/SectionHeading";
-import Image from "next/image";
-import { BLUR_DATA_URL } from "@/lib/blur";
+import BlurImage from "@/components/ui/BlurImage";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -35,14 +34,12 @@ export default function LeadershipSection() {
             >
               {/* Photo */}
               <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-manah-gray-200 mb-5">
-                <Image
+                <BlurImage
                   src={leader.image}
                   alt={leader.name}
                   fill
                   className="object-cover grayscale transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
-                  placeholder="blur"
-                  blurDataURL={BLUR_DATA_URL}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-manah-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>

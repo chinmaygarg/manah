@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
-import { BLUR_DATA_URL } from "@/lib/blur";
+import BlurImage from "@/components/ui/BlurImage";
 import { motion } from "framer-motion";
 import { fadeUp, fadeLeft, fadeRight, staggerContainer } from "@/lib/animations";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -115,15 +114,13 @@ export default function ContactContent() {
       {/* ─── Hero ─── */}
       <section className="relative bg-manah-navy text-white overflow-hidden -mt-20 pt-20">
         {/* Background image */}
-        <Image
+        <BlurImage
           src="/images/hero/hero_construction_site.webp"
           alt="Manah Group contact — engineering and construction excellence"
           fill
           className="object-cover"
           priority
           sizes="100vw"
-          placeholder="blur"
-          blurDataURL={BLUR_DATA_URL}
         />
 
         {/* Overlay gradients */}

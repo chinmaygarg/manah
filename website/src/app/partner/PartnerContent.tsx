@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
-import { BLUR_DATA_URL } from "@/lib/blur";
+import BlurImage from "@/components/ui/BlurImage";
 import { motion } from "framer-motion";
 import {
   fadeUp,
@@ -215,14 +214,12 @@ export default function PartnerContent() {
     <main>
       {/* ═══ 1. Hero Section ═══ */}
       <section className="relative bg-manah-navy text-white overflow-hidden -mt-20 pt-20">
-        <Image
+        <BlurImage
           src="/images/partners/partners_hero.webp"
           alt=""
           fill
           className="object-cover opacity-15"
           priority
-          placeholder="blur"
-          blurDataURL={BLUR_DATA_URL}
         />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_40%_30%,rgba(200,169,110,0.12),transparent_65%)]" />
         <div className="section-container py-24 md:py-32 relative z-10">
@@ -451,14 +448,12 @@ export default function PartnerContent() {
                 transition={{ delay: i * 0.06 }}
                 className="flex items-center justify-center bg-white rounded-xl border border-white/20 p-6 hover:shadow-lg hover:shadow-white/10 hover:scale-[1.03] transition-all duration-300 aspect-[2/1]"
               >
-                <Image
+                <BlurImage
                   src={logo.src}
                   alt={logo.alt}
                   width={240}
                   height={120}
                   className="object-contain w-full h-full max-h-24"
-                  placeholder="blur"
-                  blurDataURL={BLUR_DATA_URL}
                 />
               </motion.div>
             ))}

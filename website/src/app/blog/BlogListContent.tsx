@@ -2,8 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { BLUR_DATA_URL } from "@/lib/blur";
+import BlurImage from "@/components/ui/BlurImage";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -59,15 +58,13 @@ export default function BlogListContent() {
       {/* ─── Hero ─── */}
       <section className="relative bg-manah-navy text-white overflow-hidden -mt-20 pt-20">
         {/* Background image */}
-        <Image
+        <BlurImage
           src="/images/hero/hero_main_infrastructure.webp"
           alt="Manah Group blog — thought leadership and industry insights"
           fill
           className="object-cover"
           priority
           sizes="100vw"
-          placeholder="blur"
-          blurDataURL={BLUR_DATA_URL}
         />
 
         {/* Overlay gradients */}
@@ -124,15 +121,13 @@ export default function BlogListContent() {
               <div className="grid lg:grid-cols-2 gap-0 bg-white rounded-2xl overflow-hidden border border-manah-gray-200/60 shadow-card group-hover:shadow-card-hover transition-all duration-500">
                 {/* Image */}
                 <div className="relative aspect-[16/10] lg:aspect-auto lg:min-h-[420px] overflow-hidden">
-                  <Image
+                  <BlurImage
                     src={FEATURED_BLOG_ARTICLE.image}
                     alt={FEATURED_BLOG_ARTICLE.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     priority
-                    placeholder="blur"
-                    blurDataURL={BLUR_DATA_URL}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-manah-navy/30 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-manah-navy/5" />
                 </div>
@@ -229,15 +224,13 @@ export default function BlogListContent() {
                   >
                     {/* Card Image */}
                     <div className="relative aspect-[16/10] overflow-hidden">
-                      <Image
+                      <BlurImage
                         src={article.image}
                         alt={article.title}
                         fill
                         loading="eager"
                         className="object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        placeholder="blur"
-                        blurDataURL={BLUR_DATA_URL}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-manah-navy/20 to-transparent" />
                       <span className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-sm text-manah-navy text-caption font-semibold rounded-full">

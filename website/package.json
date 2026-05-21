@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "gen:blur": "node scripts/generate-blur.mjs",
+    "prebuild": "node scripts/generate-blur.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

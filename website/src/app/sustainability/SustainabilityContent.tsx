@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { BLUR_DATA_URL } from "@/lib/blur";
+import BlurImage from "@/components/ui/BlurImage";
 import { motion } from "framer-motion";
 import { fadeUp, fadeLeft, fadeRight, staggerContainer, scaleIn } from "@/lib/animations";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -92,15 +91,13 @@ export default function SustainabilityContent() {
     <main>
       {/* ─── Hero ─── */}
       <section className="relative bg-manah-navy text-white overflow-hidden -mt-20 pt-20">
-        <Image
+        <BlurImage
           src="/images/sustainability/sustainability_hero.webp"
           alt="Renewable energy landscape — solar panels, wind turbines, and transmission infrastructure"
           fill
           className="object-cover"
           priority
           sizes="100vw"
-          placeholder="blur"
-          blurDataURL={BLUR_DATA_URL}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-manah-navy/70 via-manah-navy/40 to-manah-navy/85" />
         <div className="absolute inset-0 bg-gradient-to-r from-manah-navy/60 via-transparent to-manah-navy/40" />
@@ -196,14 +193,12 @@ export default function SustainabilityContent() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
-                <Image
+                <BlurImage
                   src="/images/sustainability/community_impact.webp"
                   alt="Community development and social impact"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  placeholder="blur"
-                  blurDataURL={BLUR_DATA_URL}
                 />
               </div>
             </motion.div>

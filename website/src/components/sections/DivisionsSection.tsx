@@ -2,8 +2,7 @@
 
 import { useState, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { BLUR_DATA_URL } from "@/lib/blur";
+import BlurImage from "@/components/ui/BlurImage";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { DIVISIONS } from "@/lib/constants";
@@ -101,13 +100,11 @@ export default function DivisionsSection() {
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-0 rounded-2xl overflow-hidden bg-white/[0.03] border border-white/[0.06]">
               {/* Left: Image */}
               <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[520px]">
-                <Image
+                <BlurImage
                   src={division.image}
                   alt={division.name}
                   fill
                   className="object-cover"
-                  placeholder="blur"
-                  blurDataURL={BLUR_DATA_URL}
                 />
               </div>
 
