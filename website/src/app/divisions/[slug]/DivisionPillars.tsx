@@ -27,14 +27,14 @@ export default function DivisionPillars({ pillars, color }: DivisionPillarsProps
         return (
           <section key={pillar.name} className={`section-padding ${sectionBg}`}>
             <div className="section-container">
-              <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+              <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 lg:items-stretch">
                 {/* ─── Pillar image ─── */}
                 <motion.div
                   variants={imageLeft ? fadeLeft : fadeRight}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  className={`relative aspect-[4/3] rounded-2xl overflow-hidden bg-manah-gray-100 ${
+                  className={`relative aspect-[4/3] lg:aspect-auto lg:min-h-full rounded-2xl overflow-hidden bg-manah-gray-100 ${
                     imageLeft ? "lg:order-1" : "lg:order-2"
                   }`}
                 >
