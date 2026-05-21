@@ -6,6 +6,7 @@ import { getPartnerRecipient } from "@/lib/forms/recipients";
 import { renderPartnerEmail } from "@/lib/forms/email-templates";
 import { sendEmail } from "@/lib/forms/resend";
 import { jsonOk, jsonError } from "@/lib/forms/respond";
+import { isHoneypotFilled } from "@/lib/forms/honeypot";
 
 export const runtime = "nodejs";
 
@@ -24,10 +25,9 @@ export async function POST(request: Request): Promise<Response> {
     return jsonError(400, "Invalid request.");
   }
 
-  if (
-    typeof body.company_website === "string" &&
-    body.company_website.trim() !== ""
-  ) {
+  // Honeypot: a real user never fills this. Return a silent success so the
+  // bot is not told it was caught.
+  if (isHoneypotFilled(body)) {
     return jsonOk();
   }
 
