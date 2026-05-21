@@ -427,7 +427,7 @@ export default function AboutContent() {
 
             {MILESTONES.map((milestone, i) => (
               <motion.div
-                key={milestone.year}
+                key={milestone.title}
                 variants={i % 2 === 0 ? fadeLeft : fadeRight}
                 initial="hidden"
                 whileInView="visible"

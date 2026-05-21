@@ -5,6 +5,52 @@
    division pages, linked from relatedDivisions below.
    ═══════════════════════════════════════════════════════════ */
 
+import type { LucideIcon } from "lucide-react";
+import {
+  Activity,
+  Antenna,
+  BatteryCharging,
+  BellRing,
+  Building,
+  Building2,
+  Cable,
+  CircuitBoard,
+  Container,
+  Cpu,
+  Crosshair,
+  Droplet,
+  Droplets,
+  Factory,
+  Filter,
+  Gauge,
+  GraduationCap,
+  Hammer,
+  HardHat,
+  Home,
+  Layers,
+  LineChart,
+  MonitorDot,
+  Network,
+  Package,
+  PlugZap,
+  Radio,
+  RadioTower,
+  Recycle,
+  Route,
+  Ship,
+  ShieldCheck,
+  Sprout,
+  Sun,
+  TowerControl,
+  TrainFront,
+  Truck,
+  Warehouse,
+  Waves,
+  Waypoints,
+  Wind,
+  Wrench,
+} from "lucide-react";
+
 export interface SectorProject {
   title: string;
   location: string;
@@ -21,7 +67,7 @@ export interface SectorDetail {
   image: string;
   overview: string[];
   keyStats: { value: string; label: string }[];
-  services: { title: string; description: string }[];
+  services: { title: string; description: string; icon: LucideIcon }[];
   projects: SectorProject[];
   process: { step: string; title: string; description: string }[];
   relatedDivisions: string[];
@@ -50,12 +96,12 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
       { value: "5,000+", label: "Towers Erected" },
     ],
     services: [
-      { title: "EHV Transmission Lines", description: "Design, supply, and construction of 220kV to 765kV extra-high-voltage transmission lines including lattice tower fabrication, foundation works, and conductor stringing." },
-      { title: "HV Distribution Lines", description: "66kV to 132kV high-voltage distribution infrastructure for urban and rural electrification programs with minimal right-of-way impact." },
-      { title: "AIS Substations", description: "Turnkey air-insulated switchgear substations up to 400kV with complete civil, electrical, protection, and SCADA systems." },
-      { title: "GIS Substations", description: "Compact gas-insulated switchgear substations for space-constrained urban and industrial environments with superior reliability." },
-      { title: "Underground Cable Systems", description: "XLPE and fluid-filled underground cable systems for critical urban corridors where overhead lines are not feasible." },
-      { title: "Grid Modernization & SCADA", description: "Smart grid upgrades including FACTS devices, reactive power compensation, AMI, BESS integration, and SCADA automation." },
+      { icon: TowerControl, title: "EHV Transmission Lines", description: "Design, supply, and construction of 220kV to 765kV extra-high-voltage transmission lines including lattice tower fabrication, foundation works, and conductor stringing." },
+      { icon: Cable, title: "HV Distribution Lines", description: "66kV to 132kV high-voltage distribution infrastructure for urban and rural electrification programs with minimal right-of-way impact." },
+      { icon: PlugZap, title: "AIS Substations", description: "Turnkey air-insulated switchgear substations up to 400kV with complete civil, electrical, protection, and SCADA systems." },
+      { icon: Container, title: "GIS Substations", description: "Compact gas-insulated switchgear substations for space-constrained urban and industrial environments with superior reliability." },
+      { icon: Route, title: "Underground Cable Systems", description: "XLPE and fluid-filled underground cable systems for critical urban corridors where overhead lines are not feasible." },
+      { icon: Cpu, title: "Grid Modernization & SCADA", description: "Smart grid upgrades including FACTS devices, reactive power compensation, AMI, BESS integration, and SCADA automation." },
     ],
     projects: [
       { title: "765kV Transmission Corridor", location: "Andhra Pradesh, India", value: "$45M", description: "Double-circuit 765kV transmission line spanning 180 km connecting major generation hubs to load centers." },
@@ -98,12 +144,12 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
       { value: "99.5%", label: "Plant Availability" },
     ],
     services: [
-      { title: "Solar EPC (Utility Scale)", description: "Complete EPC for ground-mounted solar parks from 10 MW to 500 MW+ including single-axis trackers, inverter stations, and pooling substations." },
-      { title: "Wind Farm Development", description: "Turnkey onshore wind projects including micrositing, foundation design, turbine erection, and electrical balance of plant." },
-      { title: "Hybrid Power Plants", description: "Co-located solar-wind-storage hybrids optimizing land use, grid connectivity, and capacity utilization factors." },
-      { title: "BESS Integration", description: "Battery energy storage solutions for renewable firming, peak shaving, and grid ancillary services." },
-      { title: "Rooftop & C&I Solar", description: "Commercial and industrial rooftop solar with net metering, wheeling arrangements, and PPA structures." },
-      { title: "O&M Services", description: "Plant operations, predictive maintenance, performance monitoring, and vegetation management for renewable assets." },
+      { icon: Sun, title: "Solar EPC (Utility Scale)", description: "Complete EPC for ground-mounted solar parks from 10 MW to 500 MW+ including single-axis trackers, inverter stations, and pooling substations." },
+      { icon: Wind, title: "Wind Farm Development", description: "Turnkey onshore wind projects including micrositing, foundation design, turbine erection, and electrical balance of plant." },
+      { icon: Layers, title: "Hybrid Power Plants", description: "Co-located solar-wind-storage hybrids optimizing land use, grid connectivity, and capacity utilization factors." },
+      { icon: BatteryCharging, title: "BESS Integration", description: "Battery energy storage solutions for renewable firming, peak shaving, and grid ancillary services." },
+      { icon: Home, title: "Rooftop & C&I Solar", description: "Commercial and industrial rooftop solar with net metering, wheeling arrangements, and PPA structures." },
+      { icon: Wrench, title: "O&M Services", description: "Plant operations, predictive maintenance, performance monitoring, and vegetation management for renewable assets." },
     ],
     projects: [
       { title: "300 MW Solar Park", location: "Rajasthan, India", value: "$120M", description: "Utility-scale solar park with single-axis trackers and 132kV pooling substation, powering 150,000 homes annually." },
@@ -146,12 +192,12 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
       { value: "Zero", label: "Major Safety Incidents" },
     ],
     services: [
-      { title: "Highway & Expressway Construction", description: "Multi-lane highway construction with bituminous and concrete pavements, toll plazas, service roads, and intelligent transportation systems." },
-      { title: "Bridge & Flyover Engineering", description: "Reinforced concrete and steel bridges, elevated corridors, grade separators, and pedestrian overpasses with seismic-resilient design." },
-      { title: "Residential & Military Buildings", description: "Multi-storey residential complexes, barracks, and military station infrastructure delivered to defence and government specifications." },
-      { title: "Industrial & Commercial Construction", description: "Pre-engineered buildings, warehouses, data-center shells, manufacturing facilities, and commercial complexes." },
-      { title: "Urban Development", description: "Smart-city infrastructure including underground utilities, stormwater drainage, streetscaping, and public-space development." },
-      { title: "Railway & Metro Infrastructure", description: "Station buildings, viaducts, depot construction, and allied infrastructure for metro rail and railway projects." },
+      { icon: Route, title: "Highway & Expressway Construction", description: "Multi-lane highway construction with bituminous and concrete pavements, toll plazas, service roads, and intelligent transportation systems." },
+      { icon: Waypoints, title: "Bridge & Flyover Engineering", description: "Reinforced concrete and steel bridges, elevated corridors, grade separators, and pedestrian overpasses with seismic-resilient design." },
+      { icon: Building2, title: "Residential & Military Buildings", description: "Multi-storey residential complexes, barracks, and military station infrastructure delivered to defence and government specifications." },
+      { icon: Warehouse, title: "Industrial & Commercial Construction", description: "Pre-engineered buildings, warehouses, data-center shells, manufacturing facilities, and commercial complexes." },
+      { icon: Building, title: "Urban Development", description: "Smart-city infrastructure including underground utilities, stormwater drainage, streetscaping, and public-space development." },
+      { icon: TrainFront, title: "Railway & Metro Infrastructure", description: "Station buildings, viaducts, depot construction, and allied infrastructure for metro rail and railway projects." },
     ],
     projects: [
       { title: "G+4 Residential Buildings", location: "India", value: "₹53 Cr", description: "Construction of four G+4 residential building blocks — a multi-block housing development." },
@@ -194,10 +240,10 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
       { value: "Integration", label: "Assembly & Testing" },
     ],
     services: [
-      { title: "Firearms & Small Arms", description: "Manufacture and supply of firearms and small-arms systems for the armed forces and security agencies." },
-      { title: "Communication Devices", description: "Secure communication equipment for tactical and field use across defence and security operations." },
-      { title: "RF-Based Devices", description: "Radio-frequency sub-systems and devices for defence communication and electronics applications." },
-      { title: "System Integration & Testing", description: "In-house assembly, integration, and quality testing of firearm, communication, and RF systems." },
+      { icon: Crosshair, title: "Firearms & Small Arms", description: "Manufacture and supply of firearms and small-arms systems for the armed forces and security agencies." },
+      { icon: Radio, title: "Communication Devices", description: "Secure communication equipment for tactical and field use across defence and security operations." },
+      { icon: Antenna, title: "RF-Based Devices", description: "Radio-frequency sub-systems and devices for defence communication and electronics applications." },
+      { icon: Cpu, title: "System Integration & Testing", description: "In-house assembly, integration, and quality testing of firearm, communication, and RF systems." },
     ],
     projects: [],
     process: [
@@ -236,12 +282,12 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
       { value: "24/7", label: "NOC Support" },
     ],
     services: [
-      { title: "Telecom Towers (GBT & RTT)", description: "Ground-based and rooftop tower design, fabrication, erection, and commissioning for macro and small-cell deployments." },
-      { title: "Optical Fiber Cabling (OFC)", description: "Underground and aerial OFC execution, splicing, OTDR testing, and last-mile connectivity for BharatNet and private fiber." },
-      { title: "Active Network Integration", description: "BTS/BBU/RRU installation, microwave link commissioning, antenna alignment, and RAN integration." },
-      { title: "Power & Battery Backup", description: "SMPS systems, VRLA/Li-ion battery banks, DG integration, and hybrid solar-diesel solutions for remote sites." },
-      { title: "Base Station Electronics (EMS)", description: "In-house manufacturing of antenna controllers, network management units, and telecom sub-assemblies at our Cherlapally facility." },
-      { title: "Site O&M & NOC", description: "Preventive and corrective site maintenance, 24/7 network operations center support, and SLA-backed response." },
+      { icon: RadioTower, title: "Telecom Towers (GBT & RTT)", description: "Ground-based and rooftop tower design, fabrication, erection, and commissioning for macro and small-cell deployments." },
+      { icon: Cable, title: "Optical Fiber Cabling (OFC)", description: "Underground and aerial OFC execution, splicing, OTDR testing, and last-mile connectivity for BharatNet and private fiber." },
+      { icon: Network, title: "Active Network Integration", description: "BTS/BBU/RRU installation, microwave link commissioning, antenna alignment, and RAN integration." },
+      { icon: BatteryCharging, title: "Power & Battery Backup", description: "SMPS systems, VRLA/Li-ion battery banks, DG integration, and hybrid solar-diesel solutions for remote sites." },
+      { icon: CircuitBoard, title: "Base Station Electronics (EMS)", description: "In-house manufacturing of antenna controllers, network management units, and telecom sub-assemblies at our Cherlapally facility." },
+      { icon: MonitorDot, title: "Site O&M & NOC", description: "Preventive and corrective site maintenance, 24/7 network operations center support, and SLA-backed response." },
     ],
     projects: [
       { title: "BharatNet Phase III", location: "Multi-State", value: "$12M", description: "OFC laying and last-mile connectivity across 1,500+ gram panchayats under BharatNet Phase III." },
@@ -284,12 +330,12 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
       { value: "24/7", label: "Construction Mode" },
     ],
     services: [
-      { title: "Refinery Allied Works", description: "Civil, structural, piping, and tankage works supporting refinery turnarounds, expansions, and brownfield upgrades." },
-      { title: "Cross-Country Pipelines", description: "Oil, gas, and product pipeline construction including trenching, welding, coating, hydro-testing, and commissioning." },
-      { title: "Storage Terminals", description: "Above-ground storage tanks (AST), cryogenic storage, bunds, fire-protection systems, and terminal automation." },
-      { title: "LNG Terminal Support", description: "Civil and balance-of-plant works for LNG receiving terminals, regasification units, and send-out systems." },
-      { title: "Process Packages", description: "Modular process package construction, skid integration, and mechanical completion for downstream operators." },
-      { title: "Instrumentation & Automation", description: "SCADA, DCS, leak-detection, pipeline integrity monitoring, and asset-management systems." },
+      { icon: Factory, title: "Refinery Allied Works", description: "Civil, structural, piping, and tankage works supporting refinery turnarounds, expansions, and brownfield upgrades." },
+      { icon: Waypoints, title: "Cross-Country Pipelines", description: "Oil, gas, and product pipeline construction including trenching, welding, coating, hydro-testing, and commissioning." },
+      { icon: Container, title: "Storage Terminals", description: "Above-ground storage tanks (AST), cryogenic storage, bunds, fire-protection systems, and terminal automation." },
+      { icon: Ship, title: "LNG Terminal Support", description: "Civil and balance-of-plant works for LNG receiving terminals, regasification units, and send-out systems." },
+      { icon: Package, title: "Process Packages", description: "Modular process package construction, skid integration, and mechanical completion for downstream operators." },
+      { icon: Gauge, title: "Instrumentation & Automation", description: "SCADA, DCS, leak-detection, pipeline integrity monitoring, and asset-management systems." },
     ],
     projects: [
       { title: "Refinery Piping Package", location: "Western India", value: "$22M", description: "Piping and structural works for a brownfield refinery upgrade including 400+ tonnes of fabrication." },
@@ -318,7 +364,7 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
     heroDescription:
       "Mining operations, balance-of-plant engineering, and infrastructure construction for India's coal, mineral, and metal mining sector.",
     color: "#92400E",
-    image: "/images/sectors/manufacturing.webp",
+    image: "/images/sectors/mining.webp",
     overview: [
       "Manah Group supports India's mining industry with construction of mine infrastructure, mineral processing plants, overburden removal, and allied civil works. We serve coal, iron-ore, limestone, and non-ferrous metal operators with EPC scope covering civil foundations, crushing and screening plants, conveying systems, and mine support structures.",
       "Our integrated approach combines heavy civil construction with electrical and automation capabilities — enabling single-source delivery for greenfield mines, capacity expansions, and mine closure programs.",
@@ -332,12 +378,12 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
       { value: "Full EPC", label: "Scope" },
     ],
     services: [
-      { title: "Mine Infrastructure", description: "Haul roads, workshops, administrative buildings, labor colonies, and weighbridges for greenfield and brownfield mines." },
-      { title: "Mineral Processing Plants", description: "Crushing, screening, beneficiation, and washery plant construction with EPC-scope civil, mechanical, and electrical." },
-      { title: "Overburden & Conveyors", description: "Overburden removal works, in-pit crushing-and-conveying systems, overland belt conveyors, and stacker-reclaimers." },
-      { title: "Tailings & Water Management", description: "Tailings storage facilities, water treatment, mine dewatering, and discharge management infrastructure." },
-      { title: "Mine Electricals & Automation", description: "Substation construction, MV/LV distribution, SCADA for production tracking, and mine-wide IIoT instrumentation." },
-      { title: "Mine Closure & Reclamation", description: "Slope stabilization, revegetation, water-body restoration, and long-term reclamation plans." },
+      { icon: HardHat, title: "Mine Infrastructure", description: "Haul roads, workshops, administrative buildings, labor colonies, and weighbridges for greenfield and brownfield mines." },
+      { icon: Factory, title: "Mineral Processing Plants", description: "Crushing, screening, beneficiation, and washery plant construction with EPC-scope civil, mechanical, and electrical." },
+      { icon: Truck, title: "Overburden & Conveyors", description: "Overburden removal works, in-pit crushing-and-conveying systems, overland belt conveyors, and stacker-reclaimers." },
+      { icon: Droplets, title: "Tailings & Water Management", description: "Tailings storage facilities, water treatment, mine dewatering, and discharge management infrastructure." },
+      { icon: Cpu, title: "Mine Electricals & Automation", description: "Substation construction, MV/LV distribution, SCADA for production tracking, and mine-wide IIoT instrumentation." },
+      { icon: Sprout, title: "Mine Closure & Reclamation", description: "Slope stabilization, revegetation, water-body restoration, and long-term reclamation plans." },
     ],
     projects: [
       { title: "Coal Washery Expansion", location: "Eastern India", value: "$18M", description: "Brownfield expansion of a 3 MTPA coal washery including civil, mechanical, and conveyor works." },
@@ -366,7 +412,7 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
     heroDescription:
       "Water treatment, irrigation systems, and urban water infrastructure — ensuring clean water supply and efficient water management for agriculture and communities.",
     color: "#0891B2",
-    image: "/images/sectors/infrastructure.webp",
+    image: "/images/sectors/irrigation_water.webp",
     overview: [
       "Manah Group delivers water and irrigation infrastructure for state governments, municipal bodies, and industrial clients. Scope spans drinking water supply schemes, lift-irrigation systems, canal networks, water-treatment plants, and sewage-treatment plants — supporting India's Jal Jeevan Mission and urban water security goals.",
       "We combine heavy civil construction, mechanical-hydraulic engineering, and electrical-automation to deliver end-to-end water infrastructure with operator training, O&M, and long-term performance guarantees.",
@@ -380,12 +426,12 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
       { value: "Full EPC", label: "Scope" },
     ],
     services: [
-      { title: "Drinking Water Supply", description: "Bulk water supply schemes, intake structures, treatment plants, and distribution networks for urban and rural coverage." },
-      { title: "Water Treatment Plants (WTP)", description: "Conventional and advanced WTPs including coagulation, filtration, disinfection, membrane processes, and sludge management." },
-      { title: "Sewage Treatment (STP)", description: "STP design and construction using SBR, MBBR, and MBR technologies with treated water reuse for irrigation and industry." },
-      { title: "Lift Irrigation Systems", description: "Pump stations, rising mains, delivery networks, and field-level distribution for agricultural water supply." },
-      { title: "Canal & Distributary Networks", description: "Main canal, distributary, and minor canal construction including lining, cross-regulators, and automation." },
-      { title: "SCADA & Water Automation", description: "Flow monitoring, leak detection, pressure management, and SCADA-based water-distribution control for NRW reduction." },
+      { icon: Droplet, title: "Drinking Water Supply", description: "Bulk water supply schemes, intake structures, treatment plants, and distribution networks for urban and rural coverage." },
+      { icon: Filter, title: "Water Treatment Plants (WTP)", description: "Conventional and advanced WTPs including coagulation, filtration, disinfection, membrane processes, and sludge management." },
+      { icon: Recycle, title: "Sewage Treatment (STP)", description: "STP design and construction using SBR, MBBR, and MBR technologies with treated water reuse for irrigation and industry." },
+      { icon: Sprout, title: "Lift Irrigation Systems", description: "Pump stations, rising mains, delivery networks, and field-level distribution for agricultural water supply." },
+      { icon: Waves, title: "Canal & Distributary Networks", description: "Main canal, distributary, and minor canal construction including lining, cross-regulators, and automation." },
+      { icon: Gauge, title: "SCADA & Water Automation", description: "Flow monitoring, leak detection, pressure management, and SCADA-based water-distribution control for NRW reduction." },
     ],
     projects: [
       { title: "100 MLD Water Treatment Plant", location: "Hyderabad, India", value: "$30M", description: "Advanced water treatment facility with multi-stage filtration serving 500,000 urban residents." },
@@ -428,12 +474,12 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
       { value: "Renewable", label: "Firming & Peak Shaving" },
     ],
     services: [
-      { title: "Battery Energy Storage Systems", description: "Turnkey utility-scale BESS — battery container integration, thermal management, and safety systems for renewable firming and grid support." },
-      { title: "Power Conversion & Interconnection", description: "Bidirectional inverters, transformers, and switchgear for grid-tied storage, with protection coordination and interconnection compliance." },
-      { title: "SCADA & Automation", description: "Substation and plant SCADA, RTUs, and communication networks for real-time supervision, control, and data acquisition." },
-      { title: "Energy Management Systems", description: "EMS software for dispatch optimisation, state-of-charge management, and automated participation in ancillary-service markets." },
-      { title: "Grid Stabilisation Services", description: "Frequency regulation, peak shaving, load shifting, and black-start support to stabilise renewable-heavy networks." },
-      { title: "O&M & Performance Monitoring", description: "Predictive maintenance, battery-health analytics, and SLA-backed monitoring across the asset lifecycle." },
+      { icon: BatteryCharging, title: "Battery Energy Storage Systems", description: "Turnkey utility-scale BESS — battery container integration, thermal management, and safety systems for renewable firming and grid support." },
+      { icon: PlugZap, title: "Power Conversion & Interconnection", description: "Bidirectional inverters, transformers, and switchgear for grid-tied storage, with protection coordination and interconnection compliance." },
+      { icon: MonitorDot, title: "SCADA & Automation", description: "Substation and plant SCADA, RTUs, and communication networks for real-time supervision, control, and data acquisition." },
+      { icon: Gauge, title: "Energy Management Systems", description: "EMS software for dispatch optimisation, state-of-charge management, and automated participation in ancillary-service markets." },
+      { icon: Activity, title: "Grid Stabilisation Services", description: "Frequency regulation, peak shaving, load shifting, and black-start support to stabilise renewable-heavy networks." },
+      { icon: LineChart, title: "O&M & Performance Monitoring", description: "Predictive maintenance, battery-health analytics, and SLA-backed monitoring across the asset lifecycle." },
     ],
     projects: [
       { title: "Renewable Firming BESS", location: "India", value: "Grid-Scale", description: "Battery storage co-located with a renewable park for round-the-clock dispatch and grid firming." },
@@ -476,12 +522,12 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
       { value: "Community", label: "Focused" },
     ],
     services: [
-      { title: "Emergency Operations Centres", description: "Design and construction of command-and-control centres with communication, monitoring, and coordination infrastructure." },
-      { title: "Early-Warning & Communication Networks", description: "Sensor networks, alert systems, and resilient communication links for timely hazard detection and public warning." },
-      { title: "Resilient Infrastructure", description: "Hazard-resistant civil infrastructure engineered to withstand seismic, flood, and extreme-weather events." },
-      { title: "Preparedness Training", description: "Drills, simulation exercises, and capability-building programs for response teams and institutions." },
-      { title: "Crisis Coordination Systems", description: "Incident-management platforms, mobile command units, and inter-agency coordination tools for organised response." },
-      { title: "Recovery & Reconstruction", description: "Post-disaster damage assessment, rehabilitation, and reconstruction of critical infrastructure and services." },
+      { icon: Building2, title: "Emergency Operations Centres", description: "Design and construction of command-and-control centres with communication, monitoring, and coordination infrastructure." },
+      { icon: BellRing, title: "Early-Warning & Communication Networks", description: "Sensor networks, alert systems, and resilient communication links for timely hazard detection and public warning." },
+      { icon: ShieldCheck, title: "Resilient Infrastructure", description: "Hazard-resistant civil infrastructure engineered to withstand seismic, flood, and extreme-weather events." },
+      { icon: GraduationCap, title: "Preparedness Training", description: "Drills, simulation exercises, and capability-building programs for response teams and institutions." },
+      { icon: Network, title: "Crisis Coordination Systems", description: "Incident-management platforms, mobile command units, and inter-agency coordination tools for organised response." },
+      { icon: Hammer, title: "Recovery & Reconstruction", description: "Post-disaster damage assessment, rehabilitation, and reconstruction of critical infrastructure and services." },
     ],
     projects: [
       { title: "Emergency Operations Centre", location: "India", value: "Turnkey EPC", description: "Command-and-control facility with integrated communication, monitoring, and coordination systems." },

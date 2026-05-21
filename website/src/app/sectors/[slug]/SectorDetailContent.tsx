@@ -214,7 +214,7 @@ export default function SectorDetailContent({ slug }: { slug: string }) {
                   className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
                   style={{ backgroundColor: `${sector.color}15` }}
                 >
-                  <CheckCircle2
+                  <service.icon
                     className="w-5 h-5"
                     style={{ color: sector.color }}
                   />

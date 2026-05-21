@@ -61,7 +61,7 @@ const SECTORS = [
     description: "Water treatment, lift irrigation, canal networks, and sewage treatment — aligned with Jal Jeevan Mission and urban water security.",
     color: "#0891B2",
     highlights: ["Water Treatment (WTP)", "Sewage Treatment (STP)", "Lift Irrigation", "SCADA Automation"],
-    image: "/images/sectors/infrastructure.webp",
+    image: "/images/sectors/irrigation_water.webp",
   },
   {
     icon: Pickaxe,
@@ -70,7 +70,7 @@ const SECTORS = [
     description: "Mine infrastructure, mineral processing plants, overburden removal, and overland conveyors for coal, iron ore, and non-ferrous operators.",
     color: "#92400E",
     highlights: ["Mine Infrastructure", "Processing Plants", "Conveyor Systems", "Mine Closure"],
-    image: "/images/sectors/manufacturing.webp",
+    image: "/images/sectors/mining.webp",
   },
   {
     icon: Flame,
