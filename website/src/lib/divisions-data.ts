@@ -3,6 +3,40 @@
    Complete content for each business division page
    ═══════════════════════════════════════════════════════════ */
 
+import type { LucideIcon } from "lucide-react";
+import {
+  Atom,
+  BatteryCharging,
+  Bot,
+  BrainCircuit,
+  Briefcase,
+  Building,
+  Building2,
+  CircuitBoard,
+  ClipboardCheck,
+  Cog,
+  Container,
+  Cpu,
+  Droplets,
+  Factory,
+  Gauge,
+  GraduationCap,
+  Handshake,
+  Leaf,
+  Lightbulb,
+  Orbit,
+  RadioTower,
+  Rocket,
+  Server,
+  Shield,
+  ShieldCheck,
+  Sparkles,
+  Sun,
+  Workflow,
+  Wrench,
+  Zap,
+} from "lucide-react";
+
 export interface DivisionDetail {
   id: string;
   name: string;
@@ -12,7 +46,7 @@ export interface DivisionDetail {
   gradient: string;
   overview: string[];
   keyStats: { value: string; label: string }[];
-  services: { title: string; description: string }[];
+  services: { title: string; description: string; icon: LucideIcon }[];
   sectors: { name: string; image: string; description: string }[];
   certifications: string[];
   cta: { text: string; href: string };
@@ -47,14 +81,14 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
       { value: "1M+", label: "Products / Year" },
     ],
     services: [
-      { title: "Power Transmission & Distribution", description: "Design, supply, and construction of 66kV to 765kV overhead transmission lines, AIS/GIS substations, and smart grid infrastructure including BESS and SCADA systems." },
-      { title: "Building, Roads & Civil Infrastructure", description: "Roads, bridges, industrial buildings, residential complexes, and urban infrastructure executed to international safety and quality standards." },
-      { title: "Telecom Infrastructure", description: "Telecom tower rollout, BharatNet fiber execution, optical fiber cabling, and passive/active network infrastructure for state and central programs." },
-      { title: "Renewable Energy & Mining", description: "Utility-scale solar, wind, and hybrid power plant EPC, plus mining infrastructure and balance-of-plant execution." },
-      { title: "Oil & Gas, Irrigation & Water", description: "Downstream oil & gas processing works, refinery allied construction, pipeline execution, and water treatment, irrigation, and disaster management infrastructure." },
-      { title: "Defence & BESS/SCADA", description: "Defence systems and networks, battery energy storage system (BESS) integration, and SCADA automation for utility and industrial applications." },
-      { title: "Smart Metering & M&A", description: "DTC smart meter deployment, AMI infrastructure, O&M services for power and generation assets, and strategic mergers & acquisitions advisory." },
-      { title: "Electronics Manufacturing Services (EMS)", description: "30,000 sq ft Cherlapally facility delivering PCB assembly, SMT box build, and system integration for Smart Meters, EV Chargers, and Defence RF Systems — MIL-STD and JSS compliant." },
+      { icon: Zap, title: "Power Transmission & Distribution", description: "Design, supply, and construction of 66kV to 765kV overhead transmission lines, AIS/GIS substations, and smart grid infrastructure including BESS and SCADA systems." },
+      { icon: Building2, title: "Building, Roads & Civil Infrastructure", description: "Roads, bridges, industrial buildings, residential complexes, and urban infrastructure executed to international safety and quality standards." },
+      { icon: RadioTower, title: "Telecom Infrastructure", description: "Telecom tower rollout, BharatNet fiber execution, optical fiber cabling, and passive/active network infrastructure for state and central programs." },
+      { icon: Sun, title: "Renewable Energy & Mining", description: "Utility-scale solar, wind, and hybrid power plant EPC, plus mining infrastructure and balance-of-plant execution." },
+      { icon: Droplets, title: "Oil & Gas, Irrigation & Water", description: "Downstream oil & gas processing works, refinery allied construction, pipeline execution, and water treatment, irrigation, and disaster management infrastructure." },
+      { icon: Shield, title: "Defence & BESS/SCADA", description: "Defence systems and networks, battery energy storage system (BESS) integration, and SCADA automation for utility and industrial applications." },
+      { icon: Gauge, title: "Smart Metering & M&A", description: "DTC smart meter deployment, AMI infrastructure, O&M services for power and generation assets, and strategic mergers & acquisitions advisory." },
+      { icon: CircuitBoard, title: "Electronics Manufacturing Services (EMS)", description: "30,000 sq ft Cherlapally facility delivering PCB assembly, SMT box build, and system integration for Smart Meters, EV Chargers, and Defence RF Systems — MIL-STD and JSS compliant." },
     ],
     sectors: [
       { name: "Power T&D", image: "/images/sectors/power_transmission.webp", description: "EHV/HV transmission lines up to 765 kV and substation infrastructure across 15+ states." },
@@ -121,9 +155,9 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
       { value: "Full Spectrum", label: "MRO Capabilities" },
     ],
     services: [
-      { title: "Aircraft Maintenance (MRO)", description: "DGCA-certified business jet maintenance for light and midsize jets — customized maintenance programs, parts procurement, quality control, and airworthiness management." },
-      { title: "Aviation Training (CAR 147)", description: "DGCA-approved Level III training for Embraer and ATR aircraft types, plus Level I & II foundational training and regulatory courses for aviation professionals." },
-      { title: "Aviation Consultancy", description: "Aircraft acquisition advisory, fleet analysis and research, regulatory compliance guidance, and operational efficiency advisory for operators and investors." },
+      { icon: Wrench, title: "Aircraft Maintenance (MRO)", description: "DGCA-certified business jet maintenance for light and midsize jets — customized maintenance programs, parts procurement, quality control, and airworthiness management." },
+      { icon: GraduationCap, title: "Aviation Training (CAR 147)", description: "DGCA-approved Level III training for Embraer and ATR aircraft types, plus Level I & II foundational training and regulatory courses for aviation professionals." },
+      { icon: ClipboardCheck, title: "Aviation Consultancy", description: "Aircraft acquisition advisory, fleet analysis and research, regulatory compliance guidance, and operational efficiency advisory for operators and investors." },
     ],
     sectors: [],
     certifications: ["DGCA CAR 145", "San Marino CAR 145", "CAR 147", "ISO 9001:2015"],
@@ -169,12 +203,12 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
       { value: "1", label: "Production Site" },
     ],
     services: [
-      { title: "Green Hydrogen Production", description: "Large-scale green hydrogen plants using renewable power — serving refineries, fertilizer plants, and industrial consumers." },
-      { title: "Electrolyzer Manufacturing", description: "Assembly and integration of PEM and Alkaline electrolyzers with localized content meeting national and international regulatory standards." },
-      { title: "Renewable Energy Parks", description: "Development of dedicated solar and wind parks for captive hydrogen production with grid optimization." },
-      { title: "Hydrogen Storage & Transport", description: "Compressed and liquid hydrogen storage solutions, pipeline infrastructure, and tube trailer logistics." },
-      { title: "Fuel Cell Solutions", description: "Hydrogen fuel cell systems for stationary power, material handling equipment, and commercial vehicle applications." },
-      { title: "Carbon Advisory", description: "Carbon credit generation, ESG reporting support, and sustainability roadmap development for industrial clients." },
+      { icon: Factory, title: "Green Hydrogen Production", description: "Large-scale green hydrogen plants using renewable power — serving refineries, fertilizer plants, and industrial consumers." },
+      { icon: Cog, title: "Electrolyzer Manufacturing", description: "Assembly and integration of PEM and Alkaline electrolyzers with localized content meeting national and international regulatory standards." },
+      { icon: Sun, title: "Renewable Energy Parks", description: "Development of dedicated solar and wind parks for captive hydrogen production with grid optimization." },
+      { icon: Container, title: "Hydrogen Storage & Transport", description: "Compressed and liquid hydrogen storage solutions, pipeline infrastructure, and tube trailer logistics." },
+      { icon: BatteryCharging, title: "Fuel Cell Solutions", description: "Hydrogen fuel cell systems for stationary power, material handling equipment, and commercial vehicle applications." },
+      { icon: Leaf, title: "Carbon Advisory", description: "Carbon credit generation, ESG reporting support, and sustainability roadmap development for industrial clients." },
     ],
     sectors: [
       { name: "Green Hydrogen", image: "/images/sectors/green_hydrogen.webp", description: "Large-scale green hydrogen production powering net-zero ambitions." },
@@ -225,10 +259,10 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
       { value: "IAEA & AERB", label: "Safety Standards" },
     ],
     services: [
-      { title: "Small Modular Reactors (SMR)", description: "Deployment and integration of next-generation small modular reactor technology, offering scalable, factory-built nuclear capacity for industrial and grid-scale applications." },
-      { title: "Advanced Nuclear Fuel Cycle", description: "End-to-end fuel cycle engineering — from fuel design and fabrication support through spent-fuel management aligned with national and international safeguards." },
-      { title: "Reactor Safety & Compliance", description: "Safety case development, probabilistic safety assessment, regulatory liaison, and compliance with AERB, IAEA, and international reactor safety standards." },
-      { title: "Clean Energy Transition Advisory", description: "Strategic advisory for industrial decarbonization pathways integrating nuclear baseload with renewables, hydrogen, and grid storage." },
+      { icon: Atom, title: "Small Modular Reactors (SMR)", description: "Deployment and integration of next-generation small modular reactor technology, offering scalable, factory-built nuclear capacity for industrial and grid-scale applications." },
+      { icon: Orbit, title: "Advanced Nuclear Fuel Cycle", description: "End-to-end fuel cycle engineering — from fuel design and fabrication support through spent-fuel management aligned with national and international safeguards." },
+      { icon: ShieldCheck, title: "Reactor Safety & Compliance", description: "Safety case development, probabilistic safety assessment, regulatory liaison, and compliance with AERB, IAEA, and international reactor safety standards." },
+      { icon: Lightbulb, title: "Clean Energy Transition Advisory", description: "Strategic advisory for industrial decarbonization pathways integrating nuclear baseload with renewables, hydrogen, and grid storage." },
     ],
     sectors: [],
     certifications: ["AERB Compliance (in progress)", "IAEA Safeguards Aligned", "ISO 9001:2015"],
@@ -274,12 +308,12 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
       { value: "India-Native", label: "AI Capability" },
     ],
     services: [
-      { title: "Agentic AI Systems", description: "Design and deployment of autonomous, tool-using AI agents for enterprise workflow automation, decision support, and operational intelligence." },
-      { title: "LLM & SLM Training", description: "End-to-end large and small language model training, fine-tuning, and continual learning pipelines — tailored to domain, language, and regulatory context." },
-      { title: "Generative AI Applications", description: "Production-grade generative AI products spanning content, code, design, document processing, and multi-modal interfaces for enterprise and public sector use cases." },
-      { title: "Data Center Infrastructure", description: "Purpose-built AI data centers engineered for high-density GPU compute, liquid cooling, and power-efficient operation — supporting training and inference at scale." },
-      { title: "Sovereign AI Compute", description: "Dedicated compute capacity for government, defence, and regulated industries with full data residency, auditability, and security controls." },
-      { title: "AI Consulting & Integration", description: "Strategic AI roadmap, model evaluation, MLOps, and system integration services for organizations operationalizing AI at scale." },
+      { icon: Bot, title: "Agentic AI Systems", description: "Design and deployment of autonomous, tool-using AI agents for enterprise workflow automation, decision support, and operational intelligence." },
+      { icon: BrainCircuit, title: "LLM & SLM Training", description: "End-to-end large and small language model training, fine-tuning, and continual learning pipelines — tailored to domain, language, and regulatory context." },
+      { icon: Sparkles, title: "Generative AI Applications", description: "Production-grade generative AI products spanning content, code, design, document processing, and multi-modal interfaces for enterprise and public sector use cases." },
+      { icon: Server, title: "Data Center Infrastructure", description: "Purpose-built AI data centers engineered for high-density GPU compute, liquid cooling, and power-efficient operation — supporting training and inference at scale." },
+      { icon: Cpu, title: "Sovereign AI Compute", description: "Dedicated compute capacity for government, defence, and regulated industries with full data residency, auditability, and security controls." },
+      { icon: Workflow, title: "AI Consulting & Integration", description: "Strategic AI roadmap, model evaluation, MLOps, and system integration services for organizations operationalizing AI at scale." },
     ],
     sectors: [
       { name: "Enterprise AI", image: "/images/sectors/industrial_iot.webp", description: "Agentic systems and generative AI deployed across business operations and decision workflows." },
@@ -330,12 +364,12 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
       { value: "$2B+", label: "Co-Investment Mobilized" },
     ],
     services: [
-      { title: "Infrastructure Private Equity", description: "Direct equity investments in infrastructure projects including power, roads, logistics, and urban development across emerging and developed markets." },
-      { title: "Energy Transition Fund", description: "Dedicated capital allocation for renewable energy, green hydrogen, battery storage, and clean mobility ventures." },
-      { title: "Technology Ventures", description: "Early to growth-stage investments in deep tech, industrial IoT, defence technology, and advanced manufacturing startups." },
-      { title: "Real Estate Development", description: "Strategic investments in commercial, industrial, and mixed-use real estate projects in high-growth corridors." },
-      { title: "Joint Ventures & Partnerships", description: "Structured JVs with global technology partners and industry leaders for market entry and capability building." },
-      { title: "Advisory & Asset Management", description: "Investment advisory services and fund management for institutional investors seeking exposure to global infrastructure growth." },
+      { icon: Building2, title: "Infrastructure Private Equity", description: "Direct equity investments in infrastructure projects including power, roads, logistics, and urban development across emerging and developed markets." },
+      { icon: Leaf, title: "Energy Transition Fund", description: "Dedicated capital allocation for renewable energy, green hydrogen, battery storage, and clean mobility ventures." },
+      { icon: Rocket, title: "Technology Ventures", description: "Early to growth-stage investments in deep tech, industrial IoT, defence technology, and advanced manufacturing startups." },
+      { icon: Building, title: "Real Estate Development", description: "Strategic investments in commercial, industrial, and mixed-use real estate projects in high-growth corridors." },
+      { icon: Handshake, title: "Joint Ventures & Partnerships", description: "Structured JVs with global technology partners and industry leaders for market entry and capability building." },
+      { icon: Briefcase, title: "Advisory & Asset Management", description: "Investment advisory services and fund management for institutional investors seeking exposure to global infrastructure growth." },
     ],
     sectors: [
       { name: "Infrastructure", image: "/images/sectors/infrastructure.webp", description: "Direct equity in power, roads, logistics, and urban development." },

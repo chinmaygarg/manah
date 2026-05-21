@@ -16,7 +16,6 @@ import FaqSection from "@/components/sections/FaqSection";
 import { DIVISION_DETAILS } from "@/lib/divisions-data";
 import {
   ArrowRight,
-  CheckCircle2,
   ChevronRight,
   Shield,
 } from "lucide-react";
@@ -274,7 +273,7 @@ export default function DivisionDetailContent({ slug }: { slug: string }) {
                           className="w-10 h-10 rounded-lg flex items-center justify-center"
                           style={{ backgroundColor: `${division.color}15` }}
                         >
-                          <CheckCircle2 className="w-5 h-5" style={{ color: division.color }} />
+                          <service.icon className="w-5 h-5" style={{ color: division.color }} />
                         </div>
                         <h3 className="font-display text-heading-lg font-semibold text-manah-navy">
                           {service.title}
@@ -305,7 +304,7 @@ export default function DivisionDetailContent({ slug }: { slug: string }) {
                     className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
                     style={{ backgroundColor: `${division.color}15` }}
                   >
-                    <CheckCircle2 className="w-5 h-5" style={{ color: division.color }} />
+                    <service.icon className="w-5 h-5" style={{ color: division.color }} />
                   </div>
                   <h3 className="font-display text-heading-md font-semibold text-manah-navy mb-2">
                     {service.title}
