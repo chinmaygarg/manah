@@ -225,7 +225,7 @@ export default function AboutContent() {
                   The world is racing to modernise — smart cities, energy transition, transport networks, and industrial corridors. Across emerging and developed economies alike, governments are committing record capital to close the infrastructure deficit.
                 </p>
                 <p>
-                  The challenge? Delivering complex, large-scale projects on time, on budget, and to international standards. With a proven track record across 10 sectors and a vision rooted in sustainable, technology-led execution — Manah Group was built for exactly this.
+                  The challenge? Delivering complex, large-scale projects on time, on budget, and to international standards. With a proven track record across 11 sectors and a vision rooted in sustainable, technology-led execution — Manah Group was built for exactly this.
                 </p>
               </div>
             </motion.div>

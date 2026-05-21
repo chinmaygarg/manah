@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { fadeUp, staggerContainer, scaleIn } from "@/lib/animations";
 import SectionHeading from "@/components/ui/SectionHeading";
 import MotionSection from "@/components/animations/MotionSection";
-import { ArrowRight, Zap, Sun, Building2, Shield, Radio, Flame, Pickaxe, Droplets, BatteryCharging, Siren } from "lucide-react";
+import { ArrowRight, Zap, Sun, Building2, Shield, Radio, Flame, Pickaxe, Droplets, BatteryCharging, Cpu, Siren } from "lucide-react";
 
 const SECTORS = [
   {
@@ -38,12 +38,21 @@ const SECTORS = [
   },
   {
     icon: BatteryCharging,
-    slug: "bess-scada",
-    title: "BESS / SCADA",
-    description: "Grid-scale battery energy storage systems and SCADA automation — stabilising renewable-heavy grids with real-time monitoring, control, and dispatch.",
+    slug: "energy-storage",
+    title: "Energy Storage",
+    description: "Grid-scale battery energy storage — renewable firming, peak shaving, and frequency regulation that keep modern grids stable around the clock.",
     color: "#0D9488",
-    highlights: ["Battery Energy Storage", "SCADA & Automation", "Grid Stabilisation", "Real-Time Monitoring"],
-    image: "/images/sectors/bess_scada.webp",
+    highlights: ["Utility-Scale BESS", "Power Conversion", "Grid Stabilisation", "Energy Management"],
+    image: "/images/sectors/energy_storage.webp",
+  },
+  {
+    icon: Cpu,
+    slug: "industrial-automation",
+    title: "Industrial Automation",
+    description: "SCADA, process control, and telemetry — real-time monitoring and automated control across substations, water schemes, and process plants.",
+    color: "#4F46E5",
+    highlights: ["SCADA & RTUs", "PLC / DCS Control", "Telemetry & IIoT", "OT Cybersecurity"],
+    image: "/images/sectors/industrial_automation.webp",
   },
   {
     icon: Shield,
@@ -135,7 +144,7 @@ export default function SectorsContent() {
               <span className="text-gradient-gold">Transform</span>
             </motion.h1>
             <motion.p variants={fadeUp} className="text-manah-gray-300 text-body-lg">
-              Deep sectoral expertise across power, renewables, defence, telecom, and water infrastructure — powering progress across 10 sectors.
+              Deep sectoral expertise across power, renewables, defence, telecom, and water infrastructure — powering progress across 11 sectors.
             </motion.p>
           </motion.div>
         </div>

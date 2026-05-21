@@ -25,7 +25,8 @@ End-market industries served, one detail page each:
 - [Oil & Gas](https://www.manah.com/sectors/oil-gas): Refinery allied works, pipelines and LNG terminal balance-of-plant.
 - [Mining](https://www.manah.com/sectors/mining): Mine infrastructure, mineral processing plants and conveying systems.
 - [Irrigation & Water](https://www.manah.com/sectors/irrigation-water): Water and sewage treatment, lift irrigation and canal networks.
-- [BESS / SCADA](https://www.manah.com/sectors/bess-scada): Grid-scale battery energy storage and SCADA automation.
+- [Energy Storage](https://www.manah.com/sectors/energy-storage): Grid-scale battery energy storage (BESS) — renewable firming, peak shaving and frequency regulation.
+- [Industrial Automation](https://www.manah.com/sectors/industrial-automation): SCADA, process control and telemetry across substations, water schemes and process plants.
 - [Disaster Management](https://www.manah.com/sectors/disaster-management): Emergency response infrastructure and resilience programs.
 
 ## Key Pages

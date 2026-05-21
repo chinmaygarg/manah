@@ -27,7 +27,7 @@ export default function MegaMenuPanel({ item, onClose }: MegaMenuPanelProps) {
           ? "grid-cols-2 lg:grid-cols-4"
           : featuredItems.length <= 5
             ? "grid-cols-3 lg:grid-cols-5"
-            : "grid-cols-3";
+            : "grid-cols-3 lg:grid-cols-6";
 
   return (
     <motion.div

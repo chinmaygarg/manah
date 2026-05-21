@@ -46,6 +46,7 @@ const nextConfig: NextConfig = {
   },
   redirects: async () => [
     { source: "/divisions/technology", destination: "/divisions/ai", permanent: true },
+    { source: "/sectors/bess-scada", destination: "/sectors/energy-storage", permanent: true },
     { source: "/sectors/infrastructure", destination: "/sectors/building-roads", permanent: true },
     { source: "/sectors/green-hydrogen", destination: "/divisions/green-energy", permanent: true },
     { source: "/sectors/manufacturing", destination: "/divisions/dynamics", permanent: true },

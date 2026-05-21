@@ -193,7 +193,7 @@ const EMPANELMENTS = [
 const HERO_STATS = [
   { value: 50, suffix: "+", label: "Projects Delivered" },
   { value: 20000, prefix: "₹", suffix: "+ Cr", label: "Project Pipeline" },
-  { value: 10, suffix: "", label: "Sectors" },
+  { value: 11, suffix: "", label: "Sectors" },
   { value: 15, suffix: "+", label: "States Covered" },
 ];
 

@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
 Manah Group — New Sector Image Generator (Replicate / FLUX 2 Pro)
-Generates the two sector hero images added in the deck content sync:
-BESS/SCADA and Disaster Management.
+Generates the Energy Storage and Industrial Automation sector hero images
+created when the old "bess-scada" sector was split into two.
 
-Used because the Google Gemini image quota is exhausted. Outputs JPG straight
-to website/public/images/sectors/, then runs an optimize pass (cap long edge,
-recompress) so the source files stay web-weight.
+Outputs straight to website/public/images/sectors/ (format derived from each
+entry's filename extension), then runs an optimize pass (cap long edge,
+recompress) so the source files stay web-weight. Existing files are skipped.
 """
 
 import os
@@ -42,29 +42,27 @@ BRAND_STYLE = (
 
 SECTOR_IMAGES = [
     {
-        "id": "bess_scada",
-        "filename": "bess_scada.jpg",
+        "id": "energy_storage",
+        "filename": "energy_storage.webp",
         "prompt": (
             BRAND_STYLE +
-            "Utility-scale battery energy storage system at a grid substation — long rows of "
-            "containerised lithium-ion battery units in a fenced compound, connected to "
-            "high-voltage switchgear. A modern SCADA control room visible through glass, "
-            "operators monitoring large dashboards of real-time grid data. Dusk lighting, "
-            "deep navy sky, warm gold accent light on the equipment. Engineering precision "
-            "and clean-energy reliability."
+            "Utility-scale battery energy storage system at a renewable grid substation — "
+            "long rows of containerised lithium-ion battery units in a fenced compound, "
+            "connected to high-voltage switchgear and transformers. Solar panels and wind "
+            "turbines on the horizon. Dusk lighting, deep navy sky, warm gold accent light "
+            "on the equipment. Engineering precision and clean-energy reliability."
         ),
     },
     {
-        "id": "disaster_management",
-        "filename": "disaster_management.jpg",
+        "id": "industrial_automation",
+        "filename": "industrial_automation.webp",
         "prompt": (
             BRAND_STYLE +
-            "Professional disaster response and emergency training operation — coordinated "
-            "rescue teams in high-visibility gear, command-and-control vehicles, a mobile "
-            "operations centre with communication antennas and a deployed control tent. "
-            "Organised, calm-under-pressure atmosphere conveying readiness and resilience. "
-            "Dramatic overcast light with warm gold rescue-vehicle lighting against a "
-            "navy-toned scene."
+            "Modern industrial SCADA control room — operators monitoring a wall of large "
+            "dashboards showing real-time grid and process telemetry, plant schematics, and "
+            "data trends. Racks of control servers and RTU cabinets, fibre cabling, soft "
+            "screen glow. Deep navy ambient light with warm gold accent lighting. Precision, "
+            "real-time supervision, and operational reliability."
         ),
     },
 ]
@@ -83,7 +81,7 @@ def generate(img):
             input={
                 "prompt": img["prompt"],
                 "aspect_ratio": "16:9",
-                "output_format": "jpg",
+                "output_format": img["filename"].rsplit(".", 1)[-1].lower(),
                 "output_quality": 95,
                 "safety_tolerance": 2,
                 "steps": 30,
