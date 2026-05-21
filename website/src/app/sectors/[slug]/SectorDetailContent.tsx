@@ -13,6 +13,7 @@ import {
 } from "@/lib/animations";
 import MotionSection from "@/components/animations/MotionSection";
 import SectionHeading from "@/components/ui/SectionHeading";
+import FaqSection from "@/components/sections/FaqSection";
 import { SECTOR_DETAILS } from "@/lib/sectors-data";
 import {
   ArrowRight,
@@ -318,6 +319,15 @@ export default function SectorDetailContent({ slug }: { slug: string }) {
           </div>
         </div>
       </section>
+
+      {/* ─── FAQ (AEO) ─── */}
+      {sector.faqItems && sector.faqItems.length > 0 && (
+        <FaqSection
+          items={sector.faqItems}
+          description={`Common questions about Manah Group's ${sector.title} services and delivery.`}
+          className="bg-white"
+        />
+      )}
 
       {/* ─── CTA ─── */}
       <MotionSection className="section-padding bg-manah-gray-50">

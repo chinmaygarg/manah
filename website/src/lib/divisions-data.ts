@@ -21,6 +21,7 @@ export interface DivisionDetail {
     intro: string;
     phases: { title: string; description: string }[];
   };
+  faqItems?: { question: string; answer: string }[];
 }
 
 export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
@@ -79,6 +80,24 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
         { title: "After-Sales", description: "Repair, maintenance, and warranty management." },
       ],
     },
+    faqItems: [
+      {
+        question: "What does Manah Dynamics do?",
+        answer: "Manah Dynamics is the flagship EPC and manufacturing division of Manah Group, delivering turnkey project execution across power transmission, renewables, telecom, civil infrastructure, BESS/SCADA, oil & gas, irrigation and defence. It serves utilities, government agencies, and private developers across India with integrated design engineering, procurement, construction, and commissioning capabilities.",
+      },
+      {
+        question: "What services does Manah Dynamics provide?",
+        answer: "Manah Dynamics provides power transmission and distribution (66kV to 765kV lines and AIS/GIS substations), building, roads and civil infrastructure, telecom infrastructure including BharatNet fiber, renewable energy and mining EPC, oil & gas, irrigation and water works, defence and BESS/SCADA systems, smart metering and M&A advisory, and Electronics Manufacturing Services.",
+      },
+      {
+        question: "Where is Manah Group's electronics manufacturing facility located?",
+        answer: "Manah Group's Electronics Manufacturing Services business operates from a 30,000 sq ft facility at Cherlapally, Hyderabad. The facility runs 8+ SMT lines and produces over 1 million products per year, including Smart Energy Meters, Smart Water Meters, EV Chargers, Room Chargers, and Defence RF Systems.",
+      },
+      {
+        question: "What certifications and standards does Manah Dynamics hold?",
+        answer: "Manah Dynamics is certified to ISO 9001:2015, ISO 14001:2015, and ISO 45001:2018, and is CEA compliant. Its electronics manufacturing meets IPC-A-610 Class 3 and MIL-STD / JSS standards for defence and high-reliability products.",
+      },
+    ],
   },
 
   aerospace: {
@@ -109,6 +128,24 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
     sectors: [],
     certifications: ["DGCA CAR 145", "San Marino CAR 145", "CAR 147", "ISO 9001:2015"],
     cta: { text: "Explore Capabilities", href: "/capabilities" },
+    faqItems: [
+      {
+        question: "What does Manah Aerospace do?",
+        answer: "Manah Aerospace is the aviation arm of Manah Group, delivering DGCA-certified business jet maintenance, repair and overhaul (MRO) services specializing in light and midsize jets, alongside CAR 147 aviation training and aviation consultancy. It currently provides MRO services to 18+ aircraft across 6 locations in India.",
+      },
+      {
+        question: "What services does Manah Aerospace provide?",
+        answer: "Manah Aerospace provides aircraft maintenance (MRO) with customized maintenance programs, parts procurement, quality control and airworthiness management; CAR 147 aviation training including DGCA-approved Level III training for Embraer and ATR aircraft; and aviation consultancy covering aircraft acquisition advisory, fleet analysis, regulatory compliance, and operational efficiency.",
+      },
+      {
+        question: "Where is Manah Aerospace's MRO facility located?",
+        answer: "Manah Aerospace operates from a facility at Begumpet Airport, Hyderabad in partnership with AAI, and has an international partnership with Jet Aviation Dubai. Its MRO services span 6 locations — Hyderabad, Koppal, Ahmedabad, Bhubaneshwar, Chennai, and Bangalore — with planned expansion to Pune and Kolkata.",
+      },
+      {
+        question: "What certifications does Manah Aerospace hold?",
+        answer: "Manah Aerospace holds DGCA CAR 145 and San Marino CAR 145 certifications for aircraft maintenance, CAR 147 approval for aviation training, and ISO 9001:2015 certification.",
+      },
+    ],
   },
 
   "green-energy": {
@@ -147,6 +184,24 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
     ],
     certifications: ["ISO 9001:2015", "ISO 14001:2015", "BIS Standards", "MNRE Approved"],
     cta: { text: "Learn More", href: "/sustainability" },
+    faqItems: [
+      {
+        question: "What does Manah Green Energy do?",
+        answer: "Manah Green Energy is a wholly owned subsidiary of Manah Dynamics, pioneering green hydrogen production in India. Backed by an MoU with the Government of Madhya Pradesh, it is establishing a hydrogen production plant at Bina on 350 acres near the BPCL Bina Refinery, targeting 18,000 MTPA of green hydrogen across 4 production phases.",
+      },
+      {
+        question: "What services does Manah Green Energy provide?",
+        answer: "Manah Green Energy provides green hydrogen production, electrolyzer manufacturing of PEM and Alkaline electrolyzers, development of dedicated renewable energy parks, hydrogen storage and transport solutions, hydrogen fuel cell systems, and carbon advisory services including carbon credit generation and ESG reporting support.",
+      },
+      {
+        question: "Where is Manah Green Energy's hydrogen plant located?",
+        answer: "Manah Green Energy is building its green hydrogen production plant at Bina, Madhya Pradesh, on a 350-acre site near the BPCL Bina Refinery. The facility targets 18,000 MTPA of green hydrogen developed across four production phases.",
+      },
+      {
+        question: "What technology does Manah Green Energy use for hydrogen production?",
+        answer: "Manah Green Energy uses ARB and electrolysis-type hydrogen production, backed by strategic partnerships with multiple global technology partners for water-splitting and electrolysis. Its ₹5,000 Cr investment programme supports India's National Green Hydrogen Mission and Net Zero 2070 vision.",
+      },
+    ],
   },
 
   atomic: {
@@ -178,6 +233,24 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
     sectors: [],
     certifications: ["AERB Compliance (in progress)", "IAEA Safeguards Aligned", "ISO 9001:2015"],
     cta: { text: "Learn More", href: "/contact" },
+    faqItems: [
+      {
+        question: "What does Manah Atomic do?",
+        answer: "Manah Atomic is the nuclear energy division of Manah Group, focused on Small Modular Reactors (SMRs), advanced nuclear fuel cycle capability, reactor safety systems, and regulatory compliance. It positions Manah at the forefront of India's low-carbon, high-density baseload energy transition.",
+      },
+      {
+        question: "What services does Manah Atomic provide?",
+        answer: "Manah Atomic provides deployment and integration of Small Modular Reactors (SMRs), advanced nuclear fuel cycle engineering from fuel design through spent-fuel management, reactor safety and compliance services including probabilistic safety assessment and regulatory liaison, and clean energy transition advisory for industrial decarbonization.",
+      },
+      {
+        question: "What is the focus and scale of Manah Atomic's reactor technology?",
+        answer: "Manah Atomic focuses on Small Modular Reactors with unit capacity in the 50–300 MW range, offering scalable, factory-built nuclear capacity for industrial and grid-scale applications. The division supports India's target of 100 GW of nuclear capacity by 2047, backed by a ₹10,000 Cr investment plan.",
+      },
+      {
+        question: "What safety standards does Manah Atomic follow?",
+        answer: "Manah Atomic aligns its work with AERB, IAEA, and international reactor safety standards, with AERB compliance in progress and IAEA safeguards alignment in place. The division is also ISO 9001:2015 certified and pursues collaborations with global SMR technology providers and domestic nuclear programs.",
+      },
+    ],
   },
 
   ai: {
@@ -216,6 +289,24 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
     ],
     certifications: ["ISO 9001:2015", "ISO 27001 (in progress)", "DPDP Act Aligned"],
     cta: { text: "Request Demo", href: "/contact" },
+    faqItems: [
+      {
+        question: "What does Manah AI do?",
+        answer: "Manah AI is the artificial intelligence and compute infrastructure division of Manah Group, focused on agentic AI systems, LLM and SLM training pipelines, generative AI applications, and sovereign data center infrastructure. Its mission is to build India-native AI capability from research through deployment for enterprise, government, and defence use cases.",
+      },
+      {
+        question: "What services does Manah AI provide?",
+        answer: "Manah AI provides agentic AI systems for workflow automation, end-to-end LLM and SLM training and fine-tuning, production-grade generative AI applications, purpose-built data center infrastructure, sovereign AI compute for regulated industries, and AI consulting and integration services including AI roadmap, model evaluation, and MLOps.",
+      },
+      {
+        question: "What is sovereign AI compute at Manah AI?",
+        answer: "Sovereign AI compute is Manah AI's dedicated compute capacity for government, defence, and regulated industries, delivered with full data residency, auditability, and security controls. It is backed by purpose-built data centers engineered for high-density GPU compute, liquid cooling, and power-efficient operation.",
+      },
+      {
+        question: "What standards and certifications does Manah AI follow?",
+        answer: "Manah AI is ISO 9001:2015 certified, with ISO 27001 certification in progress, and its systems are aligned with India's DPDP Act for data protection and privacy compliance.",
+      },
+    ],
   },
 
   investments: {
@@ -254,5 +345,23 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
     ],
     certifications: ["SEBI Registered", "DPIIT Recognized", "ISO 9001:2015", "ESG Compliant"],
     cta: { text: "Explore Opportunities", href: "/contact" },
+    faqItems: [
+      {
+        question: "What does Manah Investments do?",
+        answer: "Manah Investments is the strategic investment arm of Manah Group, focused on identifying, incubating, and scaling high-potential ventures across infrastructure, energy, and technology sectors. It manages a portfolio exceeding $500M and partners with entrepreneurs and institutions to build enterprises delivering both financial returns and lasting impact.",
+      },
+      {
+        question: "What services does Manah Investments provide?",
+        answer: "Manah Investments provides infrastructure private equity, an energy transition fund for renewables, green hydrogen and battery storage, technology venture investments in deep tech and defence technology, real estate development, structured joint ventures and partnerships, and advisory and asset management services for institutional investors.",
+      },
+      {
+        question: "How large is Manah Investments' portfolio?",
+        answer: "Manah Investments manages a portfolio valued at over $500M across 15+ active ventures spanning 4 focus verticals, with an average return multiple of 3x. The division works with 8+ strategic partners and has mobilized over $2B in co-investment.",
+      },
+      {
+        question: "What is Manah Investments' investment approach?",
+        answer: "Manah Investments follows an investment philosophy rooted in domain expertise, leveraging Manah Group's operational knowledge across EPC, aviation, green energy, and manufacturing to evaluate opportunities with an operator's eye. Beyond capital, it provides portfolio companies with strategic guidance, industry networks, and execution support. The division is SEBI registered, DPIIT recognized, ISO 9001:2015 certified, and ESG compliant.",
+      },
+    ],
   },
 };

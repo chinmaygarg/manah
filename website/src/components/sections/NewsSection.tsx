@@ -119,7 +119,7 @@ function HeroCard({ item }: { item: (typeof NEWS_ITEMS)[0] }) {
     <motion.div ref={cardRef} variants={heroCardVariants} className="h-full">
       <Link href={item.href} className="group block h-full">
         <motion.article
-          className="relative h-full min-h-[520px] lg:min-h-[600px] rounded-2xl overflow-hidden cursor-pointer"
+          className="relative h-full min-h-[420px] sm:min-h-[480px] lg:min-h-[600px] rounded-2xl overflow-hidden cursor-pointer"
           whileHover={{ y: -6 }}
           transition={{ duration: 0.4, ease: EASE_OUT_EXPO }}
         >
@@ -221,7 +221,7 @@ function StackedCard({
 
           {/* Category pill */}
           <motion.div className="absolute top-4 left-4 z-10" variants={pillVariants}>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/15 backdrop-blur-md border border-white/20 text-white text-[11px] font-semibold rounded-full">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/15 backdrop-blur-md border border-white/20 text-white text-caption font-semibold rounded-full">
               <span className="w-1.5 h-1.5 rounded-full bg-manah-gold animate-pulse" />
               {item.category}
             </span>
@@ -229,7 +229,7 @@ function StackedCard({
 
           {/* Text content */}
           <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-6 z-10">
-            <div className="flex items-center gap-2 text-[11px] text-white/60 mb-2">
+            <div className="flex items-center gap-2 text-caption text-white/60 mb-2">
               <Calendar className="w-3 h-3" />
               {item.date}
             </div>
@@ -238,7 +238,7 @@ function StackedCard({
               {item.title}
             </h3>
 
-            <div className="flex items-center gap-1.5 mt-3 text-manah-gold text-[13px] font-semibold opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+            <div className="flex items-center gap-1.5 mt-3 text-manah-gold text-body-sm font-semibold opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
               Read More
               <ArrowUpRight className="w-3.5 h-3.5" />
             </div>

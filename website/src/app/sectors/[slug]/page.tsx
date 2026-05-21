@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SECTOR_DETAILS } from "@/lib/sectors-data";
 import { SITE_CONFIG } from "@/lib/constants";
-import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/seo/JsonLd";
 import SectorDetailContent from "./SectorDetailContent";
 
 // ─── Static Params (pre-render every sector) ───
@@ -76,6 +76,15 @@ export default async function SectorPage({
           { name: sector.title, href: `/sectors/${slug}` },
         ]}
       />
+      <ServiceJsonLd
+        name={sector.title}
+        description={sector.heroDescription}
+        path={`/sectors/${slug}`}
+        services={sector.services}
+      />
+      {sector.faqItems && sector.faqItems.length > 0 && (
+        <FaqJsonLd items={sector.faqItems} />
+      )}
       <SectorDetailContent slug={slug} />
     </>
   );

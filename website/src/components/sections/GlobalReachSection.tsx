@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { MapPin, Globe, Users, Briefcase } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import MotionSection from "@/components/animations/MotionSection";
+import GridNetworkBackground from "@/components/animations/GridNetworkBackground";
 import ParallaxWrapper from "@/components/animations/ParallaxWrapper";
 import CounterAnimation from "@/components/animations/CounterAnimation";
 import WorldMap, { type MapLocation } from "@/components/ui/WorldMap";
@@ -28,18 +29,10 @@ const LOCATIONS: MapLocation[] = [
 export default function GlobalReachSection() {
   return (
     <section className="section-padding bg-manah-navy relative overflow-hidden">
-      {/* Dot grid overlay */}
-      <div className="absolute inset-0 opacity-5">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(200,169,110,0.3) 1px, transparent 0)`,
-            backgroundSize: "40px 40px",
-          }}
-        />
-      </div>
+      {/* Animated grid-network backdrop — echoes the global-footprint theme */}
+      <GridNetworkBackground />
 
-      <div className="section-container relative">
+      <div className="section-container relative z-10">
         <SectionHeading
           eyebrow="Global Footprint"
           title="Our Reach, Your Advantage"

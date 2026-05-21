@@ -25,6 +25,7 @@ export interface SectorDetail {
   projects: SectorProject[];
   process: { step: string; title: string; description: string }[];
   relatedDivisions: string[];
+  faqItems?: { question: string; answer: string }[];
 }
 
 export const SECTOR_DETAILS: Record<string, SectorDetail> = {
@@ -68,6 +69,12 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
       { step: "04", title: "Construction & Commissioning", description: "Foundation casting, tower erection, stringing, testing, and energization with real-time progress monitoring." },
     ],
     relatedDivisions: ["Manah Dynamics"],
+    faqItems: [
+      { question: "What power transmission and distribution services does Manah Group provide?", answer: "Manah Group provides end-to-end EPC services covering EHV transmission lines (220kV to 765kV), HV distribution lines (66kV to 132kV), AIS and GIS substations, underground cable systems, and grid modernization with SCADA. The scope includes route surveying, tower design and fabrication, foundation engineering, stringing, and commissioning." },
+      { question: "What voltage levels does Manah Group's transmission EPC cover?", answer: "Manah Group works across the full voltage spectrum, from 66kV distribution networks up to ultra-high-voltage 765kV transmission corridors. Its AIS substations are delivered up to 400kV." },
+      { question: "Which Manah division delivers power transmission projects?", answer: "Power transmission and distribution projects are delivered by Manah Dynamics, the Group's EPC division." },
+      { question: "How much transmission infrastructure has Manah Group built?", answer: "Manah Group has constructed over 3,000 km of transmission lines and erected more than 5,000 towers, built 50-plus substations across 15-plus states, and maintains 99.8% grid availability." },
+    ],
   },
 
   "renewable-energy": {
@@ -110,6 +117,12 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
       { step: "04", title: "O&M & Monitoring", description: "24/7 remote monitoring, preventive maintenance, performance analytics, and warranty management." },
     ],
     relatedDivisions: ["Manah Dynamics", "Manah Green Energy", "Manah Atomic"],
+    faqItems: [
+      { question: "What renewable energy services does Manah Group provide?", answer: "Manah Group provides utility-scale solar EPC from 10 MW to 500 MW-plus, turnkey onshore wind farm development, co-located solar-wind-storage hybrid plants, BESS integration, rooftop and C&I solar, and long-term O&M services for renewable assets." },
+      { question: "How does Manah Group approach renewable energy project delivery?", answer: "Manah Group operates across the full project lifecycle, moving from resource assessment and permitting through EPC execution to 24/7 monitoring and long-term O&M. This integrated approach spans solar parks, wind farms, hybrid plants, and energy storage." },
+      { question: "Which Manah division delivers renewable energy projects?", answer: "Renewable energy projects are delivered by Manah Dynamics, with green hydrogen and electrolyzers handled by Manah Green Energy and nuclear baseload by Manah Atomic." },
+      { question: "How much renewable capacity has Manah Group installed?", answer: "Manah Group has installed over 1,200 MW of renewable capacity, including 500-plus MW of wind and 15-plus solar parks, avoiding more than 100,000 tons of CO2 per year at 99.5% plant availability." },
+    ],
   },
 
   "building-roads": {
@@ -152,6 +165,12 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
       { step: "04", title: "Handover & Maintenance", description: "Completion testing, snag rectification, documentation, and defect liability period maintenance." },
     ],
     relatedDivisions: ["Manah Dynamics"],
+    faqItems: [
+      { question: "What building and road construction services does Manah Group provide?", answer: "Manah Group provides highway and expressway construction, bridge and flyover engineering, residential and military buildings, industrial and commercial construction, urban development, and railway and metro infrastructure. Its civil infrastructure scope covers projects of national significance delivered to international standards." },
+      { question: "What types of civil infrastructure projects does Manah Group execute?", answer: "Manah Group executes large-scale civil infrastructure including national highways and urban road networks, industrial parks, and residential complexes. Active mandates include four G+4 residential buildings under a multi-block housing development valued at 53 Cr." },
+      { question: "Which Manah division delivers building and road projects?", answer: "Building and road infrastructure projects are delivered by Manah Dynamics, the Group's EPC division." },
+      { question: "How much civil infrastructure has Manah Group delivered?", answer: "Manah Group has constructed over 500 km of roads, built 25-plus bridges, delivered more than 2 million sq ft of buildings, and completed 10-plus smart city projects with zero major safety incidents." },
+    ],
   },
 
   defence: {
@@ -188,6 +207,12 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
       { step: "04", title: "Manufacturing & Supply", description: "Series manufacturing, final inspection, and supply with after-sales support." },
     ],
     relatedDivisions: ["Manah Dynamics"],
+    faqItems: [
+      { question: "What defence products does Manah Group manufacture and supply?", answer: "Manah Group manufactures and supplies firearms and small-arms systems, secure communication devices for tactical and field use, and radio-frequency (RF) based devices for India's armed forces and security agencies. It also provides in-house system integration and testing of these systems." },
+      { question: "How does Manah Group manufacture its defence equipment?", answer: "Defence equipment is designed, assembled, and tested in-house, drawing on the Group's electronics manufacturing capability at its Cherlapally facility. This brings mechanical and electronics engineering together for firearm systems, secure communication devices, and RF sub-systems." },
+      { question: "Which Manah division delivers defence manufacturing projects?", answer: "Defence manufacturing and supply is delivered by Manah Dynamics." },
+      { question: "What quality standards does Manah Group's defence equipment meet?", answer: "Manah Group builds defence-grade equipment to the reliability and quality expectations of the armed forces and security agencies, with functional and reliability testing carried out in-house ahead of series manufacturing and supply." },
+    ],
   },
 
   telecom: {
@@ -230,6 +255,12 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
       { step: "04", title: "Handover & O&M", description: "Acceptance testing, SLA-backed O&M, and NOC-based remote monitoring." },
     ],
     relatedDivisions: ["Manah Dynamics"],
+    faqItems: [
+      { question: "What telecom infrastructure services does Manah Group provide?", answer: "Manah Group provides ground-based and rooftop telecom towers, optical fiber cabling (OFC), active network integration, power and battery backup, base station electronics manufacturing, and site O&M with 24/7 NOC support. Its scope spans tower erection, OFC laying, and passive and active network integration." },
+      { question: "Does Manah Group work on BharatNet projects?", answer: "Yes. Manah Group is BharatNet-empanelled and anchors large-scale rollouts under BharatNet, BSNL, and private tower programs, including OFC laying and last-mile connectivity across gram panchayats under BharatNet Phase III." },
+      { question: "Which Manah division delivers telecom projects?", answer: "Telecom infrastructure projects are delivered by Manah Dynamics, the Group's EPC division." },
+      { question: "How much telecom infrastructure has Manah Group deployed?", answer: "Manah Group has deployed more than 5,000 tower sites and laid over 10,000 km of OFC across 20-plus telecom programs, maintaining 99.5% site uptime with 24/7 NOC support." },
+    ],
   },
 
   "oil-gas": {
@@ -272,6 +303,12 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
       { step: "04", title: "Commissioning & Handover", description: "Loop checks, pre-commissioning, start-up support, and performance guarantee testing." },
     ],
     relatedDivisions: ["Manah Dynamics", "Manah Green Energy", "Manah Atomic"],
+    faqItems: [
+      { question: "What oil and gas services does Manah Group provide?", answer: "Manah Group delivers EPC for downstream oil and gas infrastructure, including refinery allied works, cross-country pipelines, storage terminals, LNG terminal support, process packages, and instrumentation and automation. The scope spans civil, mechanical, piping, electrical, and instrumentation disciplines." },
+      { question: "What scope does Manah Group cover in downstream oil and gas EPC?", answer: "Manah Group covers refinery allied works, process package construction, cross-country pipelines, LNG terminal support, and storage facilities, working with national oil companies, private refiners, and EPC majors on allied packages that complement primary process units." },
+      { question: "Which Manah division delivers oil and gas projects?", answer: "Oil and gas EPC projects are delivered by Manah Dynamics, with refinery decarbonization through clean hydrogen handled by Manah Green Energy and potential SMR heat by Manah Atomic." },
+      { question: "How much oil and gas infrastructure has Manah Group executed?", answer: "Manah Group has executed 15-plus oil and gas projects and over 500 km of pipelines, working to ISO 9001 quality and ASME code compliance with zero major safety incidents." },
+    ],
   },
 
   mining: {
@@ -314,6 +351,12 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
       { step: "04", title: "Commissioning & O&M", description: "No-load and load trials, performance guarantee tests, and post-commissioning support." },
     ],
     relatedDivisions: ["Manah Dynamics"],
+    faqItems: [
+      { question: "What mining services does Manah Group provide?", answer: "Manah Group provides mine infrastructure, mineral processing plants, overburden removal and conveyors, tailings and water management, mine electricals and automation, and mine closure and reclamation. Its EPC scope covers civil foundations, crushing and screening plants, conveying systems, and mine support structures." },
+      { question: "Which mining sectors does Manah Group serve?", answer: "Manah Group serves coal, iron-ore, limestone, and non-ferrous metal operators, supporting greenfield mines, capacity expansions, and mine closure programs with full EPC scope." },
+      { question: "Which Manah division delivers mining projects?", answer: "Mining infrastructure projects are delivered by Manah Dynamics, the Group's EPC division." },
+      { question: "How much mining infrastructure has Manah Group delivered?", answer: "Manah Group has delivered 10-plus mining projects and over 50 km of conveyor systems, holding ISO 45001 HSE certification and maintaining 99% dispatch availability against a zero lost-time-injury target." },
+    ],
   },
 
   "irrigation-water": {
@@ -356,6 +399,12 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
       { step: "04", title: "Commissioning & O&M", description: "Plant startup, operator training, performance guarantee testing, and long-term O&M support." },
     ],
     relatedDivisions: ["Manah Dynamics"],
+    faqItems: [
+      { question: "What irrigation and water infrastructure services does Manah Group provide?", answer: "Manah Group provides drinking water supply schemes, water treatment plants, sewage treatment plants, lift irrigation systems, canal and distributary networks, and SCADA-based water automation. Its scope combines heavy civil construction, mechanical-hydraulic engineering, and electrical-automation." },
+      { question: "Who does Manah Group deliver water infrastructure for?", answer: "Manah Group delivers water and irrigation infrastructure for state governments, municipal bodies, and industrial clients, supporting India's Jal Jeevan Mission and urban water security goals with operator training, O&M, and long-term performance guarantees." },
+      { question: "Which Manah division delivers irrigation and water projects?", answer: "Irrigation and water infrastructure projects are delivered by Manah Dynamics, the Group's EPC division." },
+      { question: "How much water infrastructure has Manah Group delivered?", answer: "Manah Group has delivered over 100 MLD of treatment capacity across 10-plus schemes, serving more than 500,000 lives, with ISO 9001 quality certification and full EPC scope aligned to the Jal Jeevan Mission." },
+    ],
   },
 
   "bess-scada": {
@@ -398,6 +447,12 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
       { step: "04", title: "Operations & Optimisation", description: "Dispatch tuning, battery-health monitoring, and SLA-backed O&M with performance analytics." },
     ],
     relatedDivisions: ["Manah Dynamics", "Manah Green Energy"],
+    faqItems: [
+      { question: "What BESS and SCADA services does Manah Group provide?", answer: "Manah Group provides turnkey utility-scale battery energy storage systems, power conversion and interconnection, substation and plant SCADA and automation, energy management systems, grid stabilisation services, and O&M with performance monitoring. The scope covers battery container integration, power conversion, grid interconnection, and dispatch control software." },
+      { question: "How does Manah Group's BESS support renewable-heavy grids?", answer: "Manah Group's BESS deployments provide renewable firming, peak shaving, frequency regulation, and black-start support, paired with SCADA and energy-management systems that give operators real-time visibility and automated control across substations, storage assets, and distributed resources." },
+      { question: "Which Manah division delivers BESS and SCADA projects?", answer: "BESS and SCADA projects are delivered by Manah Dynamics, with renewable-side support from Manah Green Energy." },
+      { question: "What battery technology and capability does Manah Group offer for storage?", answer: "Manah Group offers grid-scale BESS capability using Li-ion battery technology, delivered as full-EPC scope with real-time SCADA control and 24/7 dispatch and monitoring for renewable firming and peak shaving." },
+    ],
   },
 
   "disaster-management": {
@@ -440,5 +495,11 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
       { step: "04", title: "Drills & Readiness", description: "Simulation exercises, readiness audits, and continuous improvement of response capability." },
     ],
     relatedDivisions: ["Manah Dynamics"],
+    faqItems: [
+      { question: "What disaster management services does Manah Group provide?", answer: "Manah Group provides emergency operations centres, early-warning and communication networks, resilient infrastructure, preparedness training, crisis coordination systems, and recovery and reconstruction. Its scope spans the infrastructure, command systems, and trained capability communities rely on when crisis strikes." },
+      { question: "How does Manah Group approach disaster resilience?", answer: "Manah Group brings engineering discipline to disaster resilience, delivering emergency operations centres, early-warning networks, and hazard-resistant infrastructure alongside preparedness training and response capability. The approach reflects the Group's Mindful Enterprising philosophy of building with awareness of long-term impact on people and communities." },
+      { question: "Which Manah division delivers disaster management projects?", answer: "Disaster management projects are delivered by Manah Dynamics, the Group's EPC division." },
+      { question: "Does Manah Group provide disaster preparedness training?", answer: "Yes. Beyond infrastructure, Manah Group delivers preparedness training and response capability, equipping teams with drills, simulation exercises, coordination protocols, and command-and-control tools for rapid, organised action." },
+    ],
   },
 };

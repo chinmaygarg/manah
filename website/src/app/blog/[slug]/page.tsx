@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BLOG_ARTICLES, ALL_BLOG_ARTICLES } from "@/lib/blog-data";
 import { SITE_CONFIG } from "@/lib/constants";
-import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/JsonLd";
 import BlogPostContent from "./BlogPostContent";
 
 // ─── Static Params (pre-render all blog posts) ───
@@ -114,32 +114,6 @@ function ArticleJsonLd({
   );
 }
 
-function FAQJsonLd({
-  items,
-}: {
-  items: readonly { question: string; answer: string }[];
-}) {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: items.map((item) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.answer,
-      },
-    })),
-  };
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
-}
-
 // ─── Page Component ───
 
 export default async function BlogPostPage({
@@ -166,7 +140,7 @@ export default async function BlogPostPage({
         ]}
       />
       {article.faqItems && article.faqItems.length > 0 && (
-        <FAQJsonLd items={article.faqItems} />
+        <FaqJsonLd items={article.faqItems} />
       )}
 
       {/* Client Content */}

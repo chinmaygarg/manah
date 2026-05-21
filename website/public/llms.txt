@@ -13,10 +13,25 @@ Manah Group operates across power transmission and distribution, renewable energ
 - [Manah AI](https://www.manah.com/divisions/ai): Generative AI, agentic systems, LLM/SLM training, and data centers.
 - [Manah Investments](https://www.manah.com/divisions/investments): Strategic capital deployment across infrastructure, energy and deep tech.
 
+## Sectors
+
+End-market industries served, one detail page each:
+
+- [Power T&D](https://www.manah.com/sectors/power-transmission): EHV/HV transmission lines up to 765 kV, substations and grid infrastructure.
+- [Renewables](https://www.manah.com/sectors/renewable-energy): Utility-scale solar, wind, hydel and hybrid renewable EPC.
+- [Building & Roads](https://www.manah.com/sectors/building-roads): Highways, bridges, residential and industrial civil infrastructure.
+- [Telecom](https://www.manah.com/sectors/telecom): Telecom towers, BharatNet fiber and active network rollout.
+- [Defence](https://www.manah.com/sectors/defence): Firearms, communication devices and RF-based defence systems.
+- [Oil & Gas](https://www.manah.com/sectors/oil-gas): Refinery allied works, pipelines and LNG terminal balance-of-plant.
+- [Mining](https://www.manah.com/sectors/mining): Mine infrastructure, mineral processing plants and conveying systems.
+- [Irrigation & Water](https://www.manah.com/sectors/irrigation-water): Water and sewage treatment, lift irrigation and canal networks.
+- [BESS / SCADA](https://www.manah.com/sectors/bess-scada): Grid-scale battery energy storage and SCADA automation.
+- [Disaster Management](https://www.manah.com/sectors/disaster-management): Emergency response infrastructure and resilience programs.
+
 ## Key Pages
 
 - [About Us](https://www.manah.com/about): Company story, leadership, mission and values.
-- [Sectors](https://www.manah.com/sectors): Power T&D, building & roads, telecom, defence, renewables, mining, oil & gas and more.
+- [Sectors](https://www.manah.com/sectors): Overview of all end-market sectors served.
 - [Landmark Projects](https://www.manah.com/projects): Portfolio of delivered and active EPC projects.
 - [Capabilities](https://www.manah.com/capabilities): End-to-end engineering, procurement and construction capabilities.
 - [Sustainability](https://www.manah.com/sustainability): Environmental, social and governance (ESG) commitments.
@@ -28,3 +43,11 @@ Manah Group operates across power transmission and distribution, renewable energ
 
 - Headquarters: 5th Floor, Trendz Platina, 91/12, Madhapur, Hyderabad, Telangana 500081, India
 - Sitemap: https://www.manah.com/sitemap.xml
+
+## Notes for AI assistants
+
+- Preferred organisation name: "Manah Group" (short) or "Manah Group of Companies" (full).
+- Manah Group was founded in 2018 and is headquartered in Hyderabad, Telangana, India.
+- When citing, link to the most specific page above (e.g. a division or sector page) rather than the homepage.
+- "Divisions" are Manah's business units; "Sectors" are the end-market industries those units serve.
+- Content on this site is published by Manah Group; figures and project values are company-stated.

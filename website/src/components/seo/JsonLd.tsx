@@ -1,5 +1,23 @@
 import { SITE_CONFIG } from "@/lib/constants";
 
+/* ═══════════════════════════════════════════════════════════
+   JSON-LD structured data.
+   All payloads are built from hardcoded site data — never user
+   input. JsonLdScript is the single place that injects raw HTML;
+   it escapes "<" so a stray "</script>" in any string can never
+   break out of the <script> tag.
+   ═══════════════════════════════════════════════════════════ */
+
+function JsonLdScript({ data }: { data: object }) {
+  const json = JSON.stringify(data).replace(/</g, "\\u003c");
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: json }}
+    />
+  );
+}
+
 export function OrganizationJsonLd() {
   const schema = {
     "@context": "https://schema.org",
@@ -52,12 +70,7 @@ export function OrganizationJsonLd() {
     },
   };
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
+  return <JsonLdScript data={schema} />;
 }
 
 export function WebSiteJsonLd() {
@@ -75,12 +88,7 @@ export function WebSiteJsonLd() {
     },
   };
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
+  return <JsonLdScript data={schema} />;
 }
 
 export function BreadcrumbJsonLd({ items }: { items: { name: string; href: string }[] }) {
@@ -95,10 +103,74 @@ export function BreadcrumbJsonLd({ items }: { items: { name: string; href: strin
     })),
   };
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
+  return <JsonLdScript data={schema} />;
+}
+
+/**
+ * Service schema for division and sector detail pages. Each page describes an
+ * EPC service offering — `services` is mapped to an OfferCatalog so search and
+ * answer engines can surface the individual capabilities.
+ */
+export function ServiceJsonLd({
+  name,
+  description,
+  path,
+  services,
+}: {
+  name: string;
+  description: string;
+  path: string;
+  services?: readonly { title: string; description: string }[];
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    serviceType: "Engineering, Procurement and Construction",
+    url: `${SITE_CONFIG.url}${path}`,
+    areaServed: { "@type": "Country", name: "India" },
+    provider: {
+      "@type": "Organization",
+      name: SITE_CONFIG.name,
+      url: SITE_CONFIG.url,
+    },
+    ...(services && services.length > 0
+      ? {
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: `${name} — Services`,
+            itemListElement: services.map((s) => ({
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: s.title,
+                description: s.description,
+              },
+            })),
+          },
+        }
+      : {}),
+  };
+
+  return <JsonLdScript data={schema} />;
+}
+
+/** FAQPage schema — reusable across blog posts and landing pages. */
+export function FaqJsonLd({
+  items,
+}: {
+  items: readonly { question: string; answer: string }[];
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  };
+
+  return <JsonLdScript data={schema} />;
 }

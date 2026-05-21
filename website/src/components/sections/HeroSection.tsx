@@ -175,7 +175,7 @@ export default function HeroSection() {
                     if (intervalRef.current) clearInterval(intervalRef.current);
                     startCrossfade();
                   }}
-                  className={`text-caption sm:text-body-sm tracking-[0.15em] uppercase transition-all duration-500 ${
+                  className={`py-1.5 text-caption sm:text-body-sm tracking-[0.15em] uppercase transition-all duration-500 ${
                     i === activeIndex
                       ? "text-manah-gold font-medium"
                       : "text-white/30 hover:text-white/50"

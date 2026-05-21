@@ -12,6 +12,7 @@ import {
 } from "@/lib/animations";
 import MotionSection from "@/components/animations/MotionSection";
 import SectionHeading from "@/components/ui/SectionHeading";
+import FaqSection from "@/components/sections/FaqSection";
 import { DIVISION_DETAILS } from "@/lib/divisions-data";
 import {
   ArrowRight,
@@ -409,6 +410,15 @@ export default function DivisionDetailContent({ slug }: { slug: string }) {
             </motion.div>
           </div>
         </section>
+      )}
+
+      {/* ─── FAQ (AEO) ─── */}
+      {division.faqItems && division.faqItems.length > 0 && (
+        <FaqSection
+          items={division.faqItems}
+          description={`Common questions about ${division.name} and what it delivers.`}
+          className="bg-manah-gray-50"
+        />
       )}
     </main>
   );

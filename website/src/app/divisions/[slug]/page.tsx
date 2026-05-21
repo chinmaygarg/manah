@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { DIVISION_DETAILS } from "@/lib/divisions-data";
 import { SITE_CONFIG } from "@/lib/constants";
-import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/seo/JsonLd";
 import DivisionDetailContent from "./DivisionDetailContent";
 
 // ─── Static Params (pre-render every division) ───
@@ -76,6 +76,15 @@ export default async function DivisionPage({
           { name: division.name, href: `/divisions/${slug}` },
         ]}
       />
+      <ServiceJsonLd
+        name={division.name}
+        description={division.heroDescription}
+        path={`/divisions/${slug}`}
+        services={division.services}
+      />
+      {division.faqItems && division.faqItems.length > 0 && (
+        <FaqJsonLd items={division.faqItems} />
+      )}
       <DivisionDetailContent slug={slug} />
     </>
   );
