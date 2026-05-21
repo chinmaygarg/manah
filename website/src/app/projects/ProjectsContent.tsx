@@ -1,6 +1,7 @@
 "use client";
 
-// Ongoing project portfolio — sourced from the client-approved Manah deck.
+// Ongoing project portfolio — Manah Dynamics. Client names and addresses are
+// intentionally omitted; projects are listed by name, scope, and value only.
 
 import { useState } from "react";
 import Image from "next/image";
@@ -9,21 +10,21 @@ import { motion, AnimatePresence } from "framer-motion";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CounterAnimation from "@/components/animations/CounterAnimation";
-import { MapPin, Calendar, ChevronDown } from "lucide-react";
+import { Calendar, ChevronDown, BadgeCheck } from "lucide-react";
 
 /* ─── Per-project image mapping ─── */
 const PROJECT_IMAGES: Record<number, string> = {
-  1: "/images/sectors/infrastructure.webp",                 // MES residential buildings
-  2: "/images/sectors/power_transmission.webp",             // HESCOM smart meters
-  3: "/images/projects/substation-switchyard.webp",         // PGCIL GIS substation
-  4: "/images/projects/transmission-line-corridor.webp",    // PGCIL transmission line
-  5: "/images/sectors/manufacturing.webp",                  // Morocco conveyor system
-  6: "/images/sectors/real_estate.webp",                    // Singrauli commercial complex
-  7: "/images/sectors/telecom_equipment.webp",              // BharatNet middle-mile
-  8: "/images/projects/substation-control-building.webp",   // Terna Trust G+17 building
-  9: "/images/sectors/infrastructure.webp",                 // MES G+2 building
-  10: "/images/sectors/telecom_equipment.webp",             // BSNL 5G towers
-  11: "/images/sectors/infrastructure.webp",                // NWR railway station
+  1: "/images/projects/residential-g4-housing.webp",        // G+4 residential buildings
+  2: "/images/projects/dtc-smart-meters.webp",              // DTC smart meters
+  3: "/images/projects/substation-switchyard.webp",         // GIS substation
+  4: "/images/projects/transmission-line-corridor.webp",    // transmission line & towers
+  5: "/images/projects/industrial-conveyor-system.webp",    // conveyor system
+  6: "/images/projects/commercial-complex.webp",            // commercial complex
+  7: "/images/projects/middle-mile-fiber-network.webp",     // middle-mile fiber network
+  8: "/images/projects/residential-g17-tower.webp",         // G+17 building
+  9: "/images/projects/residential-g2-building.webp",       // G+2 building
+  10: "/images/projects/telecom-5g-towers.webp",            // 5G towers / 4G saturation
+  11: "/images/projects/railway-station.webp",              // railway station
 };
 
 const FALLBACK_IMAGE = "/images/hero/hero_main_infrastructure.webp";
@@ -44,14 +45,14 @@ const FILTERS = [
 
 /* ─── Project Footprints gallery — real site photographs from the deck ─── */
 const GALLERY = [
-  { src: "/images/projects/kipic-storage-tank.webp", caption: "KIPIC Storage Tank — 25,000 MT Capacity" },
+  { src: "/images/projects/kipic-storage-tank.webp", caption: "Storage Tank — 25,000 MT Capacity" },
   { src: "/images/projects/tank-shell-erection.webp", caption: "Tank Shell Erection — Crane-Assisted Plate Lifting" },
   { src: "/images/projects/solar-panel-array.webp", caption: "Solar Panel Array — Renewable Energy Project" },
   { src: "/images/projects/storage-tank-construction.webp", caption: "Storage Tank Under Construction" },
   { src: "/images/projects/transmission-line-corridor.webp", caption: "High-Voltage Transmission Line Corridor" },
   { src: "/images/projects/substation-control-building.webp", caption: "Power Substation Control Building" },
   { src: "/images/projects/water-treatment-plant.webp", caption: "Water Treatment Plant — Settling & Filtration" },
-  { src: "/images/projects/gis-switchgear-siemens.webp", caption: "Siemens GIS Switchgear Installation" },
+  { src: "/images/projects/gis-switchgear-siemens.webp", caption: "GIS Switchgear Installation" },
   { src: "/images/projects/pipeline-construction.webp", caption: 'Pipeline Construction — 24", 30", 34", 36" Diameter' },
   { src: "/images/projects/transmission-tower-lines.webp", caption: "Transmission Tower & Power Lines" },
   { src: "/images/projects/gis-power-infrastructure.webp", caption: "GIS Equipment & Power Infrastructure" },
@@ -64,8 +65,6 @@ interface Project {
   id: number;
   title: string;
   category: string;
-  client: string;
-  location: string;
   status: string;
   value?: string;
   description: string;
@@ -75,126 +74,119 @@ interface Project {
 const PROJECTS: Project[] = [
   {
     id: 1,
-    title: "Four G+4 Residential Buildings — Narangi Military Station",
+    title: "Four G+4 Residential Buildings",
     category: "Civil",
-    client: "Military Engineer Services (MES)",
-    location: "Guwahati, Assam",
     status: "Ongoing",
     value: "₹53 Cr",
     description:
-      "Construction of four G+4 residential buildings at Narangi Military Station under GE Guwahati (MES) for defence personnel housing.",
+      "Construction of four G+4 residential buildings — a multi-block housing development.",
     featured: true,
   },
   {
     id: 2,
-    title: "48,893 DTC Smart Meters — 6 Districts",
+    title: "48,893 DTC Smart Meters",
     category: "Power & Metering",
-    client: "HESCOM",
-    location: "Karnataka",
     status: "Ongoing",
     value: "₹171 Cr",
     description:
-      "Supply and installation of 48,893 DTC smart meters across six districts in Karnataka, with a 5-year operations and maintenance contract under HESCOM.",
+      "Supply and installation of 48,893 DTC smart meters across six districts, with a five-year operations and maintenance contract.",
     featured: true,
   },
   {
     id: 3,
     title: "400/220 kV GIS Substation",
     category: "Power Transmission",
-    client: "PGCIL, Roorkee",
-    location: "Roorkee, Uttarakhand",
     status: "Ongoing",
     description:
-      "Construction of a 400/220 kV gas-insulated switchgear (GIS) substation for the Power Grid Corporation of India.",
+      "Construction of a 400/220 kV gas-insulated switchgear (GIS) substation.",
     featured: true,
   },
   {
     id: 4,
     title: "Transmission Line & Towers — 400/220 kV",
     category: "Power Transmission",
-    client: "PGCIL, Roorkee",
-    location: "Roorkee, Uttarakhand",
     status: "Ongoing",
     description:
-      "Construction of transmission line and towers feeding the 400/220 kV GIS substation for the Power Grid Corporation of India.",
+      "Construction of transmission line and towers feeding a 400/220 kV GIS substation.",
     featured: false,
   },
   {
     id: 5,
-    title: "Conveyor System Construction",
+    title: "Construction of Conveyor System",
     category: "Industrial",
-    client: "Morocco",
-    location: "Morocco",
     status: "Ongoing",
     description:
-      "Construction of an industrial conveyor system — an international project delivery in Morocco.",
+      "Construction of an industrial material-handling conveyor system.",
     featured: false,
   },
   {
     id: 6,
     title: "Commercial Complex Development",
     category: "Real Estate",
-    client: "Singrauli, MP",
-    location: "Singrauli, Madhya Pradesh",
     status: "Ongoing",
     description:
-      "Construction and development of a commercial complex at Singrauli, Madhya Pradesh.",
+      "Construction and development of a commercial complex.",
     featured: false,
   },
   {
     id: 7,
-    title: "Middle-Mile Network — DBOM Basis",
+    title: "Middle-Mile Fiber Network — DBOM",
     category: "Telecom",
-    client: "BharatNet",
-    location: "India",
     status: "Ongoing",
     description:
-      "Development of the middle-mile network on a Design-Build-Operate-Maintain (DBOM) basis under the BharatNet programme.",
+      "Development of a middle-mile fiber network on a Design-Build-Operate-Maintain (DBOM) basis.",
     featured: false,
   },
   {
     id: 8,
-    title: "G+17 Building, Mumbai",
+    title: "G+17 Residential Building",
     category: "Civil",
-    client: "Terna Trust",
-    location: "Mumbai, Maharashtra",
     status: "Ongoing",
     description:
-      "Construction of a G+17 multi-storey building in Mumbai for Terna Trust.",
+      "Construction of a G+17 multi-storey residential building.",
     featured: false,
   },
   {
     id: 9,
-    title: "G+2 Building, Ahilyanagar",
+    title: "G+2 Building",
     category: "Civil",
-    client: "Military Engineer Services (MES)",
-    location: "Ahilyanagar, Maharashtra",
     status: "Ongoing",
-    description:
-      "Construction of a G+2 building in Ahilyanagar for Military Engineer Services (MES).",
+    description: "Construction of a G+2 building.",
     featured: false,
   },
   {
     id: 10,
-    title: "5G Towers across 6 States",
+    title: "5G Towers — 4G Saturation, Three States",
     category: "Telecom",
-    client: "BSNL",
-    location: "Six States, India",
     status: "Ongoing",
     description:
-      "Construction of 5G telecom towers across six states for BSNL — strengthening the national connectivity backbone.",
+      "Construction of telecom towers supporting 5G rollout and 4G network saturation across three states.",
     featured: false,
   },
   {
     id: 11,
-    title: "Ambhaji Railway Station",
+    title: "Railway Station Construction",
     category: "Civil",
-    client: "North Western Railway (NWR)",
-    location: "India",
     status: "Ongoing",
     description:
-      "Construction of the Ambhaji railway station for North Western Railway (NWR).",
+      "Construction of a new railway station building and allied infrastructure.",
     featured: false,
+  },
+];
+
+/* ─── Empanelments & accreditations — Manah Dynamics ─── */
+const EMPANELMENTS = [
+  {
+    title: "BSNL Empaneled Partner",
+    logo: "/images/partners/logos/bsnl.webp",
+    description:
+      "Empaneled partner and Managed Network Service Provider (MNSP) with BSNL, in terms of supply.",
+  },
+  {
+    title: "ITI Limited Empaneled Partner",
+    logo: "/images/partners/logos/iti-limited.webp",
+    description:
+      "Empaneled partner with ITI Limited — approved on the vendor panel for supply.",
   },
 ];
 
@@ -348,23 +340,10 @@ export default function ProjectsContent() {
                   <p className="text-manah-gray-500 text-body-sm mb-4">
                     {project.description}
                   </p>
-                  <div className="flex items-center gap-4 text-caption text-manah-gray-400">
-                    <span className="flex items-center gap-1">
-                      <MapPin className="w-3.5 h-3.5" /> {project.location}
-                    </span>
-                    <span className="flex items-center gap-1">
+                  <div className="mt-3 pt-3 border-t border-manah-gray-200/50 flex items-center justify-between gap-3">
+                    <span className="flex items-center gap-1 text-caption text-manah-gray-400">
                       <Calendar className="w-3.5 h-3.5" /> {project.status}
                     </span>
-                  </div>
-                  <div className="mt-3 pt-3 border-t border-manah-gray-200/50 flex items-center justify-between gap-3">
-                    <div className="min-w-0">
-                      <span className="font-display font-bold text-manah-navy">
-                        {project.client}
-                      </span>
-                      <span className="text-manah-gray-400 text-caption ml-1">
-                        Client
-                      </span>
-                    </div>
                     {project.value && (
                       <span className="font-display font-bold text-manah-gold whitespace-nowrap">
                         {project.value}
@@ -447,12 +426,14 @@ export default function ProjectsContent() {
                       {project.description}
                     </p>
                     <div className="flex items-center justify-between gap-3 text-caption text-manah-gray-400">
-                      <span className="flex items-center gap-1 min-w-0">
-                        <MapPin className="w-3 h-3 shrink-0" /> {project.location}
+                      <span className="flex items-center gap-1">
+                        <Calendar className="w-3 h-3 shrink-0" /> {project.status}
                       </span>
-                      <span className="font-semibold text-manah-navy whitespace-nowrap">
-                        {project.value ?? project.client}
-                      </span>
+                      {project.value && (
+                        <span className="font-semibold text-manah-gold whitespace-nowrap">
+                          {project.value}
+                        </span>
+                      )}
                     </div>
                   </div>
                 </motion.div>
@@ -462,13 +443,58 @@ export default function ProjectsContent() {
         </div>
       </section>
 
+      {/* ─── Empanelments & Accreditations ─── */}
+      <section className="section-padding bg-white">
+        <div className="section-container">
+          <SectionHeading
+            eyebrow="Credentials"
+            title="Empanelments & Accreditations"
+            description="Recognised and empaneled with leading public-sector enterprises for project supply."
+          />
+          <div className="grid sm:grid-cols-2 gap-6 mt-12 max-w-4xl mx-auto">
+            {EMPANELMENTS.map((item, i) => (
+              <motion.div
+                key={item.title}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="flex gap-5 items-center bg-manah-gray-50 rounded-xl p-6 border border-manah-gray-200/60"
+              >
+                <div className="shrink-0 w-20 h-20 rounded-lg bg-white border border-manah-gray-200/60 flex items-center justify-center p-3">
+                  <Image
+                    src={item.logo}
+                    alt={item.title}
+                    width={64}
+                    height={64}
+                    className="object-contain"
+                  />
+                </div>
+                <div>
+                  <div className="flex items-center gap-1.5 mb-1">
+                    <BadgeCheck className="w-4 h-4 text-manah-gold shrink-0" />
+                    <h3 className="font-display text-heading-md font-semibold text-manah-navy">
+                      {item.title}
+                    </h3>
+                  </div>
+                  <p className="text-manah-gray-500 text-body-sm leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ─── Project Footprints Gallery ─── */}
       <section className="section-padding bg-manah-navy">
         <div className="section-container">
           <SectionHeading
             eyebrow="Project Footprints"
             title="Real Projects. Real Impact."
-            description="On-site execution across India and the Middle East — power, water, oil & gas, and heavy infrastructure."
+            description="On-site execution across power, water, oil & gas, and heavy infrastructure."
             light
           />
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-12">
