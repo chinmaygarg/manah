@@ -108,8 +108,8 @@ success state, a `TurnstileWidget`, and a `HoneypotField`. The existing
 1. User fills form. Turnstile widget renders and yields a token.
 2. On submit, client POSTs JSON: form fields + `turnstileToken` + honeypot field.
 3. Handler resolves client IP, checks rate limit.
-4. Handler rejects if honeypot field is non-empty (silent generic success to
-   avoid signalling the bot, or 400 — see Error Handling).
+4. Handler rejects if honeypot field is non-empty: returns 200 with a generic
+   success body and sends nothing, so the bot is not tipped off.
 5. Zod parses the body; invalid input → 400 with field errors.
 6. Turnstile token verified against `https://challenges.cloudflare.com/turnstile/v0/siteverify`.
 7. Contact/Partner: build HTML body, `resend.emails.send`.
