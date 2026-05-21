@@ -1,19 +1,51 @@
 # Manah Group — Website Asset Generator
 
-AI-powered image and video generation pipeline for the Manah Group website using Google's Imagen 3 and Veo 2 models.
+AI-powered image and video generation pipeline for the Manah Group website.
+
+**Current pipeline: Replicate (FLUX-2-Pro).** New images are generated through
+Replicate — see [Replicate pipeline](#replicate-pipeline-current) below. The
+legacy Google Imagen / Veo scripts (`generate_images.py`, `generate_videos.py`)
+are kept for reference but are no longer the default.
 
 ## Setup
 
 ```bash
 # 1. Install dependencies
-pip install -r requirements.txt
+pip3 install replicate python-dotenv
 
-# 2. Add your API key to .env file
-# Open .env and paste your Google AI Studio key
+# 2. Add credentials to .env
+#    Replicate (current):  REPLICATE_API_TOKEN, REPLICATE_IMAGE_MODEL
+#    Legacy Google:        GOOGLE_API_KEY
 
-# 3. Preview all prompts (no API calls)
-python scripts/generate_all.py --dry-run
+# 3. cwebp is needed to optimize generated images
+brew install webp
 ```
+
+## Replicate pipeline (current)
+
+New imagery is generated with one focused script per feature/batch — each holds
+its own prompt list, generates via `replicate.run()` using `REPLICATE_IMAGE_MODEL`
+(default `black-forest-labs/flux-2-pro`), converts the result to optimized WebP
+with `cwebp`, and writes it **straight into `website/public/images/...`**.
+
+```bash
+python3 scripts/generate_dynamics.py            # Dynamics division imagery
+python3 scripts/generate_dynamics.py --list     # list this batch's asset ids
+python3 scripts/generate_dynamics.py --id <id>  # regenerate one asset
+python3 scripts/generate_dynamics.py --force    # regenerate even if it exists
+python3 scripts/generate_project_flux.py        # /projects page imagery
+python3 scripts/generate_new_sectors.py         # sector hero imagery
+```
+
+After generating, run `npm run gen:blur` in `website/` so the new images get
+blur placeholders, and commit the updated `src/lib/blur-map.ts`.
+
+To add a new batch, copy `generate_dynamics.py`, swap in new prompts, and point
+the output directory at the right `public/images/` subfolder.
+
+## Legacy Google pipeline
+
+The commands below use the older Google Imagen / Veo scripts.
 
 ## Usage
 

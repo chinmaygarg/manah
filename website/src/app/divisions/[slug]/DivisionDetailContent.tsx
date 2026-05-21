@@ -21,11 +21,26 @@ import {
 } from "lucide-react";
 import BlurImage from "@/components/ui/BlurImage";
 import DivisionPillars from "./DivisionPillars";
+import DivisionStats from "./DivisionStats";
+import DivisionLifecycle from "./DivisionLifecycle";
+import DivisionFeaturedProjects from "./DivisionFeaturedProjects";
+import DivisionEmsShowcase from "./DivisionEmsShowcase";
 
-const DIVISION_IMAGES: Record<string, { hero: string; detail: string; video?: string; videoMobile?: string }> = {
+const DIVISION_IMAGES: Record<
+  string,
+  {
+    hero: string;
+    detail: string;
+    /** Optional second overview photo — renders an overlapping image cluster. */
+    detail2?: string;
+    video?: string;
+    videoMobile?: string;
+  }
+> = {
   dynamics: {
     hero: "/images/divisions/manah_dynamics_hero.webp",
     detail: "/images/divisions/manah_dynamics_projects.webp",
+    detail2: "/images/divisions/dynamics_overview_secondary.webp",
     video: "/videos/divisions/dynamics_reel-720p.mp4",
     videoMobile: "/videos/divisions/dynamics_reel-480p.mp4",
   },
@@ -148,26 +163,7 @@ export default function DivisionDetailContent({ slug }: { slug: string }) {
       </section>
 
       {/* ─── Key Stats ─── */}
-      <section className="bg-white border-b border-manah-gray-200">
-        <div className="section-container py-12">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {division.keyStats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="text-center"
-              >
-                <p className="font-display text-heading-xl font-bold text-manah-navy">{stat.value}</p>
-                <p className="text-manah-gray-500 text-body-sm mt-1">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <DivisionStats stats={division.keyStats} />
 
       {/* ─── Overview ─── */}
       <MotionSection className="section-padding bg-white">
@@ -200,29 +196,81 @@ export default function DivisionDetailContent({ slug }: { slug: string }) {
                   ))}
                 </div>
               </div>
-            </motion.div>
 
-            <motion.div
-              variants={fadeRight}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-manah-gray-100"
-            >
-              {DIVISION_IMAGES[slug] ? (
-                <BlurImage
-                  src={DIVISION_IMAGES[slug].detail}
-                  alt={`${division.name} facility`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              ) : (
-                <div className="absolute inset-0 flex items-center justify-center text-manah-gray-400 text-body-sm">
-                  {division.name} Facility Image
+              {/* Delivery models */}
+              {division.deliveryModels && division.deliveryModels.length > 0 && (
+                <div className="mt-8">
+                  <h4 className="font-semibold text-manah-navy text-body-md mb-3">Delivery Models</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {division.deliveryModels.map((model) => (
+                      <span
+                        key={model}
+                        className="inline-flex items-center px-3 py-1.5 rounded-full text-body-sm font-medium bg-manah-navy/[0.04] text-manah-navy border border-manah-navy/10"
+                      >
+                        {model}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               )}
             </motion.div>
+
+            {DIVISION_IMAGES[slug]?.detail2 ? (
+              /* Overlapping image cluster — primary photo with an offset
+                 secondary photo and a gold ring accent. */
+              <motion.div
+                variants={fadeRight}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="relative"
+              >
+                <div
+                  className="absolute -top-4 -right-4 w-28 h-28 rounded-2xl border border-manah-gold/40 hidden lg:block"
+                  aria-hidden
+                />
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-manah-gray-100 shadow-card">
+                  <BlurImage
+                    src={DIVISION_IMAGES[slug].detail}
+                    alt={`${division.name} projects`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
+                <div className="absolute -bottom-10 -left-10 w-2/5 aspect-[4/3] rounded-xl overflow-hidden border-[6px] border-white shadow-glass-lg bg-manah-gray-100 hidden lg:block">
+                  <BlurImage
+                    src={DIVISION_IMAGES[slug].detail2 as string}
+                    alt={`${division.name} on-site engineering`}
+                    fill
+                    className="object-cover"
+                    sizes="20vw"
+                  />
+                </div>
+              </motion.div>
+            ) : (
+              <motion.div
+                variants={fadeRight}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-manah-gray-100"
+              >
+                {DIVISION_IMAGES[slug] ? (
+                  <BlurImage
+                    src={DIVISION_IMAGES[slug].detail}
+                    alt={`${division.name} facility`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center text-manah-gray-400 text-body-sm">
+                    {division.name} Facility Image
+                  </div>
+                )}
+              </motion.div>
+            )}
           </div>
         </div>
       </MotionSection>
@@ -324,43 +372,19 @@ export default function DivisionDetailContent({ slug }: { slug: string }) {
       </section>
       ) : null}
 
-      {/* ─── Electronics Manufacturing Value Chain ─── */}
+      {/* ─── EPC Delivery Lifecycle ─── */}
+      {division.deliveryLifecycle && (
+        <DivisionLifecycle lifecycle={division.deliveryLifecycle} />
+      )}
+
+      {/* ─── Featured Projects ─── */}
+      {division.featuredProjects && (
+        <DivisionFeaturedProjects featured={division.featuredProjects} />
+      )}
+
+      {/* ─── Electronics Manufacturing Services ─── */}
       {division.ems && (
-        <section className="section-padding bg-white">
-          <div className="section-container">
-            <SectionHeading
-              eyebrow="Electronics Manufacturing"
-              title={division.ems.heading}
-              description={division.ems.intro}
-            />
-            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mt-12">
-              {division.ems.phases.map((phase, i) => (
-                <motion.div
-                  key={phase.title}
-                  variants={fadeUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08 }}
-                  className="bg-manah-gray-50 rounded-xl p-6 border border-manah-gray-200/60 hover:border-manah-gold/30 hover:shadow-card-hover transition-all duration-500"
-                >
-                  <span
-                    className="font-display text-heading-xl font-bold block mb-3"
-                    style={{ color: division.color }}
-                  >
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="font-display text-heading-md font-semibold text-manah-navy mb-2">
-                    {phase.title}
-                  </h3>
-                  <p className="text-manah-gray-500 text-body-sm leading-relaxed">
-                    {phase.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <DivisionEmsShowcase ems={division.ems} color={division.color} />
       )}
 
       {/* ─── Sectors Served ─── */}

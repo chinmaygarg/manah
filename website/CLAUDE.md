@@ -34,6 +34,24 @@ colour-matched blur.
 Use `<BlurImage>` (not raw `next/image`) for content photos. Logos and icons
 can stay as plain `<Image>` — they don't need a blur placeholder.
 
+### Generating new images
+
+New imagery is produced with the **`asset-generator/` pipeline** (a sibling
+directory of `website/`), which generates via **Replicate (FLUX-2-Pro)**. Each
+batch is a focused script — e.g. `asset-generator/scripts/generate_dynamics.py`
+— that holds its own prompts, generates through Replicate, optimizes to WebP,
+and writes straight into `website/public/images/...`.
+
+```bash
+cd asset-generator
+python3 scripts/generate_dynamics.py        # generate (skips existing)
+python3 scripts/generate_dynamics.py --list # list this batch's asset ids
+```
+
+Needs `REPLICATE_API_TOKEN` in `asset-generator/.env` and `cwebp`
+(`brew install webp`). After generating, run `npm run gen:blur` here and commit
+the updated `src/lib/blur-map.ts`. See `asset-generator/README.md` for details.
+
 ## SEO / AEO / GEO
 
 **Whenever site content changes — adding, removing, or renaming a sector,

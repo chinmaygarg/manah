@@ -16,11 +16,13 @@ import {
   Cloud,
   Cog,
   Container,
+  DraftingCompass,
   Droplets,
   Factory,
   Gauge,
   GraduationCap,
   Handshake,
+  HardHat,
   Languages,
   Leaf,
   Lightbulb,
@@ -35,6 +37,7 @@ import {
   Shield,
   ShieldCheck,
   Sun,
+  Truck,
   Workflow,
   Wrench,
   Zap,
@@ -64,7 +67,17 @@ export interface DivisionDetail {
   color: string;
   gradient: string;
   overview: string[];
-  keyStats: { value: string; label: string }[];
+  /**
+   * Headline metrics. When `count` is set the value animates up from zero;
+   * `prefix`/`suffix` wrap the animated number. Otherwise `value` renders as-is.
+   */
+  keyStats: {
+    value: string;
+    label: string;
+    count?: number;
+    prefix?: string;
+    suffix?: string;
+  }[];
   /** Flat service list — used by divisions without grouped pillars. */
   services?: DivisionService[];
   /** Grouped capability areas — when present, rendered instead of `services`. */
@@ -72,10 +85,43 @@ export interface DivisionDetail {
   sectors: { name: string; image: string; description: string }[];
   certifications: string[];
   cta: { text: string; href: string };
+  /** Project delivery / ownership models, shown as accent chips in the overview. */
+  deliveryModels?: string[];
+  /** End-to-end EPC lifecycle — rendered as an image-led phase walkthrough. */
+  deliveryLifecycle?: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    phases: {
+      step: string;
+      title: string;
+      subtitle: string;
+      description: string;
+      image: string;
+      icon: LucideIcon;
+    }[];
+  };
+  /** Live or completed flagship projects — rendered as a bento showcase. */
+  featuredProjects?: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    cta: { text: string; href: string };
+    projects: {
+      title: string;
+      category: string;
+      value?: string;
+      status: string;
+      description: string;
+      image: string;
+    }[];
+  };
   ems?: {
     heading: string;
     intro: string;
+    facilityImage?: string;
     phases: { title: string; description: string }[];
+    products?: { name: string; description: string; image: string }[];
   };
   faqItems?: { question: string; answer: string }[];
 }
@@ -90,16 +136,16 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
     color: "#1E3A5F",
     gradient: "from-[#1E3A5F] to-manah-navy",
     overview: [
-      "Manah Dynamics is the flagship EPC and manufacturing division of Manah Group, delivering turnkey project execution across power transmission, renewables, telecom, civil infrastructure, BESS/SCADA, oil & gas, irrigation and defence — trusted by utilities, government agencies, and private developers across India.",
-      "Our integrated capabilities span design engineering, procurement, construction, and commissioning — enabling single-point accountability through DBFOOT, DBOOT, BOO, BOOT, and Investment project delivery models. Active mandates include four G+4 residential buildings under a multi-block housing development (₹53 Cr) and the deployment of 48,893 DTC smart meters across six districts with five-year maintenance (₹171 Cr).",
-      "Manah Dynamics is also home to the Group's Electronics Manufacturing Services (EMS) business, operating from a 30,000 sq ft facility at Cherlapally, Hyderabad. With 8+ SMT lines and 1M+ products per year, we manufacture Smart Energy Meters, Smart Water Meters, EV Chargers, Room Chargers, and Defence RF Systems to MIL-STD, JSS, and IPC-A-610 Class 3 standards.",
+      "Manah Dynamics is the flagship EPC and manufacturing division of Manah Group — delivering turnkey project execution across power transmission, renewables, telecom, civil infrastructure, BESS/SCADA, oil & gas, irrigation and defence. We are trusted by utilities, government agencies, and private developers across 15+ Indian states.",
+      "Integrated in-house capability spans design engineering, procurement, construction, and commissioning — giving clients single-point accountability from concept to handover. Flexible delivery and ownership models let every mandate be structured around its own financing, risk, and operating needs.",
+      "Manah Dynamics is also home to the Group's Electronics Manufacturing Services business — a 30,000 sq ft facility at Cherlapally, Hyderabad. Across 8+ SMT lines producing over 1M units a year, we build smart energy and water meters, EV chargers, room chargers, and defence RF systems to MIL-STD, JSS, and IPC-A-610 Class 3 standards.",
     ],
     keyStats: [
-      { value: "50+", label: "Projects Delivered" },
-      { value: "1,200+ MW", label: "Capacity Installed" },
-      { value: "15+", label: "States Active" },
-      { value: "8+", label: "SMT Lines" },
-      { value: "30,000 sq ft", label: "EMS Facility" },
+      { value: "50+", label: "Projects Delivered", count: 50, suffix: "+" },
+      { value: "1,200+ MW", label: "Capacity Installed", count: 1200, suffix: "+ MW" },
+      { value: "15+", label: "States Active", count: 15, suffix: "+" },
+      { value: "8+", label: "SMT Lines", count: 8, suffix: "+" },
+      { value: "30,000 sq ft", label: "EMS Facility", count: 30000, suffix: " sq ft" },
       { value: "1M+", label: "Products / Year" },
     ],
     services: [
@@ -124,16 +170,132 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
     ],
     certifications: ["ISO 9001:2015", "ISO 14001:2015", "ISO 45001:2018", "IPC-A-610 Class 3", "MIL-STD / JSS", "CEA Compliant"],
     cta: { text: "View Projects", href: "/projects?division=dynamics" },
+    deliveryModels: ["DBFOOT", "DBOOT", "BOO", "BOOT", "Investment Models"],
+    deliveryLifecycle: {
+      eyebrow: "How We Deliver",
+      title: "Turnkey EPC, End to End",
+      description:
+        "Single-point accountability across the full project lifecycle — every phase engineered, owned, and delivered in-house.",
+      phases: [
+        {
+          step: "01",
+          title: "Engineer",
+          subtitle: "Design & Engineering",
+          description:
+            "Multi-discipline design — structural, electrical, and civil — with 3D BIM modelling, clash detection, and detailed engineering for every project.",
+          image: "/images/divisions/dynamics_lifecycle_engineer.webp",
+          icon: DraftingCompass,
+        },
+        {
+          step: "02",
+          title: "Procure",
+          subtitle: "Sourcing & Supply Chain",
+          description:
+            "Strategic sourcing, vendor management, and logistics — equipment and materials procured, inspected, and dispatched to site on schedule.",
+          image: "/images/divisions/dynamics_lifecycle_procure.webp",
+          icon: Truck,
+        },
+        {
+          step: "03",
+          title: "Build",
+          subtitle: "Construction & Execution",
+          description:
+            "On-site construction and erection executed to international safety and quality standards, with project controls tracking cost and schedule.",
+          image: "/images/divisions/dynamics_lifecycle_build.webp",
+          icon: HardHat,
+        },
+        {
+          step: "04",
+          title: "Commission",
+          subtitle: "Testing & Handover",
+          description:
+            "Systems tested, commissioned, and handed over — backed by O&M support that keeps assets performing across their service life.",
+          image: "/images/divisions/dynamics_lifecycle_commission.webp",
+          icon: ClipboardCheck,
+        },
+      ],
+    },
+    featuredProjects: {
+      eyebrow: "Proven Delivery",
+      title: "Projects in Execution",
+      description:
+        "Live mandates across power, civil, and metering — delivered with single-point accountability.",
+      cta: { text: "View All Projects", href: "/projects?division=dynamics" },
+      projects: [
+        {
+          title: "Four G+4 Residential Buildings",
+          category: "Civil",
+          value: "₹53 Cr",
+          status: "Ongoing",
+          description:
+            "A multi-block housing development — construction of four G+4 residential buildings.",
+          image: "/images/projects/residential-g4-housing.webp",
+        },
+        {
+          title: "48,893 DTC Smart Meters",
+          category: "Power & Metering",
+          value: "₹171 Cr",
+          status: "Ongoing",
+          description:
+            "Supply and installation of 48,893 DTC smart meters across six districts, with a five-year O&M contract.",
+          image: "/images/projects/dtc-smart-meters.webp",
+        },
+        {
+          title: "400/220 kV GIS Substation",
+          category: "Power Transmission",
+          status: "Ongoing",
+          description:
+            "Construction of a 400/220 kV gas-insulated switchgear (GIS) substation.",
+          image: "/images/projects/substation-switchyard.webp",
+        },
+        {
+          title: "Transmission Line & Towers — 400/220 kV",
+          category: "Power Transmission",
+          status: "Ongoing",
+          description:
+            "Construction of transmission line and towers feeding the 400/220 kV GIS substation.",
+          image: "/images/projects/transmission-line-corridor.webp",
+        },
+      ],
+    },
     ems: {
       heading: "Electronics Manufacturing Services",
       intro:
         "A 30,000 sq ft facility in Cherlapally, Hyderabad delivering end-to-end electronics manufacturing — from prototyping to final integration across 8+ SMT lines and 1M+ products per year.",
+      facilityImage: "/images/divisions/dynamics_ems_facility.webp",
       phases: [
         { title: "Design & Engineering", description: "Product development and prototyping." },
         { title: "Manufacturing", description: "PCB assembly, box build, and system integration." },
         { title: "Testing & QA", description: "Compliance testing and reliability validation." },
         { title: "Supply Chain", description: "Strategic sourcing and logistics optimization." },
         { title: "After-Sales", description: "Repair, maintenance, and warranty management." },
+      ],
+      products: [
+        {
+          name: "Smart Energy Meters",
+          description: "Single- and three-phase smart electricity meters with AMI communication.",
+          image: "/images/divisions/ems_product_energy_meter.webp",
+        },
+        {
+          name: "Smart Water Meters",
+          description: "IoT-enabled ultrasonic water meters for utility-grade flow measurement.",
+          image: "/images/divisions/ems_product_water_meter.webp",
+        },
+        {
+          name: "EV Chargers",
+          description: "AC charging units for residential, commercial, and fleet electric mobility.",
+          image: "/images/divisions/ems_product_ev_charger.webp",
+        },
+        {
+          name: "Room Chargers",
+          description: "Compact fast-charging adapters built for high-volume consumer electronics.",
+          image: "/images/divisions/ems_product_room_charger.webp",
+        },
+        {
+          name: "Defence RF Systems",
+          description: "Rugged RF modules and assemblies built to MIL-STD and JSS standards.",
+          image: "/images/divisions/ems_product_defence_rf.webp",
+        },
       ],
     },
     faqItems: [
