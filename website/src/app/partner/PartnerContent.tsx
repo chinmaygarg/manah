@@ -1,6 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import TurnstileWidget from "@/components/forms/TurnstileWidget";
+import HoneypotField from "@/components/forms/HoneypotField";
+import { useFormSubmit } from "@/components/forms/useFormSubmit";
 import BlurImage from "@/components/ui/BlurImage";
 import { motion } from "framer-motion";
 import {
@@ -192,7 +195,11 @@ const INITIAL_FORM_STATE = {
 
 export default function PartnerContent() {
   const [formData, setFormData] = useState(INITIAL_FORM_STATE);
-  const [submitted, setSubmitted] = useState(false);
+  const [honeypot, setHoneypot] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
+
+  const { status, error, submit } = useFormSubmit("/api/partner");
+  const submitted = status === "success";
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -205,9 +212,14 @@ export default function PartnerContent() {
       setFormData((prev) => ({ ...prev, [field]: value }));
     };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    if (!turnstileToken) return;
+    await submit({
+      ...formData,
+      company_website: honeypot,
+      turnstileToken,
+    });
   };
 
   return (
@@ -685,9 +697,28 @@ export default function PartnerContent() {
                     />
                   </div>
 
-                  <button type="submit" className="btn-primary w-full">
+                  <HoneypotField value={honeypot} onChange={setHoneypot} />
+
+                  <TurnstileWidget
+                    onVerify={setTurnstileToken}
+                    onReset={() => setTurnstileToken("")}
+                  />
+
+                  {status === "error" && error && (
+                    <p role="alert" className="text-body-sm text-red-600">
+                      {error}
+                    </p>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={status === "submitting" || !turnstileToken}
+                    className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
                     <Send className="w-4 h-4" />
-                    Submit Partnership Inquiry
+                    {status === "submitting"
+                      ? "Submitting…"
+                      : "Submit Partnership Inquiry"}
                   </button>
                 </form>
               )}
