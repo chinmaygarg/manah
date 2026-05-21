@@ -75,7 +75,7 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
     title: "Renewables",
     tagline: "Clean Power",
     heroDescription:
-      "Utility-scale solar, wind, and hybrid renewable energy EPC — from feasibility studies through construction to long-term operations and maintenance.",
+      "Utility-scale solar, wind, hydel, and hybrid renewable energy EPC — from feasibility studies through construction to long-term operations and maintenance.",
     color: "#F59E0B",
     image: "/images/sectors/renewable_energy.webp",
     overview: [
@@ -159,7 +159,7 @@ export const SECTOR_DETAILS: Record<string, SectorDetail> = {
     title: "Defence",
     tagline: "Strategic & Mission-Critical",
     heroDescription:
-      "Defence systems and networks, tactical communication, electronic warfare, surveillance, and mission-critical electronics for India's armed forces.",
+      "Defence systems and networks, tactical communication, electronic warfare, surveillance, composites, and mission-critical electronics for India's armed forces.",
     color: "#059669",
     image: "/images/sectors/defence_electronics.webp",
     overview: [
