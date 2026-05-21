@@ -35,9 +35,9 @@ const NEWS_ITEMS = [
     id: 3,
     category: "Contract Win",
     date: "Feb 2026",
-    title: "HESCOM Awards Manah \u20b9171 Cr Smart Metering Contract \u2014 48,893 DTC Meters Across 6 Districts",
+    title: "Manah Wins \u20b9171 Cr Smart Metering Contract \u2014 48,893 DTC Meters",
     excerpt:
-      "Manah Dynamics to deploy 48,893 DTC smart meters across six districts in Karnataka for HESCOM under a \u20b9171 Cr utility modernisation programme.",
+      "Manah Dynamics to deploy 48,893 DTC smart meters across six districts under a \u20b9171 Cr utility modernisation programme.",
     href: "/projects",
     image: "/images/news/power-transmission.webp",
   },

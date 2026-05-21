@@ -34,7 +34,7 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
     gradient: "from-[#1E3A5F] to-manah-navy",
     overview: [
       "Manah Dynamics is the flagship EPC and manufacturing division of Manah Group, delivering turnkey project execution across power transmission, renewables, telecom, civil infrastructure, BESS/SCADA, oil & gas, irrigation and defence — trusted by utilities, government agencies, and private developers across India.",
-      "Our integrated capabilities span design engineering, procurement, construction, and commissioning — enabling single-point accountability through DBFOOT, DBOOT, BOO, BOOT, and Investment project delivery models. Active mandates include 4× G+4 residential buildings for MES at Narangi Military Station (₹53 Cr) and deployment of 48,893 DTC smart meters for HESCOM across 6 Karnataka districts (₹171 Cr).",
+      "Our integrated capabilities span design engineering, procurement, construction, and commissioning — enabling single-point accountability through DBFOOT, DBOOT, BOO, BOOT, and Investment project delivery models. Active mandates include four G+4 residential buildings under a multi-block housing development (₹53 Cr) and the deployment of 48,893 DTC smart meters across six districts with five-year maintenance (₹171 Cr).",
       "Manah Dynamics is also home to the Group's Electronics Manufacturing Services (EMS) business, operating from a 30,000 sq ft facility at Cherlapally, Hyderabad. With 8+ SMT lines and 1M+ products per year, we manufacture Smart Energy Meters, Smart Water Meters, EV Chargers, Room Chargers, and Defence RF Systems to MIL-STD, JSS, and IPC-A-610 Class 3 standards.",
     ],
     keyStats: [

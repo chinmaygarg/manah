@@ -92,7 +92,7 @@ function ArticleJsonLd({
       name: SITE_CONFIG.name,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_CONFIG.url}/images/logo.svg`,
+        url: `${SITE_CONFIG.url}/images/logo_250.webp`,
       },
     },
     mainEntityOfPage: {

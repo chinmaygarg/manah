@@ -49,9 +49,9 @@ const SECTORS = [
     icon: Shield,
     slug: "defence",
     title: "Defence",
-    description: "Tactical communication, radar sub-systems, electronic warfare, and mission-critical defence electronics — indigenous, MIL-STD and JSS compliant.",
+    description: "Firearms, communication devices, and radio-frequency systems — defence-grade equipment designed, manufactured, and tested in-house.",
     color: "#059669",
-    highlights: ["Tactical Comms", "Radar & EW", "Surveillance Systems", "Weapon Electronics"],
+    highlights: ["Firearms & Small Arms", "Communication Devices", "RF-Based Devices", "System Integration"],
     image: "/images/sectors/defence_electronics.webp",
   },
   {

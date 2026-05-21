@@ -18,6 +18,9 @@ import {
   Factory,
   ArrowRight,
   Target,
+  Scale,
+  Award,
+  FileText,
 } from "lucide-react";
 
 const ESG_PILLARS = [
@@ -83,6 +86,29 @@ const INITIATIVES = [
     title: "Community Development",
     description: "Skill development programs, local hiring initiatives, and community infrastructure projects in areas surrounding our operations.",
     icon: Users,
+  },
+];
+
+const GOVERNANCE_POINTS = [
+  {
+    icon: Scale,
+    title: "Independent Board Oversight",
+    description: "An independent board and a dedicated audit committee provide objective oversight of strategy, risk, and financial integrity across every division.",
+  },
+  {
+    icon: Award,
+    title: "Certified to Global Standards",
+    description: "Operations are certified to ISO 9001, ISO 14001 and ISO 45001, with DGCA CAR 145 approval for aviation MRO — quality, environment, and safety held to international benchmarks.",
+  },
+  {
+    icon: FileText,
+    title: "Transparent ESG Reporting",
+    description: "ESG and BRSR-aligned reporting and disclosures keep stakeholders informed with consistent, comparable, and verifiable sustainability data.",
+  },
+  {
+    icon: Shield,
+    title: "Ethics & Integrity",
+    description: "Anti-corruption and whistleblower policies enforce a zero-tolerance stance on misconduct and protect those who raise concerns in good faith.",
   },
 ];
 
@@ -227,8 +253,42 @@ export default function SustainabilityContent() {
         </div>
       </MotionSection>
 
-      {/* ─── Key Initiatives / Governance ─── */}
-      <section id="governance" className="section-padding bg-manah-navy text-white">
+      {/* ─── Governance ─── */}
+      <MotionSection id="governance" className="section-padding bg-white">
+        <div className="section-container">
+          <SectionHeading
+            eyebrow="Accountability"
+            title="Governance & Oversight"
+            description="Strong governance underpins every decision — ethics, compliance, and transparency built into how Manah Group operates."
+          />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+            {GOVERNANCE_POINTS.map((point, i) => (
+              <motion.div
+                key={point.title}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-manah-gray-50 rounded-2xl p-7 border border-manah-gray-200/40"
+              >
+                <div className="w-14 h-14 rounded-xl bg-manah-gold/10 flex items-center justify-center mb-5">
+                  <point.icon className="w-7 h-7 text-manah-gold" />
+                </div>
+                <h3 className="font-display text-heading-md font-semibold text-manah-navy mb-3">
+                  {point.title}
+                </h3>
+                <p className="text-manah-gray-500 text-body-sm leading-relaxed">
+                  {point.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </MotionSection>
+
+      {/* ─── Key Initiatives ─── */}
+      <section id="initiatives" className="section-padding bg-manah-navy text-white">
         <div className="section-container">
           <SectionHeading
             eyebrow="In Action"
@@ -260,8 +320,8 @@ export default function SustainabilityContent() {
         </div>
       </section>
 
-      {/* ─── ESG Reports ─── */}
-      <MotionSection id="reports" className="section-padding bg-white text-center">
+      {/* ─── Closing CTA ─── */}
+      <MotionSection className="section-padding bg-white text-center">
         <div className="section-container max-w-2xl mx-auto">
           <SectionHeading
             eyebrow="Partner With Us"

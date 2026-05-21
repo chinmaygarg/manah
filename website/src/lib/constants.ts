@@ -107,7 +107,7 @@ export const NAVIGATION: NavItem[] = [
       { label: "Building & Roads", href: "/sectors/building-roads", description: "Highways, bridges, residential and industrial buildings", image: "/images/sectors/infrastructure.webp", featured: true },
       { label: "Telecom", href: "/sectors/telecom", description: "Towers, BharatNet fiber, and active network rollout", image: "/images/sectors/telecom_equipment.webp", featured: true },
       { label: "BESS / SCADA", href: "/sectors/bess-scada", description: "Battery energy storage and grid automation", image: "/images/sectors/bess_scada.webp" },
-      { label: "Defence", href: "/sectors/defence", description: "Tactical comms, radar, EW, and composites", image: "/images/sectors/defence_electronics.webp", featured: true },
+      { label: "Defence", href: "/sectors/defence", description: "Firearms, communication devices, and RF-based systems", image: "/images/sectors/defence_electronics.webp", featured: true },
       { label: "Irrigation & Water", href: "/sectors/irrigation-water", description: "WTP, STP, lift irrigation, and canal networks", image: "/images/sectors/infrastructure.webp" },
       { label: "Mining", href: "/sectors/mining", description: "Mine infrastructure, processing plants, conveyors", image: "/images/sectors/manufacturing.webp" },
       { label: "Oil & Gas", href: "/sectors/oil-gas", description: "Refinery allied, pipelines, LNG terminal BoP", image: "/images/sectors/manufacturing.webp" },
@@ -132,7 +132,6 @@ export const NAVIGATION: NavItem[] = [
       { label: "Environment", href: "/sustainability#environment", description: "Climate action & carbon reduction", image: "/images/sustainability/environment.webp", featured: true },
       { label: "Social Responsibility", href: "/sustainability#social", description: "Community impact & inclusion", image: "/images/sustainability/community_impact.webp", featured: true },
       { label: "Governance", href: "/sustainability#governance", description: "Ethics, compliance & transparency", image: "/images/sustainability/sustainability_hero.webp", featured: true },
-      { label: "ESG Reports", href: "/sustainability#reports", description: "Annual sustainability disclosures" },
     ],
   },
   {

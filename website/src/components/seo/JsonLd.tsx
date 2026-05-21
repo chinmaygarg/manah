@@ -7,7 +7,7 @@ export function OrganizationJsonLd() {
     name: SITE_CONFIG.name,
     alternateName: SITE_CONFIG.shortName,
     url: SITE_CONFIG.url,
-    logo: `${SITE_CONFIG.url}/images/logo.svg`,
+    logo: `${SITE_CONFIG.url}/images/logo_250.webp`,
     description: SITE_CONFIG.description,
     slogan: SITE_CONFIG.tagline,
     knowsAbout: [

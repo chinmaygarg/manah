@@ -231,6 +231,7 @@ export default function SectorDetailContent({ slug }: { slug: string }) {
       </section>
 
       {/* ─── Featured Projects ─── */}
+      {sector.projects.length > 0 && (
       <section className="section-padding bg-white">
         <div className="section-container">
           <SectionHeading
@@ -274,6 +275,7 @@ export default function SectorDetailContent({ slug }: { slug: string }) {
           </div>
         </div>
       </section>
+      )}
 
       {/* ─── Process ─── */}
       <section className="section-padding bg-manah-navy text-white">
