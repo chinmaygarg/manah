@@ -27,6 +27,10 @@ export async function verifyTurnstile(
     }
 
     const response = await fetch(VERIFY_URL, { method: "POST", body });
+    if (!response.ok) {
+      console.error("Turnstile siteverify HTTP error:", response.status);
+      return false;
+    }
     const data = (await response.json()) as SiteVerifyResponse;
     return data.success === true;
   } catch (error) {

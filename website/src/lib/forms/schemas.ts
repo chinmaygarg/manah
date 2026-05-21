@@ -5,6 +5,7 @@ const PHONE = 40;
 const EMAIL = 320;
 const MESSAGE = 5000;
 const TOKEN = 4096;
+const DIVISION = 50;
 
 const INQUIRY_TYPES = [
   "General Inquiry",
@@ -43,7 +44,7 @@ export const contactSchema = z.object({
   phone: optionalText(PHONE),
   company: optionalText(SHORT),
   type: z.enum(INQUIRY_TYPES),
-  division: optionalText(50),
+  division: optionalText(DIVISION),
   message: z.string().trim().min(1).max(MESSAGE),
   turnstileToken,
 });
