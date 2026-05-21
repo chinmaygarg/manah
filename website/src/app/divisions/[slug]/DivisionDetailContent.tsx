@@ -20,6 +20,7 @@ import {
   Shield,
 } from "lucide-react";
 import BlurImage from "@/components/ui/BlurImage";
+import DivisionPillars from "./DivisionPillars";
 
 const DIVISION_IMAGES: Record<string, { hero: string; detail: string; video?: string; videoMobile?: string }> = {
   dynamics: {
@@ -226,7 +227,10 @@ export default function DivisionDetailContent({ slug }: { slug: string }) {
         </div>
       </MotionSection>
 
-      {/* ─── Services ─── */}
+      {/* ─── Services / Pillars ─── */}
+      {division.pillars ? (
+        <DivisionPillars pillars={division.pillars} color={division.color} />
+      ) : division.services ? (
       <section className="section-padding bg-manah-gray-50">
         <div className="section-container">
           <SectionHeading
@@ -318,6 +322,7 @@ export default function DivisionDetailContent({ slug }: { slug: string }) {
           )}
         </div>
       </section>
+      ) : null}
 
       {/* ─── Electronics Manufacturing Value Chain ─── */}
       {division.ems && (

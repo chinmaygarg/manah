@@ -80,7 +80,7 @@ export default async function DivisionPage({
         name={division.name}
         description={division.heroDescription}
         path={`/divisions/${slug}`}
-        services={division.services}
+        services={division.services ?? division.pillars?.flatMap((p) => p.services)}
       />
       {division.faqItems && division.faqItems.length > 0 && (
         <FaqJsonLd items={division.faqItems} />

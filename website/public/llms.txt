@@ -10,7 +10,7 @@ Manah Group operates across power transmission and distribution, renewable energ
 - [Manah Green Energy](https://www.manah.com/divisions/green-energy): Green hydrogen production and renewable energy infrastructure.
 - [Manah Atomic](https://www.manah.com/divisions/atomic): Nuclear energy solutions — Small Modular Reactors and advanced reactors.
 - [Manah Aerospace](https://www.manah.com/divisions/aerospace): Aviation MRO, training and consultancy (DGCA-certified).
-- [Manah AI](https://www.manah.com/divisions/ai): Generative AI, agentic systems, LLM/SLM training, and data centers.
+- [Manah AI](https://www.manah.com/divisions/ai): Built on two pillars — Generative AI & LLM (conversational analytics, sovereign LLM/SLM training, enterprise AI automation, NLP, AI-as-a-Service) and Data Centers (colocation, cloud infrastructure, edge computing, green data centers).
 - [Manah Investments](https://www.manah.com/divisions/investments): Strategic capital deployment across infrastructure, energy and deep tech.
 
 ## Sectors

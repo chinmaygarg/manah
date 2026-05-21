@@ -7,35 +7,54 @@ import type { LucideIcon } from "lucide-react";
 import {
   Atom,
   BatteryCharging,
-  Bot,
   BrainCircuit,
   Briefcase,
   Building,
   Building2,
   CircuitBoard,
   ClipboardCheck,
+  Cloud,
   Cog,
   Container,
-  Cpu,
   Droplets,
   Factory,
   Gauge,
   GraduationCap,
   Handshake,
+  Languages,
   Leaf,
   Lightbulb,
+  MessagesSquare,
+  Network,
   Orbit,
+  Radio,
   RadioTower,
   Rocket,
   Server,
+  ServerCog,
   Shield,
   ShieldCheck,
-  Sparkles,
   Sun,
   Workflow,
   Wrench,
   Zap,
 } from "lucide-react";
+
+export interface DivisionService {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  /** Marks a capability that is planned but not yet operational. */
+  inPipeline?: boolean;
+}
+
+/** A named capability area within a division — each renders as its own section. */
+export interface DivisionPillar {
+  name: string;
+  tagline: string;
+  image: string;
+  services: DivisionService[];
+}
 
 export interface DivisionDetail {
   id: string;
@@ -46,7 +65,10 @@ export interface DivisionDetail {
   gradient: string;
   overview: string[];
   keyStats: { value: string; label: string }[];
-  services: { title: string; description: string; icon: LucideIcon }[];
+  /** Flat service list — used by divisions without grouped pillars. */
+  services?: DivisionService[];
+  /** Grouped capability areas — when present, rendered instead of `services`. */
+  pillars?: DivisionPillar[];
   sectors: { name: string; image: string; description: string }[];
   certifications: string[];
   cta: { text: string; href: string };
@@ -296,8 +318,8 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
     color: "#5B8CC5",
     gradient: "from-[#5B8CC5] to-manah-navy",
     overview: [
-      "Manah AI is the artificial intelligence and compute infrastructure division of Manah Group, focused on agentic AI systems, LLM and SLM training pipelines, generative AI applications, and the sovereign data center infrastructure that backs them.",
-      "Our mission is to build India-native AI capability — from research through deployment — for enterprise, government, and defence use cases, with purpose-built data center infrastructure delivering high-performance, secure, and energy-efficient compute.",
+      "Manah AI is the artificial intelligence and compute infrastructure division of Manah Group, built on two pillars — Generative AI & LLM, and Data Centers — that together deliver sovereign AI capability from foundational research through production deployment.",
+      "Our mission is to build India-native AI capability for enterprise, government, and defence — domain-trained language models, agentic automation, and conversational intelligence — backed by purpose-built data center infrastructure for high-performance, secure, and energy-efficient compute.",
     ],
     keyStats: [
       { value: "Agentic AI", label: "Core Platform" },
@@ -307,19 +329,37 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
       { value: "Sovereign", label: "Compute" },
       { value: "India-Native", label: "AI Capability" },
     ],
-    services: [
-      { icon: Bot, title: "Agentic AI Systems", description: "Design and deployment of autonomous, tool-using AI agents for enterprise workflow automation, decision support, and operational intelligence." },
-      { icon: BrainCircuit, title: "LLM & SLM Training", description: "End-to-end large and small language model training, fine-tuning, and continual learning pipelines — tailored to domain, language, and regulatory context." },
-      { icon: Sparkles, title: "Generative AI Applications", description: "Production-grade generative AI products spanning content, code, design, document processing, and multi-modal interfaces for enterprise and public sector use cases." },
-      { icon: Server, title: "Data Center Infrastructure", description: "Purpose-built AI data centers engineered for high-density GPU compute, liquid cooling, and power-efficient operation — supporting training and inference at scale." },
-      { icon: Cpu, title: "Sovereign AI Compute", description: "Dedicated compute capacity for government, defence, and regulated industries with full data residency, auditability, and security controls." },
-      { icon: Workflow, title: "AI Consulting & Integration", description: "Strategic AI roadmap, model evaluation, MLOps, and system integration services for organizations operationalizing AI at scale." },
+    pillars: [
+      {
+        name: "Generative AI & LLM",
+        tagline: "Sovereign generative-AI capability for enterprise and government — from conversational intelligence to India-hosted, domain-trained language models.",
+        image: "/images/divisions/manah_ai_generative.webp",
+        services: [
+          { icon: MessagesSquare, title: "Conversational Analytics", description: "Natural-language interfaces that turn enterprise data into decisions — ask a question and get a sourced answer, summary, or report." },
+          { icon: BrainCircuit, title: "Sovereign LLM & SLM Training", description: "India-hosted large and small language models, trained and fine-tuned on domain data for defence, BFSI, and government workloads." },
+          { icon: Workflow, title: "Enterprise AI Automation", description: "Agentic workflow automation, document intelligence, and decision support that compress manual back-office processes." },
+          { icon: Languages, title: "NLP Solutions", description: "Multilingual processing across Indian languages — sentiment, entity, and knowledge extraction at scale." },
+          { icon: ServerCog, title: "AI-as-a-Service", description: "Managed, compliant AI infrastructure for regulated industries — defence, banking, healthcare, and government." },
+        ],
+      },
+      {
+        name: "Data Centers",
+        tagline: "Scalable, secure, sovereign data-center infrastructure to power India's digital economy — from enterprise colocation to hyperscaler-grade facilities.",
+        image: "/images/divisions/manah_ai_datacenter.webp",
+        services: [
+          { icon: Server, title: "Colocation Services", description: "Tier-grade rack space with redundant power and precision cooling for enterprise IT and AI workloads." },
+          { icon: Cloud, title: "Cloud Infrastructure", description: "Private and hybrid cloud hosting with high availability and India data residency." },
+          { icon: Network, title: "Hyperscaler Partnerships", description: "Strategic alliances for large-scale compute capacity to serve hyperscale AI demand.", inPipeline: true },
+          { icon: Radio, title: "Edge Computing", description: "Low-latency micro-facilities at the network edge for real-time inference and distributed workloads." },
+          { icon: Leaf, title: "Green Data Centers", description: "Renewable-powered, PUE-optimized facilities aligned with Net-Zero and ESG commitments." },
+        ],
+      },
     ],
     sectors: [
-      { name: "Enterprise AI", image: "/images/sectors/industrial_iot.webp", description: "Agentic systems and generative AI deployed across business operations and decision workflows." },
-      { name: "Data Centers", image: "/images/divisions/manah_ai_detail.webp", description: "High-density GPU compute infrastructure for AI training and inference." },
-      { name: "Government & Defence", image: "/images/sectors/defence_electronics.webp", description: "Sovereign AI compute and secure AI systems for public sector and defence." },
-      { name: "Deep Tech Research", image: "/images/divisions/manah_ai_hero.webp", description: "Foundational model research, LLM/SLM development, and applied AI research." },
+      { name: "Enterprise & Industry", image: "/images/sectors/industrial_iot.webp", description: "Agentic systems and generative AI embedded across business operations and decision workflows." },
+      { name: "Government & Defence", image: "/images/sectors/defence_electronics.webp", description: "Sovereign AI compute and secure language models for public-sector and defence programmes." },
+      { name: "Banking & Financial Services", image: "/images/divisions/manah_ai_detail.webp", description: "Document intelligence, conversational analytics, and compliant AI for BFSI workloads." },
+      { name: "Healthcare & Research", image: "/images/divisions/manah_ai_hero.webp", description: "Applied AI, NLP, and high-performance compute for healthcare and deep-tech research." },
     ],
     certifications: ["ISO 9001:2015", "ISO 27001 (in progress)", "DPDP Act Aligned"],
     cta: { text: "Request Demo", href: "/contact" },
@@ -330,7 +370,7 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
       },
       {
         question: "What services does Manah AI provide?",
-        answer: "Manah AI provides agentic AI systems for workflow automation, end-to-end LLM and SLM training and fine-tuning, production-grade generative AI applications, purpose-built data center infrastructure, sovereign AI compute for regulated industries, and AI consulting and integration services including AI roadmap, model evaluation, and MLOps.",
+        answer: "Manah AI is organized into two pillars. Generative AI & LLM covers conversational analytics, sovereign LLM and SLM training, enterprise AI automation, NLP solutions, and AI-as-a-Service. Data Centers covers colocation services, cloud infrastructure, edge computing, green data centers, and hyperscaler partnerships.",
       },
       {
         question: "What is sovereign AI compute at Manah AI?",
