@@ -11,7 +11,7 @@ export const SITE_CONFIG = {
   url: "https://www.manah.com",
   locale: "en_IN",
   socials: {
-    linkedin: "https://www.linkedin.com/company/manah-group",
+    linkedin: "https://www.linkedin.com/company/manahgroup/",
     twitter: "https://twitter.com/manahgroup",
     youtube: "https://www.youtube.com/@manahgroup",
     instagram: "https://www.instagram.com/manahgroup",
