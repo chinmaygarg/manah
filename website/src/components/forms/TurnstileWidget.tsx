@@ -11,7 +11,9 @@ interface TurnstileWidgetProps {
 
 /**
  * Cloudflare Turnstile widget. Reads the public site key from
- * NEXT_PUBLIC_TURNSTILE_SITE_KEY; renders nothing if it is unset.
+ * NEXT_PUBLIC_TURNSTILE_SITE_KEY. If the key is unset the form cannot be
+ * verified, so a visible fallback message is shown rather than failing
+ * silently (a missing widget leaves the submit button permanently disabled).
  */
 export default function TurnstileWidget({
   onVerify,
@@ -20,7 +22,11 @@ export default function TurnstileWidget({
   const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
   if (!siteKey) {
     console.error("NEXT_PUBLIC_TURNSTILE_SITE_KEY is not configured");
-    return null;
+    return (
+      <p role="alert" className="text-body-sm text-red-600">
+        Form verification is unavailable right now. Please email us directly.
+      </p>
+    );
   }
 
   return (
