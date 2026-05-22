@@ -18,6 +18,7 @@ const scriptSrc = [
   "script-src 'self' 'unsafe-inline'",
   ...(isDev ? ["'unsafe-eval'"] : []),
   "https://www.googletagmanager.com",
+  "https://challenges.cloudflare.com",
 ].join(" ");
 
 const CSP = [
@@ -28,6 +29,7 @@ const CSP = [
   "font-src 'self' data:",
   "connect-src 'self' https:",
   "media-src 'self'",
+  "frame-src 'self' https://challenges.cloudflare.com",
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self'",
