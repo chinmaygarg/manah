@@ -60,7 +60,6 @@ export function OrganizationJsonLd() {
       SITE_CONFIG.socials.linkedin,
       SITE_CONFIG.socials.twitter,
       SITE_CONFIG.socials.youtube,
-      SITE_CONFIG.socials.instagram,
     ],
     industry: "Engineering, Procurement and Construction",
     numberOfEmployees: {

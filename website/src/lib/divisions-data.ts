@@ -528,7 +528,7 @@ export const DIVISION_DETAILS: Record<string, DivisionDetail> = {
     faqItems: [
       {
         question: "What does Manah AI do?",
-        answer: "Manah AI is the artificial intelligence and compute infrastructure division of Manah Group, focused on agentic AI systems, LLM and SLM training pipelines, generative AI applications, and sovereign data center infrastructure. Its mission is to build India-native AI capability from research through deployment for enterprise, government, and defence use cases.",
+        answer: "Manah AI is the artificial intelligence and compute infrastructure division of Manah Group, built on two pillars — Generative AI & LLM and Data Centers. Its mission is to build India-native AI capability from research through deployment for enterprise, government, and defence use cases, backed by purpose-built, sovereign data center infrastructure.",
       },
       {
         question: "What services does Manah AI provide?",

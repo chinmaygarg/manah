@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Linkedin, Youtube, Twitter, Instagram, ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
+import { Linkedin, Youtube, Twitter, ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { SITE_CONFIG, FOOTER_LINKS } from "@/lib/constants";
 import MotionSection from "@/components/animations/MotionSection";
 
@@ -68,7 +68,6 @@ export default function Footer() {
                 { icon: Linkedin, href: SITE_CONFIG.socials.linkedin, label: "LinkedIn" },
                 { icon: Twitter, href: SITE_CONFIG.socials.twitter, label: "X (Twitter)" },
                 { icon: Youtube, href: SITE_CONFIG.socials.youtube, label: "YouTube" },
-                { icon: Instagram, href: SITE_CONFIG.socials.instagram, label: "Instagram" },
               ].map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}

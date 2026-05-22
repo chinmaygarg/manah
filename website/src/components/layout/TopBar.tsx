@@ -1,14 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { Linkedin, Twitter, Youtube, Instagram } from "lucide-react";
+import { Linkedin, Twitter, Youtube } from "lucide-react";
 import { TOP_BAR_LINKS, SITE_CONFIG } from "@/lib/constants";
 
 const SOCIAL_LINKS = [
   { icon: Linkedin, href: SITE_CONFIG.socials.linkedin, label: "LinkedIn" },
   { icon: Twitter, href: SITE_CONFIG.socials.twitter, label: "Twitter" },
   { icon: Youtube, href: SITE_CONFIG.socials.youtube, label: "YouTube" },
-  { icon: Instagram, href: SITE_CONFIG.socials.instagram, label: "Instagram" },
 ] as const;
 
 export default function TopBar() {
