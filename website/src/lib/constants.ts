@@ -12,9 +12,8 @@ export const SITE_CONFIG = {
   locale: "en_IN",
   socials: {
     linkedin: "https://www.linkedin.com/company/manahgroup/",
-    twitter: "https://twitter.com/manahgroup",
-    youtube: "https://www.youtube.com/@manahgroup",
-    instagram: "https://www.instagram.com/manahgroup",
+    twitter: "https://x.com/ManahGroup",
+    youtube: "https://www.youtube.com/@Manah-Group",
   },
 } as const;
 
@@ -228,12 +227,12 @@ export const DIVISIONS = [
     id: "ai",
     name: "Manah AI",
     tagline: "Generative AI & Data Centers",
-    description: "Building Manah's AI capability from foundational research to production — agentic AI systems, LLM and SLM training pipelines, and generative AI applications, backed by purpose-built data center infrastructure for sovereign, high-performance compute.",
+    description: "Manah's AI division, built on two pillars — Generative AI & LLM and Data Centers — delivering sovereign AI capability from foundational research to production, backed by purpose-built data center infrastructure for high-performance compute.",
     href: "/divisions/ai",
     color: "#5B8CC5",
     image: "/images/divisions/manah_ai_hero.webp",
     stats: [
-      { label: "Core Focus", value: "Agentic AI" },
+      { label: "Core Focus", value: "Generative AI" },
       { label: "Training", value: "LLM & SLM" },
       { label: "Infrastructure", value: "Data Centers" },
     ],
