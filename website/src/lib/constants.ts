@@ -70,8 +70,7 @@ export const NAVIGATION: NavItem[] = [
       { label: "Who We Are", href: "/about", description: "Our story, vision, and philosophy", image: "/images/about/team_collaboration.webp", featured: true },
       { label: "Board of Directors", href: "/about#leadership", description: "Meet our executive team", image: "/images/leaders/prem_kumar.webp", featured: true },
       { label: "Mission, Vision & Values", href: "/about#mission", description: "Purpose-driven excellence", image: "/images/about/values_mindful.webp", featured: true },
-      { label: "Investor Relations", href: "/about#investors", description: "Financial performance and reports" },
-      { label: "Policies & Charters", href: "/about#governance", description: "Governance framework" },
+
       { label: "History & Awards", href: "/about#history", description: "Milestones and certifications" },
     ],
   },
@@ -148,7 +147,7 @@ export const NAVIGATION: NavItem[] = [
       { label: "Press Releases", href: "/media#press", description: "Official announcements", image: "/images/news/power-transmission.webp", featured: true },
       { label: "In The News", href: "/media#news", description: "Media coverage & features", image: "/images/news/aerospace-mro.webp", featured: true },
       { label: "Awards & Recognition", href: "/media#awards", description: "Industry accolades", image: "/images/news/green-hydrogen.webp", featured: true },
-      { label: "Videos", href: "/media#videos", description: "Project films & corporate stories" },
+
     ],
   },
   {
