@@ -266,13 +266,13 @@ document.addEventListener('DOMContentLoaded', function () {
   // ─── Preload Critical Images ───
   var criticalImages = [
     '../website/public/images/logo.avif',
-    '../website/public/images/divisions/manah_dynamics_hero.png',
-    '../website/public/images/divisions/manah_aerospace_hero.png',
-    '../website/public/images/divisions/green_energy_hero.png',
-    '../website/public/images/hero/hero_construction_site.png',
-    '../website/public/images/hero/hero_main_infrastructure.png',
-    '../website/public/images/hero/hero_renewable_energy.png',
-    '../website/public/images/gallery/corporate_boardroom_meeting.png',
+    '../website/public/images/divisions/manah_dynamics_hero.webp',
+    '../website/public/images/divisions/manah_aerospace_hero.webp',
+    '../website/public/images/divisions/green_energy_hero.webp',
+    '../website/public/images/hero/hero_construction_site.webp',
+    '../website/public/images/hero/hero_main_infrastructure.webp',
+    '../website/public/images/hero/hero_renewable_energy.webp',
+    '../website/public/images/gallery/corporate_boardroom_meeting.webp',
   ];
 
   criticalImages.forEach(function (src) {
