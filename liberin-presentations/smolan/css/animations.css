@@ -1,0 +1,78 @@
+/* ═══════════════════════════════════════════════════════════
+   LIBERIN CAPABILITIES DECK — Ambient & Micro Animations (Light)
+   ═══════════════════════════════════════════════════════════ */
+
+.slide-head > *, [data-stagger] > * { will-change: transform, opacity; }
+
+/* ─── Text shimmer on gradient headline ─── */
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+.text-gradient {
+  background-size: 200% auto;
+  animation: shimmer 6s linear infinite;
+}
+
+/* ─── Eyebrow dot pulse ─── */
+@keyframes dotPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(13,148,136,0.45); }
+  70% { box-shadow: 0 0 0 8px rgba(13,148,136,0); }
+}
+.eyebrow .dot { animation: dotPulse 2.2s infinite; }
+
+/* ─── Strategy flow node pulse ─── */
+@keyframes sfPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37,99,235,0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(37,99,235,0); }
+}
+.strategy-flow .sf-node.active .sf-dot { animation: sfPulse 2.4s infinite; }
+
+/* ─── Orb glow ambient drift ─── */
+@keyframes orbDrift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(24px, -18px) scale(1.05); }
+}
+.orb-glow { animation: orbDrift 16s ease-in-out infinite; }
+.orb-glow.teal { animation-duration: 20s; animation-direction: reverse; }
+
+/* ─── SVG pattern slow drift ─── */
+@keyframes patternDrift {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-40px, -40px); }
+}
+.svg-pattern-bg.pat-grid svg { animation: patternDrift 45s linear infinite; }
+
+/* ─── Hover micro-interactions ─── */
+.card, .tile, .pillar, .logo-plate, .product-card, .team-card, .step, .case-block, .kpi, .usecase-card {
+  will-change: transform;
+}
+.tile .ic svg, .pillar .ic svg {
+  transition: transform 0.3s var(--ease-out);
+}
+.tile:hover .ic svg, .pillar:hover .ic svg {
+  transform: scale(1.12) rotate(-3deg);
+}
+
+/* ─── Logo plate: full color always (presented live, not browsed) ─── */
+.logo-plate img { transition: transform 0.3s ease; }
+.logo-plate:hover img { transform: scale(1.05); }
+
+/* ─── Product card banner zoom ─── */
+.product-card .banner img { transition: transform 0.4s var(--ease-out); }
+.product-card:hover .banner img { transform: scale(1.06); }
+
+/* ─── Team card photo ring pulse on hover ─── */
+.team-card img { transition: border-color 0.3s ease, transform 0.3s ease; }
+.team-card:hover img { border-color: var(--blue-light); transform: scale(1.05); }
+
+/* ─── CTA arrow nudge ─── */
+.reveal a.cta-big svg { transition: transform 0.3s var(--ease-out); }
+.reveal a.cta-big:hover svg { transform: translateX(4px); }
+
+/* ─── Reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  .text-gradient, .orb-glow, .svg-pattern-bg svg, .eyebrow .dot, .strategy-flow .sf-node.active .sf-dot {
+    animation: none !important;
+  }
+}

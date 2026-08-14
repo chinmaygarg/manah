@@ -1,0 +1,188 @@
+/* ═══════════════════════════════════════════════════════════
+   LIBERIN — Enterprise AI & Digital Engineering Capabilities
+   Brand Theme Tokens · Liberin Blue on Light (sales-pitch deck)
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Base — light */
+  --paper: #FAFBFE;
+  --paper-alt: #F1F5F9;
+  --white: #FFFFFF;
+
+  /* Primary — Liberin Blue */
+  --blue: #2563EB;
+  --blue-light: #60A5FA;
+  --blue-dark: #1D4ED8;
+  --sky: #0284C7;
+
+  /* Secondary — Teal */
+  --teal: #0D9488;
+  --teal-light: #2DD4BF;
+
+  /* Category accents */
+  --violet: #7C3AED;
+  --orange: #EA580C;
+  --red: #DC2626;
+
+  /* Tinted panels */
+  --tint-blue: #EFF6FF;
+  --tint-teal: #F0FDFA;
+  --tint-slate: #F1F5F9;
+
+  /* Text */
+  --ink: #0F172A;
+  --ink-soft: #1E293B;
+  --ink-dim: #64748B;
+  --ink-faint: #94A3B8;
+
+  /* Borders */
+  --line: #E2E8F0;
+  --line-soft: #CBD5E1;
+
+  /* Typography */
+  --font-display: 'Outfit', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  /* Spacing */
+  --slide-padding: 30px 56px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html, body { margin: 0; padding: 0; overflow: hidden; background: var(--paper); }
+
+/* ─── Reveal.js Overrides ─── */
+.reveal {
+  font-family: var(--font-body);
+  font-size: 24px;
+  color: var(--ink-soft);
+}
+
+.reveal .slides {
+  text-align: left;
+}
+
+.reveal .slides > section {
+  padding: var(--slide-padding);
+  box-sizing: border-box;
+  overflow: hidden;
+  background: var(--paper);
+  /* Force full canvas height regardless of content length — reveal.js's
+     own centering only adjusts `top`, it never stretches section height,
+     so shorter slides would otherwise leave gaps above and below. */
+  height: 100% !important;
+  top: 0 !important;
+}
+
+/* ─── Typography ─── */
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  line-height: 1.12;
+  margin-bottom: 0.4em;
+}
+
+.reveal h1 { font-size: 3.2em; font-weight: 800; }
+.reveal h2 { font-size: 2.2em; }
+.reveal h3 { font-size: 1.3em; font-weight: 600; color: var(--blue); }
+.reveal h4 { font-size: 1.05em; font-weight: 600; color: var(--ink); }
+
+.reveal p {
+  line-height: 1.6;
+  color: var(--ink-dim);
+  max-width: 900px;
+}
+
+.reveal strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ─── Text Gradient (blue → teal, matches Liberin's live site) ─── */
+.text-gradient {
+  background: linear-gradient(100deg, var(--blue) 0%, var(--sky) 50%, var(--teal) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-blue { color: var(--blue); }
+.text-teal { color: var(--teal); }
+
+/* ─── Cards ─── */
+.card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px;
+  transition: all 0.3s var(--ease-out);
+}
+
+.card:hover {
+  border-color: var(--blue-light);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(37, 99, 235, 0.1);
+}
+
+/* ─── Slide Number / Progress ─── */
+.reveal .slide-number {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--blue);
+  background: transparent;
+}
+
+.reveal .progress {
+  height: 3px;
+  color: var(--blue);
+}
+
+.reveal .progress span {
+  background: linear-gradient(90deg, var(--blue-dark), var(--blue), var(--teal));
+}
+
+.reveal .controls {
+  color: var(--blue);
+}
+
+/* ─── Fragments ─── */
+.reveal .fragment { transition: all 0.5s var(--ease-out); }
+.reveal .fragment.fade-up { transform: translateY(40px); opacity: 0; }
+.reveal .fragment.fade-up.visible { transform: translateY(0); opacity: 1; }
+
+/* ─── Fullscreen Button ─── */
+#fullscreen-btn {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  z-index: 100;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--blue);
+  cursor: pointer;
+  transition: all 0.3s var(--ease-out);
+  padding: 0;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
+}
+
+#fullscreen-btn:hover {
+  background: var(--tint-blue);
+  border-color: var(--blue-light);
+  transform: scale(1.08);
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--paper-alt); }
+::-webkit-scrollbar-thumb { background: var(--blue-light); border-radius: 2px; }

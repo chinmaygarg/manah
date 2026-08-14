@@ -1,0 +1,947 @@
+/* ═══════════════════════════════════════════════════════════
+   LIBERIN — Saudi Arabia Investor Deck — Brand Theme Tokens
+   Palette: Emerald + Platinum on Emerald-Black
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── Google Fonts ─── */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ─── CSS Custom Properties ─── */
+:root {
+  /* Primary Brand */
+  --navy: #05140E;
+  --navy-light: #0B241B;
+  --navy-dark: #020A07;
+  --gold: #10B981;
+  --gold-light: #34D399;
+  --gold-dark: #0E9E6E;
+
+  /* Emerald + Platinum aliases (Liberin) */
+  --emerald: #10B981;
+  --emerald-light: #34D399;
+  --emerald-dark: #0E9E6E;
+  --emerald-deep: #047857;
+  --platinum: #E2E8ED;
+  --platinum-dim: #9FB0B8;
+  --platinum-dark: #64748B;
+
+  /* Neutrals */
+  --slate: #2A3A52;
+  --gray-50: #FAFAF8;
+  --gray-100: #F5F5F0;
+  --gray-200: #E8E8E0;
+  --gray-300: #D4D4CC;
+  --gray-400: #A3A39C;
+  --gray-500: #737370;
+  --gray-600: #525250;
+  --gray-700: #3D3D3B;
+  --gray-800: #262625;
+  --gray-900: #111111;
+
+  /* Division Colors */
+  --dynamics-blue: #1E3A5F;
+  --aerospace-teal: #0D9488;
+  --green-energy: #16A34A;
+  --tech-purple: #7C3AED;
+  --investments-amber: #D97706;
+
+  /* Typography */
+  --font-display: 'Outfit', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  /* Spacing */
+  --slide-padding: 40px 60px;
+
+  /* Transitions */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ─── Reveal.js Overrides ─── */
+.reveal {
+  font-family: var(--font-body);
+  font-size: 25px;
+  color: var(--gray-100);
+}
+
+.reveal .slides {
+  text-align: left;
+}
+
+.reveal .slides > section {
+  padding: var(--slide-padding);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* ─── Typography ─── */
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: white;
+  text-transform: none;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 0.5em;
+}
+
+.reveal h1 {
+  font-size: 3.4em;
+  font-weight: 800;
+}
+
+.reveal h2 {
+  font-size: 2.4em;
+}
+
+.reveal h3 {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.reveal h4 {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: var(--gold-light);
+}
+
+.reveal p {
+  line-height: 1.65;
+  color: var(--gray-300);
+  max-width: 900px;
+}
+
+.reveal strong {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* ─── Gold Text Gradient ─── */
+.text-gold {
+  color: var(--gold);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--platinum) 0%, var(--emerald-light) 55%, var(--emerald) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Backgrounds ─── */
+.bg-navy {
+  background: var(--navy);
+}
+
+.bg-navy-gradient {
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
+}
+
+.bg-navy-radial {
+  background: radial-gradient(ellipse at 30% 50%, var(--navy-light) 0%, var(--navy) 50%, var(--navy-dark) 100%);
+}
+
+/* Slide with background image overlay */
+.slide-bg-overlay {
+  position: relative;
+}
+
+.slide-bg-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(10, 22, 40, 0.85) 0%, rgba(10, 22, 40, 0.7) 100%);
+  z-index: 1;
+}
+
+.slide-bg-overlay > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ─── Cards ─── */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(16, 163, 122, 0.15);
+  border-radius: 12px;
+  padding: 24px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s var(--ease-out);
+}
+
+.card:hover {
+  border-color: rgba(16, 163, 122, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(16, 163, 122, 0.1);
+}
+
+.card-highlight {
+  background: rgba(16, 163, 122, 0.08);
+  border-color: rgba(16, 163, 122, 0.25);
+}
+
+/* ─── Stat Number ─── */
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 3em;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.stat-label {
+  font-size: 0.85em;
+  color: var(--gray-400);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 8px;
+}
+
+/* ─── Divider ─── */
+.gold-line {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+  border: none;
+  margin: 16px 0;
+}
+
+/* ─── Badge / Pill ─── */
+.badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.75em;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.badge-gold {
+  background: rgba(16, 163, 122, 0.15);
+  color: var(--gold);
+  border: 1px solid rgba(16, 163, 122, 0.3);
+}
+
+.badge-teal {
+  background: rgba(13, 148, 136, 0.15);
+  color: var(--aerospace-teal);
+  border: 1px solid rgba(13, 148, 136, 0.3);
+}
+
+.badge-green {
+  background: rgba(22, 163, 74, 0.15);
+  color: var(--green-energy);
+  border: 1px solid rgba(22, 163, 74, 0.3);
+}
+
+.badge-amber {
+  background: rgba(217, 119, 6, 0.15);
+  color: var(--investments-amber);
+  border: 1px solid rgba(217, 119, 6, 0.3);
+}
+
+/* ─── Grid Layouts ─── */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  width: 100%;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.grid-2x3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+/* ─── Split Layout ─── */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  width: 100%;
+}
+
+.split-40-60 {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* ─── Icon Grid for Sectors ─── */
+.sector-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(16, 163, 122, 0.1);
+  color: var(--gold);
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+/* ─── Partner Logo Grid ─── */
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+}
+
+.logo-grid img {
+  max-height: 100px;
+  max-width: 140px;
+  width: auto;
+  filter: none;
+  opacity: 0.95;
+  transition: opacity 0.3s ease;
+  margin: 0 auto;
+  display: block;
+  background: white;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.logo-grid img:hover {
+  opacity: 1;
+}
+
+/* ─── Partner Tile (PPT-extracted logos) ─── */
+.partner-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 18px;
+  min-height: 120px;
+  background: #ffffff;
+  border: 1px solid rgba(16, 163, 122, 0.25);
+  border-radius: 10px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.partner-tile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(16, 163, 122, 0.2);
+}
+
+.partner-tile img {
+  max-height: 80px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* ─── Leader Cards ─── */
+.leader-card {
+  text-align: center;
+}
+
+.leader-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--gold);
+  margin-bottom: 16px;
+}
+
+.leader-card h4 {
+  margin-bottom: 4px;
+  color: white;
+}
+
+.leader-card .title {
+  font-size: 0.8em;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.leader-card p {
+  font-size: 0.75em;
+  color: var(--gray-400);
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+/* ─── Table ─── */
+.reveal table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85em;
+}
+
+.reveal table th {
+  background: rgba(16, 163, 122, 0.15);
+  color: var(--gold);
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 2px solid rgba(16, 163, 122, 0.3);
+}
+
+.reveal table td {
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--gray-300);
+}
+
+.reveal table tr:hover td {
+  background: rgba(16, 163, 122, 0.05);
+}
+
+/* ─── Chart Container ─── */
+.chart-container {
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+
+.chart-container-sm {
+  width: 100%;
+  height: 300px;
+}
+
+/* ─── Org Chart ─── */
+.org-chart {
+  position: relative;
+  width: 100%;
+}
+
+.org-node {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 0.85em;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.org-node-primary {
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.org-node-secondary {
+  background: rgba(16, 163, 122, 0.15);
+  color: var(--gold);
+  border: 1px solid rgba(16, 163, 122, 0.3);
+}
+
+/* ─── Slide Number ─── */
+.reveal .slide-number {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--gold);
+  background: transparent;
+}
+
+/* ─── Progress Bar ─── */
+.reveal .progress {
+  height: 3px;
+  color: var(--gold);
+}
+
+.reveal .progress span {
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-light));
+}
+
+/* ─── Speaker Notes ─── */
+.reveal .speaker-notes {
+  font-family: var(--font-body);
+}
+
+/* ─── Fragment Overrides ─── */
+.reveal .fragment {
+  transition: all 0.5s var(--ease-out);
+}
+
+.reveal .fragment.fade-up {
+  transform: translateY(40px);
+  opacity: 0;
+}
+
+.reveal .fragment.fade-up.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ─── Access Code Gate ─── */
+#access-gate {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at 50% 40%, #0B2E22 0%, #05140E 60%, #020A07 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+  overflow: hidden;
+}
+
+#access-gate::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 20%, rgba(16, 163, 122, 0.04) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(16, 163, 122, 0.03) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+#access-gate.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.access-gate-inner {
+  text-align: center;
+  max-width: 400px;
+  padding: 48px 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.access-gate-logo-wrap {
+  display: inline-block;
+  background: white;
+  border-radius: 16px;
+  padding: 18px 28px;
+  margin-bottom: 32px;
+}
+
+.access-gate-logo {
+  width: 140px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.access-gate-divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0 auto 32px;
+  border: none;
+}
+
+.access-gate-title {
+  font-family: var(--font-display);
+  font-size: 2.2em;
+  color: white;
+  margin: 0 0 10px;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.access-gate-subtitle {
+  color: rgba(16, 163, 122, 0.5);
+  font-size: 0.78em;
+  margin: 0 0 36px;
+  font-family: var(--font-body);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.access-gate-input-wrap {
+  display: flex;
+  gap: 0;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(16, 163, 122, 0.2);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.access-gate-input-wrap:focus-within {
+  border-color: var(--gold);
+  box-shadow: 0 0 20px rgba(16, 163, 122, 0.1), 0 0 40px rgba(16, 163, 122, 0.05);
+}
+
+#access-code-input {
+  flex: 1;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: none;
+  color: white;
+  font-size: 1.05em;
+  font-family: var(--font-body);
+  letter-spacing: 0.15em;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+#access-code-input:focus {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+#access-code-input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+  letter-spacing: 0.1em;
+  font-size: 0.9em;
+}
+
+#access-code-submit {
+  padding: 16px 22px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark, #a88b5c));
+  border: none;
+  color: var(--navy-900);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#access-code-submit:hover {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  padding-left: 26px;
+  padding-right: 26px;
+}
+
+#access-code-submit svg {
+  transition: transform 0.3s ease;
+}
+
+#access-code-submit:hover svg {
+  transform: translateX(2px);
+}
+
+.access-gate-error {
+  color: #ef4444;
+  font-size: 0.85em;
+  margin: 0;
+  min-height: 1.2em;
+  letter-spacing: 0.02em;
+}
+
+.access-gate-footer {
+  margin-top: 48px;
+  color: rgba(255, 255, 255, 0.15);
+  font-size: 0.75em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ─── Fullscreen Toggle Button ─── */
+#fullscreen-btn {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  z-index: 100;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 22, 40, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(16, 163, 122, 0.3);
+  border-radius: 8px;
+  color: var(--gold);
+  cursor: pointer;
+  transition: all 0.3s var(--ease-out);
+  padding: 0;
+}
+
+#fullscreen-btn:hover {
+  background: rgba(16, 163, 122, 0.15);
+  border-color: var(--gold);
+  transform: scale(1.1);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   LIGHT THEME OVERRIDES
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── Light Theme: CSS Custom Properties ─── */
+body.light-theme {
+  --navy: #F5F5F0;
+  --navy-light: #FFFFFF;
+  --navy-dark: #E8E8E0;
+  --gold: #0F766E;
+  --gold-light: #14926F;
+  --gold-dark: #0B5D4E;
+  --slate: #C8C8C0;
+  --gray-50: #111111;
+  --gray-100: #1A1A1A;
+  --gray-200: #333333;
+  --gray-300: #4A4A48;
+  --gray-400: #6B6B68;
+  --gray-500: #8A8A87;
+  --gray-600: #BFBFBC;
+  --gray-700: #E0E0DC;
+  --gray-800: #F0F0EC;
+  --gray-900: #FAFAF8;
+}
+
+/* ─── Light Theme: Typography ─── */
+body.light-theme .reveal {
+  color: #333333;
+}
+
+body.light-theme .reveal h1,
+body.light-theme .reveal h2 {
+  color: #1A1A1A;
+}
+
+body.light-theme .reveal h3 {
+  color: var(--gold);
+}
+
+body.light-theme .reveal h4 {
+  color: var(--gold-light);
+}
+
+body.light-theme .reveal p {
+  color: #4A4A48;
+}
+
+body.light-theme .reveal strong {
+  color: var(--gold);
+}
+
+/* Override inline color:white */
+body.light-theme [style*="color:white"],
+body.light-theme [style*="color: white"] {
+  color: #1A1A1A !important;
+}
+
+/* ─── Light Theme: Cards ─── */
+body.light-theme .card {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .card:hover {
+  border-color: rgba(15, 118, 110, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .card-highlight {
+  background: rgba(15, 118, 110, 0.06);
+  border-color: rgba(15, 118, 110, 0.2);
+}
+
+/* ─── Light Theme: Badges ─── */
+body.light-theme .badge-gold {
+  background: rgba(15, 118, 110, 0.1);
+  border-color: rgba(15, 118, 110, 0.3);
+}
+
+/* ─── Light Theme: Table ─── */
+body.light-theme .reveal table th {
+  background: rgba(15, 118, 110, 0.08);
+  border-bottom-color: rgba(15, 118, 110, 0.2);
+}
+
+body.light-theme .reveal table td {
+  border-bottom-color: rgba(0, 0, 0, 0.06);
+  color: #4A4A48;
+}
+
+body.light-theme .reveal table tr:hover td {
+  background: rgba(15, 118, 110, 0.04);
+}
+
+/* ─── Light Theme: Org Nodes ─── */
+body.light-theme .org-node-primary {
+  background: var(--gold);
+  color: #FFFFFF;
+}
+
+body.light-theme .org-node-secondary {
+  background: rgba(15, 118, 110, 0.08);
+  border-color: rgba(15, 118, 110, 0.25);
+}
+
+/* ─── Light Theme: Leader Cards ─── */
+body.light-theme .leader-card h4 {
+  color: #1A1A1A;
+}
+
+body.light-theme .leader-card .title {
+  color: var(--gold);
+}
+
+body.light-theme .leader-card p {
+  color: #6B6B68;
+}
+
+/* ─── Light Theme: Stat ─── */
+body.light-theme .stat-label {
+  color: #6B6B68;
+}
+
+/* ─── Light Theme: Slide Background Overlay ─── */
+body.light-theme .slide-bg-overlay::before {
+  background: linear-gradient(135deg, rgba(245, 245, 240, 0.88) 0%, rgba(245, 245, 240, 0.75) 100%);
+}
+
+/* ─── Light Theme: Partner Logos ─── */
+body.light-theme .logo-grid img {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* ─── Light Theme: Sector Icons ─── */
+body.light-theme .sector-icon {
+  background: rgba(15, 118, 110, 0.08);
+}
+
+/* ─── Light Theme: Gold Line ─── */
+body.light-theme .gold-line {
+  background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+}
+
+/* ─── Light Theme: Slide Number & Progress ─── */
+body.light-theme .reveal .slide-number {
+  color: var(--gold);
+}
+
+body.light-theme .reveal .progress span {
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-light));
+}
+
+/* ─── Light Theme: Access Gate ─── */
+body.light-theme #access-gate {
+  background: radial-gradient(ellipse at 50% 40%, #FFFFFF 0%, #F5F5F0 60%, #E8E8E0 100%);
+}
+
+body.light-theme #access-gate::before {
+  background: radial-gradient(circle at 30% 20%, rgba(15, 118, 110, 0.04) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(15, 118, 110, 0.03) 0%, transparent 40%);
+}
+
+body.light-theme .access-gate-title {
+  color: #1A1A1A;
+}
+
+body.light-theme .access-gate-subtitle {
+  color: rgba(15, 118, 110, 0.6);
+}
+
+body.light-theme .access-gate-input-wrap {
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+body.light-theme .access-gate-input-wrap:focus-within {
+  border-color: var(--gold);
+  box-shadow: 0 0 20px rgba(15, 118, 110, 0.1);
+}
+
+body.light-theme #access-code-input {
+  background: rgba(0, 0, 0, 0.03);
+  color: #1A1A1A;
+}
+
+body.light-theme #access-code-input:focus {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme #access-code-input::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+body.light-theme .access-gate-footer {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+/* ─── Light Theme: Fullscreen & Theme Toggle Buttons ─── */
+body.light-theme #fullscreen-btn,
+body.light-theme #theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.12);
+  color: var(--gold);
+}
+
+body.light-theme #fullscreen-btn:hover,
+body.light-theme #theme-toggle-btn:hover {
+  background: rgba(15, 118, 110, 0.1);
+  border-color: var(--gold);
+}
+
+/* ─── Theme Toggle Button (shared dark/light) ─── */
+#theme-toggle-btn {
+  position: fixed;
+  bottom: 16px;
+  left: 64px;
+  z-index: 100;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 22, 40, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(16, 163, 122, 0.3);
+  border-radius: 8px;
+  color: var(--gold);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0;
+}
+
+#theme-toggle-btn:hover {
+  background: rgba(16, 163, 122, 0.15);
+  border-color: var(--gold);
+  transform: scale(1.1);
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--navy-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold-dark);
+  border-radius: 2px;
+}
+
+/* ─── Light Theme: Scrollbar ─── */
+body.light-theme ::-webkit-scrollbar-track {
+  background: #E8E8E0;
+}
+
+body.light-theme ::-webkit-scrollbar-thumb {
+  background: #14926F;
+}

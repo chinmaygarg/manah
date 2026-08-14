@@ -1,0 +1,12 @@
+{
+  "name": "liberin-smolan-presentation",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "serve": "python3 -m http.server 8080",
+    "pdf": "node capture-pdf.js"
+  },
+  "devDependencies": {
+    "puppeteer": "^24.40.0"
+  }
+}

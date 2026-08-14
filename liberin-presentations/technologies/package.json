@@ -1,0 +1,10 @@
+{
+  "name": "manah-presentation-liberin-pdf",
+  "private": true,
+  "scripts": {
+    "pdf": "node capture-pdf.js"
+  },
+  "dependencies": {
+    "puppeteer": "^24.40.0"
+  }
+}

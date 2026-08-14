@@ -1,0 +1,1069 @@
+/* ═══════════════════════════════════════════════════════════
+   LIBERIN — Mobile Responsive Overrides
+   Targets: Portrait Mobile, Landscape Mobile, Small Tablets
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── Helper: Allow vertical scroll within slides on mobile ─── */
+.mobile-scroll .reveal .slides > section {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PORTRAIT MOBILE (phones held vertically)
+   Canvas swaps to 1080×1920 via JS — these rules restyle
+   the internal slide content for portrait reading.
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) and (orientation: portrait) {
+
+  /* ─── Base Typography ───
+     The 1080×1920 canvas is scaled ~0.36× to fit a 390px phone.
+     To keep text readable, the base font must be ~2.5× larger
+     than desktop so it renders at a comfortable mobile size. */
+  .reveal {
+    font-size: 48px !important;
+  }
+
+  /* ─── Slide Padding & Top-Align ─── */
+  .reveal .slides > section {
+    padding: 40px 48px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  /* ─── Headings ─── */
+  .reveal h1 {
+    font-size: 2.4em !important;
+  }
+
+  .reveal h2 {
+    font-size: 1.8em !important;
+  }
+
+  .reveal h3 {
+    font-size: 1.2em !important;
+  }
+
+  .reveal h4 {
+    font-size: 1em !important;
+  }
+
+  .reveal p {
+    max-width: 100% !important;
+    font-size: 0.95em !important;
+    line-height: 1.6 !important;
+  }
+
+  /* ─── Grid Layouts ─── */
+  .grid-2 {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 14px !important;
+  }
+
+  .grid-4 {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 14px !important;
+  }
+
+  .grid-2x3 {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto !important;
+    gap: 14px !important;
+  }
+
+  /* ─── Split Layouts → Stack Vertically ─── */
+  .split {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .split-40-60 {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  /* ─── Cover Slide ─── */
+  #slide-cover {
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 0 !important;
+  }
+
+  /* Vertically center content, leave just enough room for divisions */
+  #slide-cover .cover-content {
+    padding: 0 20px !important;
+    justify-content: center !important;
+    flex: 1 !important;
+  }
+
+  #slide-cover .cover-logo {
+    width: 360px !important;
+    margin-bottom: 48px !important;
+  }
+
+  #slide-cover .cover-headline {
+    font-size: 2.2em !important;
+    margin-bottom: 28px !important;
+    line-height: 1.1 !important;
+  }
+
+  #slide-cover .cover-subtitle {
+    font-size: 1em !important;
+    max-width: 100% !important;
+    line-height: 1.65 !important;
+    padding: 0 16px !important;
+    color: rgba(255, 255, 255, 0.65) !important;
+    text-align: center !important;
+  }
+
+  #slide-cover .cover-subtitle br {
+    display: none;
+  }
+
+  /* Division grid — 5 across in a single row */
+  #slide-cover .cover-divisions {
+    flex-wrap: nowrap !important;
+    gap: 0 !important;
+    padding: 0 16px 80px !important;
+    justify-content: space-evenly !important;
+    margin-top: 0 !important;
+    flex: 0 0 auto !important;
+  }
+
+  #slide-cover .cover-division-item {
+    max-width: none !important;
+    flex: 1 1 0 !important;
+    width: auto !important;
+    gap: 10px !important;
+    min-width: 0 !important;
+  }
+
+  #slide-cover .cover-division-letter {
+    font-size: 2em !important;
+    color: rgba(255, 255, 255, 0.35) !important;
+  }
+
+  #slide-cover .cover-division {
+    font-size: 0.38em !important;
+    letter-spacing: 0.06em !important;
+    color: rgba(255, 255, 255, 0.55) !important;
+    white-space: nowrap !important;
+  }
+
+  /* ─── Who We Are (Slide 3) ─── */
+  #slide-whoweare {
+    padding: 40px 48px !important;
+  }
+
+  #slide-whoweare .mobile-grid-2 {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+  }
+
+  #slide-whoweare .mobile-grid-2 .card {
+    padding: 20px 16px !important;
+  }
+
+  #slide-whoweare .mobile-grid-2 .card h4 {
+    font-size: 0.85em !important;
+  }
+
+  #slide-whoweare .mobile-grid-2 .card p {
+    font-size: 0.7em !important;
+  }
+
+  /* ─── Cards ─── */
+  .card {
+    padding: 16px !important;
+  }
+
+  /* ─── Stat Numbers ─── */
+  .stat-number {
+    font-size: 2.2em !important;
+  }
+
+  .stat-label {
+    font-size: 0.8em !important;
+  }
+
+  #slide-glance .stat-card {
+    padding: 16px 12px !important;
+  }
+
+  /* ─── Group Structure (Slide 5) — hardest slide ─── */
+  #slide-structure {
+    padding: 20px 20px !important;
+  }
+
+  /* Header flex → stack */
+  #slide-structure > div:first-child {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  #slide-structure h2 {
+    font-size: 1.8em !important;
+  }
+
+  /* Hide SVG connectors on mobile */
+  #slide-structure > svg {
+    display: none !important;
+  }
+
+  /* Parent node */
+  #slide-structure > div:nth-child(2) {
+    max-width: 100% !important;
+    font-size: 1em !important;
+    padding: 14px 24px !important;
+  }
+
+  /* 5-division grid → 2 columns */
+  #slide-structure > div:nth-child(4) {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Division card images — shorter */
+  #slide-structure .card > div:first-child {
+    height: 120px !important;
+  }
+
+  /* Division card text smaller */
+  #slide-structure .card span {
+    font-size: 0.8em !important;
+  }
+
+  /* Bottom bar → wrap */
+  #slide-structure > div:last-of-type {
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+  }
+
+  /* ─── Division Intro Slides ─── */
+  .division-intro {
+    gap: 12px !important;
+  }
+
+  .division-intro h2 {
+    font-size: 2em !important;
+  }
+
+  /* 4-col highlight grids inside division intros → 2 cols */
+  .division-intro > div[style*="grid-template-columns:repeat(4"] {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* 3-col pillar grids → 1 col */
+  .division-intro > div[style*="grid-template-columns:repeat(3"] {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* 4-col focus area grids → 2 cols */
+  .division-intro > div[style*="grid-template-columns:repeat(4, 1fr)"][style*="margin-top:8px"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* ─── Sectors Grid (Slide 7) ─── */
+  #slide-sectors > div:last-child {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+
+  #slide-sectors .sector-item {
+    padding: 10px !important;
+  }
+
+  #slide-sectors .sector-item p {
+    font-size: 0.65em !important;
+  }
+
+  .sector-icon {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 1.1em !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* ─── Photo Mosaic ─── */
+  .photo-mosaic {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto !important;
+  }
+
+  .photo-mosaic .span-2 {
+    grid-column: span 1 !important;
+  }
+
+  #slide-footprints .photo-mosaic {
+    grid-template-rows: 160px !important;
+  }
+
+  #slide-footprints {
+    padding: 16px 20px !important;
+  }
+
+  /* ─── Expansion Cards ─── */
+  .expansions-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+
+  .expansion-card {
+    padding: 14px 12px 12px !important;
+  }
+
+  .expansion-icon-v2 {
+    width: 36px !important;
+    height: 36px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .expansion-content h4 {
+    font-size: 0.8em !important;
+  }
+
+  .expansion-content p {
+    font-size: 0.65em !important;
+  }
+
+  .expansion-tag {
+    font-size: 0.5em !important;
+    margin-top: 8px !important;
+  }
+
+  /* ─── Logo Grid (Partnerships) ─── */
+  .logo-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+    max-width: 100% !important;
+  }
+
+  .logo-grid img {
+    max-height: 60px !important;
+    max-width: 100px !important;
+  }
+
+  /* ─── Leader Cards ─── */
+  .leader-card img {
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  .leader-card p {
+    font-size: 0.7em !important;
+    max-width: 100% !important;
+  }
+
+  /* ─── Chart Containers ─── */
+  .chart-container {
+    height: 280px !important;
+  }
+
+  .chart-container-sm {
+    height: 220px !important;
+  }
+
+  /* ─── Map Container ─── */
+  .map-container {
+    height: 280px !important;
+  }
+
+  /* ─── Tables ─── */
+  .reveal table {
+    font-size: 0.75em !important;
+  }
+
+  .reveal table th,
+  .reveal table td {
+    padding: 8px 10px !important;
+  }
+
+  /* ─── Org Chart ─── */
+  .org-node {
+    font-size: 0.75em !important;
+    padding: 8px 14px !important;
+  }
+
+  /* ─── Badges ─── */
+  .badge {
+    font-size: 0.65em !important;
+    padding: 5px 12px !important;
+  }
+
+  /* ─── Gold Line ─── */
+  .gold-line {
+    margin: 10px 0 !important;
+  }
+
+  /* ─── ESG Pillars ─── */
+  .esg-pillar {
+    padding: 20px 16px !important;
+  }
+
+  /* ─── CTA ─── */
+  .cta-content .cta-btn {
+    padding: 14px 36px !important;
+    font-size: 1em !important;
+  }
+
+  /* ─── Numbered List ─── */
+  .numbered-list li {
+    gap: 12px !important;
+    padding: 10px 0 !important;
+    font-size: 0.9em !important;
+  }
+
+  .numbered-list li::before {
+    font-size: 1.2em !important;
+    min-width: 32px !important;
+  }
+
+  /* ─── Cert Items ─── */
+  .cert-item {
+    padding: 12px !important;
+    gap: 12px !important;
+  }
+
+  .cert-icon {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  /* ─── Milestone Cards ─── */
+  .milestone-card {
+    padding-left: 18px !important;
+  }
+
+  /* ─── Slide Images ─── */
+  .slide-image {
+    border-radius: 8px !important;
+  }
+
+  /* ─── Fullscreen Button: hide on mobile portrait ─── */
+  #fullscreen-btn {
+    display: none !important;
+  }
+
+  /* ─── Theme Toggle: top-right corner on mobile ─── */
+  #theme-toggle-btn {
+    top: 10px !important;
+    bottom: auto !important;
+    right: 10px !important;
+    left: auto !important;
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 14px !important;
+  }
+
+  /* ─── Slide Number ─── */
+  .reveal .slide-number {
+    font-size: 11px !important;
+  }
+
+  /* ─── Progress Bar ─── */
+  .reveal .progress {
+    height: 2px !important;
+  }
+
+  /* ─── Pipeline split chart area ─── */
+  #slide-pipeline .split {
+    gap: 20px !important;
+  }
+
+  /* ─── Financial charts ─── */
+  #slide-financials .grid-2 {
+    gap: 20px !important;
+  }
+
+  /* ─── MRO Map ─── */
+  #slide-mro-map .split {
+    gap: 16px !important;
+  }
+
+  #slide-mro-map .chart-container {
+    height: 320px !important;
+  }
+
+  /* ─── Investment Focus — 3-col stats → 1 col ─── */
+  #slide-investment-focus div[style*="grid-template-columns:1fr 1fr 1fr"] {
+    grid-template-columns: 1fr 1fr 1fr !important;
+    gap: 8px !important;
+  }
+
+  /* ─── Cover Headline BR ─── */
+  #slide-cover .cover-headline br {
+    display: inline !important;
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     CLASS-BASED INLINE GRID OVERRIDES
+     HTML elements with inline grid styles have been given
+     helper classes (mobile-grid-2, mobile-grid-1, etc.)
+     for reliable targeting with !important.
+     ═══════════════════════════════════════════════════════════ */
+
+  /* Collapse 4-col → 2-col (division highlights, sectors, etc.) */
+  .mobile-grid-2 {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    max-width: 100% !important;
+  }
+
+  /* Collapse 3-col / 2-col → 1-col (division pillars) */
+  .mobile-grid-1 {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    max-width: 100% !important;
+  }
+
+  /* ─── Structure Slide Classes ─── */
+  .structure-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .structure-badges {
+    gap: 8px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .structure-parent {
+    max-width: 100% !important;
+    font-size: 1em !important;
+    padding: 12px 20px !important;
+  }
+
+  .structure-connectors {
+    display: none !important;
+  }
+
+  .structure-divisions {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  .structure-footer {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    margin-top: 12px !important;
+  }
+
+  /* Structure card image containers */
+  .structure-divisions .card > div:first-child {
+    height: 100px !important;
+  }
+
+  /* Structure card text sections */
+  .structure-divisions .card > div:last-child {
+    padding: 10px 12px 14px !important;
+  }
+
+  /* ─── Sectors Grid ─── */
+  .sectors-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+
+  /* ─── Slide-specific overrides ─── */
+
+  /* Leadership — 4-col grid */
+  #slide-leadership .grid-4 {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* ESG — 3-col grid */
+  #slide-esg .grid-3 {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Locations — 4-col grid */
+  #slide-locations .grid-4 {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Partnerships — logo grid */
+  #slide-partnerships .logo-grid {
+    max-width: 100% !important;
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Products — 3-col grid */
+  #slide-products .grid-3 {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+
+  /* MRO services — 3-col grid */
+  #slide-mro-services .grid-3 {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  /* General margin-bottom reductions */
+  .reveal .slides > section > div:first-child {
+    margin-bottom: 12px !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   LANDSCAPE MOBILE (phones held horizontally)
+   JS dynamically sets canvas to 1920×(aspect-matched height)
+   so slides fill edge-to-edge. CSS compacts content vertically.
+   ═══════════════════════════════════════════════════════════ */
+@media (max-height: 500px) and (orientation: landscape) {
+
+  /* ─── Base Typography — larger since canvas is shorter ─── */
+  .reveal {
+    font-size: 22px !important;
+  }
+
+  /* ─── Slide Padding — minimal for max space ─── */
+  .reveal .slides > section {
+    padding: 12px 28px !important;
+    overflow-y: auto !important;
+  }
+
+  /* ─── Headings — compact ─── */
+  .reveal h1 {
+    font-size: 2.4em !important;
+    margin-bottom: 0.2em !important;
+  }
+
+  .reveal h2 {
+    font-size: 1.6em !important;
+    margin-bottom: 0.2em !important;
+  }
+
+  .reveal h3 {
+    font-size: 1.1em !important;
+  }
+
+  .reveal h4 {
+    font-size: 0.95em !important;
+  }
+
+  .reveal p {
+    line-height: 1.4 !important;
+    margin-bottom: 0.2em !important;
+  }
+
+  /* ─── Grids — tighter gaps ─── */
+  .grid-4 {
+    gap: 10px !important;
+  }
+
+  .grid-3 {
+    gap: 10px !important;
+  }
+
+  .grid-2 {
+    gap: 12px !important;
+  }
+
+  .grid-2x3 {
+    gap: 10px !important;
+  }
+
+  /* ─── Split — tighter ─── */
+  .split {
+    gap: 16px !important;
+  }
+
+  .split-40-60 {
+    gap: 20px !important;
+  }
+
+  /* ─── Cover Slide ─── */
+  #slide-cover .cover-content {
+    padding: 20px 40px 0 !important;
+  }
+
+  #slide-cover .cover-logo {
+    width: 120px !important;
+    margin-bottom: 12px !important;
+  }
+
+  #slide-cover .cover-headline {
+    font-size: 3.5em !important;
+    margin-bottom: 10px !important;
+  }
+
+  #slide-cover .cover-subtitle {
+    font-size: 0.9em !important;
+  }
+
+  #slide-cover .cover-divisions {
+    padding: 0 30px 20px !important;
+  }
+
+  #slide-cover .cover-division-letter {
+    font-size: 2.4em !important;
+  }
+
+  /* ─── Cards — compact ─── */
+  .card {
+    padding: 12px !important;
+  }
+
+  /* ─── Stat Numbers ─── */
+  .stat-number {
+    font-size: 2em !important;
+  }
+
+  .stat-label {
+    font-size: 0.75em !important;
+    margin-top: 4px !important;
+  }
+
+  #slide-glance .stat-card {
+    padding: 12px 10px !important;
+  }
+
+  /* ─── Charts / Maps — shorter ─── */
+  .chart-container {
+    height: 260px !important;
+  }
+
+  .chart-container-sm {
+    height: 200px !important;
+  }
+
+  .map-container {
+    height: 280px !important;
+  }
+
+  /* ─── Photo Mosaic ─── */
+  .photo-mosaic {
+    grid-template-rows: 120px !important;
+  }
+
+  #slide-footprints .photo-mosaic {
+    grid-template-rows: 140px 120px !important;
+  }
+
+  #slide-footprints {
+    padding: 10px 20px !important;
+  }
+
+  /* ─── Expansion Cards ─── */
+  .expansion-card {
+    padding: 10px 10px 8px !important;
+  }
+
+  .expansion-icon-v2 {
+    width: 36px !important;
+    height: 36px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .expansion-content h4 {
+    font-size: 0.8em !important;
+  }
+
+  .expansion-content p {
+    font-size: 0.65em !important;
+  }
+
+  /* ─── Gold Line ─── */
+  .gold-line {
+    margin: 6px 0 !important;
+  }
+
+  /* ─── Badge ─── */
+  .badge {
+    margin-bottom: 6px !important;
+    padding: 4px 12px !important;
+    font-size: 0.65em !important;
+  }
+
+  /* ─── Division Intro — very compact to fill space ─── */
+  .division-intro {
+    gap: 4px !important;
+  }
+
+  .division-intro h2 {
+    font-size: 1.8em !important;
+    margin-bottom: 0.15em !important;
+  }
+
+  .division-intro p {
+    font-size: 0.82em !important;
+    line-height: 1.4 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .division-intro .badge {
+    margin-bottom: 2px !important;
+    padding: 3px 10px !important;
+    font-size: 0.6em !important;
+  }
+
+  /* ─── Division Intro grids — tighter ─── */
+  .mobile-grid-2 {
+    gap: 8px !important;
+  }
+
+  .mobile-grid-1 {
+    gap: 8px !important;
+  }
+
+  .mobile-grid-2 .card {
+    padding: 10px 8px !important;
+  }
+
+  .mobile-grid-1 .card {
+    padding: 10px 14px !important;
+  }
+
+  /* ─── Group Structure ─── */
+  #slide-structure {
+    padding: 10px 20px !important;
+  }
+
+  .structure-connectors {
+    height: 28px !important;
+  }
+
+  .structure-parent {
+    padding: 10px 24px !important;
+    font-size: 1.1em !important;
+  }
+
+  .structure-divisions {
+    gap: 12px !important;
+  }
+
+  .structure-divisions .card > div:first-child {
+    height: 140px !important;
+  }
+
+  .structure-footer {
+    margin-top: 8px !important;
+    gap: 16px !important;
+  }
+
+  /* ─── Sectors Grid ─── */
+  .sectors-grid {
+    gap: 8px !important;
+  }
+
+  .sectors-grid .card {
+    padding: 8px !important;
+  }
+
+  .sector-icon {
+    width: 32px !important;
+    height: 32px !important;
+    margin-bottom: 4px !important;
+  }
+
+  #slide-sectors .sector-item h4 {
+    font-size: 0.8em !important;
+  }
+
+  #slide-sectors .sector-item p {
+    font-size: 0.65em !important;
+  }
+
+  /* ─── ESG ─── */
+  .esg-pillar {
+    padding: 16px 14px !important;
+  }
+
+  /* ─── Leader Cards ─── */
+  .leader-card img {
+    width: 90px !important;
+    height: 90px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .leader-card p {
+    font-size: 0.7em !important;
+  }
+
+  /* ─── Cert Items ─── */
+  .cert-item {
+    padding: 10px !important;
+  }
+
+  /* ─── Tables ─── */
+  .reveal table {
+    font-size: 0.8em !important;
+  }
+
+  .reveal table th,
+  .reveal table td {
+    padding: 6px 10px !important;
+  }
+
+  /* ─── Numbered List ─── */
+  .numbered-list li {
+    padding: 8px 0 !important;
+    gap: 10px !important;
+  }
+
+  /* ─── Milestone Cards ─── */
+  .milestone-card {
+    padding-left: 16px !important;
+  }
+
+  .milestone-card h4 {
+    font-size: 0.95em !important;
+  }
+
+  /* ─── Logo Grid ─── */
+  .logo-grid {
+    gap: 10px !important;
+  }
+
+  .logo-grid img {
+    max-height: 70px !important;
+  }
+
+  /* ─── CTA ─── */
+  .cta-content .cta-btn {
+    padding: 12px 40px !important;
+  }
+
+  /* ─── Fullscreen Button: hide on small mobile ─── */
+  #fullscreen-btn {
+    display: none !important;
+  }
+
+  /* ─── Theme Toggle: top-right on small mobile ─── */
+  #theme-toggle-btn {
+    top: 6px !important;
+    bottom: auto !important;
+    right: 6px !important;
+    left: auto !important;
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 12px !important;
+  }
+
+  /* ─── Slide Number ─── */
+  .reveal .slide-number {
+    font-size: 12px !important;
+  }
+
+  /* ─── Progress Bar ─── */
+  .reveal .progress {
+    height: 2px !important;
+  }
+
+  /* ─── Margin-bottom reductions ─── */
+  .reveal .slides > section > div:first-child {
+    margin-bottom: 8px !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SMALL TABLETS (768px–1024px)
+   Still landscape canvas, moderate reductions
+   ═══════════════════════════════════════════════════════════ */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .reveal {
+    font-size: 20px !important;
+  }
+
+  .reveal .slides > section {
+    padding: 28px 40px !important;
+  }
+
+  .reveal h2 {
+    font-size: 2em !important;
+  }
+
+  /* ─── Grids — tighter gaps ─── */
+  .grid-4 {
+    gap: 14px !important;
+  }
+
+  .grid-3 {
+    gap: 16px !important;
+  }
+
+  .split {
+    gap: 28px !important;
+  }
+
+  /* ─── Cover ─── */
+  #slide-cover .cover-headline {
+    font-size: 4.5em !important;
+  }
+
+  #slide-cover .cover-logo {
+    width: 180px !important;
+  }
+
+  /* ─── Charts ─── */
+  .chart-container {
+    height: 340px !important;
+  }
+
+  /* ─── Cards ─── */
+  .card {
+    padding: 18px !important;
+  }
+
+  .stat-number {
+    font-size: 2.6em !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   VERY SMALL PHONES (≤ 390px width, e.g., iPhone SE)
+   Extra compact for tiny portrait viewports
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 390px) and (orientation: portrait) {
+
+  .reveal {
+    font-size: 44px !important;
+  }
+
+  .reveal .slides > section {
+    padding: 36px 40px !important;
+  }
+
+  #slide-cover .cover-headline {
+    font-size: 2.8em !important;
+  }
+
+  #slide-cover .cover-logo {
+    width: 260px !important;
+  }
+
+  #slide-cover .cover-division-letter {
+    font-size: 2.2em !important;
+  }
+
+  #slide-cover .cover-division {
+    font-size: 0.48em !important;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .expansions-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .stat-number {
+    font-size: 1.8em !important;
+  }
+}

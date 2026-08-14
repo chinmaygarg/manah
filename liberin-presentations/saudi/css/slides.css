@@ -1,0 +1,696 @@
+/* ═══════════════════════════════════════════════════════════
+   LIBERIN — Per-Slide Layouts & Backgrounds
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── Global Slide Background ───
+   Background set via data-background-color on each section.
+   Reveal.js manages backgrounds separately from slide content. */
+
+/* ─── Slide: Cover ─── */
+#slide-cover {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#slide-cover::before {
+  display: none; /* Reveal.js data-background handles the image; no inner overlay needed */
+}
+
+#slide-cover > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Cover layout — content pushed toward top */
+#slide-cover .cover-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 120px 80px 0;
+  box-sizing: border-box;
+}
+
+#slide-cover .cover-logo {
+  width: 240px;
+  height: auto;
+  margin-bottom: 48px;
+  animation: logoPulse 8s ease-in-out infinite;
+}
+
+#slide-cover .cover-headline {
+  font-family: var(--font-display);
+  font-size: 5.5em;
+  font-weight: 900;
+  line-height: 1.08;
+  color: white;
+  text-transform: lowercase;
+  letter-spacing: 0.0em;
+  margin-bottom: 36px;
+}
+
+#slide-cover .cover-subtitle {
+  font-size: 1.05em;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.55);
+  max-width: 1100px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Division grid — M A N A H above each division */
+#slide-cover .cover-divisions {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0;
+  padding: 0 60px 100px;
+  margin-top: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#slide-cover .cover-division-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  max-width: 240px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+/* On hover of ANY division, all letters glow gold (the wordmark) */
+#slide-cover .cover-divisions:hover .cover-division-letter {
+  color: var(--gold) !important;
+  text-shadow: 0 0 12px rgba(16, 163, 122, 0.4) !important;
+}
+
+/* The hovered division's label highlights */
+#slide-cover .cover-division-item:hover .cover-division {
+  color: var(--gold-light);
+}
+
+/* Dim only the division NAME text (not the letter) on non-hovered items */
+#slide-cover .cover-divisions:hover .cover-division-item .cover-division {
+  opacity: 0.35;
+}
+
+/* Hovered item's name stays bright and glows gold */
+#slide-cover .cover-divisions:hover .cover-division-item:hover .cover-division {
+  opacity: 1;
+  color: var(--gold-light);
+}
+
+#slide-cover .cover-division-letter {
+  font-family: var(--font-display);
+  font-size: 3em;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.12);
+  line-height: 1;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+#slide-cover .cover-division {
+  font-family: var(--font-display);
+  font-size: 0.7em;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+/* ─── Slide: Challenge (Split) ─── */
+#slide-challenge .split-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ─── Slide: Who We Are ─── */
+#slide-whoweare {
+  text-align: center;
+}
+
+#slide-whoweare p {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ─── Slide: At a Glance ─── */
+#slide-glance {
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 40%, var(--navy-light) 100%);
+}
+
+#slide-glance .stat-card {
+  text-align: center;
+  padding: 28px 16px;
+}
+
+/* ─── Slide: Group Structure ─── */
+#slide-structure {
+  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%);
+}
+
+/* ─── Division Intro Slides ─── */
+.division-slide {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.division-slide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(10, 22, 40, 0.88) 0%, rgba(10, 22, 40, 0.75) 100%);
+}
+
+.division-slide > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ─── Dynamics Color Accent ─── */
+.division-dynamics .badge {
+  background: rgba(30, 58, 95, 0.2);
+  color: #5B8CC5;
+  border-color: rgba(30, 58, 95, 0.4);
+}
+
+/* ─── Aerospace Color Accent ─── */
+.division-aerospace .badge {
+  background: rgba(13, 148, 136, 0.15);
+  color: var(--aerospace-teal);
+  border-color: rgba(13, 148, 136, 0.3);
+}
+
+/* ─── Green Energy Color Accent ─── */
+.division-green .badge {
+  background: rgba(22, 163, 74, 0.15);
+  color: var(--green-energy);
+  border-color: rgba(22, 163, 74, 0.3);
+}
+
+/* ─── Slide: Sectors Grid ─── */
+#slide-sectors .sector-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px;
+}
+
+#slide-sectors .sector-item h4 {
+  font-size: 0.85em;
+  margin: 0;
+  color: white;
+}
+
+#slide-sectors .sector-item p {
+  font-size: 0.7em;
+  margin: 0;
+  color: var(--gray-400);
+  line-height: 1.4;
+}
+
+/* ─── Slide: Project Footprints ─── */
+#slide-footprints {
+  padding: 20px 30px;
+}
+
+#slide-footprints .photo-mosaic {
+  grid-template-rows: 250px 220px;
+  gap: 10px;
+}
+
+/* ─── Project Background Slideshow ─── */
+.project-bg-slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.project-bg-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.project-bg-img.active {
+  opacity: 0.15;
+}
+
+.project-table {
+  background: rgba(10, 22, 40, 0.85);
+  border-radius: 12px;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+
+.project-table td,
+.project-table th {
+  color: var(--gray-200);
+}
+
+.project-table tbody tr {
+  transition: background 0.3s ease;
+}
+
+.project-table tbody tr:hover {
+  background: rgba(184, 151, 80, 0.1) !important;
+}
+
+/* ─── Slide: Project Footprints Gallery ─── */
+.footprints-gallery {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 480px;
+}
+
+.gallery-slot {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.gallery-slot-large {
+  grid-row: 1 / 3;
+}
+
+.gallery-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.8s ease-in-out;
+}
+
+.gallery-img.active {
+  opacity: 1;
+}
+
+.gallery-slot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(16, 163, 122, 0.15);
+  border-radius: 10px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ─── Slide: Pipeline & Charts ─── */
+#slide-pipeline {
+  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%);
+}
+
+/* ─── Slide: Financial Charts ─── */
+#slide-financials {
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+}
+
+/* ─── Slide: Partnerships ─── */
+#slide-partnerships {
+  background-color: #05140E;
+}
+
+/* ─── Slide: Expansions ─── */
+.expansions-header {
+  margin-bottom: 20px;
+}
+
+.expansions-header p {
+  margin: 0;
+  font-size: 0.85em;
+  opacity: 0.7;
+}
+
+.expansions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  width: 100%;
+}
+
+.expansion-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(16, 163, 122, 0.12);
+  border-radius: 14px;
+  padding: 20px 18px 16px;
+  text-align: left;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.expansion-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent, var(--gold));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.expansion-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(16, 163, 122, 0.3);
+  transform: translateY(-4px);
+}
+
+.expansion-card:hover::before {
+  opacity: 1;
+}
+
+.expansion-number {
+  font-size: 0.65em;
+  font-weight: 700;
+  color: rgba(16, 163, 122, 0.25);
+  font-family: 'Inter', monospace;
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  letter-spacing: 0.05em;
+}
+
+.expansion-icon-v2 {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, rgba(16, 163, 122, 0.12), rgba(16, 163, 122, 0.04));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent, var(--gold));
+  margin-bottom: 14px;
+  transition: all 0.3s ease;
+}
+
+.expansion-card:hover .expansion-icon-v2 {
+  background: linear-gradient(135deg, rgba(16, 163, 122, 0.2), rgba(16, 163, 122, 0.08));
+  transform: scale(1.08);
+}
+
+.expansion-content h4 {
+  color: white;
+  font-size: 0.85em;
+  margin: 0 0 4px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.expansion-content p {
+  font-size: 0.7em;
+  margin: 0;
+  opacity: 0.55;
+  line-height: 1.3;
+}
+
+.expansion-tag {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.55em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent, var(--gold));
+  background: rgba(16, 163, 122, 0.08);
+  border: 1px solid rgba(16, 163, 122, 0.15);
+}
+
+/* ─── Slide: Leadership ─── */
+#slide-leadership {
+  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%);
+}
+
+/* ─── Slide: ESG ─── */
+#slide-esg {
+  background-color: #05140E;
+}
+
+.esg-pillar {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(16, 163, 122, 0.12);
+  border-radius: 14px;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.esg-pillar:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(16, 163, 122, 0.3);
+  transform: translateY(-4px);
+}
+
+.esg-pillar h3 {
+  color: var(--gold);
+}
+
+.esg-pillar .icon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, rgba(16, 163, 122, 0.12), rgba(16, 163, 122, 0.04));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.esg-pillar ul li {
+  border-bottom: 1px solid rgba(16, 163, 122, 0.08);
+}
+
+/* ─── Slide: Locations ─── */
+
+/* ─── Slide: MRO Services — gradient bg ─── */
+#slide-mro-services {
+  background: radial-gradient(ellipse at 20% 50%, rgba(13, 148, 136, 0.08) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 30%, rgba(16, 163, 122, 0.06) 0%, transparent 40%),
+              linear-gradient(180deg, #05140E 0%, #0D1B2E 50%, #05140E 100%) !important;
+}
+
+#slide-mro-services .grid-3 {
+  position: relative;
+  z-index: 2;
+}
+
+/* ─── Slide: Thank You ─── */
+#slide-thankyou {
+  background: radial-gradient(ellipse at center, var(--navy-light) 0%, var(--navy) 50%, var(--navy-dark) 100%);
+}
+
+/* ─── Responsive Images in Slides ─── */
+.slide-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.slide-image-sm {
+  max-height: 200px;
+  object-fit: cover;
+}
+
+/* ─── Map Container ─── */
+.map-container {
+  width: 100%;
+  height: 420px;
+  position: relative;
+}
+
+/* ─── Horizontal Rule ─── */
+.slide-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(16, 163, 122, 0.3), transparent);
+  margin: 20px 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   LIGHT THEME — Slide-Specific Overrides
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── Cover Slide — always dark regardless of theme ─── */
+body.light-theme #slide-cover .cover-headline {
+  color: white;
+}
+
+body.light-theme #slide-cover .cover-subtitle {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+body.light-theme #slide-cover .cover-division-letter {
+  color: rgba(255, 255, 255, 0.12);
+}
+
+body.light-theme #slide-cover .cover-division {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+body.light-theme #slide-cover .cover-divisions:hover .cover-division-letter {
+  color: #10B981 !important;
+  text-shadow: 0 0 12px rgba(16, 163, 122, 0.4) !important;
+}
+
+body.light-theme #slide-cover .cover-division-item:hover .cover-division {
+  color: #34D399;
+}
+
+body.light-theme #slide-cover .cover-divisions:hover .cover-division-item:hover .cover-division {
+  color: #34D399;
+}
+
+/* ─── Gradient Slides ─── */
+body.light-theme #slide-glance {
+  background: linear-gradient(135deg, #E8E8E0 0%, #F5F5F0 40%, #FFFFFF 100%) !important;
+}
+
+body.light-theme #slide-structure {
+  background: linear-gradient(180deg, #F5F5F0 0%, #E8E8E0 100%) !important;
+}
+
+body.light-theme #slide-pipeline {
+  background: linear-gradient(180deg, #F5F5F0 0%, #E8E8E0 100%) !important;
+}
+
+body.light-theme #slide-financials {
+  background: linear-gradient(135deg, #E8E8E0 0%, #F5F5F0 100%) !important;
+}
+
+body.light-theme #slide-leadership {
+  background: linear-gradient(180deg, #F5F5F0 0%, #E8E8E0 100%) !important;
+}
+
+body.light-theme #slide-thankyou {
+  background: radial-gradient(ellipse at center, #FFFFFF 0%, #F5F5F0 50%, #E8E8E0 100%) !important;
+}
+
+/* ─── Division Intro Slides — lighter overlay over bg images ─── */
+body.light-theme .division-slide::before {
+  background: linear-gradient(135deg, rgba(245, 245, 240, 0.9) 0%, rgba(245, 245, 240, 0.8) 100%);
+}
+
+/* ─── MRO Services ─── */
+body.light-theme #slide-mro-services {
+  background: radial-gradient(ellipse at 20% 50%, rgba(13, 148, 136, 0.06) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 30%, rgba(15, 118, 110, 0.04) 0%, transparent 40%),
+              linear-gradient(180deg, #F5F5F0 0%, #EDEDEA 50%, #F5F5F0 100%) !important;
+}
+
+/* ─── Hardcoded bg-color slides ─── */
+body.light-theme #slide-partnerships {
+  background-color: #F5F5F0 !important;
+}
+
+body.light-theme #slide-esg {
+  background-color: #F5F5F0 !important;
+}
+
+body.light-theme #slide-whoweare {
+  background-color: #F5F5F0 !important;
+}
+
+body.light-theme #slide-expansions {
+  background-color: #F5F5F0 !important;
+}
+
+/* ─── ESG & Expansion Cards ─── */
+body.light-theme .esg-pillar {
+  background: rgba(0, 0, 0, 0.02);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .esg-pillar:hover {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(15, 118, 110, 0.3);
+}
+
+body.light-theme .expansion-card {
+  background: rgba(0, 0, 0, 0.02);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .expansion-card:hover {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(15, 118, 110, 0.3);
+}
+
+body.light-theme .expansion-number {
+  color: rgba(15, 118, 110, 0.3);
+}
+
+body.light-theme .expansion-icon-v2 {
+  background: linear-gradient(135deg, rgba(15, 118, 110, 0.08), rgba(15, 118, 110, 0.02));
+}
+
+body.light-theme .expansion-tag {
+  background: rgba(15, 118, 110, 0.06);
+  border-color: rgba(15, 118, 110, 0.15);
+}
+
+/* ─── Sectors ─── */
+body.light-theme #slide-sectors .sector-item h4 {
+  color: #1A1A1A;
+}
+
+body.light-theme #slide-sectors .sector-item p {
+  color: #6B6B68;
+}
+
+/* ─── Slide Image Shadow ─── */
+body.light-theme .slide-image {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* ─── Slide Divider ─── */
+body.light-theme .slide-divider {
+  background: linear-gradient(90deg, transparent, rgba(15, 118, 110, 0.25), transparent);
+}
+
+/* ─── Expansion content text ─── */
+body.light-theme .expansion-content h4 {
+  color: #1A1A1A;
+}
+
+/* ─── CTA Button ─── */
+body.light-theme .cta-content .cta-btn {
+  background: var(--gold);
+  color: #FFFFFF;
+}
+
+body.light-theme .cta-content .cta-btn:hover {
+  box-shadow: 0 8px 32px rgba(15, 118, 110, 0.25);
+}
