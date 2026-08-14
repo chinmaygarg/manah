@@ -47,6 +47,12 @@ function startServer() {
     const server = http.createServer((req, res) => {
       let filePath = path.join(HERE, decodeURIComponent(req.url.split('?')[0]))
       if (filePath.endsWith('/')) filePath = path.join(filePath, 'index.html')
+      filePath = path.resolve(filePath)
+      if (!filePath.startsWith(HERE + path.sep)) {
+        res.writeHead(403)
+        res.end('Forbidden')
+        return
+      }
       fs.readFile(filePath, (err, data) => {
         if (err) {
           res.writeHead(404)
@@ -58,7 +64,7 @@ function startServer() {
         res.end(data)
       })
     })
-    server.listen(PORT, () => resolve(server))
+    server.listen(PORT, '127.0.0.1', () => resolve(server))
   })
 }
 
